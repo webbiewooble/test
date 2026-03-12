@@ -345,6 +345,116 @@
         </div>
     </main>
 
+    <!-- Checkout View -->
+    <main id="checkout-view" class="hidden pt-32 pb-20 lg:pt-40 lg:pb-32 min-h-screen max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl w-full overflow-hidden shadow-sm border border-stone-100">
+            <div class="px-6 py-5 border-b border-stone-100 flex items-center gap-4">
+                <button type="button" onclick="backToProduct()" class="text-stone-400 hover:text-stone-600 transition-colors" aria-label="Back to product">
+                    <i data-lucide="arrow-left" class="w-6 h-6"></i>
+                </button>
+                <h1 class="text-2xl font-serif font-medium text-stone-900">Secure Checkout</h1>
+            </div>
+            
+            <form id="checkout-form" onsubmit="submitOrder(event)" class="p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Left Column: Shipping Details -->
+                    <div class="space-y-5">
+                        <h4 class="font-medium text-stone-900 border-b border-stone-100 pb-2">Shipping Information</h4>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">Full Name</label>
+                            <input type="text" required class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-1">Email</label>
+                                <input type="email" required class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-1">Phone</label>
+                                <input type="tel" required pattern="[0-9]{10}" placeholder="10 digits" class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-stone-700 mb-1">Address</label>
+                            <textarea required rows="2" class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent"></textarea>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-1">City</label>
+                                <input type="text" required class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-stone-700 mb-1">PIN Code</label>
+                                <input type="text" required pattern="[0-9]{6}" placeholder="6 digits" class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Order Summary & Payment -->
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="font-medium text-stone-900 border-b border-stone-100 pb-2 mb-4">Order Summary</h4>
+                            <div class="bg-stone-50 rounded-xl p-5 border border-stone-100">
+                                <div class="flex justify-between items-start mb-2">
+                                    <div>
+                                        <p id="checkout-product-title" class="font-medium text-stone-900">Komal Products</p>
+                                        <p class="text-sm text-stone-500">Qty: 1</p>
+                                    </div>
+                                    <p id="checkout-product-price" class="font-medium text-stone-900">₹0</p>
+                                </div>
+                                <div class="flex justify-between items-center text-sm text-stone-500 mb-4 pb-4 border-b border-stone-200">
+                                    <p>Shipping</p>
+                                    <p class="text-indiaGreen-600 font-medium">Free</p>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <p class="font-medium text-stone-900">Total</p>
+                                    <p id="checkout-total-price" class="font-bold text-xl text-saffron-600">₹0</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-medium text-stone-900 border-b border-stone-100 pb-2 mb-4">Payment Method</h4>
+                            <div class="space-y-3">
+                                <label class="flex items-center gap-3 p-4 border border-stone-200 rounded-xl cursor-pointer hover:bg-stone-50 transition-colors">
+                                    <input type="radio" name="payment" value="upi" checked class="text-saffron-600 focus:ring-saffron-500 w-4 h-4">
+                                    <span class="text-sm font-medium text-stone-700">UPI (GPay, PhonePe, Paytm)</span>
+                                </label>
+                                <label class="flex items-center gap-3 p-4 border border-stone-200 rounded-xl cursor-pointer hover:bg-stone-50 transition-colors">
+                                    <input type="radio" name="payment" value="cod" class="text-saffron-600 focus:ring-saffron-500 w-4 h-4">
+                                    <span class="text-sm font-medium text-stone-700">Cash on Delivery</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit" class="w-full bg-saffron-600 text-white px-6 py-4 rounded-xl font-medium hover:bg-saffron-700 transition-colors flex justify-center items-center gap-2 shadow-lg shadow-saffron-600/20 text-lg">
+                                <i data-lucide="lock" class="w-5 h-5"></i>
+                                Place Order Securely
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            
+            <!-- Success State -->
+            <div id="checkout-success" class="hidden p-16 text-center">
+                <div class="w-24 h-24 bg-indiaGreen-100 text-indiaGreen-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i data-lucide="check-circle-2" class="w-12 h-12"></i>
+                </div>
+                <h3 class="text-4xl font-serif font-medium text-stone-900 mb-4">Order Confirmed!</h3>
+                <p class="text-stone-600 mb-10 max-w-md mx-auto text-lg">Thank you for choosing Komal Tissues. Your order has been placed successfully and will be delivered in 3-5 business days.</p>
+                <button type="button" onclick="backToHomeFromCheckout()" class="inline-flex bg-stone-900 text-white px-8 py-4 rounded-xl font-medium hover:bg-stone-800 transition-colors">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </main>
+
     <!-- Search Modal -->
     <div id="search-modal" class="hidden fixed inset-0 z-[100] bg-stone-900/60 backdrop-blur-sm flex items-start justify-center pt-24 px-4" role="dialog" aria-modal="true" aria-label="Search products">
         <div class="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl transform transition-all" role="document">
@@ -519,9 +629,38 @@
         }
 
         function buyNow() {
-            if (currentProductId) {
-                window.location.href = `checkout.html?product=${currentProductId}`;
+            if (currentProductId && products[currentProductId]) {
+                const product = products[currentProductId];
+                document.getElementById('checkout-product-title').textContent = product.title;
+                document.getElementById('checkout-product-price').textContent = product.price;
+                document.getElementById('checkout-total-price').textContent = product.price;
+                
+                document.getElementById('product-view').classList.add('hidden');
+                document.getElementById('checkout-view').classList.remove('hidden');
+                document.getElementById('checkout-form').classList.remove('hidden');
+                document.getElementById('checkout-success').classList.add('hidden');
+                document.getElementById('checkout-form').reset();
+                window.scrollTo(0, 0);
             }
+        }
+
+        function backToProduct() {
+            document.getElementById('checkout-view').classList.add('hidden');
+            document.getElementById('product-view').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function submitOrder(e) {
+            e.preventDefault();
+            document.getElementById('checkout-form').classList.add('hidden');
+            document.getElementById('checkout-success').classList.remove('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function backToHomeFromCheckout() {
+            document.getElementById('checkout-view').classList.add('hidden');
+            document.getElementById('home-view').classList.remove('hidden');
+            window.scrollTo(0, document.getElementById('products').offsetTop - 80);
         }
 
         function openSearch() {

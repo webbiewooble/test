@@ -8,7 +8,7 @@
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -26,6 +26,7 @@
           fontFamily: {
             serif: ['Cormorant Garamond', 'serif'],
             sans: ['Inter', 'sans-serif'],
+            currency: ['Space Grotesk', 'sans-serif'],
           }
         }
       }
@@ -71,11 +72,34 @@
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
     }
     
+    .header.scrolled .nav-link,
+    .header.scrolled .icon-btn {
+      color: #1A1A1A !important;
+      text-shadow: none !important;
+    }
+    
+    .header.scrolled .nav-link:hover,
+    .header.scrolled .icon-btn:hover {
+      color: #9A7B4F !important;
+    }
+    
+    .header.scrolled .logo-text {
+      text-shadow: none !important;
+    }
+    
     .product-card img {
       transition: transform 0.8s var(--ease);
     }
     .product-card:hover img {
       transform: scale(1.04);
+    }
+    
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
     
     .product-overlay {
@@ -288,31 +312,26 @@
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <!-- Logo - Left on desktop -->
       <a href="#" class="flex flex-col items-start group">
-        <span class="font-serif text-2xl md:text-3xl tracking-[0.1em] uppercase transition-colors text-white group-hover:text-[#E8D5B7]" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Sampriti</span>
-        <span class="text-[8px] tracking-[0.4em] uppercase text-white/80 font-semibold">Botanicals</span>
+        <span class="logo-text font-serif text-2xl md:text-3xl tracking-[0.1em] uppercase transition-colors text-[#9A7B4F] group-hover:text-[#6B5530]" style="text-shadow: 0 1px 4px rgba(0,0,0,0.3);">Sampriti</span>
+        <span class="text-[8px] tracking-[0.4em] uppercase text-[#9A7B4F]/80 font-semibold">Botanicals</span>
       </a>
-
-      <!-- Mobile menu button -->
-      <button onclick="toggleMobileMenu()" class="lg:hidden text-white hover:text-[#E8D5B7] transition-colors" aria-label="Open menu">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
-      </button>
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center gap-10">
         <nav class="flex items-center gap-10">
-          <a href="#collection" class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#E8D5B7] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Shop</a>
-          <a href="#about" class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#E8D5B7] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">The House</a>
-          <a href="#materia" class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#E8D5B7] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Materia</a>
-          <a href="#journal" class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#E8D5B7] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Journal</a>
+          <a href="#collection" class="nav-link text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#9A7B4F] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Shop</a>
+          <a href="#about" class="nav-link text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#9A7B4F] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">The House</a>
+          <a href="#materia" class="nav-link text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#9A7B4F] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Materia</a>
+          <a href="#journal" class="nav-link text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#9A7B4F] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Journal</a>
         </nav>
         <div class="flex items-center gap-6">
-          <button onclick="toggleSearch()" class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Search">
+          <button onclick="toggleSearch()" class="icon-btn text-white hover:text-[#9A7B4F] transition-colors" aria-label="Search">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
           </button>
-          <button class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Wishlist">
+          <button class="icon-btn text-white hover:text-[#9A7B4F] transition-colors" aria-label="Wishlist">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
           </button>
-          <button class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Cart">
+          <button class="icon-btn text-white hover:text-[#9A7B4F] transition-colors" aria-label="Cart">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
           </button>
         </div>
@@ -320,11 +339,15 @@
 
       <!-- Mobile icons -->
       <div class="flex lg:hidden items-center gap-4">
-        <button onclick="toggleSearch()" class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Search">
+        <button onclick="toggleSearch()" class="icon-btn text-white hover:text-[#9A7B4F] transition-colors" aria-label="Search">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         </button>
-        <button class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Cart">
+        <button class="icon-btn text-white hover:text-[#9A7B4F] transition-colors" aria-label="Cart">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+        <!-- Mobile menu button -->
+        <button onclick="toggleMobileMenu()" class="icon-btn text-white hover:text-[#9A7B4F] transition-colors" aria-label="Open menu">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
         </button>
       </div>
     </div>
@@ -332,18 +355,18 @@
 
   <!-- Hero -->
   <section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#0A0908]">
-    <img src="https://images.unsplash.com/photo-1515696955266-4f67e13219e8?w=1920&q=80" alt="Botanical Tea" class="absolute inset-0 w-full h-full object-cover opacity-40" crossorigin="anonymous">
+    <img src="https://media.giphy.com/media/10VjiVoa9rWC4M/giphy.gif" alt="Lush Waterfall" class="absolute inset-0 w-full h-full object-cover opacity-20" crossorigin="anonymous" referrerpolicy="no-referrer">
     <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
     
     <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
       <h1 class="fade-up font-serif text-white text-5xl md:text-7xl lg:text-8xl font-normal leading-none mb-8" style="text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9);">
-        Living <br> <span class="italic text-[#E8D5B7]">Herbal</span> <br> Lineages
+        Living <br> <span class="italic text-[#9A7B4F]">Herbal</span> <br> Lineages
       </h1>
       <p class="fade-up text-white text-base md:text-lg tracking-wide max-w-lg mx-auto mb-12 leading-relaxed px-4 font-medium" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
         A botanical house of ritual science and disciplined formulation, guided by the quiet intelligence of the earth.
       </p>
       <div class="fade-up">
-        <a href="#collection" class="inline-block bg-white text-[#1A1A1A] py-4 px-10 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-[#E8D5B7] transition-all duration-300">Discover the Collection</a>
+        <a href="#collection" class="inline-block bg-white text-[#1A1A1A] py-4 px-10 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-[#9A7B4F] hover:text-white transition-all duration-300">Discover the Collection</a>
       </div>
     </div>
 
@@ -385,76 +408,76 @@
         <!-- Product 1 -->
         <div class="product-card group cursor-pointer" onclick="openProduct('Shakti Peya')">
           <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
-            <img src="https://images.unsplash.com/photo-1515696955266-4f67e13219e8?w=800&q=80" alt="Shakti Peya" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
-            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" alt="Shakti Peya Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1556680262-59821816ea4c?auto=format&fit=crop&w=800&q=80" alt="Shakti Peya" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80" alt="Shakti Peya Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
             <div class="absolute top-4 left-4 bg-accent text-white text-[8px] font-bold tracking-widest uppercase px-2 py-1">Bestseller</div>
             <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
           </div>
           <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Shakti Peya</h3>
           <p class="text-[#4A453D] text-xs mb-3">The Vitality Brew - Adaptogenic Morning Ritual</p>
-          <span class="font-serif text-xl font-medium text-[#6B5530]">$34</span>
+          <span class="font-currency text-base font-medium text-[#C18136]">$34</span>
         </div>
 
         <!-- Product 2 -->
         <div class="product-card group cursor-pointer" onclick="openProduct('Chandra Rasa')">
           <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
-            <img src="https://images.unsplash.com/photo-1594631252845-29fc4586567?w=800&q=80" alt="Chandra Rasa" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
-            <img src="https://images.unsplash.com/photo-1610414857342-0f3b4a30a8ef?w=800&q=80" alt="Chandra Rasa Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Chandra Rasa" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <img src="https://images.unsplash.com/photo-1608500218890-c4f8608fcb4b?auto=format&fit=crop&w=800&q=80" alt="Chandra Rasa Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
             <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
           </div>
           <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Chandra Rasa</h3>
           <p class="text-[#4A453D] text-xs mb-3">The Moon Elixir - Restorative Evening Tonic</p>
-          <span class="font-serif text-xl font-medium text-[#6B5530]">$36</span>
+          <span class="font-currency text-base font-medium text-[#C18136]">$36</span>
         </div>
 
         <!-- Product 3 -->
         <div class="product-card group cursor-pointer" onclick="openProduct('Shotharaha')">
           <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
-            <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=800&q=80" alt="Shotharaha" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
-            <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80" alt="Shotharaha Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1611078449942-239270d56cb0?auto=format&fit=crop&w=800&q=80" alt="Shotharaha" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Shotharaha Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
             <div class="absolute top-4 left-4 bg-accent text-white text-[8px] font-bold tracking-widest uppercase px-2 py-1">New</div>
             <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
           </div>
           <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Shotharaha</h3>
           <p class="text-[#4A453D] text-xs mb-3">The Anti-Inflammatory Blend - Soothing Daily Tonic</p>
-          <span class="font-serif text-xl font-medium text-[#6B5530]">$32</span>
+          <span class="font-currency text-base font-medium text-[#C18136]">$32</span>
         </div>
 
         <!-- Product 4 -->
         <div class="product-card group cursor-pointer" onclick="openProduct('Ojas Vati')">
           <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
-            <img src="https://images.unsplash.com/photo-1540331547168-8b63109225b7?w=800&q=80" alt="Ojas Vati" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
-            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=800&q=80" alt="Ojas Vati Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=800&q=80" alt="Ojas Vati" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80" alt="Ojas Vati Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
             <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
           </div>
           <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Ojas Vati</h3>
           <p class="text-[#4A453D] text-xs mb-3">Immunity Support - Seasonal Resilience</p>
-          <span class="font-serif text-xl font-medium text-[#6B5530]">$28</span>
+          <span class="font-currency text-base font-medium text-[#C18136]">$28</span>
         </div>
 
         <!-- Product 5 -->
         <div class="product-card group cursor-pointer" onclick="openProduct('Tejas Taila')">
           <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
-            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80" alt="Tejas Taila" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
-            <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=800&q=80" alt="Tejas Taila Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1608500218890-c4f8608fcb4b?auto=format&fit=crop&w=800&q=80" alt="Tejas Taila" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <img src="https://images.unsplash.com/photo-1556680262-59821816ea4c?auto=format&fit=crop&w=800&q=80" alt="Tejas Taila Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
             <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
           </div>
           <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Tejas Taila</h3>
           <p class="text-[#4A453D] text-xs mb-3">Radiance Oil - Luminous Skin Ritual</p>
-          <span class="font-serif text-xl font-medium text-[#6B5530]">$42</span>
+          <span class="font-currency text-base font-medium text-[#C18136]">$42</span>
         </div>
 
         <!-- Product 6 -->
         <div class="product-card group cursor-pointer" onclick="openProduct('Hibiscus Rasa')">
           <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
-            <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80" alt="Hibiscus Rasa" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
-            <img src="https://images.unsplash.com/photo-1525310238294-7991a8189765?w=800&q=80" alt="Hibiscus Rasa Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Hibiscus Rasa" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Hibiscus Rasa Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
             <div class="absolute top-4 left-4 bg-accent text-white text-[8px] font-bold tracking-widest uppercase px-2 py-1">Featured</div>
             <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
           </div>
           <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Hibiscus Rasa</h3>
           <p class="text-[#4A453D] text-xs mb-3">The Flower Elixir - Heart-Opening Ritual</p>
-          <span class="font-serif text-xl font-medium text-[#6B5530]">$30</span>
+          <span class="font-currency text-base font-medium text-[#C18136]">$30</span>
         </div>
       </div>
     </div>
@@ -531,7 +554,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
         <div class="relative group overflow-hidden fade-up">
           <div class="aspect-[4/5] bg-bg relative">
-            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=800&q=80" alt="Botanical Nature" class="w-full h-full object-cover" crossorigin="anonymous">
+            <img src="https://media.giphy.com/media/3o85xwxr06YNoFdSbm/giphy.gif" alt="Botanical Herbs" class="w-full h-full object-cover" crossorigin="anonymous" referrerpolicy="no-referrer">
             <div class="absolute inset-0 border-[20px] border-white/20 pointer-events-none"></div>
           </div>
           <div class="absolute -bottom-12 -right-12 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10"></div>
@@ -608,7 +631,7 @@
         </div>
         <div class="order-1 lg:order-2 relative">
           <div class="aspect-square overflow-hidden rounded-sm shadow-lg">
-            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" alt="Tea Ritual" class="w-full h-full object-cover" crossorigin="anonymous">
+            <img src="https://media.giphy.com/media/l41lTR6jmXXxHDzG0/giphy.gif" alt="Tea Ritual" class="w-full h-full object-cover" crossorigin="anonymous" referrerpolicy="no-referrer">
           </div>
           <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-3xl -z-10"></div>
           <div class="absolute -top-6 -right-6 w-40 h-40 bg-accent/5 rounded-full blur-3xl -z-10"></div>
@@ -632,7 +655,7 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <article class="group cursor-pointer">
           <div class="aspect-[4/3] overflow-hidden mb-6">
-            <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80" alt="Hibiscus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Hibiscus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous" referrerpolicy="no-referrer">
           </div>
           <span class="text-[#6B5530] text-[9px] font-bold tracking-[0.2em] uppercase mb-3 block">Materia Botanica</span>
           <h3 class="font-serif text-2xl mb-4 text-dark group-hover:text-[#6B5530] transition-colors">Hibiscus: The Flower of Deep Time</h3>
@@ -642,7 +665,7 @@
 
         <article class="group cursor-pointer">
           <div class="aspect-[4/3] overflow-hidden mb-6">
-            <img src="https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?w=800&q=80" alt="Turmeric" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1611078449942-239270d56cb0?auto=format&fit=crop&w=800&q=80" alt="Turmeric" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous" referrerpolicy="no-referrer">
           </div>
           <span class="text-[#6B5530] text-[9px] font-bold tracking-[0.2em] uppercase mb-3 block">Ritual</span>
           <h3 class="font-serif text-2xl mb-4 text-dark group-hover:text-[#6B5530] transition-colors">On the Daily Practice of Turmeric</h3>
@@ -652,7 +675,7 @@
 
         <article class="group cursor-pointer">
           <div class="aspect-[4/3] overflow-hidden mb-6">
-            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80" alt="Moon Herbs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=800&q=80" alt="Moon Herbs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous" referrerpolicy="no-referrer">
           </div>
           <span class="text-[#6B5530] text-[9px] font-bold tracking-[0.2em] uppercase mb-3 block">Formulation</span>
           <h3 class="font-serif text-2xl mb-4 text-dark group-hover:text-[#6B5530] transition-colors">Moon Herbs for the Quiet Hours</h3>
@@ -761,62 +784,63 @@
 
   <!-- Product Overlay -->
   <div id="productOverlay" class="product-overlay">
-    <div class="sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-border px-6 py-4 flex items-center justify-between">
-      <button onclick="closeProduct()" class="flex items-center gap-3 group">
+    <div class="sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-border px-4 md:px-6 py-4 flex items-center justify-between">
+      <button onclick="closeProduct()" class="flex items-center gap-2 group p-2 -ml-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform"><path d="m15 18-6-6 6-6"/></svg>
-        <span class="text-[10px] font-semibold tracking-[0.2em] uppercase">Back to Collection</span>
+        <span class="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase hidden sm:inline">Back to Collection</span>
+        <span class="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase sm:hidden">Back</span>
       </button>
-      <div class="flex flex-col items-center">
-        <span class="font-serif text-xl tracking-[0.1em] uppercase">Sampriti</span>
+      <div class="flex flex-col items-center absolute left-1/2 -translate-x-1/2">
+        <span class="font-serif text-lg md:text-xl tracking-[0.1em] uppercase">Sampriti</span>
       </div>
-      <div class="w-32 hidden md:block"></div>
+      <div class="w-16"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 py-12 md:py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24">
         <!-- Gallery -->
-        <div class="space-y-6">
-          <div class="aspect-[3/4] bg-[#F0EBE2] overflow-hidden">
-            <img id="overlayMainImg" src="" alt="Product" class="w-full h-full object-cover" crossorigin="anonymous">
+        <div class="flex flex-col-reverse md:flex-row gap-4 md:gap-6">
+          <div id="overlayThumbs" class="flex flex-row md:flex-col gap-3 md:gap-4 overflow-x-auto md:overflow-y-auto w-full md:w-24 shrink-0 hide-scrollbar pb-2 md:pb-0"></div>
+          <div class="flex-1 aspect-[4/5] md:aspect-[3/4] bg-[#F0EBE2] overflow-hidden rounded-sm">
+            <img id="overlayMainImg" src="" alt="Product" class="w-full h-full object-cover" crossorigin="anonymous" referrerpolicy="no-referrer">
           </div>
-          <div id="overlayThumbs" class="grid grid-cols-3 gap-4"></div>
         </div>
 
         <!-- Info -->
         <div class="flex flex-col">
-          <span id="overlayBadge" class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Bestseller</span>
-          <h1 id="overlayName" class="font-serif text-5xl md:text-6xl font-light mb-4 text-dark">Shakti Peya</h1>
-          <p id="overlaySubtitle" class="text-[#4A453D] text-sm tracking-wide mb-8">The Vitality Brew - Adaptogenic Morning Ritual</p>
+          <span id="overlayBadge" class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-3 block">Bestseller</span>
+          <h1 id="overlayName" class="font-serif text-4xl md:text-5xl lg:text-6xl font-light mb-3 text-dark">Shakti Peya</h1>
+          <p id="overlaySubtitle" class="text-[#4A453D] text-xs md:text-sm tracking-wide mb-6">The Vitality Brew - Adaptogenic Morning Ritual</p>
           
-          <div class="flex items-center gap-4 mb-8">
+          <div class="flex items-center gap-4 mb-6">
             <div class="flex text-[#9A7B4F] text-xs">★★★★★</div>
             <span id="overlayRating" class="text-[10px] text-[#4A453D] tracking-widest uppercase">4.9 (214 Reviews)</span>
           </div>
 
-          <div id="overlayPrice" class="font-serif text-3xl text-[#6B5530] font-medium mb-10">$34</div>
+          <div id="overlayPrice" class="font-currency text-xl text-[#C18136] font-medium mb-8">$34</div>
 
-          <p id="overlayDesc" class="text-[#4A453D] text-sm leading-relaxed mb-12">
+          <p id="overlayDesc" class="text-[#4A453D] font-serif text-2xl md:text-3xl lg:text-4xl leading-relaxed mb-10">
             A precisely composed adaptogenic morning ritual designed to honor the body's natural activation cycles.
           </p>
 
           <div class="flex flex-col gap-4 mb-12">
-            <div class="flex items-center gap-6">
-              <div class="flex items-center border border-border">
-                <button onclick="updateQty(-1)" class="px-4 py-3 hover:bg-accent/5 transition-colors">-</button>
-                <span id="overlayQty" class="px-6 py-3 text-xs font-medium">1</span>
-                <button onclick="updateQty(1)" class="px-4 py-3 hover:bg-accent/5 transition-colors">+</button>
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6">
+              <div class="flex items-center border border-border justify-between sm:justify-start">
+                <button onclick="updateQty(-1)" class="px-6 py-4 sm:px-4 sm:py-3 hover:bg-accent/5 transition-colors">-</button>
+                <span id="overlayQty" class="px-6 py-4 sm:px-6 sm:py-3 text-sm sm:text-xs font-medium">1</span>
+                <button onclick="updateQty(1)" class="px-6 py-4 sm:px-4 sm:py-3 hover:bg-accent/5 transition-colors">+</button>
               </div>
-              <button class="flex-1 btn-primary">Add to Cart</button>
+              <button class="flex-1 btn-primary py-4 sm:py-3">Add to Cart</button>
             </div>
-            <button onclick="openCheckout()" class="w-full btn-buy">Buy Now</button>
+            <button onclick="openCheckout()" class="w-full btn-buy py-4">Buy Now</button>
           </div>
 
           <!-- Tabs -->
           <div class="border-t border-border pt-8">
-            <div class="flex gap-8 mb-8">
-              <button onclick="switchTab('ingredients')" id="tab-ingredients" class="tab-btn active text-[10px] font-bold tracking-[0.2em] uppercase">Ingredients</button>
-              <button onclick="switchTab('ritual')" id="tab-ritual" class="tab-btn text-[10px] font-bold tracking-[0.2em] uppercase">Ritual</button>
-              <button onclick="switchTab('benefits')" id="tab-benefits" class="tab-btn text-[10px] font-bold tracking-[0.2em] uppercase">Benefits</button>
+            <div class="flex gap-4 sm:gap-8 mb-6 overflow-x-auto pb-2 scrollbar-hide">
+              <button onclick="switchTab('ingredients')" id="tab-ingredients" class="tab-btn active text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Ingredients</button>
+              <button onclick="switchTab('ritual')" id="tab-ritual" class="tab-btn text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Ritual</button>
+              <button onclick="switchTab('benefits')" id="tab-benefits" class="tab-btn text-[10px] font-bold tracking-[0.2em] uppercase whitespace-nowrap">Benefits</button>
             </div>
             <div id="tabContent" class="text-[#4A453D] text-sm leading-relaxed min-h-[100px]"></div>
           </div>
@@ -824,158 +848,263 @@
       </div>
 
       <!-- Reviews Section -->
-      <div class="mt-24 md:mt-32 border-t border-border pt-24">
-        <div class="text-center mb-16">
+      <div class="mt-20 md:mt-32 border-t border-border pt-16 md:pt-24">
+        <div class="text-center mb-12 md:mb-16">
           <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Community Voice</span>
-          <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-dark">Reviews</h2>
+          <h2 class="font-serif text-3xl md:text-5xl font-light mb-6 text-dark">Reviews</h2>
         </div>
-        <div id="overlayReviews" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+        <div id="overlayReviews" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"></div>
+      </div>
+
+      <!-- Others Also Considered -->
+      <div class="mt-20 md:mt-32 border-t border-border pt-16 md:pt-24">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Curated Selection</span>
+          <h2 class="font-serif text-3xl md:text-5xl font-light mb-6 text-dark">Others Also Considered</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <!-- Product Card 1 -->
+          <div class="product-card group cursor-pointer" onclick="openProduct('Chandra Rasa')">
+            <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-4">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Chandra Rasa" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <img src="https://images.unsplash.com/photo-1608500218890-c4f8608fcb4b?auto=format&fit=crop&w=800&q=80" alt="Chandra Rasa Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-3 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+            </div>
+            <h3 class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-1 text-dark">Chandra Rasa</h3>
+            <span class="font-currency text-sm font-medium text-[#C18136]">$36</span>
+          </div>
+          <!-- Product Card 2 -->
+          <div class="product-card group cursor-pointer" onclick="openProduct('Shotharaha')">
+            <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-4">
+              <img src="https://images.unsplash.com/photo-1611078449942-239270d56cb0?auto=format&fit=crop&w=800&q=80" alt="Shotharaha" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Shotharaha Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-3 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+            </div>
+            <h3 class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-1 text-dark">Shotharaha</h3>
+            <span class="font-currency text-sm font-medium text-[#C18136]">$32</span>
+          </div>
+          <!-- Product Card 3 -->
+          <div class="product-card group cursor-pointer" onclick="openProduct('Ojas Vati')">
+            <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-4">
+              <img src="https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=800&q=80" alt="Ojas Vati" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80" alt="Ojas Vati Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-3 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+            </div>
+            <h3 class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-1 text-dark">Ojas Vati</h3>
+            <span class="font-currency text-sm font-medium text-[#C18136]">$28</span>
+          </div>
+          <!-- Product Card 4 -->
+          <div class="product-card group cursor-pointer" onclick="openProduct('Tejas Taila')">
+            <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-4">
+              <img src="https://images.unsplash.com/photo-1608500218890-c4f8608fcb4b?auto=format&fit=crop&w=800&q=80" alt="Tejas Taila" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <img src="https://images.unsplash.com/photo-1556680262-59821816ea4c?auto=format&fit=crop&w=800&q=80" alt="Tejas Taila Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-3 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+            </div>
+            <h3 class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-1 text-dark">Tejas Taila</h3>
+            <span class="font-currency text-sm font-medium text-[#C18136]">$42</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recently Viewed -->
+      <div class="mt-20 md:mt-32 border-t border-border pt-16 md:pt-24 mb-16">
+        <div class="text-center mb-12 md:mb-16">
+          <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Your Journey</span>
+          <h2 class="font-serif text-3xl md:text-5xl font-light mb-6 text-dark">Recently Viewed</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+          <!-- Product Card 1 -->
+          <div class="product-card group cursor-pointer" onclick="openProduct('Hibiscus Rasa')">
+            <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-4">
+              <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80" alt="Hibiscus Rasa" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80" alt="Hibiscus Rasa Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-3 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+            </div>
+            <h3 class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-1 text-dark">Hibiscus Rasa</h3>
+            <span class="font-currency text-sm font-medium text-[#C18136]">$30</span>
+          </div>
+          <!-- Product Card 2 -->
+          <div class="product-card group cursor-pointer" onclick="openProduct('Shakti Peya')">
+            <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-4">
+              <img src="https://images.unsplash.com/photo-1556680262-59821816ea4c?auto=format&fit=crop&w=800&q=80" alt="Shakti Peya" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <img src="https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80" alt="Shakti Peya Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous" referrerpolicy="no-referrer">
+              <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-3 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+            </div>
+            <h3 class="text-[10px] md:text-[11px] font-bold tracking-[0.2em] uppercase mb-1 text-dark">Shakti Peya</h3>
+            <span class="font-currency text-sm font-medium text-[#C18136]">$34</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <!-- Checkout Overlay -->
   <div id="checkoutOverlay" class="checkout-overlay">
-    <div class="sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-border px-6 py-4 flex items-center justify-between">
-      <button onclick="closeCheckout()" class="flex items-center gap-3 group">
+    <div class="sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-border px-4 md:px-6 py-4 flex items-center justify-between">
+      <button onclick="closeCheckout()" class="flex items-center gap-2 group p-2 -ml-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform"><path d="m15 18-6-6 6-6"/></svg>
-        <span class="text-[10px] font-semibold tracking-[0.2em] uppercase">Back to Product</span>
+        <span class="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase hidden sm:inline">Back to Product</span>
+        <span class="text-[10px] md:text-xs font-semibold tracking-[0.2em] uppercase sm:hidden">Back</span>
       </button>
-      <div class="flex flex-col items-center">
-        <span class="font-serif text-xl tracking-[0.1em] uppercase">Sampriti</span>
+      <div class="flex flex-col items-center absolute left-1/2 -translate-x-1/2">
+        <span class="font-serif text-lg md:text-xl tracking-[0.1em] uppercase">Checkout</span>
       </div>
-      <div class="w-32 hidden md:block"></div>
+      <div class="w-16"></div>
     </div>
 
-    <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <!-- Order Summary -->
-        <div class="bg-white border border-border p-8">
-          <h2 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-border pb-4 text-dark">Order Summary</h2>
-          <div class="flex gap-6 mb-8">
-            <div class="w-24 h-24 bg-[#F0EBE2] overflow-hidden flex-shrink-0">
-              <img id="checkoutProductImg" src="" alt="Product" class="w-full h-full object-cover" crossorigin="anonymous">
-            </div>
-            <div class="flex-1">
-              <h3 id="checkoutProductName" class="font-serif text-xl mb-2 text-dark">Product Name</h3>
-              <p id="checkoutProductSubtitle" class="text-[#4A453D] text-xs mb-2">Subtitle</p>
-              <p id="checkoutProductQty" class="text-[#4A453D] text-xs">Qty: 1</p>
-            </div>
-          </div>
-          <div class="border-t border-border pt-6 space-y-3">
-            <div class="flex justify-between text-sm">
-              <span class="text-[#4A453D]">Subtotal</span>
-              <span id="checkoutSubtotal" class="text-dark font-medium">$34</span>
-            </div>
-            <div class="flex justify-between text-sm">
-              <span class="text-[#4A453D]">Shipping</span>
-              <span class="text-dark font-medium">Free</span>
-            </div>
-            <div class="flex justify-between text-sm">
-              <span class="text-[#4A453D]">Tax</span>
-              <span id="checkoutTax" class="text-dark font-medium">$0</span>
-            </div>
-            <div class="flex justify-between text-lg font-medium border-t border-border pt-4 mt-4">
-              <span class="text-dark">Total</span>
-              <span id="checkoutTotal" class="font-serif text-2xl text-[#6B5530]">$34</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Payment Methods -->
-        <div>
-          <h2 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-border pb-4 text-dark">Payment Method</h2>
+    <div class="max-w-5xl mx-auto px-4 md:px-6 py-8 md:py-16">
+      <div class="flex flex-col lg:flex-row gap-12 lg:gap-16">
+        
+        <!-- Left Column: Forms -->
+        <div class="flex-1 order-2 lg:order-1 space-y-10">
           
-          <!-- Card Payment -->
-          <div class="payment-option mb-4 selected" onclick="selectPayment('card')">
-            <div class="flex items-center gap-4 mb-4">
-              <input type="radio" name="payment" id="payCard" checked>
-              <label for="payCard" class="flex items-center gap-3 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
-                <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-dark">Credit / Debit Card</span>
-              </label>
-            </div>
-            <div id="cardForm" class="space-y-4 mt-6">
-              <div>
-                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Card Number</label>
-                <input type="text" class="input-field" placeholder="1234 5678 9012 3456" maxlength="19">
-              </div>
-              <div class="grid grid-cols-2 gap-4">
-                <div>
-                  <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Expiry Date</label>
-                  <input type="text" class="input-field" placeholder="MM/YY" maxlength="5">
-                </div>
-                <div>
-                  <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">CVV</label>
-                  <input type="text" class="input-field" placeholder="123" maxlength="4">
-                </div>
-              </div>
-              <div>
-                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Name on Card</label>
-                <input type="text" class="input-field" placeholder="John Doe">
-              </div>
-            </div>
-          </div>
-
-          <!-- UPI Payment -->
-          <div class="payment-option" onclick="selectPayment('upi')">
-            <div class="flex items-center gap-4 mb-4">
-              <input type="radio" name="payment" id="payUPI">
-              <label for="payUPI" class="flex items-center gap-3 cursor-pointer">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
-                <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-dark">UPI Payment</span>
-              </label>
-            </div>
-            <div id="upiForm" class="space-y-4 mt-6 hidden">
-              <div>
-                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">UPI ID</label>
-                <input type="text" class="input-field" placeholder="yourname@upi">
-              </div>
-              <div class="flex items-center gap-3 text-[#4A453D] text-xs">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
-                <span>Supported: Google Pay, PhonePe, Paytm, BHIM UPI</span>
-              </div>
-            </div>
-          </div>
-
           <!-- Contact Info -->
-          <div class="mt-8">
-            <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-6 text-dark">Contact Information</h3>
+          <section>
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-dark flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-[10px]">1</span>
+              Contact Information
+            </h2>
             <div class="space-y-4">
               <div>
-                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Email</label>
-                <input type="email" class="input-field" placeholder="your@email.com">
+                <input type="email" class="input-field" placeholder="Email address">
               </div>
               <div>
-                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Phone</label>
-                <input type="tel" class="input-field" placeholder="+91 98765 43210">
+                <input type="tel" class="input-field" placeholder="Phone number">
+              </div>
+            </div>
+          </section>
+
+          <!-- Shipping Address -->
+          <section>
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-dark flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-[10px]">2</span>
+              Shipping Address
+            </h2>
+            <div class="space-y-4">
+              <div class="grid grid-cols-2 gap-4">
+                <input type="text" class="input-field" placeholder="First name">
+                <input type="text" class="input-field" placeholder="Last name">
+              </div>
+              <input type="text" class="input-field" placeholder="Address">
+              <input type="text" class="input-field" placeholder="Apartment, suite, etc. (optional)">
+              <div class="grid grid-cols-2 gap-4">
+                <input type="text" class="input-field" placeholder="City">
+                <input type="text" class="input-field" placeholder="Postal code">
+              </div>
+            </div>
+          </section>
+
+          <!-- Payment Method -->
+          <section>
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 text-dark flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-accent text-white flex items-center justify-center text-[10px]">3</span>
+              Payment
+            </h2>
+            
+            <div class="space-y-4">
+              <!-- Card Payment -->
+              <div class="payment-option selected" onclick="selectPayment('card')" id="cardOption">
+                <div class="flex items-center justify-between mb-2">
+                  <div class="flex items-center gap-3">
+                    <input type="radio" name="payment" id="payCard" checked class="w-4 h-4">
+                    <label for="payCard" class="text-xs font-bold tracking-[0.1em] uppercase text-dark cursor-pointer">Credit Card</label>
+                  </div>
+                  <div class="flex gap-1">
+                    <svg class="h-5 w-auto" viewBox="0 0 38 24" fill="none"><rect width="38" height="24" rx="2" fill="#222"/><path d="M12 15H8v-2h4v2zm6 0h-4v-2h4v2zm6 0h-4v-2h4v2zm6 0h-4v-2h4v2z" fill="#fff" opacity=".5"/></svg>
+                  </div>
+                </div>
+                
+                <div id="cardForm" class="space-y-4 mt-6">
+                  <input type="text" class="input-field" placeholder="Card number" maxlength="19">
+                  <div class="grid grid-cols-2 gap-4">
+                    <input type="text" class="input-field" placeholder="MM / YY" maxlength="5">
+                    <input type="text" class="input-field" placeholder="CVC" maxlength="4">
+                  </div>
+                  <input type="text" class="input-field" placeholder="Name on card">
+                </div>
+              </div>
+
+              <!-- UPI Payment -->
+              <div class="payment-option" onclick="selectPayment('upi')" id="upiOption">
+                <div class="flex items-center gap-3">
+                  <input type="radio" name="payment" id="payUPI" class="w-4 h-4">
+                  <label for="payUPI" class="text-xs font-bold tracking-[0.1em] uppercase text-dark cursor-pointer">UPI</label>
+                </div>
+                <div id="upiForm" class="space-y-4 mt-6 hidden">
+                  <input type="text" class="input-field" placeholder="Enter UPI ID (e.g. name@upi)">
+                  <p class="text-[10px] text-[#4A453D]">You will receive a payment request on your UPI app.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Place Order Button -->
+          <div class="pt-6">
+            <button onclick="placeOrder()" class="w-full btn-buy py-4 text-xs">
+              Complete Purchase
+            </button>
+            <p class="text-[10px] text-[#4A453D] text-center mt-4 leading-relaxed flex items-center justify-center gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Secure and encrypted transaction
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Order Summary (Sticky on Desktop) -->
+        <div class="flex-1 order-1 lg:order-2">
+          <div class="bg-white border border-border p-6 md:p-8 lg:sticky lg:top-24">
+            <h2 class="text-xs font-bold tracking-[0.2em] uppercase mb-6 border-b border-border pb-4 text-dark">Order Summary</h2>
+            
+            <div class="flex gap-4 md:gap-6 mb-6">
+              <div class="w-20 h-20 md:w-24 md:h-24 bg-[#F0EBE2] overflow-hidden flex-shrink-0 rounded-sm">
+                <img id="checkoutProductImg" src="" alt="Product" class="w-full h-full object-cover" crossorigin="anonymous" referrerpolicy="no-referrer">
+              </div>
+              <div class="flex-1 flex flex-col justify-center">
+                <h3 id="checkoutProductName" class="font-serif text-lg md:text-xl mb-1 text-dark">Product Name</h3>
+                <p id="checkoutProductSubtitle" class="text-[#4A453D] text-[10px] md:text-xs mb-2 line-clamp-1">Subtitle</p>
+                <p id="checkoutProductQty" class="text-[#4A453D] text-xs font-medium">Qty: 1</p>
+              </div>
+              <div class="flex items-center">
+                <span id="checkoutProductPrice" class="font-currency text-base text-[#C18136]">$34</span>
+              </div>
+            </div>
+
+            <div class="border-t border-border pt-6 space-y-3">
+              <div class="flex justify-between text-sm">
+                <span class="text-[#4A453D]">Subtotal</span>
+                <span id="checkoutSubtotal" class="font-currency text-[#C18136] font-medium">$34</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-[#4A453D]">Shipping</span>
+                <span class="text-dark font-medium">Free</span>
+              </div>
+              <div class="flex justify-between text-sm">
+                <span class="text-[#4A453D]">Tax</span>
+                <span id="checkoutTax" class="font-currency text-[#C18136] font-medium">$0</span>
+              </div>
+              <div class="flex justify-between items-center border-t border-border pt-4 mt-4">
+                <span class="text-sm font-bold tracking-widest uppercase text-dark">Total</span>
+                <span id="checkoutTotal" class="font-currency text-xl text-[#C18136]">$34</span>
               </div>
             </div>
           </div>
-
-          <!-- Place Order Button -->
-          <button onclick="placeOrder()" class="w-full btn-buy mt-10">
-            Complete Purchase
-          </button>
-
-          <p class="text-[10px] text-[#4A453D] text-center mt-6 leading-relaxed">
-            By completing this purchase, you agree to our Terms of Service and Privacy Policy. All transactions are secure and encrypted.
-          </p>
         </div>
+
       </div>
     </div>
   </div>
 
   <!-- Order Success Overlay -->
   <div id="successOverlay" class="checkout-overlay flex items-center justify-center">
-    <div class="text-center px-6 max-w-md">
-      <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-[#6B5530]/10 flex items-center justify-center">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+    <div class="text-center px-4 md:px-6 max-w-md w-full">
+      <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-6 md:mb-8 rounded-full bg-[#6B5530]/10 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="md:w-10 md:h-10"><path d="M20 6 9 17l-5-5"/></svg>
       </div>
-      <h2 class="font-serif text-4xl md:text-5xl mb-6 text-dark">Thank You</h2>
-      <p class="text-[#4A453D] text-sm leading-relaxed mb-8">Your order has been placed successfully. We've sent a confirmation email with your order details.</p>
-      <p class="text-[#6B5530] text-xs font-bold tracking-[0.2em] uppercase mb-8">Order #SB-2026-<span id="orderNumber">12345</span></p>
-      <button onclick="closeSuccess()" class="btn-primary">Continue Shopping</button>
+      <h2 class="font-serif text-3xl md:text-5xl mb-4 md:mb-6 text-dark">Thank You</h2>
+      <p class="text-[#4A453D] text-xs md:text-sm leading-relaxed mb-6 md:mb-8">Your order has been placed successfully. We've sent a confirmation email with your order details.</p>
+      <p class="text-[#6B5530] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-8">Order #SB-2026-<span id="orderNumber">12345</span></p>
+      <button onclick="closeSuccess()" class="btn-primary w-full md:w-auto">Continue Shopping</button>
     </div>
   </div>
 
@@ -988,9 +1117,9 @@
         rating: '4.9 (214 Reviews)',
         desc: 'A precisely composed adaptogenic morning ritual designed to honor the body\'s natural activation cycles. Rooted in traditional Ayurvedic wisdom, this blend features wild-harvested Ashwagandha and Tulsi.',
         images: [
-          'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80',
-          'https://images.unsplash.com/photo-1515696955266-4f67e13219e8?w=800&q=80',
-          'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80'
+          'https://images.unsplash.com/photo-1556680262-59821816ea4c?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80'
         ],
         ingredients: 'Ashwagandha (Withania somnifera), Tulsi (Ocimum sanctum), Turmeric (Curcuma longa), Black Pepper (Piper nigrum). All ingredients are wild-harvested or ethically grown.',
         ritual: 'Best enjoyed at sunrise. Mix one level teaspoon into warm water or your preferred plant-based milk. Sip slowly, focusing on the earthy aroma and the grounding energy of the herbs.',
@@ -1008,9 +1137,9 @@
         rating: '4.8 (178 Reviews)',
         desc: 'A restorative evening tonic crafted to support the body\'s transition into deep rest. Featuring cooling botanicals that soothe the nervous system and prepare the spirit for stillness.',
         images: [
-          'https://images.unsplash.com/photo-1594631252845-29fc4586567?w=800&q=80',
-          'https://images.unsplash.com/photo-1610414857342-0f3b4a30a8ef?w=800&q=80',
-          'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=800&q=80'
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1608500218890-c4f8608fcb4b?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=800&q=80'
         ],
         ingredients: 'Brahmi (Bacopa monnieri), Ashwagandha Root, Cardamom (Elettaria cardamomum), Rose Petals (Rosa centifolia).',
         ritual: 'Sip slowly 30 minutes before rest. Prepare with warm milk or water. Allow the cooling properties of Brahmi and Rose to gently unwind the mind.',
@@ -1028,9 +1157,9 @@
         rating: '4.9 (96 Reviews)',
         desc: 'A powerful combination of traditional anti-inflammatory botanicals designed to support joint health and systemic balance. Potent yet gentle on the digestive system.',
         images: [
-          'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=800&q=80',
-          'https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80',
-          'https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?w=800&q=80'
+          'https://images.unsplash.com/photo-1611078449942-239270d56cb0?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80'
         ],
         ingredients: 'Turmeric (Curcuma longa), Boswellia (Boswellia serrata), Ginger (Zingiber officinale), Guggulu (Commiphora wightii).',
         ritual: 'Can be taken any time of day. Mix with warm water or add to your favorite smoothie. Best taken with a small amount of healthy fat to enhance absorption.',
@@ -1048,9 +1177,9 @@
         rating: '4.7 (112 Reviews)',
         desc: 'A traditional Ayurvedic formulation designed to strengthen the body\'s natural defenses. Ojas Vati works to build vital energy and resilience against seasonal changes.',
         images: [
-          'https://images.unsplash.com/photo-1540331547168-8b63109225b7?w=800&q=80',
-          'https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=800&q=80',
-          'https://images.unsplash.com/photo-1502333323293-4f21b0ae5ee7?w=800&q=80'
+          'https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1556680262-59821816ea4c?auto=format&fit=crop&w=800&q=80'
         ],
         ingredients: 'Guduchi (Tinospora cordifolia), Amla (Emblica officinalis), Neem (Azadirachta indica), Licorice (Glycyrrhiza glabra).',
         ritual: 'Take two tablets daily with warm water, preferably on an empty stomach in the morning. Consistency is key to building long-term resilience.',
@@ -1067,9 +1196,9 @@
         rating: '5.0 (84 Reviews)',
         desc: 'A luxurious, cold-pressed botanical oil designed to nourish the skin and restore its natural luminosity. Infused with solar-macerated herbs for maximum potency.',
         images: [
-          'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80',
-          'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=800&q=80',
-          'https://images.unsplash.com/photo-1608571424171-397a89af57ac?w=800&q=80'
+          'https://images.unsplash.com/photo-1608500218890-c4f8608fcb4b?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1556680262-59821816ea4c?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80'
         ],
         ingredients: 'Saffron (Crocus sativus), Sandalwood (Santalum album), Manjistha (Rubia cordifolia), Sesame Oil (Sesamum indicum).',
         ritual: 'Gently massage 3-5 drops into clean, damp skin using upward circular motions. Best used as the final step in your evening ritual to allow the oils to penetrate deeply.',
@@ -1086,9 +1215,9 @@
         rating: '4.9 (124 Reviews)',
         desc: 'A vibrant, heart-opening elixir crafted from sun-dried Hibiscus petals and cooling botanicals. Designed to soothe the spirit and support cardiovascular vitality.',
         images: [
-          'https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80',
-          'https://images.unsplash.com/photo-1525310238294-7991a8189765?w=800&q=80',
-          'https://images.unsplash.com/photo-1502333323293-4f21b0ae5ee7?w=800&q=80'
+          'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1611078449942-239270d56cb0?auto=format&fit=crop&w=800&q=80'
         ],
         ingredients: 'Hibiscus (Hibiscus rosa-sinensis), Rosehips (Rosa canina), Hawthorn Berry (Crataegus), Stevia Leaf.',
         ritual: 'Mix one teaspoon with cool water or sparkling water for a refreshing afternoon ritual. The vibrant red hue and tart flavor are deeply grounding and heart-centering.',
@@ -1134,10 +1263,20 @@
       document.getElementById('searchOverlay').classList.toggle('active');
     }
 
-    // Mobile Menu Toggle
     function toggleMobileMenu() {
-      document.getElementById('mobileMenu').classList.toggle('active');
-      document.getElementById('mobileMenuOverlay').classList.toggle('active');
+      const menu = document.getElementById('mobileMenu');
+      const overlay = document.getElementById('mobileMenuOverlay');
+      const isActive = menu.classList.contains('active');
+      
+      if (isActive) {
+        menu.classList.remove('active');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      } else {
+        menu.classList.add('active');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
     }
 
     // Product Overlay Logic
@@ -1160,12 +1299,16 @@
       thumbContainer.innerHTML = '';
       data.images.forEach((img, i) => {
         const thumb = document.createElement('div');
-        thumb.className = `aspect-square bg-[#F0EBE2] overflow-hidden cursor-pointer border-2 ${i === 0 ? 'border-[#6B5530]' : 'border-transparent'}`;
-        thumb.innerHTML = `<img src="${img}" class="w-full h-full object-cover" crossorigin="anonymous">`;
+        thumb.className = `w-20 md:w-full aspect-[4/5] shrink-0 bg-[#F0EBE2] overflow-hidden cursor-pointer transition-all duration-300 rounded-sm ${i === 0 ? 'ring-1 ring-offset-2 ring-[#6B5530] opacity-100' : 'opacity-60 hover:opacity-100'}`;
+        thumb.innerHTML = `<img src="${img}" class="w-full h-full object-cover" crossorigin="anonymous" referrerpolicy="no-referrer">`;
         thumb.onclick = () => {
           document.getElementById('overlayMainImg').src = img;
-          thumbContainer.querySelectorAll('div').forEach(d => d.classList.remove('border-[#6B5530]'));
-          thumb.classList.add('border-[#6B5530]');
+          thumbContainer.querySelectorAll('div').forEach(d => {
+            d.classList.remove('ring-1', 'ring-offset-2', 'ring-[#6B5530]', 'opacity-100');
+            d.classList.add('opacity-60');
+          });
+          thumb.classList.remove('opacity-60');
+          thumb.classList.add('ring-1', 'ring-offset-2', 'ring-[#6B5530]', 'opacity-100');
         };
         thumbContainer.appendChild(thumb);
       });
@@ -1258,6 +1401,7 @@
       document.getElementById('checkoutProductName').textContent = checkoutProductName;
       document.getElementById('checkoutProductSubtitle').textContent = checkoutProductData.subtitle;
       document.getElementById('checkoutProductQty').textContent = 'Qty: ' + currentQty;
+      document.getElementById('checkoutProductPrice').textContent = checkoutProductData.price;
       
       const priceNum = parseInt(checkoutProductData.price.replace('$', ''));
       const subtotal = priceNum * currentQty;
@@ -1273,8 +1417,8 @@
     }
 
     function selectPayment(method) {
-      const cardOption = document.querySelector('.payment-option:nth-child(1)');
-      const upiOption = document.querySelector('.payment-option:nth-child(2)');
+      const cardOption = document.getElementById('cardOption');
+      const upiOption = document.getElementById('upiOption');
       const cardForm = document.getElementById('cardForm');
       const upiForm = document.getElementById('upiForm');
       

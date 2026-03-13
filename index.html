@@ -1,714 +1,1311 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Komal Tissues | Premium Indian Bamboo Tissues</title>
-    
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons via CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind Configuration -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        saffron: {
-                            50: '#fff9f2',
-                            100: '#fff1e0',
-                            500: '#f97316',
-                            600: '#ea580c',
-                            700: '#c2410c',
-                        },
-                        indiaGreen: {
-                            50: '#f0fdf4',
-                            100: '#dcfce7',
-                            300: '#86efac',
-                            600: '#16a34a',
-                            800: '#166534',
-                            900: '#14532d',
-                        }
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sampriti Botanicals - India's Living Herbal Lineages</title>
+  <meta name="description" content="A botanical house of ritual science and disciplined formulation, guided by the quiet intelligence of the earth.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            bg: '#FAF8F4',
+            accent: '#9A7B4F',
+            'accent-dark': '#6B5530',
+            dark: '#1A1A1A',
+            muted: '#4A453D',
+            border: '#E4DDD4',
+          },
+          fontFamily: {
+            serif: ['Cormorant Garamond', 'serif'],
+            sans: ['Inter', 'sans-serif'],
+          }
         }
-    </script>
+      }
+    }
+  </script>
+  
+  <style>
+    :root {
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+    }
     
-    <!-- Custom Animations -->
-    <style>
-        .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
-        .slide-up { animation: slideUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        
-        @keyframes fadeIn { to { opacity: 1; } }
-        @keyframes slideUp { to { opacity: 1; transform: translateY(0); } }
-    </style>
+    body {
+      background-color: #FAF8F4;
+      color: #1A1A1A;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #FAF8F4; }
+    ::-webkit-scrollbar-thumb { background: #E4DDD4; border-radius: 10px; }
+    ::-webkit-scrollbar-thumb:hover { background: #6B6259; }
+    
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s var(--ease);
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .header {
+      transition: all 0.4s var(--ease);
+    }
+    .header.scrolled {
+      background: rgba(250, 248, 244, 0.98);
+      backdrop-filter: blur(20px);
+      padding-top: 0.75rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid #E4DDD4;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+    }
+    
+    .product-card img {
+      transition: transform 0.8s var(--ease);
+    }
+    .product-card:hover img {
+      transform: scale(1.04);
+    }
+    
+    .product-overlay {
+      position: fixed;
+      inset: 0;
+      background: #FAF8F4;
+      z-index: 1000;
+      transform: translateX(100%);
+      transition: transform 0.6s var(--ease);
+      overflow-y: auto;
+    }
+    .product-overlay.active {
+      transform: translateX(0);
+    }
+    
+    .tab-btn {
+      position: relative;
+      padding-bottom: 8px;
+    }
+    .tab-btn::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: #9A7B4F;
+      transition: width 0.3s var(--ease);
+    }
+    .tab-btn.active::after {
+      width: 100%;
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 30s linear infinite;
+    }
+    
+    .search-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(250, 248, 244, 0.98);
+      z-index: 1100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--ease);
+    }
+    .search-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .btn-primary {
+      background: #1A1A1A;
+      color: #FFFFFF;
+      padding: 12px 32px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s var(--ease);
+    }
+    .btn-primary:hover {
+      background: #6B5530;
+    }
+    
+    .btn-outline {
+      border: 1px solid #1A1A1A;
+      color: #1A1A1A;
+      padding: 12px 32px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s var(--ease);
+    }
+    .btn-outline:hover {
+      background: #1A1A1A;
+      color: #FFFFFF;
+    }
+    
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 80%;
+      max-width: 320px;
+      height: 100vh;
+      background: #FAF8F4;
+      z-index: 1200;
+      transition: right 0.4s var(--ease);
+      box-shadow: -4px 0 30px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+    }
+    .mobile-menu.active {
+      right: 0;
+    }
+    .mobile-menu-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1100;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s var(--ease);
+    }
+    .mobile-menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    /* Checkout Overlay */
+    .checkout-overlay {
+      position: fixed;
+      inset: 0;
+      background: #FAF8F4;
+      z-index: 1200;
+      transform: translateX(100%);
+      transition: transform 0.6s var(--ease);
+      overflow-y: auto;
+    }
+    .checkout-overlay.active {
+      transform: translateX(0);
+    }
+    
+    .payment-option {
+      border: 2px solid #E4DDD4;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+    }
+    .payment-option:hover {
+      border-color: #9A7B4F;
+    }
+    .payment-option.selected {
+      border-color: #9A7B4F;
+      background: #FAF8F4;
+    }
+    .payment-option input[type="radio"] {
+      accent-color: #9A7B4F;
+    }
+    
+    .input-field {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #E4DDD4;
+      background: white;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.3s var(--ease);
+    }
+    .input-field:focus {
+      border-color: #9A7B4F;
+    }
+    .input-field::placeholder {
+      color: #9A9A9A;
+    }
+    
+    .btn-buy {
+      background: #9A7B4F;
+      color: #FFFFFF;
+      padding: 14px 32px;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: all 0.3s var(--ease);
+    }
+    .btn-buy:hover {
+      background: #6B5530;
+    }
+  </style>
 </head>
-<body class="bg-stone-50 text-stone-900 font-sans antialiased selection:bg-saffron-100 selection:text-saffron-700">
+
+<body class="overflow-x-hidden">
+
+  <!-- Search Overlay -->
+  <div id="searchOverlay" class="search-overlay flex flex-col items-center justify-center p-8">
+    <button onclick="toggleSearch()" class="absolute top-8 right-8 text-3xl hover:text-accent transition-colors" aria-label="Close search">&times;</button>
+    <div class="w-full max-w-2xl">
+      <input type="text" placeholder="Search the collection..." class="w-full bg-transparent border-b border-dark/20 py-4 text-3xl font-serif outline-none focus:border-accent transition-colors">
+      <div class="mt-8 text-muted text-sm tracking-widest uppercase">Start typing to find botanicals...</div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenuOverlay" class="mobile-menu-overlay" onclick="toggleMobileMenu()"></div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <div class="p-8">
+      <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-2xl hover:text-accent transition-colors" aria-label="Close menu">&times;</button>
+      <div class="mt-16 space-y-8">
+        <a href="#collection" onclick="toggleMobileMenu()" class="block text-sm font-medium tracking-[0.2em] uppercase hover:text-accent transition-colors">Shop</a>
+        <a href="#about" onclick="toggleMobileMenu()" class="block text-sm font-medium tracking-[0.2em] uppercase hover:text-accent transition-colors">The House</a>
+        <a href="#materia" onclick="toggleMobileMenu()" class="block text-sm font-medium tracking-[0.2em] uppercase hover:text-accent transition-colors">Materia</a>
+        <a href="#journal" onclick="toggleMobileMenu()" class="block text-sm font-medium tracking-[0.2em] uppercase hover:text-accent transition-colors">Journal</a>
+      </div>
+      <div class="mt-12 pt-8 border-t border-border">
+        <p class="text-muted text-xs leading-relaxed">A botanical house of ritual science and disciplined formulation.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header id="header" class="header fixed top-0 left-0 w-full z-50 py-6 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <!-- Logo - Left on desktop -->
+      <a href="#" class="flex flex-col items-start group">
+        <span class="font-serif text-2xl md:text-3xl tracking-[0.1em] uppercase transition-colors text-white group-hover:text-[#E8D5B7]" style="text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Sampriti</span>
+        <span class="text-[8px] tracking-[0.4em] uppercase text-white/80 font-semibold">Botanicals</span>
+      </a>
+
+      <!-- Mobile menu button -->
+      <button onclick="toggleMobileMenu()" class="lg:hidden text-white hover:text-[#E8D5B7] transition-colors" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-10">
+        <nav class="flex items-center gap-10">
+          <a href="#collection" class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#E8D5B7] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Shop</a>
+          <a href="#about" class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#E8D5B7] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">The House</a>
+          <a href="#materia" class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#E8D5B7] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Materia</a>
+          <a href="#journal" class="text-[11px] font-semibold tracking-[0.25em] uppercase text-white hover:text-[#E8D5B7] transition-colors" style="text-shadow: 0 1px 4px rgba(0,0,0,0.5);">Journal</a>
+        </nav>
+        <div class="flex items-center gap-6">
+          <button onclick="toggleSearch()" class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Search">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </button>
+          <button class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Wishlist">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          </button>
+          <button class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile icons -->
+      <div class="flex lg:hidden items-center gap-4">
+        <button onclick="toggleSearch()" class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Search">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        </button>
+        <button class="text-white hover:text-[#E8D5B7] transition-colors" aria-label="Cart">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#0A0908]">
+    <img src="https://images.unsplash.com/photo-1515696955266-4f67e13219e8?w=1920&q=80" alt="Botanical Tea" class="absolute inset-0 w-full h-full object-cover opacity-40" crossorigin="anonymous">
+    <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80"></div>
     
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-stone-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center gap-2 cursor-pointer">
-                    <div class="bg-saffron-50 p-2 rounded-xl text-saffron-600">
-                        <i data-lucide="feather" class="w-6 h-6"></i>
-                    </div>
-                    <span class="font-serif text-2xl font-semibold tracking-tight text-stone-800">Komal</span>
-                </div>
-                
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#products" class="text-sm font-medium text-stone-600 hover:text-saffron-600 transition-colors">Products</a>
-                    <a href="#sustainability" class="text-sm font-medium text-stone-600 hover:text-saffron-600 transition-colors">Sustainability</a>
-                    <a href="#about" class="text-sm font-medium text-stone-600 hover:text-saffron-600 transition-colors">Our Story</a>
-                    <button type="button" onclick="openSearch()" class="text-stone-600 hover:text-saffron-600 transition-colors" aria-label="Open search">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                    </button>
-                    <button class="bg-stone-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-stone-800 transition-colors flex items-center gap-2">
-                        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-                        Shop Now
-                    </button>
-                </div>
-
-                <div class="flex items-center gap-2 md:hidden">
-                    <button type="button" onclick="openSearch()" class="p-2 text-stone-600" aria-label="Open search">
-                        <i data-lucide="search" class="w-5 h-5"></i>
-                    </button>
-                    <button type="button" class="p-2 text-stone-600" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" aria-label="Toggle menu">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-stone-200 px-4 py-4 space-y-4">
-            <a href="#products" class="block text-base font-medium text-stone-600" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Products</a>
-            <a href="#sustainability" class="block text-base font-medium text-stone-600" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Sustainability</a>
-            <a href="#about" class="block text-base font-medium text-stone-600" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Our Story</a>
-            <button class="w-full bg-stone-900 text-white px-5 py-3 rounded-xl text-sm font-medium flex items-center justify-center gap-2">
-                <i data-lucide="shopping-bag" class="w-4 h-4"></i>
-                Shop Now
-            </button>
-        </div>
-    </nav>
-
-    <!-- Main Content (Home View) -->
-    <main id="home-view">
-        <!-- Hero Section -->
-        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <div class="absolute inset-0 bg-gradient-to-b from-saffron-50/60 to-stone-50/90 z-10"></div>
-            <img src="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?q=80&w=2070&auto=format&fit=crop" alt="Soft white fabric texture" class="w-full h-full object-cover opacity-40" crossorigin="anonymous">
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-3xl slide-up">
-                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-saffron-100/50 text-saffron-700 text-sm font-medium mb-6 backdrop-blur-sm border border-saffron-200/50">
-                    <i data-lucide="leaf" class="w-4 h-4"></i>
-                    100% Indian Bamboo
-                </span>
-                <h1 class="text-5xl lg:text-7xl font-serif font-medium tracking-tight text-stone-900 leading-[1.1] mb-6">
-                    Gentle on you.<br>
-                    <span class="text-stone-500 italic">Kind to Mother Earth.</span>
-                </h1>
-                <p class="text-lg text-stone-600 mb-8 max-w-xl leading-relaxed">
-                    Experience the cloud-like softness of our premium tissue paper. Proudly made in India from sustainably sourced bamboo from the Northeast.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="bg-saffron-600 text-white px-8 py-4 rounded-full text-base font-medium hover:bg-saffron-700 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-saffron-600/20">
-                        Explore Products
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                    <button class="bg-white text-stone-700 border border-stone-200 px-8 py-4 rounded-full text-base font-medium hover:bg-stone-50 transition-colors flex items-center justify-center">
-                        Vocal for Local
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
-                <div class="text-center slide-up delay-100">
-                    <div class="w-16 h-16 mx-auto bg-saffron-50 rounded-2xl flex items-center justify-center text-saffron-600 mb-6">
-                        <i data-lucide="feather" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Komal Softness</h3>
-                    <p class="text-stone-600 leading-relaxed">Ultra-premium 3-ply construction delivers an incredibly gentle touch, perfect for sensitive Indian skin.</p>
-                </div>
-                
-                <div class="text-center slide-up delay-200">
-                    <div class="w-16 h-16 mx-auto bg-indiaGreen-50 rounded-2xl flex items-center justify-center text-indiaGreen-700 mb-6">
-                        <i data-lucide="leaf" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Sourced from Assam</h3>
-                    <p class="text-stone-600 leading-relaxed">Made entirely from fast-growing bamboo from Northeast India, saving millions of trees.</p>
-                </div>
-
-                <div class="text-center slide-up delay-300">
-                    <div class="w-16 h-16 mx-auto bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
-                        <i data-lucide="shield-check" class="w-8 h-8"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-stone-900 mb-3">Safe & Pure</h3>
-                    <p class="text-stone-600 leading-relaxed">Free from harsh chemicals, dyes, and artificial fragrances. Dermatologist tested.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products Showcase -->
-    <section id="products" class="py-24 bg-stone-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-2xl mx-auto mb-16 slide-up">
-                <h2 class="text-3xl md:text-4xl font-serif font-medium text-stone-900 mb-4">Everyday Essentials</h2>
-                <p class="text-lg text-stone-600">Elevate your daily routines with our thoughtfully crafted paper products.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Product 1 -->
-                <div onclick="showProduct('facial')" class="cursor-pointer bg-white rounded-3xl p-6 shadow-sm border border-stone-100 group hover:shadow-md transition-shadow slide-up delay-100">
-                    <div class="aspect-square rounded-2xl bg-stone-100 mb-6 overflow-hidden relative">
-                        <img src="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?q=80&w=800&auto=format&fit=crop" alt="Facial Tissues" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" crossorigin="anonymous">
-                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-stone-800">
-                            Best Seller
-                        </div>
-                    </div>
-                    <h3 class="text-xl font-semibold text-stone-900 mb-2">Premium Facial Tissues</h3>
-                    <p class="text-stone-500 text-sm mb-4">4 boxes • 120 pulls per box</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-medium text-stone-900">₹249</span>
-                        <button class="bg-stone-100 hover:bg-stone-200 text-stone-900 p-2 rounded-full transition-colors">
-                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 2 -->
-                <div onclick="showProduct('toilet')" class="cursor-pointer bg-white rounded-3xl p-6 shadow-sm border border-stone-100 group hover:shadow-md transition-shadow slide-up delay-200">
-                    <div class="aspect-square rounded-2xl bg-stone-100 mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?q=80&w=800&auto=format&fit=crop" alt="Bath Tissue" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" crossorigin="anonymous">
-                    </div>
-                    <h3 class="text-xl font-semibold text-stone-900 mb-2">Bamboo Toilet Rolls</h3>
-                    <p class="text-stone-500 text-sm mb-4">12 mega rolls • 3-ply</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-medium text-stone-900">₹499</span>
-                        <button class="bg-stone-100 hover:bg-stone-200 text-stone-900 p-2 rounded-full transition-colors">
-                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Product 3 -->
-                <div onclick="showProduct('kitchen')" class="cursor-pointer bg-white rounded-3xl p-6 shadow-sm border border-stone-100 group hover:shadow-md transition-shadow slide-up delay-300">
-                    <div class="aspect-square rounded-2xl bg-stone-100 mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1584556812952-905ffd0c611a?q=80&w=800&auto=format&fit=crop" alt="Kitchen Towels" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" crossorigin="anonymous">
-                    </div>
-                    <h3 class="text-xl font-semibold text-stone-900 mb-2">Kitchen Towels</h3>
-                    <p class="text-stone-500 text-sm mb-4">4 double rolls • 2-ply</p>
-                    <div class="flex items-center justify-between">
-                        <span class="text-lg font-medium text-stone-900">₹199</span>
-                        <button class="bg-stone-100 hover:bg-stone-200 text-stone-900 p-2 rounded-full transition-colors">
-                            <i data-lucide="shopping-bag" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sustainability Feature -->
-    <section id="sustainability" class="py-24 bg-indiaGreen-900 text-white overflow-hidden relative">
-        <div class="absolute inset-0 opacity-10">
-            <svg class="h-full w-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <path d="M0,100 C30,50 70,50 100,0 L100,100 Z" fill="currentColor" />
-            </svg>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="slide-up">
-                    <h2 class="text-4xl md:text-5xl font-serif font-medium mb-6 leading-tight">
-                        For every box sold,<br>we plant a tree in India.
-                    </h2>
-                    <p class="text-indiaGreen-100 text-lg mb-8 leading-relaxed">
-                        Traditional tissue paper destroys ancient forests. We use 100% FSC-certified bamboo sourced from local farmers in Assam. It grows 20x faster than trees and requires zero pesticides. A small change for your home, a massive impact for our country.
-                    </p>
-                    <ul class="space-y-4 mb-10">
-                        <li class="flex items-center gap-3 text-indiaGreen-50">
-                            <div class="bg-indiaGreen-800 p-1 rounded-full"><i data-lucide="droplets" class="w-4 h-4 text-indiaGreen-300"></i></div>
-                            Zero plastic packaging
-                        </li>
-                        <li class="flex items-center gap-3 text-indiaGreen-50">
-                            <div class="bg-indiaGreen-800 p-1 rounded-full"><i data-lucide="droplets" class="w-4 h-4 text-indiaGreen-300"></i></div>
-                            Supporting local farmers
-                        </li>
-                        <li class="flex items-center gap-3 text-indiaGreen-50">
-                            <div class="bg-indiaGreen-800 p-1 rounded-full"><i data-lucide="droplets" class="w-4 h-4 text-indiaGreen-300"></i></div>
-                            100% Made in India
-                        </li>
-                        <li class="flex items-center gap-3 text-indiaGreen-50">
-                            <div class="bg-indiaGreen-800 p-1 rounded-full"><i data-lucide="droplets" class="w-4 h-4 text-indiaGreen-300"></i></div>
-                            Cruelty-free & Vegan
-                        </li>
-                    </ul>
-                    <button class="bg-white text-indiaGreen-900 px-8 py-4 rounded-full text-base font-medium hover:bg-indiaGreen-50 transition-colors">
-                        Read Our Sankalp (Pledge)
-                    </button>
-                </div>
-                
-                <div class="relative slide-up delay-200">
-                    <div class="aspect-[4/5] rounded-3xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=1000&auto=format&fit=crop" alt="Lush bamboo forest" class="w-full h-full object-cover" crossorigin="anonymous">
-                    </div>
-                    <div class="absolute -bottom-8 -left-8 bg-white text-stone-900 p-8 rounded-3xl shadow-xl max-w-xs hidden md:block">
-                        <div class="text-4xl font-serif font-medium text-indiaGreen-600 mb-2">10L+</div>
-                        <div class="text-sm font-medium text-stone-600 uppercase tracking-wider">Trees Planted in Western Ghats</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    </main>
-
-    <!-- Product View -->
-    <main id="product-view" class="hidden pt-32 pb-20 lg:pt-40 lg:pb-32 min-h-screen">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <button onclick="backToHome()" class="flex items-center gap-2 text-stone-600 hover:text-saffron-600 transition-colors mb-8 font-medium">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i>
-                Back to Home
-            </button>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
-                <!-- Product Image -->
-                <div class="aspect-square rounded-3xl bg-stone-100 overflow-hidden relative">
-                    <img id="pv-image" src="" alt="Product Image" class="w-full h-full object-cover" crossorigin="anonymous">
-                    <div id="pv-badge" class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-stone-800 hidden">
-                        Best Seller
-                    </div>
-                </div>
-                
-                <!-- Product Details -->
-                <div class="flex flex-col justify-center">
-                    <h1 id="pv-title" class="text-4xl lg:text-5xl font-serif font-medium text-stone-900 mb-4">Product Title</h1>
-                    <p id="pv-subtitle" class="text-lg text-stone-500 mb-6">Product Subtitle</p>
-                    <div class="text-3xl font-medium text-stone-900 mb-8" id="pv-price">₹0</div>
-                    
-                    <p id="pv-description" class="text-stone-600 leading-relaxed mb-8">
-                        Product description goes here.
-                    </p>
-                    
-                    <div class="space-y-4 mb-10">
-                        <div class="flex items-center gap-3 text-stone-700">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-indiaGreen-600"></i>
-                            <span id="pv-feature-1">Feature 1</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-stone-700">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-indiaGreen-600"></i>
-                            <span id="pv-feature-2">Feature 2</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-stone-700">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-indiaGreen-600"></i>
-                            <span id="pv-feature-3">Feature 3</span>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <button onclick="addToCart()" class="flex-1 bg-white text-stone-900 border border-stone-200 px-8 py-4 rounded-full text-base font-medium hover:bg-stone-50 transition-colors flex items-center justify-center gap-2">
-                            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
-                            Add to Cart
-                        </button>
-                        <button onclick="buyNow()" class="flex-1 bg-saffron-600 text-white px-8 py-4 rounded-full text-base font-medium hover:bg-saffron-700 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-saffron-600/20">
-                            <i data-lucide="zap" class="w-5 h-5"></i>
-                            Buy Now
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Checkout View -->
-    <main id="checkout-view" class="hidden pt-32 pb-20 lg:pt-40 lg:pb-32 min-h-screen max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white rounded-3xl w-full overflow-hidden shadow-sm border border-stone-100">
-            <div class="px-6 py-5 border-b border-stone-100 flex items-center gap-4">
-                <button type="button" onclick="backToProduct()" class="text-stone-400 hover:text-stone-600 transition-colors" aria-label="Back to product">
-                    <i data-lucide="arrow-left" class="w-6 h-6"></i>
-                </button>
-                <h1 class="text-2xl font-serif font-medium text-stone-900">Secure Checkout</h1>
-            </div>
-            
-            <form id="checkout-form" onsubmit="submitOrder(event)" class="p-6 md:p-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                    <!-- Left Column: Shipping Details -->
-                    <div class="space-y-5">
-                        <h4 class="font-medium text-stone-900 border-b border-stone-100 pb-2">Shipping Information</h4>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-stone-700 mb-1">Full Name</label>
-                            <input type="text" required class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-stone-700 mb-1">Email</label>
-                                <input type="email" required class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-stone-700 mb-1">Phone</label>
-                                <input type="tel" required pattern="[0-9]{10}" placeholder="10 digits" class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <label class="block text-sm font-medium text-stone-700 mb-1">Address</label>
-                            <textarea required rows="2" class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent"></textarea>
-                        </div>
-                        
-                        <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label class="block text-sm font-medium text-stone-700 mb-1">City</label>
-                                <input type="text" required class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-stone-700 mb-1">PIN Code</label>
-                                <input type="text" required pattern="[0-9]{6}" placeholder="6 digits" class="w-full border border-stone-200 rounded-xl px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-saffron-500 focus:border-transparent">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Right Column: Order Summary & Payment -->
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="font-medium text-stone-900 border-b border-stone-100 pb-2 mb-4">Order Summary</h4>
-                            <div class="bg-stone-50 rounded-xl p-5 border border-stone-100">
-                                <div class="flex justify-between items-start mb-2">
-                                    <div>
-                                        <p id="checkout-product-title" class="font-medium text-stone-900">Komal Products</p>
-                                        <p class="text-sm text-stone-500">Qty: 1</p>
-                                    </div>
-                                    <p id="checkout-product-price" class="font-medium text-stone-900">₹0</p>
-                                </div>
-                                <div class="flex justify-between items-center text-sm text-stone-500 mb-4 pb-4 border-b border-stone-200">
-                                    <p>Shipping</p>
-                                    <p class="text-indiaGreen-600 font-medium">Free</p>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <p class="font-medium text-stone-900">Total</p>
-                                    <p id="checkout-total-price" class="font-bold text-xl text-saffron-600">₹0</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div>
-                            <h4 class="font-medium text-stone-900 border-b border-stone-100 pb-2 mb-4">Payment Method</h4>
-                            <div class="space-y-3">
-                                <label class="flex items-center gap-3 p-4 border border-stone-200 rounded-xl cursor-pointer hover:bg-stone-50 transition-colors">
-                                    <input type="radio" name="payment" value="upi" checked class="text-saffron-600 focus:ring-saffron-500 w-4 h-4">
-                                    <span class="text-sm font-medium text-stone-700">UPI (GPay, PhonePe, Paytm)</span>
-                                </label>
-                                <label class="flex items-center gap-3 p-4 border border-stone-200 rounded-xl cursor-pointer hover:bg-stone-50 transition-colors">
-                                    <input type="radio" name="payment" value="cod" class="text-saffron-600 focus:ring-saffron-500 w-4 h-4">
-                                    <span class="text-sm font-medium text-stone-700">Cash on Delivery</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="pt-4">
-                            <button type="submit" class="w-full bg-saffron-600 text-white px-6 py-4 rounded-xl font-medium hover:bg-saffron-700 transition-colors flex justify-center items-center gap-2 shadow-lg shadow-saffron-600/20 text-lg">
-                                <i data-lucide="lock" class="w-5 h-5"></i>
-                                Place Order Securely
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            
-            <!-- Success State -->
-            <div id="checkout-success" class="hidden p-16 text-center">
-                <div class="w-24 h-24 bg-indiaGreen-100 text-indiaGreen-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="check-circle-2" class="w-12 h-12"></i>
-                </div>
-                <h3 class="text-4xl font-serif font-medium text-stone-900 mb-4">Order Confirmed!</h3>
-                <p class="text-stone-600 mb-10 max-w-md mx-auto text-lg">Thank you for choosing Komal Tissues. Your order has been placed successfully and will be delivered in 3-5 business days.</p>
-                <button type="button" onclick="backToHomeFromCheckout()" class="inline-flex bg-stone-900 text-white px-8 py-4 rounded-xl font-medium hover:bg-stone-800 transition-colors">
-                    Continue Shopping
-                </button>
-            </div>
-        </div>
-    </main>
-
-    <!-- Search Modal -->
-    <div id="search-modal" class="hidden fixed inset-0 z-[100] bg-stone-900/60 backdrop-blur-sm flex items-start justify-center pt-24 px-4" role="dialog" aria-modal="true" aria-label="Search products">
-        <div class="bg-white rounded-3xl w-full max-w-2xl overflow-hidden shadow-2xl transform transition-all" role="document">
-            <div class="p-4 flex items-center gap-3">
-                <i data-lucide="search" class="w-6 h-6 text-stone-400 ml-2" aria-hidden="true"></i>
-                <label for="search-input" class="sr-only">Search for products</label>
-                <input type="search" id="search-input" class="w-full text-lg border-none focus:ring-0 focus:outline-none placeholder-stone-400 py-3" placeholder="Search for products (e.g., facial, bamboo)...">
-                <button type="button" onclick="closeSearch()" class="p-2 text-stone-400 hover:text-stone-600 transition-colors rounded-full hover:bg-stone-100" aria-label="Close search">
-                    <i data-lucide="x" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
+    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
+      <h1 class="fade-up font-serif text-white text-5xl md:text-7xl lg:text-8xl font-normal leading-none mb-8" style="text-shadow: 0 4px 30px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.9);">
+        Living <br> <span class="italic text-[#E8D5B7]">Herbal</span> <br> Lineages
+      </h1>
+      <p class="fade-up text-white text-base md:text-lg tracking-wide max-w-lg mx-auto mb-12 leading-relaxed px-4 font-medium" style="text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+        A botanical house of ritual science and disciplined formulation, guided by the quiet intelligence of the earth.
+      </p>
+      <div class="fade-up">
+        <a href="#collection" class="inline-block bg-white text-[#1A1A1A] py-4 px-10 text-[11px] font-bold tracking-[0.2em] uppercase hover:bg-[#E8D5B7] transition-all duration-300">Discover the Collection</a>
+      </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-stone-950 text-stone-400 py-16 border-t border-stone-900">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-1">
-                    <div class="flex items-center gap-2 mb-6">
-                        <div class="bg-stone-800 p-2 rounded-xl text-white">
-                            <i data-lucide="feather" class="w-5 h-5"></i>
-                        </div>
-                        <span class="font-serif text-xl font-semibold text-white">Komal</span>
-                    </div>
-                    <p class="text-sm leading-relaxed mb-6">
-                        Premium, sustainable tissue products designed for comfort and crafted for a better tomorrow. Proudly Indian.
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <a href="#" class="bg-stone-900 p-2.5 rounded-full text-stone-400 hover:text-white hover:bg-stone-800 transition-colors" aria-label="Instagram">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="bg-stone-900 p-2.5 rounded-full text-stone-400 hover:text-white hover:bg-stone-800 transition-colors" aria-label="Facebook">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="text-white font-medium mb-4">Shop</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">Facial Tissues</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Toilet Rolls</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Kitchen Towels</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Monthly Subscription</a></li>
-                    </ul>
-                </div>
+    <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 opacity-40">
+      <div class="w-[1px] h-12 bg-white animate-pulse"></div>
+      <span class="text-[8px] text-white tracking-[0.3em] uppercase">Scroll</span>
+    </div>
+  </section>
 
-                <div>
-                    <h4 class="text-white font-medium mb-4">About</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="hover:text-white transition-colors">Our Story</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Sustainability</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Impact Report</a></li>
-                        <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
-                    </ul>
-                </div>
+  <!-- Marquee -->
+  <div class="bg-[#1A1A1A] py-4 overflow-hidden">
+    <div class="marquee-track">
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Shakti Peya</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Chandra Rasa</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Shotharaha</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Ayurvedic Formulations</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Botanical Wellness</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Shakti Peya</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Chandra Rasa</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Shotharaha</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Ayurvedic Formulations</span>
+      <span class="text-[10px] text-white uppercase tracking-[0.3em] font-semibold px-12">Botanical Wellness</span>
+    </div>
+  </div>
 
-                <div>
-                    <h4 class="text-white font-medium mb-4">Stay in touch</h4>
-                    <p class="text-sm mb-4">Subscribe for 10% off your first order and eco-tips.</p>
-                    <div class="flex gap-2">
-                        <input type="email" placeholder="Enter your email" class="bg-stone-900 border border-stone-800 rounded-lg px-4 py-2 text-sm text-white focus:outline-none focus:border-stone-600 w-full">
-                        <button class="bg-white text-stone-900 px-4 py-2 rounded-lg text-sm font-medium hover:bg-stone-200 transition-colors">
-                            Join
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="pt-8 border-t border-stone-900 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-                <p>&copy; 2026 Komal Tissues India Pvt. Ltd. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-                </div>
-            </div>
+  <!-- Collection -->
+  <section id="collection" class="py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div class="max-w-xl">
+          <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Signature Rituals</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-dark">The Collection</h2>
+          <p class="text-[#4A453D] text-sm leading-relaxed">Precisely composed formulations honoring the body's essential cycles - activation and restoration.</p>
         </div>
-    </footer>
+        <a href="#" class="text-dark text-[10px] font-bold tracking-[0.2em] uppercase border-b-2 border-dark pb-1 hover:border-[#6B5530] hover:text-[#6B5530] transition-colors">View All Products</a>
+      </div>
 
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8">
+        <!-- Product 1 -->
+        <div class="product-card group cursor-pointer" onclick="openProduct('Shakti Peya')">
+          <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
+            <img src="https://images.unsplash.com/photo-1515696955266-4f67e13219e8?w=800&q=80" alt="Shakti Peya" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" alt="Shakti Peya Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <div class="absolute top-4 left-4 bg-accent text-white text-[8px] font-bold tracking-widest uppercase px-2 py-1">Bestseller</div>
+            <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+          </div>
+          <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Shakti Peya</h3>
+          <p class="text-[#4A453D] text-xs mb-3">The Vitality Brew - Adaptogenic Morning Ritual</p>
+          <span class="font-serif text-xl font-medium text-[#6B5530]">$34</span>
+        </div>
 
-        let currentProductId = null;
+        <!-- Product 2 -->
+        <div class="product-card group cursor-pointer" onclick="openProduct('Chandra Rasa')">
+          <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
+            <img src="https://images.unsplash.com/photo-1594631252845-29fc4586567?w=800&q=80" alt="Chandra Rasa" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1610414857342-0f3b4a30a8ef?w=800&q=80" alt="Chandra Rasa Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+          </div>
+          <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Chandra Rasa</h3>
+          <p class="text-[#4A453D] text-xs mb-3">The Moon Elixir - Restorative Evening Tonic</p>
+          <span class="font-serif text-xl font-medium text-[#6B5530]">$36</span>
+        </div>
 
-        // Product Data
-        const products = {
-            'facial': {
-                title: 'Premium Facial Tissues',
-                subtitle: '4 boxes • 120 pulls per box',
-                price: '₹249',
-                image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?q=80&w=800&auto=format&fit=crop',
-                badge: 'Best Seller',
-                description: 'Experience the ultimate softness with our premium 3-ply facial tissues. Made from 100% Indian bamboo, these tissues are naturally hypoallergenic and gentle on sensitive skin. Perfect for everyday use in your home, office, or car.',
-                features: [
-                    '100% FSC-certified Indian bamboo',
-                    'Ultra-soft 3-ply construction',
-                    'Free from harsh chemicals and dyes'
-                ]
-            },
-            'toilet': {
-                title: 'Bamboo Toilet Rolls',
-                subtitle: '12 mega rolls • 3-ply',
-                price: '₹499',
-                image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?q=80&w=800&auto=format&fit=crop',
-                badge: null,
-                description: 'Upgrade your bathroom experience with our sustainable bamboo toilet rolls. Strong, absorbent, and incredibly soft, these 3-ply rolls are designed to provide maximum comfort while being kind to the planet. Septic-safe and quick-dissolving.',
-                features: [
-                    'Septic-safe and quick-dissolving',
-                    'Extra strong and absorbent 3-ply',
-                    'Zero plastic packaging'
-                ]
-            },
-            'kitchen': {
-                title: 'Kitchen Towels',
-                subtitle: '4 double rolls • 2-ply',
-                price: '₹199',
-                image: 'https://images.unsplash.com/photo-1584556812952-905ffd0c611a?q=80&w=800&auto=format&fit=crop',
-                badge: null,
-                description: 'Tackle tough spills and messes with our heavy-duty bamboo kitchen towels. These highly absorbent 2-ply towels are perfect for cleaning counters, wiping up spills, and everyday kitchen use. Strong even when wet.',
-                features: [
-                    'Heavy-duty 2-ply absorbency',
-                    'Strong even when wet',
-                    'Food-contact safe'
-                ]
-            }
+        <!-- Product 3 -->
+        <div class="product-card group cursor-pointer" onclick="openProduct('Shotharaha')">
+          <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
+            <img src="https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=800&q=80" alt="Shotharaha" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80" alt="Shotharaha Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <div class="absolute top-4 left-4 bg-accent text-white text-[8px] font-bold tracking-widest uppercase px-2 py-1">New</div>
+            <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+          </div>
+          <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Shotharaha</h3>
+          <p class="text-[#4A453D] text-xs mb-3">The Anti-Inflammatory Blend - Soothing Daily Tonic</p>
+          <span class="font-serif text-xl font-medium text-[#6B5530]">$32</span>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card group cursor-pointer" onclick="openProduct('Ojas Vati')">
+          <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
+            <img src="https://images.unsplash.com/photo-1540331547168-8b63109225b7?w=800&q=80" alt="Ojas Vati" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=800&q=80" alt="Ojas Vati Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+          </div>
+          <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Ojas Vati</h3>
+          <p class="text-[#4A453D] text-xs mb-3">Immunity Support - Seasonal Resilience</p>
+          <span class="font-serif text-xl font-medium text-[#6B5530]">$28</span>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card group cursor-pointer" onclick="openProduct('Tejas Taila')">
+          <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
+            <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80" alt="Tejas Taila" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=800&q=80" alt="Tejas Taila Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+          </div>
+          <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Tejas Taila</h3>
+          <p class="text-[#4A453D] text-xs mb-3">Radiance Oil - Luminous Skin Ritual</p>
+          <span class="font-serif text-xl font-medium text-[#6B5530]">$42</span>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card group cursor-pointer" onclick="openProduct('Hibiscus Rasa')">
+          <div class="relative aspect-[3/4] overflow-hidden bg-[#F0EBE2] mb-6">
+            <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80" alt="Hibiscus Rasa" class="w-full h-full object-cover absolute inset-0 transition-opacity duration-700 group-hover:opacity-0" crossorigin="anonymous">
+            <img src="https://images.unsplash.com/photo-1525310238294-7991a8189765?w=800&q=80" alt="Hibiscus Rasa Detail" class="w-full h-full object-cover absolute inset-0 opacity-0 transition-opacity duration-700 group-hover:opacity-100" crossorigin="anonymous">
+            <div class="absolute top-4 left-4 bg-accent text-white text-[8px] font-bold tracking-widest uppercase px-2 py-1">Featured</div>
+            <button class="absolute bottom-0 left-0 w-full bg-dark/90 text-white py-4 text-[9px] font-bold tracking-[0.2em] uppercase translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-10">Quick Add</button>
+          </div>
+          <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-2 text-dark">Hibiscus Rasa</h3>
+          <p class="text-[#4A453D] text-xs mb-3">The Flower Elixir - Heart-Opening Ritual</p>
+          <span class="font-serif text-xl font-medium text-[#6B5530]">$30</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="py-20 md:py-28 px-6 md:px-12 bg-white relative overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="text-center mb-16 md:mb-20">
+        <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Testimonials</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-dark">What Our Community Says</h2>
+        <p class="text-[#4A453D] text-sm leading-relaxed max-w-2xl mx-auto">Real experiences from people who've embraced botanical wellness as a daily ritual.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
+        <div class="bg-[#F9F7F2] border border-border p-8 md:p-10 hover:shadow-lg transition-shadow">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-[#6B5530]/20 flex items-center justify-center font-serif text-[#6B5530] text-sm font-medium">P</div>
+              <div>
+                <div class="text-[11px] font-bold tracking-wider uppercase text-dark">Priya M.</div>
+                <div class="text-[9px] text-[#4A453D] tracking-widest uppercase">Mumbai</div>
+              </div>
+            </div>
+            <div class="text-[#9A7B4F] text-xs">★★★★★</div>
+          </div>
+          <h4 class="font-serif text-xl mb-4 text-dark">Transformed my mornings</h4>
+          <p class="text-[#4A453D] text-xs leading-relaxed mb-6">Shakti Peya has completely changed how I start my day. The sustained energy is remarkable, without any jitters or crash. This is real botanical power.</p>
+          <div class="text-[9px] font-bold tracking-[0.2em] uppercase text-[#6B5530]">Shakti Peya</div>
+        </div>
+
+        <div class="bg-[#F9F7F2] border border-border p-8 md:p-10 hover:shadow-lg transition-shadow">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-[#6B5530]/20 flex items-center justify-center font-serif text-[#6B5530] text-sm font-medium">A</div>
+              <div>
+                <div class="text-[11px] font-bold tracking-wider uppercase text-dark">Ananya S.</div>
+                <div class="text-[9px] text-[#4A453D] tracking-widest uppercase">Bangalore</div>
+              </div>
+            </div>
+            <div class="text-[#9A7B4F] text-xs">★★★★★</div>
+          </div>
+          <h4 class="font-serif text-xl mb-4 text-dark">Sleep has never been better</h4>
+          <p class="text-[#4A453D] text-xs leading-relaxed mb-6">Two weeks with Chandra Rasa and I'm sleeping more deeply than I have in years. I wake up truly restored. The quality is exceptional.</p>
+          <div class="text-[9px] font-bold tracking-[0.2em] uppercase text-[#6B5530]">Chandra Rasa</div>
+        </div>
+
+        <div class="bg-[#F9F7F2] border border-border p-8 md:p-10 hover:shadow-lg transition-shadow">
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-[#6B5530]/20 flex items-center justify-center font-serif text-[#6B5530] text-sm font-medium">R</div>
+              <div>
+                <div class="text-[11px] font-bold tracking-wider uppercase text-dark">Ravi K.</div>
+                <div class="text-[9px] text-[#4A453D] tracking-widest uppercase">Delhi</div>
+              </div>
+            </div>
+            <div class="text-[#9A7B4F] text-xs">★★★★★</div>
+          </div>
+          <h4 class="font-serif text-xl mb-4 text-dark">Inflammation dramatically reduced</h4>
+          <p class="text-[#4A453D] text-xs leading-relaxed mb-6">Shotharaha has made a visible difference in my joint health. Results within the first week. This is formulation done right.</p>
+          <div class="text-[9px] font-bold tracking-[0.2em] uppercase text-[#6B5530]">Shotharaha</div>
+        </div>
+      </div>
+
+      <div class="text-center mt-12 md:mt-16">
+        <a href="#collection" class="inline-block text-[10px] font-bold tracking-[0.2em] uppercase border-b-2 border-dark text-dark pb-1 hover:text-[#6B5530] hover:border-[#6B5530] transition-colors">See All Reviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-24 px-6 md:px-12 bg-[#F9F7F2]">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div class="relative group overflow-hidden fade-up">
+          <div class="aspect-[4/5] bg-bg relative">
+            <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=800&q=80" alt="Botanical Nature" class="w-full h-full object-cover" crossorigin="anonymous">
+            <div class="absolute inset-0 border-[20px] border-white/20 pointer-events-none"></div>
+          </div>
+          <div class="absolute -bottom-12 -right-12 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10"></div>
+        </div>
+        <div class="fade-up bg-white p-12 md:p-16 shadow-sm border border-border relative" style="transition-delay: 200ms;">
+          <div class="absolute top-0 left-0 w-full h-1 bg-accent"></div>
+          <span class="text-[10px] font-bold tracking-[0.3em] uppercase text-[#6B5530] mb-8 block">Our Philosophy</span>
+          <h2 class="font-serif text-4xl md:text-5xl mb-10 leading-tight text-dark">A Letter from Sampriti</h2>
+          <div class="space-y-6 text-[#3A3632] leading-relaxed text-sm font-serif italic">
+            <p>"Sampriti Botanicals was born from a simple realization: that the wisdom of our ancestors is not a relic of the past, but a living, breathing guide for the present. Our journey began in the foothills of the Himalayas, where we sought out the last remaining practitioners of traditional herbalism."</p>
+            <p>"We believe that true wellness is a harmony of the physical, mental, and spiritual. Our formulations are not just products; they are rituals, designed to reconnect you with the natural world and your own inner rhythm."</p>
+            <p>"Every ingredient we use is ethically sourced, sustainably harvested, and processed with the utmost care. We are committed to transparency, quality, and the preservation of ancient knowledge."</p>
+          </div>
+          <div class="mt-12 pt-12 border-t border-border flex items-center justify-between">
+            <div>
+              <p class="font-serif text-2xl italic mb-1 text-dark">Sampriti Devi</p>
+              <p class="text-[10px] uppercase tracking-widest font-bold text-[#4A453D]">Founder & Herbalist</p>
+            </div>
+            <div class="font-serif text-3xl text-[#6B5530]/40 italic select-none">Sampriti</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Materia Botanica -->
+  <section id="materia" class="py-24 md:py-32 px-6 md:px-12 bg-white">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-20">
+        <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Our Standards</span>
+        <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-dark">Materia Botanica</h2>
+        <p class="text-[#4A453D] text-sm leading-relaxed">Every ingredient is selected for its energetic quality, traditional use, and ecological integrity.</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
+        <div class="text-center group">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-[#6B5530]/30 rounded-full group-hover:bg-[#6B5530]/5 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+          </div>
+          <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase text-dark">Wild Harvested &<br>Ethically Grown</h4>
+        </div>
+        <div class="text-center group">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-[#6B5530]/30 rounded-full group-hover:bg-[#6B5530]/5 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase text-dark">Traditional<br>Preparation</h4>
+        </div>
+        <div class="text-center group">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-[#6B5530]/30 rounded-full group-hover:bg-[#6B5530]/5 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2Z"/></svg>
+          </div>
+          <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase text-dark">No Synthetic<br>Additives</h4>
+        </div>
+        <div class="text-center group">
+          <div class="w-16 h-16 mx-auto mb-6 flex items-center justify-center border border-[#6B5530]/30 rounded-full group-hover:bg-[#6B5530]/5 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h4 class="text-[10px] font-bold tracking-[0.2em] uppercase text-dark">Third-Party<br>Tested</h4>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ritual Section -->
+  <section class="py-20 md:py-28 px-6 md:px-12 bg-[#F9F7F2] overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="order-2 lg:order-1">
+          <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">The Ritual</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 leading-tight text-dark">Brewing as<br>Meditation</h2>
+          <p class="text-[#4A453D] text-sm leading-relaxed mb-8">Every cup is an invitation to slow down. The simple act of preparing herbal tea becomes a moment of presence - watching leaves unfurl, inhaling botanical aromas, feeling warmth between your palms.</p>
+          <p class="text-[#4A453D] text-sm leading-relaxed mb-10">Our blends are designed not just for consumption, but for contemplation. Each formulation carries centuries of wisdom, inviting you to pause and reconnect with the rhythms of nature.</p>
+          <a href="#collection" class="btn-outline inline-block">Explore Rituals</a>
+        </div>
+        <div class="order-1 lg:order-2 relative">
+          <div class="aspect-square overflow-hidden rounded-sm shadow-lg">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80" alt="Tea Ritual" class="w-full h-full object-cover" crossorigin="anonymous">
+          </div>
+          <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/10 rounded-full blur-3xl -z-10"></div>
+          <div class="absolute -top-6 -right-6 w-40 h-40 bg-accent/5 rounded-full blur-3xl -z-10"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Journal -->
+  <section id="journal" class="py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+        <div class="max-w-xl">
+          <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">The Journal</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-dark">Botanical Wisdom</h2>
+          <p class="text-[#4A453D] text-sm leading-relaxed">Dispatches from the herb room - essays on formulation, seasonal ritual, and living with plants.</p>
+        </div>
+        <a href="#" class="btn-outline inline-block">Read the Journal</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <article class="group cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden mb-6">
+            <img src="https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80" alt="Hibiscus" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous">
+          </div>
+          <span class="text-[#6B5530] text-[9px] font-bold tracking-[0.2em] uppercase mb-3 block">Materia Botanica</span>
+          <h3 class="font-serif text-2xl mb-4 text-dark group-hover:text-[#6B5530] transition-colors">Hibiscus: The Flower of Deep Time</h3>
+          <p class="text-[#4A453D] text-xs leading-relaxed mb-6 font-medium">A portal into the ancient ecology of the hibiscus plant and its remarkable place in Ayurvedic formulation.</p>
+          <span class="text-dark text-[9px] font-bold tracking-[0.2em] uppercase border-b border-dark pb-1">Read More</span>
+        </article>
+
+        <article class="group cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden mb-6">
+            <img src="https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?w=800&q=80" alt="Turmeric" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous">
+          </div>
+          <span class="text-[#6B5530] text-[9px] font-bold tracking-[0.2em] uppercase mb-3 block">Ritual</span>
+          <h3 class="font-serif text-2xl mb-4 text-dark group-hover:text-[#6B5530] transition-colors">On the Daily Practice of Turmeric</h3>
+          <p class="text-[#4A453D] text-xs leading-relaxed mb-6 font-medium">How to build a sustainable morning ritual around India's most revered rhizome, with attention to bioavailability.</p>
+          <span class="text-dark text-[9px] font-bold tracking-[0.2em] uppercase border-b border-dark pb-1">Read More</span>
+        </article>
+
+        <article class="group cursor-pointer">
+          <div class="aspect-[4/3] overflow-hidden mb-6">
+            <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=800&q=80" alt="Moon Herbs" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" crossorigin="anonymous">
+          </div>
+          <span class="text-[#6B5530] text-[9px] font-bold tracking-[0.2em] uppercase mb-3 block">Formulation</span>
+          <h3 class="font-serif text-2xl mb-4 text-dark group-hover:text-[#6B5530] transition-colors">Moon Herbs for the Quiet Hours</h3>
+          <p class="text-[#4A453D] text-xs leading-relaxed mb-6 font-medium">An exploration of nervine botanicals used across traditional healing lineages for rest, dreaming, and inner stillness.</p>
+          <span class="text-dark text-[9px] font-bold tracking-[0.2em] uppercase border-b border-dark pb-1">Read More</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-bg border-t border-border mt-24">
+    <!-- Service Bar -->
+    <div class="border-b border-border">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3">
+        <div class="py-10 px-6 md:px-12 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-border group">
+          <span class="text-[10px] font-bold tracking-[0.2em] uppercase mb-3 text-dark group-hover:text-[#6B5530] transition-colors">Secure Checkout</span>
+          <p class="text-[10px] text-[#4A453D] leading-relaxed">Encrypted transactions for your peace of mind.</p>
+        </div>
+        <div class="py-10 px-6 md:px-12 flex flex-col items-center text-center border-b md:border-b-0 md:border-r border-border group">
+          <span class="text-[10px] font-bold tracking-[0.2em] uppercase mb-3 text-dark group-hover:text-[#6B5530] transition-colors">Complimentary Samples</span>
+          <p class="text-[10px] text-[#4A453D] leading-relaxed">Included with every order to explore our range.</p>
+        </div>
+        <div class="py-10 px-6 md:px-12 flex flex-col items-center text-center group">
+          <span class="text-[10px] font-bold tracking-[0.2em] uppercase mb-3 text-dark group-hover:text-[#6B5530] transition-colors">Gift Wrapping</span>
+          <p class="text-[10px] text-[#4A453D] leading-relaxed">Elegant presentation for your thoughtful gifts.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Grid -->
+    <div class="max-w-7xl mx-auto py-24 px-6 md:px-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 lg:gap-12">
+        <!-- Subscription -->
+        <div class="lg:col-span-1">
+          <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-dark/20 pb-4 text-dark">Subscribe to Sampriti</h4>
+          <form class="space-y-6">
+            <div class="relative">
+              <input type="email" placeholder="Email address*" class="w-full bg-transparent border-b border-dark/30 py-3 text-xs outline-none focus:border-[#6B5530] transition-colors placeholder:text-[#4A453D] text-dark" required>
+            </div>
+            <div class="flex items-start gap-3">
+              <input type="checkbox" id="email-opt" class="mt-1 accent-[#6B5530]">
+              <label for="email-opt" class="text-[9px] text-[#4A453D] leading-relaxed cursor-pointer">
+                I agree to receive email communications and accept the Terms & Conditions and Privacy Policy.
+              </label>
+            </div>
+            <button type="submit" class="w-full py-4 bg-dark text-white text-[10px] font-bold tracking-[0.2em] uppercase hover:bg-[#6B5530] transition-colors">Subscribe</button>
+          </form>
+        </div>
+
+        <!-- Orders and Support -->
+        <div>
+          <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-dark/20 pb-4 text-dark">Orders & Support</h4>
+          <ul class="space-y-4">
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Contact Us</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">FAQs</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Shipping</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Returns</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Track Your Order</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Terms of Use</a></li>
+          </ul>
+        </div>
+
+        <!-- About -->
+        <div>
+          <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-dark/20 pb-4 text-dark">About</h4>
+          <ul class="space-y-4">
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Our Story</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Foundation</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Careers</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Privacy Policy</a></li>
+            <li><a href="#" class="text-[11px] text-[#4A453D] hover:text-[#6B5530] transition-colors">Accessibility</a></li>
+          </ul>
+        </div>
+
+        <!-- Sustainability -->
+        <div>
+          <h4 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-dark/20 pb-4 text-dark">Sustainability</h4>
+          <p class="text-[11px] text-[#4A453D] leading-relaxed mb-8">
+            All Sampriti products are vegan, and we do not test our formulations or ingredients on animals. We are Leaping Bunny approved and a Certified B Corporation.
+          </p>
+          <div class="flex flex-col">
+            <span class="font-serif text-xl tracking-[0.1em] uppercase mb-1 text-dark">Sampriti</span>
+            <span class="text-[8px] tracking-[0.4em] uppercase text-[#4A453D] font-bold">Botanicals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bg-dark py-12 px-6 md:px-12 text-white/40">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
+          <p class="text-[9px] leading-relaxed">
+            &copy; 2026 Sampriti Botanicals. All rights reserved.
+          </p>
+          <div class="flex flex-wrap gap-x-8 gap-y-3">
+            <a href="#" class="text-[9px] uppercase tracking-[0.15em] hover:text-white transition-colors">Terms & Conditions</a>
+            <a href="#" class="text-[9px] uppercase tracking-[0.15em] hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#" class="text-[9px] uppercase tracking-[0.15em] hover:text-white transition-colors">Accessibility</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Overlay -->
+  <div id="productOverlay" class="product-overlay">
+    <div class="sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-border px-6 py-4 flex items-center justify-between">
+      <button onclick="closeProduct()" class="flex items-center gap-3 group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform"><path d="m15 18-6-6 6-6"/></svg>
+        <span class="text-[10px] font-semibold tracking-[0.2em] uppercase">Back to Collection</span>
+      </button>
+      <div class="flex flex-col items-center">
+        <span class="font-serif text-xl tracking-[0.1em] uppercase">Sampriti</span>
+      </div>
+      <div class="w-32 hidden md:block"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-12 md:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+        <!-- Gallery -->
+        <div class="space-y-6">
+          <div class="aspect-[3/4] bg-[#F0EBE2] overflow-hidden">
+            <img id="overlayMainImg" src="" alt="Product" class="w-full h-full object-cover" crossorigin="anonymous">
+          </div>
+          <div id="overlayThumbs" class="grid grid-cols-3 gap-4"></div>
+        </div>
+
+        <!-- Info -->
+        <div class="flex flex-col">
+          <span id="overlayBadge" class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Bestseller</span>
+          <h1 id="overlayName" class="font-serif text-5xl md:text-6xl font-light mb-4 text-dark">Shakti Peya</h1>
+          <p id="overlaySubtitle" class="text-[#4A453D] text-sm tracking-wide mb-8">The Vitality Brew - Adaptogenic Morning Ritual</p>
+          
+          <div class="flex items-center gap-4 mb-8">
+            <div class="flex text-[#9A7B4F] text-xs">★★★★★</div>
+            <span id="overlayRating" class="text-[10px] text-[#4A453D] tracking-widest uppercase">4.9 (214 Reviews)</span>
+          </div>
+
+          <div id="overlayPrice" class="font-serif text-3xl text-[#6B5530] font-medium mb-10">$34</div>
+
+          <p id="overlayDesc" class="text-[#4A453D] text-sm leading-relaxed mb-12">
+            A precisely composed adaptogenic morning ritual designed to honor the body's natural activation cycles.
+          </p>
+
+          <div class="flex flex-col gap-4 mb-12">
+            <div class="flex items-center gap-6">
+              <div class="flex items-center border border-border">
+                <button onclick="updateQty(-1)" class="px-4 py-3 hover:bg-accent/5 transition-colors">-</button>
+                <span id="overlayQty" class="px-6 py-3 text-xs font-medium">1</span>
+                <button onclick="updateQty(1)" class="px-4 py-3 hover:bg-accent/5 transition-colors">+</button>
+              </div>
+              <button class="flex-1 btn-primary">Add to Cart</button>
+            </div>
+            <button onclick="openCheckout()" class="w-full btn-buy">Buy Now</button>
+          </div>
+
+          <!-- Tabs -->
+          <div class="border-t border-border pt-8">
+            <div class="flex gap-8 mb-8">
+              <button onclick="switchTab('ingredients')" id="tab-ingredients" class="tab-btn active text-[10px] font-bold tracking-[0.2em] uppercase">Ingredients</button>
+              <button onclick="switchTab('ritual')" id="tab-ritual" class="tab-btn text-[10px] font-bold tracking-[0.2em] uppercase">Ritual</button>
+              <button onclick="switchTab('benefits')" id="tab-benefits" class="tab-btn text-[10px] font-bold tracking-[0.2em] uppercase">Benefits</button>
+            </div>
+            <div id="tabContent" class="text-[#4A453D] text-sm leading-relaxed min-h-[100px]"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews Section -->
+      <div class="mt-24 md:mt-32 border-t border-border pt-24">
+        <div class="text-center mb-16">
+          <span class="text-[#6B5530] text-[10px] font-bold tracking-[0.3em] uppercase mb-4 block">Community Voice</span>
+          <h2 class="font-serif text-4xl md:text-5xl font-light mb-6 text-dark">Reviews</h2>
+        </div>
+        <div id="overlayReviews" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Overlay -->
+  <div id="checkoutOverlay" class="checkout-overlay">
+    <div class="sticky top-0 z-50 bg-bg/90 backdrop-blur-md border-b border-border px-6 py-4 flex items-center justify-between">
+      <button onclick="closeCheckout()" class="flex items-center gap-3 group">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-1 transition-transform"><path d="m15 18-6-6 6-6"/></svg>
+        <span class="text-[10px] font-semibold tracking-[0.2em] uppercase">Back to Product</span>
+      </button>
+      <div class="flex flex-col items-center">
+        <span class="font-serif text-xl tracking-[0.1em] uppercase">Sampriti</span>
+      </div>
+      <div class="w-32 hidden md:block"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-6 py-12 md:py-20">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Order Summary -->
+        <div class="bg-white border border-border p-8">
+          <h2 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-border pb-4 text-dark">Order Summary</h2>
+          <div class="flex gap-6 mb-8">
+            <div class="w-24 h-24 bg-[#F0EBE2] overflow-hidden flex-shrink-0">
+              <img id="checkoutProductImg" src="" alt="Product" class="w-full h-full object-cover" crossorigin="anonymous">
+            </div>
+            <div class="flex-1">
+              <h3 id="checkoutProductName" class="font-serif text-xl mb-2 text-dark">Product Name</h3>
+              <p id="checkoutProductSubtitle" class="text-[#4A453D] text-xs mb-2">Subtitle</p>
+              <p id="checkoutProductQty" class="text-[#4A453D] text-xs">Qty: 1</p>
+            </div>
+          </div>
+          <div class="border-t border-border pt-6 space-y-3">
+            <div class="flex justify-between text-sm">
+              <span class="text-[#4A453D]">Subtotal</span>
+              <span id="checkoutSubtotal" class="text-dark font-medium">$34</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-[#4A453D]">Shipping</span>
+              <span class="text-dark font-medium">Free</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-[#4A453D]">Tax</span>
+              <span id="checkoutTax" class="text-dark font-medium">$0</span>
+            </div>
+            <div class="flex justify-between text-lg font-medium border-t border-border pt-4 mt-4">
+              <span class="text-dark">Total</span>
+              <span id="checkoutTotal" class="font-serif text-2xl text-[#6B5530]">$34</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Payment Methods -->
+        <div>
+          <h2 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-8 border-b border-border pb-4 text-dark">Payment Method</h2>
+          
+          <!-- Card Payment -->
+          <div class="payment-option mb-4 selected" onclick="selectPayment('card')">
+            <div class="flex items-center gap-4 mb-4">
+              <input type="radio" name="payment" id="payCard" checked>
+              <label for="payCard" class="flex items-center gap-3 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-dark">Credit / Debit Card</span>
+              </label>
+            </div>
+            <div id="cardForm" class="space-y-4 mt-6">
+              <div>
+                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Card Number</label>
+                <input type="text" class="input-field" placeholder="1234 5678 9012 3456" maxlength="19">
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Expiry Date</label>
+                  <input type="text" class="input-field" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div>
+                  <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">CVV</label>
+                  <input type="text" class="input-field" placeholder="123" maxlength="4">
+                </div>
+              </div>
+              <div>
+                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Name on Card</label>
+                <input type="text" class="input-field" placeholder="John Doe">
+              </div>
+            </div>
+          </div>
+
+          <!-- UPI Payment -->
+          <div class="payment-option" onclick="selectPayment('upi')">
+            <div class="flex items-center gap-4 mb-4">
+              <input type="radio" name="payment" id="payUPI">
+              <label for="payUPI" class="flex items-center gap-3 cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+                <span class="text-[11px] font-bold tracking-[0.15em] uppercase text-dark">UPI Payment</span>
+              </label>
+            </div>
+            <div id="upiForm" class="space-y-4 mt-6 hidden">
+              <div>
+                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">UPI ID</label>
+                <input type="text" class="input-field" placeholder="yourname@upi">
+              </div>
+              <div class="flex items-center gap-3 text-[#4A453D] text-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                <span>Supported: Google Pay, PhonePe, Paytm, BHIM UPI</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="mt-8">
+            <h3 class="text-[11px] font-bold tracking-[0.2em] uppercase mb-6 text-dark">Contact Information</h3>
+            <div class="space-y-4">
+              <div>
+                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Email</label>
+                <input type="email" class="input-field" placeholder="your@email.com">
+              </div>
+              <div>
+                <label class="text-[10px] font-bold tracking-[0.15em] uppercase text-[#4A453D] mb-2 block">Phone</label>
+                <input type="tel" class="input-field" placeholder="+91 98765 43210">
+              </div>
+            </div>
+          </div>
+
+          <!-- Place Order Button -->
+          <button onclick="placeOrder()" class="w-full btn-buy mt-10">
+            Complete Purchase
+          </button>
+
+          <p class="text-[10px] text-[#4A453D] text-center mt-6 leading-relaxed">
+            By completing this purchase, you agree to our Terms of Service and Privacy Policy. All transactions are secure and encrypted.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Order Success Overlay -->
+  <div id="successOverlay" class="checkout-overlay flex items-center justify-center">
+    <div class="text-center px-6 max-w-md">
+      <div class="w-20 h-20 mx-auto mb-8 rounded-full bg-[#6B5530]/10 flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#6B5530" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+      </div>
+      <h2 class="font-serif text-4xl md:text-5xl mb-6 text-dark">Thank You</h2>
+      <p class="text-[#4A453D] text-sm leading-relaxed mb-8">Your order has been placed successfully. We've sent a confirmation email with your order details.</p>
+      <p class="text-[#6B5530] text-xs font-bold tracking-[0.2em] uppercase mb-8">Order #SB-2026-<span id="orderNumber">12345</span></p>
+      <button onclick="closeSuccess()" class="btn-primary">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script>
+    const products = {
+      'Shakti Peya': {
+        subtitle: 'The Vitality Brew - Adaptogenic Morning Ritual',
+        price: '$34',
+        badge: 'Bestseller',
+        rating: '4.9 (214 Reviews)',
+        desc: 'A precisely composed adaptogenic morning ritual designed to honor the body\'s natural activation cycles. Rooted in traditional Ayurvedic wisdom, this blend features wild-harvested Ashwagandha and Tulsi.',
+        images: [
+          'https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=800&q=80',
+          'https://images.unsplash.com/photo-1515696955266-4f67e13219e8?w=800&q=80',
+          'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=800&q=80'
+        ],
+        ingredients: 'Ashwagandha (Withania somnifera), Tulsi (Ocimum sanctum), Turmeric (Curcuma longa), Black Pepper (Piper nigrum). All ingredients are wild-harvested or ethically grown.',
+        ritual: 'Best enjoyed at sunrise. Mix one level teaspoon into warm water or your preferred plant-based milk. Sip slowly, focusing on the earthy aroma and the grounding energy of the herbs.',
+        benefits: 'Supports sustained energy levels without the crash. Enhances mental clarity and focus. Helps the body manage daily stressors through adaptogenic support.',
+        reviews: [
+          { name: 'Priya M.', loc: 'Mumbai', title: 'My morning has transformed', body: 'Three months in and my energy levels are unlike anything I\'ve experienced. No jitters — just sustained, clean vitality.' },
+          { name: 'Leila R.', loc: 'London', title: 'Balanced and earthy', body: 'The turmeric and ashwagandha blend is perfectly balanced. It\'s become a non-negotiable part of my morning ritual.' },
+          { name: 'Sarah J.', loc: 'New York', title: 'Finally works', body: 'I\'ve tried every adaptogen product. Shakti Peya is in a different league. The quality is immediately apparent.' }
+        ]
+      },
+      'Chandra Rasa': {
+        subtitle: 'The Moon Elixir - Restorative Evening Tonic',
+        price: '$36',
+        badge: 'Restorative',
+        rating: '4.8 (178 Reviews)',
+        desc: 'A restorative evening tonic crafted to support the body\'s transition into deep rest. Featuring cooling botanicals that soothe the nervous system and prepare the spirit for stillness.',
+        images: [
+          'https://images.unsplash.com/photo-1594631252845-29fc4586567?w=800&q=80',
+          'https://images.unsplash.com/photo-1610414857342-0f3b4a30a8ef?w=800&q=80',
+          'https://images.unsplash.com/photo-1471193945509-9ad0617afabf?w=800&q=80'
+        ],
+        ingredients: 'Brahmi (Bacopa monnieri), Ashwagandha Root, Cardamom (Elettaria cardamomum), Rose Petals (Rosa centifolia).',
+        ritual: 'Sip slowly 30 minutes before rest. Prepare with warm milk or water. Allow the cooling properties of Brahmi and Rose to gently unwind the mind.',
+        benefits: 'Promotes deep, restorative sleep. Calms the nervous system. Supports emotional balance and inner stillness.',
+        reviews: [
+          { name: 'Ananya S.', loc: 'Bangalore', title: 'Deepest sleep', body: 'I was skeptical — but after two weeks of Chandra Rasa I sleep so much more deeply. I wake feeling genuinely restored.' },
+          { name: 'Maya T.', loc: 'Sydney', title: 'Evening ritual', body: 'Chandra Rasa has completely transformed my evenings. I feel genuinely calm and prepared for rest.' },
+          { name: 'Charlotte B.', loc: 'Paris', title: 'Gentle and effective', body: 'A true evening ritual. The taste is delicate and floral — much more pleasant than I expected.' }
+        ]
+      },
+      'Shotharaha': {
+        subtitle: 'The Anti-Inflammatory Blend - Soothing Daily Tonic',
+        price: '$32',
+        badge: 'New',
+        rating: '4.9 (96 Reviews)',
+        desc: 'A powerful combination of traditional anti-inflammatory botanicals designed to support joint health and systemic balance. Potent yet gentle on the digestive system.',
+        images: [
+          'https://images.unsplash.com/photo-1615485500704-8e990f9900f7?w=800&q=80',
+          'https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80',
+          'https://images.unsplash.com/photo-1615485925600-97237c4fc1ec?w=800&q=80'
+        ],
+        ingredients: 'Turmeric (Curcuma longa), Boswellia (Boswellia serrata), Ginger (Zingiber officinale), Guggulu (Commiphora wightii).',
+        ritual: 'Can be taken any time of day. Mix with warm water or add to your favorite smoothie. Best taken with a small amount of healthy fat to enhance absorption.',
+        benefits: 'Reduces systemic inflammation. Supports joint mobility and comfort. Aids digestion and detoxification.',
+        reviews: [
+          { name: 'Ravi K.', loc: 'Delhi', title: 'Remarkable results', body: 'My joints have felt dramatically better since starting Shotharaha. Inflammation has visibly reduced.' },
+          { name: 'James L.', loc: 'Toronto', title: 'The difference is real', body: 'Noticeable results within the first week. Effective, gentle, and nourishing rather than depleting.' },
+          { name: 'Fatima A.', loc: 'Dubai', title: 'Powerfully effective', body: 'The taste is earthy and pleasant. I feel the warmth of the herbs working within minutes.' }
+        ]
+      },
+      'Ojas Vati': {
+        subtitle: 'Immunity Support - Seasonal Resilience',
+        price: '$28',
+        badge: 'Immunity',
+        rating: '4.7 (112 Reviews)',
+        desc: 'A traditional Ayurvedic formulation designed to strengthen the body\'s natural defenses. Ojas Vati works to build vital energy and resilience against seasonal changes.',
+        images: [
+          'https://images.unsplash.com/photo-1540331547168-8b63109225b7?w=800&q=80',
+          'https://images.unsplash.com/photo-1512290923902-8a9f81dc2069?w=800&q=80',
+          'https://images.unsplash.com/photo-1502333323293-4f21b0ae5ee7?w=800&q=80'
+        ],
+        ingredients: 'Guduchi (Tinospora cordifolia), Amla (Emblica officinalis), Neem (Azadirachta indica), Licorice (Glycyrrhiza glabra).',
+        ritual: 'Take two tablets daily with warm water, preferably on an empty stomach in the morning. Consistency is key to building long-term resilience.',
+        benefits: 'Strengthens the immune system. Supports healthy digestion and detoxification. Enhances overall vitality and life force (Ojas).',
+        reviews: [
+          { name: 'Arjun P.', loc: 'Pune', title: 'Stronger than ever', body: 'I haven\'t felt this resilient in years. Seasonal changes used to hit me hard, but not anymore.' },
+          { name: 'Elena G.', loc: 'London', title: 'Essential support', body: 'A must-have for the winter months. I feel much more protected and energetic.' }
+        ]
+      },
+      'Tejas Taila': {
+        subtitle: 'Radiance Oil - Luminous Skin Ritual',
+        price: '$42',
+        badge: 'Radiance',
+        rating: '5.0 (84 Reviews)',
+        desc: 'A luxurious, cold-pressed botanical oil designed to nourish the skin and restore its natural luminosity. Infused with solar-macerated herbs for maximum potency.',
+        images: [
+          'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&q=80',
+          'https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=800&q=80',
+          'https://images.unsplash.com/photo-1608571424171-397a89af57ac?w=800&q=80'
+        ],
+        ingredients: 'Saffron (Crocus sativus), Sandalwood (Santalum album), Manjistha (Rubia cordifolia), Sesame Oil (Sesamum indicum).',
+        ritual: 'Gently massage 3-5 drops into clean, damp skin using upward circular motions. Best used as the final step in your evening ritual to allow the oils to penetrate deeply.',
+        benefits: 'Restores natural skin radiance. Deeply hydrates and nourishes. Evens skin tone and improves texture.',
+        reviews: [
+          { name: 'Ishani V.', loc: 'Jaipur', title: 'Liquid gold', body: 'My skin has never looked this luminous. The scent is divine and the results are immediate.' },
+          { name: 'Sophie M.', loc: 'Paris', title: 'Pure luxury', body: 'The most beautiful face oil I have ever used. It feels like a spa ritual every single night.' }
+        ]
+      },
+      'Hibiscus Rasa': {
+        subtitle: 'The Flower Elixir - Heart-Opening Ritual',
+        price: '$30',
+        badge: 'Featured',
+        rating: '4.9 (124 Reviews)',
+        desc: 'A vibrant, heart-opening elixir crafted from sun-dried Hibiscus petals and cooling botanicals. Designed to soothe the spirit and support cardiovascular vitality.',
+        images: [
+          'https://images.unsplash.com/photo-1588392382834-a891154bca4d?w=800&q=80',
+          'https://images.unsplash.com/photo-1525310238294-7991a8189765?w=800&q=80',
+          'https://images.unsplash.com/photo-1502333323293-4f21b0ae5ee7?w=800&q=80'
+        ],
+        ingredients: 'Hibiscus (Hibiscus rosa-sinensis), Rosehips (Rosa canina), Hawthorn Berry (Crataegus), Stevia Leaf.',
+        ritual: 'Mix one teaspoon with cool water or sparkling water for a refreshing afternoon ritual. The vibrant red hue and tart flavor are deeply grounding and heart-centering.',
+        benefits: 'Supports cardiovascular health. Rich in antioxidants. Cools the body and soothes the emotional heart.',
+        reviews: [
+          { name: 'Meera R.', loc: 'Chennai', title: 'Vibrant and tart', body: 'The most refreshing thing I drink all day. I feel a genuine sense of lightness after my afternoon glass.' },
+          { name: 'David W.', loc: 'Berlin', title: 'Heart health', body: 'I started taking this for my heart, but I stay for the taste. It\'s absolutely delicious and feels very pure.' }
+        ]
+      }
+    };
+
+    let currentProduct = null;
+    let currentQty = 1;
+
+    // Header Scroll Effect
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // Fade Up Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Search Toggle
+    function toggleSearch() {
+      document.getElementById('searchOverlay').classList.toggle('active');
+    }
+
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+      document.getElementById('mobileMenuOverlay').classList.toggle('active');
+    }
+
+    // Product Overlay Logic
+    function openProduct(name) {
+      const data = products[name];
+      currentProduct = data;
+      currentQty = 1;
+
+      document.getElementById('overlayName').textContent = name;
+      document.getElementById('overlaySubtitle').textContent = data.subtitle;
+      document.getElementById('overlayPrice').textContent = data.price;
+      document.getElementById('overlayBadge').textContent = data.badge;
+      document.getElementById('overlayRating').textContent = data.rating;
+      document.getElementById('overlayDesc').textContent = data.desc;
+      document.getElementById('overlayMainImg').src = data.images[0];
+      document.getElementById('overlayQty').textContent = '1';
+
+      // Thumbs
+      const thumbContainer = document.getElementById('overlayThumbs');
+      thumbContainer.innerHTML = '';
+      data.images.forEach((img, i) => {
+        const thumb = document.createElement('div');
+        thumb.className = `aspect-square bg-[#F0EBE2] overflow-hidden cursor-pointer border-2 ${i === 0 ? 'border-[#6B5530]' : 'border-transparent'}`;
+        thumb.innerHTML = `<img src="${img}" class="w-full h-full object-cover" crossorigin="anonymous">`;
+        thumb.onclick = () => {
+          document.getElementById('overlayMainImg').src = img;
+          thumbContainer.querySelectorAll('div').forEach(d => d.classList.remove('border-[#6B5530]'));
+          thumb.classList.add('border-[#6B5530]');
         };
+        thumbContainer.appendChild(thumb);
+      });
 
-        function showProduct(id) {
-            const product = products[id];
-            if (!product) return;
-            
-            currentProductId = id;
+      // Reviews
+      const reviewContainer = document.getElementById('overlayReviews');
+      reviewContainer.innerHTML = '';
+      data.reviews.forEach(rev => {
+        const card = document.createElement('div');
+        card.className = 'bg-white border border-border p-8';
+        card.innerHTML = `
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#6B5530]/20 flex items-center justify-center font-serif text-[#6B5530] text-xs font-medium">${rev.name[0]}</div>
+              <div>
+                <div class="text-[10px] font-bold tracking-wider uppercase text-dark">${rev.name}</div>
+                <div class="text-[9px] text-[#4A453D] tracking-widest uppercase">${rev.loc}</div>
+              </div>
+            </div>
+            <div class="text-[#9A7B4F] text-[10px]">★★★★★</div>
+          </div>
+          <h4 class="font-serif text-lg mb-3 text-dark">${rev.title}</h4>
+          <p class="text-[#4A453D] text-sm leading-relaxed">${rev.body}</p>
+        `;
+        reviewContainer.appendChild(card);
+      });
 
-            // Populate data
-            document.getElementById('pv-title').textContent = product.title;
-            document.getElementById('pv-subtitle').textContent = product.subtitle;
-            document.getElementById('pv-price').textContent = product.price;
-            document.getElementById('pv-description').textContent = product.description;
-            document.getElementById('pv-image').src = product.image;
-            
-            document.getElementById('pv-feature-1').textContent = product.features[0];
-            document.getElementById('pv-feature-2').textContent = product.features[1];
-            document.getElementById('pv-feature-3').textContent = product.features[2];
+      switchTab('ingredients');
+      document.getElementById('productOverlay').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-            const badge = document.getElementById('pv-badge');
-            if (product.badge) {
-                badge.textContent = product.badge;
-                badge.classList.remove('hidden');
-            } else {
-                badge.classList.add('hidden');
-            }
+    function closeProduct() {
+      document.getElementById('productOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+      currentQty = 1;
+      document.getElementById('overlayQty').textContent = '1';
+    }
 
-            // Switch views
-            document.getElementById('home-view').classList.add('hidden');
-            document.getElementById('product-view').classList.remove('hidden');
-            window.scrollTo(0, 0);
-            
-            // Re-initialize icons for the new view just in case
-            lucide.createIcons();
+    function updateQty(delta) {
+      currentQty = Math.max(1, currentQty + delta);
+      document.getElementById('overlayQty').textContent = currentQty;
+    }
+
+    function switchTab(tab) {
+      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('tab-' + tab).classList.add('active');
+      document.getElementById('tabContent').textContent = currentProduct[tab];
+    }
+
+    // Close on escape
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (document.getElementById('successOverlay').classList.contains('active')) {
+          closeSuccess();
+        } else if (document.getElementById('checkoutOverlay').classList.contains('active')) {
+          closeCheckout();
+        } else if (document.getElementById('productOverlay').classList.contains('active')) {
+          closeProduct();
         }
+        document.getElementById('searchOverlay').classList.remove('active');
+        document.getElementById('mobileMenu').classList.remove('active');
+        document.getElementById('mobileMenuOverlay').classList.remove('active');
+      }
+    });
 
-        function backToHome() {
-            document.getElementById('product-view').classList.add('hidden');
-            document.getElementById('home-view').classList.remove('hidden');
-            window.scrollTo(0, document.getElementById('products').offsetTop - 80);
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
         }
+      });
+    });
 
-        function addToCart() {
-            alert('Product added to cart successfully!');
-        }
+    // Checkout Functions
+    let checkoutProductName = '';
+    let checkoutProductData = null;
 
-        function buyNow() {
-            if (currentProductId && products[currentProductId]) {
-                const product = products[currentProductId];
-                document.getElementById('checkout-product-title').textContent = product.title;
-                document.getElementById('checkout-product-price').textContent = product.price;
-                document.getElementById('checkout-total-price').textContent = product.price;
-                
-                document.getElementById('product-view').classList.add('hidden');
-                document.getElementById('checkout-view').classList.remove('hidden');
-                document.getElementById('checkout-form').classList.remove('hidden');
-                document.getElementById('checkout-success').classList.add('hidden');
-                document.getElementById('checkout-form').reset();
-                window.scrollTo(0, 0);
-            }
-        }
+    function openCheckout() {
+      checkoutProductName = document.getElementById('overlayName').textContent;
+      checkoutProductData = products[checkoutProductName];
+      
+      document.getElementById('checkoutProductImg').src = checkoutProductData.images[0];
+      document.getElementById('checkoutProductName').textContent = checkoutProductName;
+      document.getElementById('checkoutProductSubtitle').textContent = checkoutProductData.subtitle;
+      document.getElementById('checkoutProductQty').textContent = 'Qty: ' + currentQty;
+      
+      const priceNum = parseInt(checkoutProductData.price.replace('$', ''));
+      const subtotal = priceNum * currentQty;
+      document.getElementById('checkoutSubtotal').textContent = '$' + subtotal;
+      document.getElementById('checkoutTax').textContent = '$0';
+      document.getElementById('checkoutTotal').textContent = '$' + subtotal;
+      
+      document.getElementById('checkoutOverlay').classList.add('active');
+    }
 
-        function backToProduct() {
-            document.getElementById('checkout-view').classList.add('hidden');
-            document.getElementById('product-view').classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
+    function closeCheckout() {
+      document.getElementById('checkoutOverlay').classList.remove('active');
+    }
 
-        function submitOrder(e) {
-            e.preventDefault();
-            document.getElementById('checkout-form').classList.add('hidden');
-            document.getElementById('checkout-success').classList.remove('hidden');
-            window.scrollTo(0, 0);
-        }
+    function selectPayment(method) {
+      const cardOption = document.querySelector('.payment-option:nth-child(1)');
+      const upiOption = document.querySelector('.payment-option:nth-child(2)');
+      const cardForm = document.getElementById('cardForm');
+      const upiForm = document.getElementById('upiForm');
+      
+      if (method === 'card') {
+        cardOption.classList.add('selected');
+        upiOption.classList.remove('selected');
+        cardForm.classList.remove('hidden');
+        upiForm.classList.add('hidden');
+        document.getElementById('payCard').checked = true;
+      } else {
+        upiOption.classList.add('selected');
+        cardOption.classList.remove('selected');
+        upiForm.classList.remove('hidden');
+        cardForm.classList.add('hidden');
+        document.getElementById('payUPI').checked = true;
+      }
+    }
 
-        function backToHomeFromCheckout() {
-            document.getElementById('checkout-view').classList.add('hidden');
-            document.getElementById('home-view').classList.remove('hidden');
-            window.scrollTo(0, document.getElementById('products').offsetTop - 80);
-        }
+    function placeOrder() {
+      const orderNum = Math.floor(10000 + Math.random() * 90000);
+      document.getElementById('orderNumber').textContent = orderNum;
+      document.getElementById('checkoutOverlay').classList.remove('active');
+      document.getElementById('successOverlay').classList.add('active');
+    }
 
-        function openSearch() {
-            const modal = document.getElementById('search-modal');
-            modal.classList.remove('hidden');
-            // Small delay to allow modal to render before focusing
-            setTimeout(() => {
-                document.getElementById('search-input').focus();
-            }, 100);
-        }
-
-        function closeSearch() {
-            document.getElementById('search-modal').classList.add('hidden');
-            document.getElementById('search-input').value = '';
-        }
-
-        // Close search on Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                const searchModal = document.getElementById('search-modal');
-                if (!searchModal.classList.contains('hidden')) {
-                    closeSearch();
-                }
-            }
-        });
-        
-        // Handle navigation links to work properly when on product page
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                // If we're on the product view, go back to home first
-                if (!document.getElementById('product-view').classList.contains('hidden')) {
-                    document.getElementById('product-view').classList.add('hidden');
-                    document.getElementById('home-view').classList.remove('hidden');
-                }
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
+    function closeSuccess() {
+      document.getElementById('successOverlay').classList.remove('active');
+      document.getElementById('productOverlay').classList.remove('active');
+      document.body.style.overflow = '';
+      currentQty = 1;
+    }
+  </script>
 </body>
 </html>

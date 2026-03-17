@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0031)https://sampritibotanicals.com/ -->
+<!-- saved from url=(0031)# -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,24 +26,1597 @@
     <meta property="twitter:image" content="http://sampritibotanicals.com/assets/images/brand2.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="./Botanicals &amp; Herbal Wellness_files/css2" rel="stylesheet">
-    <link rel="stylesheet" href="./Botanicals &amp; Herbal Wellness_files/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <style>/* CSS Variables */
+:root {
+    --primary-color-1: #333;
+    /* Product 1 (Shakti Peya) - Brownish Red */
+    --primary-color-2: #252525;
+    /* Product 2 (Chandra Rasa) - Deep Blue/Navy */
+    --text-color: #333333;
+    --text-light: #666666;
+    --bg-color: #fffef2;
+    --bg-light: #fffef2;
+    --font-heading: 'Tenor Sans', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --container-width: 1200px;
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 32px;
+    --spacing-lg: 64px;
+    --spacing-xl: 96px;
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    font-weight: 300;
+
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    /* color: var(--primary-color-2); */
+    /* Using the deep blue for headings for elegance */
+    line-height: 1.2;
+    margin-bottom: var(--spacing-sm);
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    font-family: var(--font-body);
+
+}
+
+p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.section-divider {
+    border: 0;
+    border-top: 1px solid #b7b7b7;
+    margin: 15px 0 20px 0;
+    /* width: 60px; */
+    opacity: 1;
+}
+
+.how-to-use-section p {
+    margin-bottom: 0;
+}
+
+.how-to-use-section h3 {
+    font-size: 1.3rem;
+}
+
+.sub-heading {
+    font-weight: 450;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Utilities */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.section-padding {
+    padding: var(--spacing-xl) 0;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.max-width-800 {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.eyebrow {
+    font-size: 1.875rem;
+    letter-spacing: 2px;
+    color: var(--primary-color-1);
+    /* font-weight: 600; */
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-heading);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color-1);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-2);
+
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--primary-color-2);
+    color: var(--primary-color-2);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color-2);
+    color: white;
+}
+
+.btn-view-more {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: var(--primary-color-1);
+    border: 1px solid var(--primary-color-1);
+}
+
+.btn-view-more:hover {
+    background-color: var(--primary-color-1);
+    color: white;
+}
+
+/* Header */
+.main-header {
+    background-color: transparent;
+    padding: var(--spacing-sm) 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.main-header.scrolled {
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* On pages without a hero, offset main content below the fixed header */
+body.no-hero>main {
+    padding-top: 130px;
+}
+
+.main-header .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: var(--spacing-sm); */
+    gap: 10px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+}
+
+.logo img {
+    height: auto;
+    max-height: 60px;
+    filter: brightness(0) invert(1);
+    transition: filter 0.4s ease;
+}
+
+.main-header.scrolled .logo img {
+    filter: brightness(0) invert(0);
+}
+
+
+
+
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.main-nav a {
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 0.95rem;
+    color: white;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+}
+
+.main-nav a:hover {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.main-header.scrolled .main-nav a {
+    color: var(--primary-color-2);
+}
+
+.main-header.scrolled .main-nav a:hover {
+    color: var(--primary-color-1);
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 0;
+    text-align: center;
+    background-color: var(--bg-light);
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+}
+
+.hero-video-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+}
+
+.hero-section .container {
+    position: absolute;
+    top: 65%;
+    z-index: 1;
+}
+
+/* Hero Video Controls */
+.hero-video-controls {
+    position: absolute;
+    bottom: 28px;
+    right: 28px;
+    z-index: 2;
+    display: flex;
+    gap: 10px;
+}
+
+.hero-ctrl-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1.5px solid rgba(255, 255, 255, 0.6);
+    background-color: rgba(0, 0, 0, 0.35);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
+
+.hero-ctrl-btn:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-color: rgba(255, 255, 255, 0.9);
+    transform: scale(1.08);
+}
+
+.hero-ctrl-btn svg {
+    width: 18px;
+    height: 18px;
+    pointer-events: none;
+}
+
+
+#hero a.btn.btn-primary {
+    background-color: rgba(0, 0, 0, 0.6);
+    border: 2px solid white;
+    margin-top: 20px;
+}
+
+#hero a.btn.btn-primary:hover {
+    background-color: var(--primary-color-2);
+    ;
+}
+
+.hero-title {
+    font-size: 2.3rem;
+    max-width: 900px;
+    /* margin: 0 auto var(--spacing-md); */
+    /* color: var(--primary-color-2); */
+    color: #fff;
+    font-weight: 300;
+}
+
+.hero-title-small {
+    font-size: 1.1rem !important;
+    margin-bottom: 0 !important;
+
+}
+
+@media (max-width: 768px) {
+
+    .hero-section .container {
+        top: 50%;
+    }
+
+    .hero-title-small {
+        font-size: 1rem !important;
+        margin-bottom: 0 !important;
+    }
+
+    .eyebrow {
+        font-size: 1.375rem;
+    }
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+/* About Section */
+.about-section {
+    padding: 0;
+    overflow: hidden;
+    margin-top: var(--spacing-xl);
+}
+
+.about-split-layout {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    min-height: 300px;
+    /* Reduced from 600px */
+}
+
+.about-image-side {
+    width: 57%;
+    position: relative;
+    padding: 0;
+    margin-bottom: 0;
+    background-color: #f4f1ea;
+    /* Override previous margin */
+}
+
+.about-image-side img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 0;
+    /* Remove border-radius for full bleed */
+}
+
+.about-content-side {
+    width: 43%;
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-color);
+    /* Soft organic background color */
+}
+
+.about-content-inner {
+    /* padding: var(--spacing-lg); */
+    padding: 35px 100px 15px 70px;
+    max-width: 850px;
+}
+
+.about-content-inner.content-left {
+    padding: 35px 50px 15px 50px;
+}
+
+
+/* Remove old About styles that interfere */
+.about-content p {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Response for About Split Layout */
+@media (max-width: 768px) {
+
+    .about-image-side,
+    .about-content-side {
+        width: 100%;
+    }
+
+
+    .about-content-inner {
+        padding: var(--spacing-md);
+    }
+}
+
+
+
+/* Sections Layout */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.col-half {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* Standards Grid */
+.standards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+@media (min-width: 769px) {
+    .standards-grid {
+        grid-template-columns: repeat(8, 1fr);
+        gap: var(--spacing-sm);
+    }
+}
+
+.standard-item {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.standard-item:hover {
+    transform: translateY(-5px);
+}
+
+.standard-item .icon,
+.standard-item .icon.large {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.standard-item .icon.extra-bold svg {
+    stroke-width: .5;
+    stroke: #000000;
+    fill: #000000;
+}
+
+.standard-item .icon svg,
+.standard-item .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    fill: none;
+    stroke: #333;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.standard-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-body);
+    font-weight: 600;
+}
+
+.standard-item p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+}
+
+/* Product Cards */
+
+.buy-now-btn {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.product-card {
+    margin-bottom: var(--spacing-xl);
+    align-items: center;
+}
+
+.product-image {
+    padding: 0;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+
+.product-image img {
+    max-height: 700px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.product-details {
+    padding-left: var(--spacing-lg);
+}
+
+.product-card.reverse-mobile .product-details {
+    padding-left: 0;
+    padding-right: var(--spacing-lg);
+}
+
+.product-card:nth-child(even) .product-details {
+    padding-left: 0;
+    padding-right: var(--spacing-lg);
+}
+
+.product-card:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.product-subtitle {
+    font-size: 1.2rem;
+    color: var(--primary-color-1);
+    margin-bottom: 0;
+    font-family: var(--font-heading);
+    font-style: italic;
+}
+
+.product-specs {
+    font-size: 1.1rem;
+    color: var(--text-light);
+}
+
+.ingredients-list {
+    margin-top: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.ingredients-list h4 {
+    font-size: 1.1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+}
+
+.ingredients-list ul li {
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    position: relative;
+    padding-left: 15px;
+}
+
+.ingredients-list ul li::before {
+    content: "•";
+    color: var(--primary-color-1);
+    position: absolute;
+    left: 0;
+}
+
+/* Collapsible Sections */
+.product-collapsible {
+    margin-top: var(--spacing-md);
+    border-top: 1px solid #eee;
+}
+
+.product-collapsible details {
+    border-bottom: 1px solid #eee;
+}
+
+.product-collapsible summary {
+    list-style: none;
+    padding: 16px 0;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    color: var(--primary-color-2);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-collapsible summary::-webkit-details-marker {
+    display: none;
+}
+
+.product-collapsible summary::after {
+    content: "▼";
+    font-size: 0.9rem;
+    transition: transform 0.3s ease;
+}
+
+.product-collapsible details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+.product-collapsible .collapsible-content {
+    padding-bottom: 16px;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Placeholder Product Image */
+.placeholder-image {
+    height: 400px;
+    background-color: var(--primary-color-2);
+    color: white;
+    width: 100%;
+}
+
+.image-text-placeholder {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+
+
+/* Footer */
+.main-footer {
+    background-color: #252525;
+    color: white;
+    padding: var(--spacing-lg) 0 var(--spacing-md);
+    margin-top: 100px;
+}
+
+.footer-logo {
+    filter: brightness(0) invert(1);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-links a {
+    font-family: var(--font-heading);
+    color: rgba(255, 255, 255, 0.8);
+    margin-left: var(--spacing-md);
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-md);
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .col-half {
+        width: 100%;
+        margin-bottom: var(--spacing-md);
+    }
+
+    .product-card,
+    .product-card:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-details,
+    .product-card.reverse-mobile .product-details,
+    .product-card:nth-child(even) .product-details {
+        padding: 0;
+        margin-top: var(--spacing-md);
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .main-header .container {
+        flex-direction: column;
+    }
+
+    .main-nav ul {
+        gap: 15px;
+    }
+
+    .ingredients-list ul li {
+        text-align: left;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-links a {
+        margin: 0 10px;
+    }
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: slideDown 0.3s ease-in-out;
+}
+
+.close-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal h2 {
+    margin-bottom: 5px;
+    color: var(--primary-color-2);
+}
+
+#modal-product-name {
+    color: var(--primary-color-1);
+    font-weight: 600;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color-2);
+    outline: none;
+}
+
+.full-width {
+    width: 100%;
+    text-align: center;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+/* Contact Page Styles */
+.contact-hero-section {
+    position: relative;
+    height: 70vh;
+    background-image: url('https://sampritibotanicals.com/assets/images/contact.avif');
+    /* Using existing brand image or placeholder */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 80px;
+}
+
+.contact-hero-section .container {
+    width: 100%;
+}
+
+.contact-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.contact-hero-title {
+    position: relative;
+    color: white;
+    font-size: 3.5rem;
+    z-index: 1;
+    margin-bottom: 0;
+}
+
+.contact-page-section {
+    background-color: #fff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-lg);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contact-section-title {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--primary-color-1);
+}
+
+.contact-description {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Contact Form Styles */
+.styled-contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.styled-contact-form input,
+.styled-contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 0;
+    /* Sharp edges as per reference */
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: var(--text-color);
+    background-color: transparent;
+    transition: border-color 0.3s;
+}
+
+.styled-contact-form input:focus,
+.styled-contact-form textarea:focus {
+    border-color: #aaa;
+    outline: none;
+}
+
+.styled-contact-form input::placeholder,
+.styled-contact-form textarea::placeholder {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.contact-submit-btn {
+    background-color: #C19A6B;
+    /* Muted gold/brown tone from reference */
+    color: white;
+    border: none;
+    /* Pill shape */
+    padding: 12px 35px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Blog Page Styles */
+.blog-hero-section {
+    position: relative;
+    height: 70vh;
+    background-image: url('https://sampritibotanicals.com/assets/images/blog/cardamon.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+#shop-hero {
+    background-image: url('https://sampritibotanicals.com/assets/images/cinnamon.jpg');
+}
+
+.contact-submit-btn:hover {
+    background-color: #a07d55;
+}
+
+/* Contact Info Styles */
+.contact-info-col {
+    padding-left: var(--spacing-md);
+}
+
+.contact-info-block {
+    margin-bottom: var(--spacing-md);
+}
+
+.contact-info-title {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    font-family: var(--font-heading);
+    color: var(--primary-color-1);
+}
+
+.contact-info-block p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.contact-link {
+    color: var(--text-light);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.contact-link:hover {
+    border-bottom-color: var(--text-light);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #f4f4f4;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    stroke-width: 1.5;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color-1);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .contact-hero-section {
+        align-items: center;
+        padding-bottom: 0;
+        text-align: center;
+    }
+
+
+    .contact-info-col {
+        padding-left: 0;
+        margin-top: var(--spacing-lg);
+    }
+
+    /* Map Styles */
+    .map-container {
+        margin-top: var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-map-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .map-container:hover .contact-map-image {
+        transform: scale(1.02);
+    }
+}
+
+/* Product Grid Styles (Homepage) */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.product-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* padding: var(--spacing-md); */
+    /* background-color: white; */
+    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.product-grid-image {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.product-grid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+/* .product-grid-item:hover .product-grid-image img {
+    transform: scale(1.05);
+} */
+
+.product-grid-item h3 {
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+    /* Ensure heading font is used */
+    color: var(--primary-color-2);
+}
+
+.product-grid-subtitle {
+    font-family: var(--font-heading);
+    font-style: italic;
+    color: var(--primary-color-1);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.product-grid-price {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+/* Product Detail Page Styles */
+.product-image-large {
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.product-image-large img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-info {
+    padding-left: var(--spacing-lg);
+}
+
+.product-info h1 {
+    font-size: 3rem;
+    margin-bottom: 5px;
+    color: var(--primary-color-2);
+}
+
+.product-subtitle-large {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-color-1);
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+.product-description-full {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+
+
+@media (max-width: 768px) {
+    .product-info {
+        padding-left: 0;
+        margin-top: var(--spacing-md);
+    }
+
+    .product-info h1 {
+        font-size: 2rem;
+    }
+}
+
+/* New Font Utilities */
+.dm-sans-regular {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.dm-sans-bold {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.dm-sans-italic {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.tenor-sans-regular {
+    font-family: "Tenor Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Blog Styles */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.blog-card {
+    background-color: white;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card-link {
+    display: block;
+    height: 100%;
+}
+
+.blog-card-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.blog-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-card-image img {
+    transform: scale(1.05);
+}
+
+.blog-card-content {
+    padding: var(--spacing-md);
+}
+
+.blog-category {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-color-1);
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+}
+
+.blog-card-content h3 {
+    font-size: 1.4rem;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.blog-card-content p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-sm);
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary-color-2);
+    display: inline-block;
+}
+
+/* Blog Detail Page */
+.blog-post-page .blog-post-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.blog-post-header h1 {
+    font-size: 3rem;
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+}
+
+.blog-meta {
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.blog-post-image {
+    margin-bottom: var(--spacing-lg);
+    overflow: hidden;
+    max-height: 800px;
+    /* Limit height to keep content accessible */
+}
+
+.blog-post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blog-post-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.blog-post-content p {
+    margin-bottom: var(--spacing-md);
+}
+
+.blog-post-content .lead {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--primary-color-2);
+    margin-bottom: var(--spacing-lg);
+}
+
+.blog-post-content h3 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.recipe-box {
+    margin: var(--spacing-lg) 0;
+}
+
+.recipe-box h3 {
+    margin-top: var(--spacing-md);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.recipe-box h3:first-child {
+    margin-top: 0;
+}
+
+.ingredient-list,
+.method-list {
+    margin-bottom: var(--spacing-md);
+}
+
+.ingredient-list li {
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+}
+
+.ingredient-list li::before {
+    content: "•";
+    color: var(--primary-color-1);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.method-list li {
+    margin-bottom: 12px;
+    padding-left: 5px;
+}
+
+.recipe-note {
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-top: var(--spacing-md);
+}
+
+.blog-navigation {
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-md);
+    border-top: 1px solid #eee;
+}
+
+@media (max-width: 768px) {
+    .blog-post-header h1 {
+        font-size: 2rem;
+    }
+
+    .recipe-box {
+        padding: var(--spacing-md);
+    }
+}
+
+/* Subscribe Section */
+.subscribe-section {
+    padding: 0;
+    overflow: hidden;
+}
+
+#subscribe p {
+    margin-bottom: 40px;
+}
+
+.subscribe-split-layout {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.subscribe-image-side {
+    width: 50%;
+    position: relative;
+    padding: 0;
+}
+
+.subscribe-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.subscribe-content-side {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    background-color: #f4f1ea;
+}
+
+.subscribe-content-inner {
+    padding: 40px 60px;
+    width: 100%;
+}
+
+.subscribe-content-inner h2 {
+    font-size: 1.9rem;
+    color: var(--primary-color-2);
+}
+
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.subscribe-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    background-color: white;
+    color: var(--text-color);
+    font-family: var(--font-body);
+    font-size: 1rem;
+}
+
+.subscribe-form input:focus {
+    outline: none;
+    border-color: var(--primary-color-1);
+}
+
+.subscribe-form .btn {
+    width: 100%;
+    padding: 12px 30px;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+
+    .subscribe-image-side,
+    .subscribe-content-side {
+        width: 100%;
+    }
+
+    .subscribe-split-layout {
+        flex-direction: column;
+    }
+
+    .subscribe-content-inner {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+}
+
+/* Shakti Peya hover image swap */
+.product-grid-image {
+    position: relative;
+}
+
+.product-grid-image .img-default,
+.product-grid-image .img-hover {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.product-grid-image .img-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+}
+
+.product-grid-image:hover .img-default {
+    opacity: 0;
+}
+
+.product-grid-image:hover .img-hover {
+    opacity: 1;
+}
+</style>
 </head>
 
 <body>
     <header class="main-header">
         <div class="container">
-            <a href="https://sampritibotanicals.com/#" class="logo">
-                <img src="./Botanicals &amp; Herbal Wellness_files/text_logo_color_big.png" alt="Sampriti Logo">
+            <a href="#" class="logo">
+                <img src="https://sampritibotanicals.com/assets/original/logo/text_logo_color_big.png" alt="Sampriti Logo">
 
             </a>
             <nav class="main-nav">
                 <ul>
-                    <li><a href="https://sampritibotanicals.com/shop">SHOP</a></li>
-                    <li><a href="https://sampritibotanicals.com/#about">THE HOUSE</a></li>
-                    <li><a href="https://sampritibotanicals.com/#materia-botanica">MATERIA BOTANICA</a></li>
-                    <li><a href="https://sampritibotanicals.com/blog">JOURNAL</a></li>
-                    <li><a href="https://sampritibotanicals.com/contact">PROVENANCE</a></li>
+                    <li><a href="#products">SHOP</a></li>
+                    <li><a href="#about">THE HOUSE</a></li>
+                    <li><a href="#materia-botanica">MATERIA BOTANICA</a></li>
+                    <li><a href="#blog-preview">JOURNAL</a></li>
+                    <li><a href="#subscribe">PROVENANCE</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,14 +1626,14 @@
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <video class="hero-video-bg" autoplay="" muted="" loop="" playsinline="">
-                <source src="assets/original/m.mp4" type="video/mp4">
+                <source src="https://sampritibotanicals.com/assets/original/m.mp4" type="video/mp4">
             </video>
             <div class="container">
                 <h6 class="hero-title hero-title-small">ROOTED IN </h6>
                 <h1 class="hero-title">LIVING HERBAL LINEAGES</h1>
                 <h6 class="hero-title hero-title-small"> A botanical house of ritual science and disciplined
                     formulation, guided by the quiet intelligence of the earth.</h6>
-                <a href="https://sampritibotanicals.com/#products" class="btn btn-primary">Discover the collection</a>
+                <a href="#products" class="btn btn-primary">Discover the collection</a>
             </div>
             <div class="hero-video-controls">
                 <button id="hero-play-pause" class="hero-ctrl-btn" aria-label="Pause video">
@@ -98,10 +1671,10 @@
 
                 <div class="products-grid">
                     <!-- Product 1: Shakti Peya -->
-                    <a class="product-grid-item" href="https://sampritibotanicals.com/shakti-peya">
+                    <a class="product-grid-item" href="#products">
                         <div class="product-grid-image">
-                            <img class="img-default" src="./Botanicals &amp; Herbal Wellness_files/shakthi.avif" alt="Shakti Peya - Energy Elixir">
-                            <img class="img-hover" src="./Botanicals &amp; Herbal Wellness_files/shakthi-hover.png" alt="Shakti Peya - Energy Elixir Hover">
+                            <img class="img-default" src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir">
+                            <img class="img-hover" src="https://sampritibotanicals.com/assets/images/shakthi-hover.png" alt="Shakti Peya - Energy Elixir Hover">
                         </div>
                         <h3>SHAKTI PEYA | Energy Elixir</h3>
                         <p>Activation ⋅ Anti-Aging ⋅ Radiance</p>
@@ -111,10 +1684,10 @@
                     </a>
 
                     <!-- Product 2: Chandra Rasa -->
-                    <a class="product-grid-item" href="https://sampritibotanicals.com/chandra-rasa">
+                    <a class="product-grid-item" href="#products">
                         <div class="product-grid-image">
-                            <img class="img-default" src="./Botanicals &amp; Herbal Wellness_files/chandra.avif" alt="Chandra Rasa - Sleep Potion">
-                            <img class="img-hover" src="./Botanicals &amp; Herbal Wellness_files/chandrai-hover.png" alt="Chandra Rasa - Sleep Potion Hover">
+                            <img class="img-default" src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion">
+                            <img class="img-hover" src="https://sampritibotanicals.com/assets/images/chandrai-hover.png" alt="Chandra Rasa - Sleep Potion Hover">
                         </div>
                         <h3>CHANDRA RASA | Sleep Potion</h3>
                         <p>Calm ⋅ Settling ⋅ Restorative</p>
@@ -137,7 +1710,7 @@
         <section id="about" class="about-section">
             <div class="about-split-layout">
                 <div class="about-image-side">
-                    <img src="./Botanicals &amp; Herbal Wellness_files/about.avif" alt="About Sampriti - Herbal Lineage">
+                    <img src="https://sampritibotanicals.com/assets/images/about.avif" alt="About Sampriti - Herbal Lineage">
                 </div>
                 <div class="about-content-side">
                     <div class="about-content-inner">
@@ -150,7 +1723,7 @@
                             vitality and balance through ritual and sustained practice.
                         </p>
                         <div style="margin-top: 30px;">
-                            <a href="https://sampritibotanicals.com/#" class="btn btn-view-more">Discover The House</a>
+                            <a href="#" class="btn btn-view-more">Discover The House</a>
                         </div>
 
 
@@ -194,7 +1767,7 @@
                     </div>
                 </div>
                 <div class="about-image-side">
-                    <img src="./Botanicals &amp; Herbal Wellness_files/phi.jpg" alt="Philosophy - Plants in Rhythm">
+                    <img src="https://sampritibotanicals.com/assets/images/phi.jpg" alt="Philosophy - Plants in Rhythm">
                 </div>
             </div>
         </section>
@@ -209,55 +1782,55 @@
                 <div class="standards-grid">
                     <div class="standard-item">
                         <div class="icon large">
-                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_ethically_sourced.png" alt="Ethically Sourced Icon">
+                            <img src="https://sampritibotanicals.com/assets/images/icons/icon_ethically_sourced.png" alt="Ethically Sourced Icon">
                         </div>
                         <p>Ethically Sourced</p>
                     </div>
                     <div class="standard-item">
                         <div class="icon">
-                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_clean_formulations.png" alt="Clean Formulations Icon">
+                            <img src="https://sampritibotanicals.com/assets/images/icons/icon_clean_formulations.png" alt="Clean Formulations Icon">
                         </div>
                         <p>Clean Formulations</p>
                     </div>
                     <div class="standard-item">
                         <div class="icon">
-                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_dosage_specific.png" alt="Dosage-Specific Icon">
+                            <img src="https://sampritibotanicals.com/assets/images/icons/icon_dosage_specific.png" alt="Dosage-Specific Icon">
                         </div>
                         <p>Dosage-Specific</p>
                     </div>
                     <div class="standard-item">
                         <div class="icon">
-                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_small_batch_crafted.png" alt="Small-Batch Crafted Icon">
+                            <img src="https://sampritibotanicals.com/assets/images/icons/icon_small_batch_crafted.png" alt="Small-Batch Crafted Icon">
                         </div>
                         <p>Small-Batch Crafted</p>
                     </div>
                     <div class="standard-item">
                         <div class="icon">
-                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_no_additives.png" alt="No Additives Icon">
+                            <img src="https://sampritibotanicals.com/assets/images/icons/icon_no_additives.png" alt="No Additives Icon">
                         </div>
                         <p>No Additives</p>
                     </div>
                     <div class="standard-item">
                         <div class="icon">
-                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_no_animal_testing.png" alt="No Animal Testing Icon">
+                            <img src="https://sampritibotanicals.com/assets/images/icons/icon_no_animal_testing.png" alt="No Animal Testing Icon">
                         </div>
                         <p>No Animal Testing</p>
                     </div>
                     <div class="standard-item">
                         <div class="icon large">
-                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_vegan.png" alt="Vegan Icon">
+                            <img src="https://sampritibotanicals.com/assets/images/icons/icon_vegan.png" alt="Vegan Icon">
                         </div>
                         <p>Vegan</p>
                     </div>
                     <div class="standard-item">
                         <div class="icon">
-                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_gluten_free.png" alt="Gluten Free Icon">
+                            <img src="https://sampritibotanicals.com/assets/images/icons/icon_gluten_free.png" alt="Gluten Free Icon">
                         </div>
                         <p>Gluten-Free</p>
                     </div>
                 </div>
                 <div class="text-center" style="margin-top: 40px;">
-                    <a href="https://sampritibotanicals.com/#" class="btn btn-view-more">Find Out More</a>
+                    <a href="#" class="btn btn-view-more">Find Out More</a>
                 </div>
             </div>
         </section>
@@ -266,7 +1839,7 @@
         <section id="ritual" class="about-section">
             <div class="about-split-layout">
                 <div class="about-image-side">
-                    <img src="./Botanicals &amp; Herbal Wellness_files/ritual.avif" alt="Rituals - The Discipline of Devotion">
+                    <img src="https://sampritibotanicals.com/assets/images/ritual.avif" alt="Rituals - The Discipline of Devotion">
                 </div>
                 <div class="about-content-side">
                     <div class="about-content-inner">
@@ -298,9 +1871,9 @@
                 <div class="blog-grid">
                     <!-- Blog Post 1 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="https://sampritibotanicals.com/blogs/hibiscus">
+                        <a class="blog-card-link" href="#blog-preview">
                             <div class="blog-card-image">
-                                <img src="./Botanicals &amp; Herbal Wellness_files/hibiscus.jpg" alt="The Crimson Catalyst: Hibiscus in Practice">
+                                <img src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg" alt="The Crimson Catalyst: Hibiscus in Practice">
                             </div>
                             <div class="blog-card-content">
                                 <span class="blog-category">Botanical Profile</span>
@@ -315,9 +1888,9 @@
 
                     <!-- Blog Post 2 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="https://sampritibotanicals.com/blogs/black-turmeric">
+                        <a class="blog-card-link" href="#blog-preview">
                             <div class="blog-card-image">
-                                <img src="./Botanicals &amp; Herbal Wellness_files/black-turmeric.png" alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery">
+                                <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery">
                             </div>
                             <div class="blog-card-content">
                                 <span class="blog-category">Siddha Wisdom</span>
@@ -332,9 +1905,9 @@
 
                     <!-- Blog Post 3 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="https://sampritibotanicals.com/blogs/chandra">
+                        <a class="blog-card-link" href="#blog-preview">
                             <div class="blog-card-image">
-                                <img src="./Botanicals &amp; Herbal Wellness_files/chandra.jpg" alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs">
+                                <img src="https://sampritibotanicals.com/assets/images/blog/chandra.jpg" alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs">
                             </div>
                             <div class="blog-card-content">
                                 <span class="blog-category">Moon Rhythms</span>
@@ -348,7 +1921,7 @@
                 </div>
 
                 <div class="text-center" style="margin-top: 40px;">
-                    <a class="btn btn-view-more" href="https://sampritibotanicals.com/blog">View More</a>
+                    <a class="btn btn-view-more" href="#blog-preview">View More</a>
                 </div>
             </div>
         </section>
@@ -357,7 +1930,7 @@
         <section id="subscribe" class="subscribe-section">
             <div class="subscribe-split-layout">
                 <div class="subscribe-image-side">
-                    <img src="./Botanicals &amp; Herbal Wellness_files/subscribe.jpg" alt="Subscribe to Sampriti Updates">
+                    <img src="https://sampritibotanicals.com/assets/images/subscribe.jpg" alt="Subscribe to Sampriti Updates">
                 </div>
                 <div class="subscribe-content-side">
                     <div class="subscribe-content-inner">
@@ -378,17 +1951,17 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <a href="https://sampritibotanicals.com/#" class="logo">
-                        <img src="./Botanicals &amp; Herbal Wellness_files/text_logo_color_big.png" alt="Sampriti" style="max-width: 150px;">
+                    <a href="#" class="logo">
+                        <img src="https://sampritibotanicals.com/assets/original/logo/text_logo_color_big.png" alt="Sampriti" style="max-width: 150px;">
 
                     </a>
                 </div>
                 <div class="footer-links">
-                    <a href="https://sampritibotanicals.com/shop">Shop</a>
-                    <a href="https://sampritibotanicals.com/#about">The House</a>
-                    <a href="https://sampritibotanicals.com/#materia-botanica">Materia Botanica</a>
-                    <a href="https://sampritibotanicals.com/blog">Journal</a>
-                    <a href="https://sampritibotanicals.com/contact">Provenance</a>
+                    <a href="#products">Shop</a>
+                    <a href="#about">The House</a>
+                    <a href="#materia-botanica">Materia Botanica</a>
+                    <a href="#blog-preview">Journal</a>
+                    <a href="#subscribe">Provenance</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -428,7 +2001,159 @@
             </form>
         </div>
     </div>
-    <script src="./Botanicals &amp; Herbal Wellness_files/script.js.download"></script>
+    <script>document.addEventListener('DOMContentLoaded', () => {
+    // --- Scroll-aware header ---
+    const mainHeader = document.querySelector('.main-header');
+    const heroSection = document.getElementById('hero');
+
+    // On pages without a hero section, always show the scrolled (solid) header
+    if (!heroSection) {
+        if (mainHeader) mainHeader.classList.add('scrolled');
+        document.body.classList.add('no-hero');
+    } else {
+        function updateHeader() {
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            const heroThreshold = heroSection.offsetHeight * 0.5;
+            if (heroBottom <= heroThreshold) {
+                mainHeader.classList.add('scrolled');
+            } else {
+                mainHeader.classList.remove('scrolled');
+            }
+        }
+
+        window.addEventListener('scroll', updateHeader, { passive: true });
+        updateHeader(); // run once on load
+
+        // --- Hover-aware header (mirrors scroll behaviour) ---
+        mainHeader.addEventListener('mouseenter', () => {
+            mainHeader.classList.add('scrolled');
+        });
+
+        mainHeader.addEventListener('mouseleave', () => {
+            // Only remove the class if scrolling hasn't already triggered it
+            const heroBottom = heroSection.getBoundingClientRect().bottom;
+            if (heroBottom > 0) {
+                mainHeader.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // --- Hero video controls ---
+    const heroVideo = document.querySelector('.hero-video-bg');
+    const playPauseBtn = document.getElementById('hero-play-pause');
+    const muteUnmuteBtn = document.getElementById('hero-mute-unmute');
+
+    if (heroVideo && playPauseBtn) {
+        playPauseBtn.addEventListener('click', () => {
+            if (heroVideo.paused) {
+                heroVideo.play();
+                playPauseBtn.querySelector('.icon-pause').style.display = '';
+                playPauseBtn.querySelector('.icon-play').style.display = 'none';
+                playPauseBtn.setAttribute('aria-label', 'Pause video');
+            } else {
+                heroVideo.pause();
+                playPauseBtn.querySelector('.icon-pause').style.display = 'none';
+                playPauseBtn.querySelector('.icon-play').style.display = '';
+                playPauseBtn.setAttribute('aria-label', 'Play video');
+            }
+        });
+    }
+
+    if (heroVideo && muteUnmuteBtn) {
+        muteUnmuteBtn.addEventListener('click', () => {
+            heroVideo.muted = !heroVideo.muted;
+            muteUnmuteBtn.querySelector('.icon-muted').style.display = heroVideo.muted ? '' : 'none';
+            muteUnmuteBtn.querySelector('.icon-unmuted').style.display = heroVideo.muted ? 'none' : '';
+            muteUnmuteBtn.setAttribute('aria-label', heroVideo.muted ? 'Unmute video' : 'Mute video');
+        });
+    }
 
 
+    // --- Configuration ---
+    // REPLACE THIS URL with your own Google Apps Script Web App URL after deployment
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyi0XkQU-k0nZgoTR20CPEIDk4d2jLkAbyQzw7jQ3_w9lzq-zh09kfpGeyMZLswW0ds_g/exec';
+
+    // --- Elements ---
+    const modal = document.getElementById('buy-modal');
+    const closeBtn = document.querySelector('.close-modal');
+    const buyBtns = document.querySelectorAll('.buy-now-btn');
+    const buyForm = document.getElementById('buy-form');
+    const modalProductName = document.getElementById('modal-product-name');
+    const hiddenProductName = document.getElementById('product-name');
+
+    // --- Event Listeners ---
+
+    // Open Modal
+    buyBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const product = btn.getAttribute('data-product');
+            modalProductName.textContent = `Ordering: ${product}`;
+            hiddenProductName.value = product;
+            modal.style.display = 'block';
+        });
+    });
+
+    // Close Modal
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // Close if clicked outside
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+
+    // Form Submission
+    buyForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        // 1. Collect Data
+        const formData = new FormData(buyForm);
+        const data = Object.fromEntries(formData.entries());
+
+        // Basic visual feedback
+        const submitBtn = buyForm.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Processing...';
+        submitBtn.disabled = true;
+
+        if (GOOGLE_SCRIPT_URL === 'YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE') {
+            alert('Please update the GOOGLE_SCRIPT_URL in script.js with your deployed Web App URL.');
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+            return;
+        }
+
+        // 2. Send to Google Apps Script
+        // We use 'no-cors' needed for simple HTML forms posting to GAS usually, 
+        // but for JSON fetch we need CORS handling in GAS. 
+        // A simple way is using URL parameters or JSON body.
+        // Let's use simple JSON body.
+
+        fetch(GOOGLE_SCRIPT_URL, {
+            method: 'POST',
+            body: JSON.stringify(data),
+            // headers: { "Content-Type": "text/plain;charset=utf-8" }, // Avoids preflight
+        })
+            .then(response => {
+                // With no-cors we can't see the response text, but we assume success if no network error.
+                // However, to get a proper response we'd need the script to return JSON and proper headers.
+                // For simplicity, let's assume if it doesn't throw, it reached.
+                alert('Order successfully placed! We will contact you shortly.');
+                buyForm.reset();
+                modal.style.display = 'none';
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem placing your order. Please try again.');
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+    });
+});
+</script>
 </body></html>

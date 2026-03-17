@@ -772,31 +772,12 @@ body.no-hero>main {
 .main-footer {
     background-color: #252525;
     color: white;
-    padding: 0 0 var(--spacing-md);
+    padding: var(--spacing-xl) 0 var(--spacing-md);
     margin-top: 100px;
     font-size: 0.9rem;
 }
 
-.footer-banner {
-    background-color: #1a1a1a;
-    padding: 15px 0;
-    margin-bottom: var(--spacing-lg);
-}
 
-.footer-banner .container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 15px;
-    text-align: center;
-}
-
-.footer-banner span {
-    font-family: var(--font-heading);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    font-size: 0.85rem;
-}
 
 .footer-grid {
     display: grid;
@@ -905,6 +886,7 @@ body.no-hero>main {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    text-align: left;
 }
 
 .footer-bottom-info p {
@@ -1316,7 +1298,7 @@ body.no-hero>main {
 /* Product Grid Styles (Homepage) */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-md);
 }
@@ -1343,7 +1325,7 @@ body.no-hero>main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: transparent;
 }
 
 .product-grid-image img {
@@ -1386,13 +1368,29 @@ body.no-hero>main {
     margin-top: var(--spacing-md);
 }
 
+.product-detail-image {
+    overflow: hidden;
+    position: relative;
+}
+
 .product-detail-image img {
     width: 100%;
     height: auto;
     max-height: 600px;
     object-fit: contain;
-    background-color: #fff;
-    border: 1px solid #eee;
+    background-color: transparent;
+    border: none;
+    transition: transform 0.5s ease;
+}
+
+@media (hover: hover) {
+    .product-detail-image:hover img {
+        transform: scale(1.05);
+    }
+}
+
+.product-detail-info {
+    min-width: 0;
 }
 
 .product-detail-info h1 {
@@ -1420,6 +1418,58 @@ body.no-hero>main {
     font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-light);
+}
+
+.product-accordion {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border-top: 1px solid #eee;
+}
+
+.accordion-item {
+    border-bottom: 1px solid #eee;
+}
+
+.accordion-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    background: none;
+    border: none;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordion-header:hover {
+    color: var(--primary-color-1);
+}
+
+.accordion-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.accordion-item.active .accordion-content {
+    padding-bottom: 15px;
+    max-height: 500px; /* Arbitrary large number */
 }
 
 .back-link {
@@ -1479,8 +1529,8 @@ body.no-hero>main {
 
 @media (max-width: 768px) {
     #product-view {
-        padding-top: 80px !important;
-        padding-bottom: 100px !important; /* Space for sticky button */
+        padding-top: 100px !important;
+        padding-bottom: 40px !important;
     }
     .product-detail-grid {
         grid-template-columns: 1fr;
@@ -1488,22 +1538,20 @@ body.no-hero>main {
         margin-top: 0;
     }
     .product-detail-image {
-        margin-left: calc(-1 * var(--spacing-md));
-        margin-right: calc(-1 * var(--spacing-md));
         margin-bottom: 25px;
-        background-color: #f8f8f8;
-        padding: 20px 0;
+        background-color: transparent;
+        padding: 0;
     }
     .product-detail-image img {
-        max-height: 380px;
+        max-height: 300px;
         width: 100%;
         object-fit: contain;
         background-color: transparent;
         border: none;
     }
     .product-detail-info h1 {
-        font-size: 2.2rem;
-        line-height: 1.1;
+        font-size: 1.8rem;
+        line-height: 1.2;
         margin-bottom: 8px;
         letter-spacing: -0.5px;
     }
@@ -1523,19 +1571,6 @@ body.no-hero>main {
         font-size: 1.05rem;
         line-height: 1.6;
         margin-bottom: 30px;
-    }
-    .product-detail-info .buy-now-btn {
-        position: fixed;
-        bottom: 20px;
-        left: var(--spacing-md);
-        width: calc(100% - (var(--spacing-md) * 2));
-        z-index: 100;
-        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
-        padding: 16px;
-        font-size: 1.15rem;
-        margin-bottom: 0;
-        border-radius: 30px;
-        transition: transform 0.2s ease, background-color 0.2s ease;
     }
     .product-tabs {
         flex-wrap: nowrap;
@@ -1601,6 +1636,7 @@ body.no-hero>main {
     gap: 20px;
     margin-bottom: 20px;
     border-bottom: 1px solid #eee;
+    max-width: 100vw;
 }
 
 .product-tab {
@@ -1639,6 +1675,7 @@ body.no-hero>main {
     overflow-x: auto;
     padding-bottom: 20px;
     scrollbar-width: thin;
+    max-width: 100vw;
 }
 
 .horizontal-scroll::-webkit-scrollbar {
@@ -1666,8 +1703,8 @@ body.no-hero>main {
     height: 250px;
     object-fit: cover;
     margin-bottom: 10px;
-    background-color: #fff;
-    border: 1px solid #eee;
+    background-color: transparent;
+    border: none;
 }
 
 .mini-product-card h4 {
@@ -1714,7 +1751,7 @@ body.no-hero>main {
 /* Blog Styles */
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-md);
 }
@@ -2177,27 +2214,24 @@ body.no-hero>main {
     }
 
     /* Footer */
-    .footer-banner .container {
-        flex-direction: column;
-        gap: 10px;
-    }
+
     .footer-grid {
         grid-template-columns: 1fr !important;
         gap: 30px !important;
-        text-align: center;
+        text-align: left;
     }
     .footer-col h3 {
         margin-bottom: 15px !important;
     }
     .footer-subscribe-form .btn {
-        align-self: center !important;
+        align-self: flex-start !important;
         width: 100%;
     }
     .footer-bottom-new {
-        text-align: center;
+        text-align: left;
     }
     .footer-bottom-links {
-        justify-content: center;
+        justify-content: flex-start;
     }
 }
 </style>
@@ -2574,9 +2608,39 @@ body.no-hero>main {
                             <p class="price">$33</p>
                             <div class="product-description-full">
                                 <p>A potent blend of adaptogens and revitalizing herbs designed to awaken the body's natural energy reserves. Formulated with ethically sourced botanicals to promote sustained vitality without the crash.</p>
-                                <p><strong>Kit Includes:</strong> 9 Test Tubes</p>
                             </div>
                             <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA">Add to cart</button>
+                            
+                            <div class="product-accordion">
+                                <div class="accordion-item active">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Ingredients</span>
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Ashwagandha, Shatavari, Brahmi, Tulsi, Rose Petals, Cardamom.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>How to Use</span>
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Mix one test tube with hot water or milk of choice. Stir well and enjoy.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Specifications</span>
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p><strong>Kit Includes:</strong> 9 Test Tubes</p>
+                                        <p><strong>Net Weight:</strong> 45g</p>
+                                    </div>
+                                </div>
+                            </div>
                             
                             <div class="recommendations-section">
                                 <div class="product-tabs">
@@ -2647,9 +2711,39 @@ body.no-hero>main {
                             <p class="price">$33</p>
                             <div class="product-description-full">
                                 <p>A calming nocturnal infusion crafted to settle the nervous system and prepare the mind for deep, restorative sleep. Blends traditional nervines to ease tension and invite tranquility.</p>
-                                <p><strong>Kit Includes:</strong> 9 Test Tubes</p>
                             </div>
                             <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA">Add to cart</button>
+                            
+                            <div class="product-accordion">
+                                <div class="accordion-item active">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Ingredients</span>
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Chamomile, Lavender, Valerian Root, Passionflower, Nutmeg.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>How to Use</span>
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p>Mix one test tube with warm milk or water 30 minutes before bed.</p>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <button class="accordion-header" onclick="toggleAccordion(this)">
+                                        <span>Specifications</span>
+                                        <span class="accordion-icon">+</span>
+                                    </button>
+                                    <div class="accordion-content">
+                                        <p><strong>Kit Includes:</strong> 9 Test Tubes</p>
+                                        <p><strong>Net Weight:</strong> 45g</p>
+                                    </div>
+                                </div>
+                            </div>
                             
                             <div class="recommendations-section">
                                 <div class="product-tabs">
@@ -2713,13 +2807,6 @@ body.no-hero>main {
     </main>
 
     <footer class="main-footer">
-        <div class="footer-banner">
-            <div class="container">
-                <span>Secure checkout</span>
-                <span>Complimentary samples</span>
-                <span>Complimentary gift wrapping</span>
-            </div>
-        </div>
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col subscribe-col">
@@ -2979,6 +3066,20 @@ body.no-hero>main {
         btn.classList.add('active');
         section.querySelectorAll('.product-tab-content').forEach(c => c.classList.remove('active'));
         document.getElementById(targetId).classList.add('active');
+    };
+
+    window.toggleAccordion = function(btn) {
+        const item = btn.closest('.accordion-item');
+        const isActive = item.classList.contains('active');
+        
+        // Close all accordions in this group
+        const group = btn.closest('.product-accordion');
+        group.querySelectorAll('.accordion-item').forEach(el => el.classList.remove('active'));
+        
+        // Toggle the clicked one
+        if (!isActive) {
+            item.classList.add('active');
+        }
     };
 
     document.querySelectorAll('.main-nav a, .footer-links a, .logo').forEach(link => {

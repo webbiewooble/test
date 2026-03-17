@@ -1,1129 +1,434 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
+<!-- saved from url=(0031)https://sampritibotanicals.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aaranya | Modern Indian Lifestyle</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        brand: {
-                            50: '#f2f7f5',
-                            100: '#e1efe9',
-                            200: '#c4dfd4',
-                            300: '#9bc6b7',
-                            400: '#6ba794',
-                            500: '#4b8b78',
-                            600: '#3a6f60',
-                            700: '#31594e',
-                            800: '#294841',
-                            900: '#1a2e25', // Deep Forest Green
-                        },
-                        accent: {
-                            DEFAULT: '#D97706', // Warm Marigold/Gold
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body { background-color: #FDFBF7; color: #1a2e25; }
-        .cart-transition { transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
-        .overlay-transition { transition: opacity 0.4s ease; }
-        .nav-transition { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
-        .glass-nav { background: rgba(253, 251, 247, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid rgba(26, 46, 37, 0.05); }
-        
-        /* Hide scrollbar for cart */
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    <title>Botanicals &amp; Herbal Wellness</title>
+    <link rel="icon" type="image/png" href="https://sampritibotanicals.com/assets/images/logo-trans.png">
 
-        /* Custom Selection */
-        ::selection { background-color: #c4dfd4; color: #1a2e25; }
-    </style>
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Sampriti - Rooted in India&#39;s living herbal lineages. Discover our botanical formulations: Shakti Peya, Chandra Rasa, and Shotharaha.">
+    <meta name="keywords" content="Herbal, Ayurveda, India, Botanicals, Tea, Wellness, Sampriti, Sampriti Botanicals">
+    <meta name="author" content="Sampriti Botanicals">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://sampritibotanicals.com/">
+    <meta property="og:title" content="Botanicals &amp; Herbal Wellness">
+    <meta property="og:description" content="Rooted in India&#39;s living herbal lineages. Sampriti arises from a continuum of deep botanical understanding.">
+    <meta property="og:image" content="http://sampritibotanicals.com/assets/images/brand2.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://sampritibotanicals.com/">
+    <meta property="twitter:title" content="Botanicals &amp; Herbal Wellness">
+    <meta property="twitter:description" content="Rooted in India&#39;s living herbal lineages. Sampriti arises from a continuum of deep botanical understanding.">
+    <meta property="twitter:image" content="http://sampritibotanicals.com/assets/images/brand2.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Botanicals &amp; Herbal Wellness_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./Botanicals &amp; Herbal Wellness_files/style.css">
 </head>
-<body class="font-sans antialiased overflow-x-hidden">
 
-    <!-- Announcement Bar -->
-    <div class="bg-brand-900 text-brand-50 text-xs md:text-sm text-center py-2.5 font-medium tracking-wide relative z-40">
-        ✨ Free Pan-India Delivery on orders above ₹999 | Cash on Delivery Only ✨
-    </div>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <a href="https://sampritibotanicals.com/#" class="logo">
+                <img src="./Botanicals &amp; Herbal Wellness_files/text_logo_color_big.png" alt="Sampriti Logo">
 
-    <!-- Navigation -->
-    <nav id="navbar" class="sticky top-0 w-full z-30 nav-transition bg-transparent py-5">
-        <div class="max-w-7xl mx-auto px-4 flex items-center justify-between">
-            <div class="flex items-center gap-6">
-                <button onclick="toggleMobileMenu(true)" class="lg:hidden p-2 -ml-2 text-brand-900 hover:bg-brand-100/50 rounded-full transition-colors" aria-label="Toggle menu">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-                <div class="hidden lg:flex gap-8 text-sm font-medium tracking-widest uppercase">
-                    <a href="#" onclick="navigateTo('home')" class="hover:text-accent transition-colors">Shop</a>
-                    <a href="#" onclick="navigateTo('about')" class="hover:text-accent transition-colors">Our Story</a>
-                </div>
-            </div>
-            
-            <a href="#" onclick="navigateTo('home')" class="font-serif text-3xl tracking-tight absolute left-1/2 -translate-x-1/2 cursor-pointer text-brand-900">
-                Aaranya.
             </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="https://sampritibotanicals.com/shop">SHOP</a></li>
+                    <li><a href="https://sampritibotanicals.com/#about">THE HOUSE</a></li>
+                    <li><a href="https://sampritibotanicals.com/#materia-botanica">MATERIA BOTANICA</a></li>
+                    <li><a href="https://sampritibotanicals.com/blog">JOURNAL</a></li>
+                    <li><a href="https://sampritibotanicals.com/contact">PROVENANCE</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <div class="flex items-center gap-4">
-                <button onclick="toggleSearch(true)" class="p-2 text-brand-900 hover:bg-brand-100/50 rounded-full transition-colors" aria-label="Search">
-                    <i data-lucide="search" class="w-5 h-5"></i>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <video class="hero-video-bg" autoplay="" muted="" loop="" playsinline="">
+                <source src="assets/original/m.mp4" type="video/mp4">
+            </video>
+            <div class="container">
+                <h6 class="hero-title hero-title-small">ROOTED IN </h6>
+                <h1 class="hero-title">LIVING HERBAL LINEAGES</h1>
+                <h6 class="hero-title hero-title-small"> A botanical house of ritual science and disciplined
+                    formulation, guided by the quiet intelligence of the earth.</h6>
+                <a href="https://sampritibotanicals.com/#products" class="btn btn-primary">Discover the collection</a>
+            </div>
+            <div class="hero-video-controls">
+                <button id="hero-play-pause" class="hero-ctrl-btn" aria-label="Pause video">
+                    <!-- Pause icon (shown when playing) -->
+                    <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                    <!-- Play icon (shown when paused) -->
+                    <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                        <polygon points="5,3 19,12 5,21"></polygon>
+                    </svg>
                 </button>
-                <button onclick="toggleCart(true)" class="p-2 text-brand-900 hover:bg-brand-100/50 rounded-full transition-colors relative group" aria-label="Open cart">
-                    <i data-lucide="shopping-bag" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
-                    <span id="cart-badge" class="hidden absolute top-0 right-0 bg-accent text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center shadow-sm">0</span>
+                <button id="hero-mute-unmute" class="hero-ctrl-btn" aria-label="Unmute video">
+                    <!-- Mute icon (shown when muted) -->
+                    <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z" opacity=".3"></path>
+                        <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"></line>
+                    </svg>
+                    <!-- Unmute icon (shown when unmuted) -->
+                    <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                        <path d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z"></path>
+                    </svg>
                 </button>
             </div>
-        </div>
-    </nav>
+        </section>
+        <!-- Products Section -->
+        <section id="products" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Signature Rituals</span>
+                    <p>A collection of precisely composed formulations honoring the body’s essential cycles: activation
+                        and restoration. </p>
+                </div>
 
-    <!-- VIEWS CONTAINER -->
-    <div id="views-container">
-        
-        <!-- HOME VIEW -->
-        <div id="view-home" class="page-view block">
-            <!-- Hero Section -->
-            <header class="relative h-[80vh] w-full bg-brand-900 overflow-hidden mx-auto max-w-[98%] mt-2 rounded-3xl">
-                <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80" alt="Modern Indian Lifestyle" class="absolute inset-0 w-full h-full object-cover opacity-80 mix-blend-overlay" referrerpolicy="no-referrer" />
-                <div class="absolute inset-0 bg-gradient-to-t from-brand-900/90 via-brand-900/40 to-transparent"></div>
-                <div class="absolute inset-0 flex items-center justify-center text-center px-4 mt-16">
-                    <div class="max-w-3xl text-brand-50">
-                        <p class="text-accent font-medium tracking-[0.2em] uppercase text-sm mb-6">Designed for India</p>
-                        <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl mb-6 tracking-tight leading-tight">Elevate Your<br>Everyday.</h1>
-                        <p class="text-lg md:text-xl font-light mb-10 opacity-90 max-w-xl mx-auto">
-                            Curated modern essentials blending global innovation with the Indian lifestyle.
+                <div class="products-grid">
+                    <!-- Product 1: Shakti Peya -->
+                    <a class="product-grid-item" href="https://sampritibotanicals.com/shakti-peya">
+                        <div class="product-grid-image">
+                            <img class="img-default" src="./Botanicals &amp; Herbal Wellness_files/shakthi.avif" alt="Shakti Peya - Energy Elixir">
+                            <img class="img-hover" src="./Botanicals &amp; Herbal Wellness_files/shakthi-hover.png" alt="Shakti Peya - Energy Elixir Hover">
+                        </div>
+                        <h3>SHAKTI PEYA | Energy Elixir</h3>
+                        <p>Activation ⋅ Anti-Aging ⋅ Radiance</p>
+                        <p>9 Test Tube Kit</p>
+                        <p>$33</p>
+                        <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA">Add to cart</button>
+                    </a>
+
+                    <!-- Product 2: Chandra Rasa -->
+                    <a class="product-grid-item" href="https://sampritibotanicals.com/chandra-rasa">
+                        <div class="product-grid-image">
+                            <img class="img-default" src="./Botanicals &amp; Herbal Wellness_files/chandra.avif" alt="Chandra Rasa - Sleep Potion">
+                            <img class="img-hover" src="./Botanicals &amp; Herbal Wellness_files/chandrai-hover.png" alt="Chandra Rasa - Sleep Potion Hover">
+                        </div>
+                        <h3>CHANDRA RASA | Sleep Potion</h3>
+                        <p>Calm ⋅ Settling ⋅ Restorative</p>
+                        <p>9 Test Tube Kit</p>
+
+                        <p>$33</p>
+                        <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA">Add to cart</button>
+                    </a>
+
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+        <!-- About Section -->
+        <section id="about" class="about-section">
+            <div class="about-split-layout">
+                <div class="about-image-side">
+                    <img src="./Botanicals &amp; Herbal Wellness_files/about.avif" alt="About Sampriti - Herbal Lineage">
+                </div>
+                <div class="about-content-side">
+                    <div class="about-content-inner">
+                        <span class="eyebrow">The Intelligence of Ancient Botanicals</span>
+
+                        <p>
+                            Emerging from India’s diverse herbal traditions and regional pharmacopoeias, our
+                            formulations draw from centuries of botanical wisdom practiced,and perfected across
+                            generations. Each blend honours the intelligence of classical herbal alchemy, cultivating
+                            vitality and balance through ritual and sustained practice.
                         </p>
-                        <button onclick="document.getElementById('product-grid').scrollIntoView({behavior: 'smooth', block: 'start'})" class="bg-brand-50 text-brand-900 px-10 py-4 rounded-full font-medium tracking-wide hover:bg-white hover:scale-105 transition-all duration-300 shadow-xl">
-                            Explore Collection
-                        </button>
-                    </div>
-                </div>
-            </header>
-
-            <!-- Features (Bento Grid Style) -->
-            <section class="py-20 px-4 max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="bg-brand-50 rounded-3xl p-8 flex flex-col items-start justify-center border border-brand-100 hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-brand-900 text-brand-50 rounded-full flex items-center justify-center mb-6">
-                            <i data-lucide="map-pin" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl mb-2">Pan-India Delivery</h3>
-                        <p class="text-brand-700 text-sm leading-relaxed">Fast, reliable shipping from Kashmir to Kanyakumari. Free on orders above ₹999.</p>
-                    </div>
-                    <div class="bg-brand-900 text-brand-50 rounded-3xl p-8 flex flex-col items-start justify-center shadow-xl transform md:-translate-y-4">
-                        <div class="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center mb-6">
-                            <i data-lucide="banknote" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl mb-2">Cash on Delivery</h3>
-                        <p class="text-brand-200 text-sm leading-relaxed">Pay conveniently at your doorstep. We currently accept Cash on Delivery for all orders across India.</p>
-                    </div>
-                    <div class="bg-brand-50 rounded-3xl p-8 flex flex-col items-start justify-center border border-brand-100 hover:shadow-lg transition-shadow">
-                        <div class="w-12 h-12 bg-brand-900 text-brand-50 rounded-full flex items-center justify-center mb-6">
-                            <i data-lucide="shield-check" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="font-serif text-2xl mb-2">Premium Quality</h3>
-                        <p class="text-brand-700 text-sm leading-relaxed">Every product is rigorously tested to withstand the dynamic Indian environment.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Product Grid -->
-            <main class="max-w-7xl mx-auto px-4 py-12 mb-20">
-                <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-4">
-                    <div>
-                        <h2 class="font-serif text-4xl md:text-5xl mb-3 text-brand-900">Trending Now</h2>
-                        <p class="text-brand-600 text-lg">Smart solutions for the modern Indian home.</p>
-                    </div>
-                    <button class="flex items-center gap-2 text-brand-900 font-medium hover:text-accent transition-colors pb-1 border-b border-brand-900 hover:border-accent">
-                        View All <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </button>
-                </div>
-
-                <div id="product-grid" class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-x-4 gap-y-8 sm:gap-x-6 sm:gap-y-12">
-                    <!-- Products injected here by JS -->
-                </div>
-            </main>
-
-            <!-- Newsletter -->
-            <section class="bg-brand-900 py-24 my-12 mx-auto max-w-[98%] rounded-3xl relative overflow-hidden">
-                <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-                <div class="max-w-2xl mx-auto px-4 text-center relative z-10">
-                    <h2 class="font-serif text-4xl md:text-5xl mb-4 text-brand-50">Join the Aaranya Family</h2>
-                    <p class="text-brand-200 mb-10 text-lg">Get ₹50 off your first order. Subscribe for exclusive festive offers and new drops.</p>
-                    <form class="flex flex-col sm:flex-row gap-3" onsubmit="event.preventDefault()">
-                        <input type="email" aria-label="Email address for newsletter" placeholder="Enter your email address" class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-brand-200 focus:ring-2 focus:ring-accent outline-none backdrop-blur-sm" required>
-                        <button type="submit" class="px-10 py-4 rounded-full bg-accent text-white font-medium hover:bg-amber-500 transition-colors shadow-lg">
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
-            </section>
-        </div>
-
-        <!-- ABOUT US VIEW -->
-        <div id="view-about" class="page-view hidden pt-32 pb-24 max-w-4xl mx-auto px-4 min-h-screen">
-            <div class="text-center mb-16">
-                <p class="text-accent font-medium tracking-[0.2em] uppercase text-sm mb-4">Our Story</p>
-                <h1 class="font-serif text-5xl md:text-6xl text-brand-900">Rooted in India.<br>Designed for the World.</h1>
-            </div>
-            <img src="https://images.unsplash.com/photo-1555529771-835f59fc5efe?auto=format&fit=crop&q=80" alt="Our Team" class="w-full h-80 object-cover rounded-3xl mb-12 shadow-xl" referrerpolicy="no-referrer" />
-            <div class="prose prose-lg max-w-none text-brand-700 space-y-8 leading-relaxed font-light">
-                <p><strong class="font-medium text-brand-900">Aaranya</strong> (meaning 'Forest' in Sanskrit) was born out of a simple observation: the modern Indian lifestyle is evolving rapidly, yet finding high-quality, reliable everyday gadgets remains a challenge.</p>
-                <p>We started our journey in Bengaluru with a mission to bridge this gap. From navigating dusty commutes (hello, Portable Car Vacuum!) to finding peace in a chaotic day (Yoga Puller Peddler), we curate products that genuinely solve problems for the Indian consumer.</p>
-                <p>We believe in the power of good design and uncompromising quality. Every product in our catalog goes through rigorous testing to ensure it meets the demands of our diverse climate and dynamic lifestyles. We are proudly Indian, and we are committed to providing a seamless, premium shopping experience from the moment you land on our site to the moment your package arrives at your doorstep.</p>
-                <p class="text-xl font-serif text-brand-900 text-center pt-8 border-t border-brand-200">Thank you for letting us be a part of your daily life.</p>
-            </div>
-        </div>
-
-        <!-- TERMS VIEW -->
-        <div id="view-terms" class="page-view hidden pt-32 pb-24 max-w-3xl mx-auto px-4 min-h-screen">
-            <h1 class="font-serif text-4xl md:text-5xl mb-10 text-brand-900 border-b border-brand-200 pb-6">Terms & Conditions</h1>
-            <div class="prose max-w-none text-brand-700 space-y-8">
-                <div>
-                    <h3 class="text-2xl font-serif text-brand-900 mb-3">1. Introduction</h3>
-                    <p>Welcome to Aaranya. These terms and conditions outline the rules and regulations for the use of our website, operated from India. By accessing this website, we assume you accept these terms and conditions in full.</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-serif text-brand-900 mb-3">2. Pricing and Payments</h3>
-                    <p>All prices are listed in Indian Rupees (₹) and are inclusive of GST. We currently only accept Cash on Delivery (COD) for all eligible pin codes across India.</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-serif text-brand-900 mb-3">3. Shipping and Delivery</h3>
-                    <p>We partner with premium courier services (BlueDart, Delhivery, etc.) to ensure pan-India delivery. Standard delivery takes 3-5 business days. Delays due to regional holidays, weather conditions, or unforeseen circumstances are beyond our control.</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-serif text-brand-900 mb-3">4. Governing Law</h3>
-                    <p>These terms and conditions are governed by and construed in accordance with the laws of India. Any disputes relating to these terms and conditions will be subject to the exclusive jurisdiction of the courts of Bengaluru, Karnataka.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- PRIVACY VIEW -->
-        <div id="view-privacy" class="page-view hidden pt-32 pb-24 max-w-3xl mx-auto px-4 min-h-screen">
-            <h1 class="font-serif text-4xl md:text-5xl mb-10 text-brand-900 border-b border-brand-200 pb-6">Privacy Policy</h1>
-            <div class="prose max-w-none text-brand-700 space-y-8">
-                <div>
-                    <h3 class="text-2xl font-serif text-brand-900 mb-3">1. Information We Collect</h3>
-                    <p>We collect personal information that you voluntarily provide to us when you register, place an order, or contact us. This includes your name, email address, phone number, shipping address, and payment details. We comply with the Information Technology Act, 2000 and applicable Indian data protection laws.</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-serif text-brand-900 mb-3">2. How We Use Your Information</h3>
-                    <p>Your information is used strictly to process your orders, provide customer support, and send you updates regarding your purchase. With your consent, we may send promotional offers via email or SMS.</p>
-                </div>
-                <div>
-                    <h3 class="text-2xl font-serif text-brand-900 mb-3">3. Data Security</h3>
-                    <p>We implement robust security measures, including SSL encryption and secure payment gateways (like Razorpay/PayU), to protect your personal and financial information. We do not store your complete credit card details on our servers.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- PRODUCT VIEW -->
-        <div id="view-product" class="page-view hidden pt-32 pb-24 max-w-7xl mx-auto px-4 min-h-screen">
-            <button onclick="navigateTo('home')" class="flex items-center gap-2 text-brand-600 hover:text-brand-900 transition-colors mb-8 font-medium">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Shop
-            </button>
-            <div id="product-detail-container" class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Product details injected here by JS -->
-            </div>
-            
-            <!-- Suggested Products Section -->
-            <div id="suggested-products-container" class="mt-24 border-t border-brand-100 pt-16">
-                <!-- Suggested products injected here -->
-            </div>
-
-            <!-- Reviews Section -->
-            <div id="product-reviews-container" class="mt-24 border-t border-brand-100 pt-16">
-                <!-- Reviews injected here -->
-            </div>
-        </div>
-
-        <!-- CHECKOUT VIEW -->
-        <div id="view-checkout" class="page-view hidden pt-32 pb-24 max-w-7xl mx-auto px-4 min-h-screen">
-            <button onclick="navigateTo('home')" class="flex items-center gap-2 text-brand-600 hover:text-brand-900 transition-colors mb-8 font-medium">
-                <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Shop
-            </button>
-            
-            <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-12">
-                <!-- Left Column: Form -->
-                <div class="lg:col-span-7 space-y-8">
-                    <form id="checkout-form" onsubmit="submitOrder(event)" class="space-y-8">
-                        <input type="hidden" name="product" id="checkout-form-product">
-                        <input type="hidden" name="quantity" id="checkout-form-quantity">
-                        <input type="hidden" name="amount" id="checkout-form-amount">
-                        <input type="hidden" name="paymentMethod" value="Cash on Delivery">
-                        <input type="hidden" name="date" id="checkout-form-date">
-
-                        <!-- Customer Info -->
-                        <div class="bg-white p-6 rounded-3xl border border-brand-100 shadow-sm">
-                            <h3 class="font-serif text-2xl text-brand-900 mb-6">1. Customer Information</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="md:col-span-2">
-                                    <label for="fullName" class="block text-sm font-medium text-brand-700 mb-1">Full Name *</label>
-                                    <input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label for="phone" class="block text-sm font-medium text-brand-700 mb-1">Phone Number *</label>
-                                    <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit mobile number" class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-brand-700 mb-1">Email Address</label>
-                                    <input type="email" id="email" name="email" placeholder="Optional" class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                            </div>
+                        <div style="margin-top: 30px;">
+                            <a href="https://sampritibotanicals.com/#" class="btn btn-view-more">Discover The House</a>
                         </div>
 
-                        <!-- Shipping Address -->
-                        <div class="bg-white p-6 rounded-3xl border border-brand-100 shadow-sm">
-                            <h3 class="font-serif text-2xl text-brand-900 mb-6">2. Shipping Address</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div class="md:col-span-2">
-                                    <label for="address" class="block text-sm font-medium text-brand-700 mb-1">House / Flat / Building Number *</label>
-                                    <input type="text" id="address" name="address" required class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                                <div class="md:col-span-2">
-                                    <label for="street" class="block text-sm font-medium text-brand-700 mb-1">Street / Area *</label>
-                                    <input type="text" id="street" name="street" required class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label for="city" class="block text-sm font-medium text-brand-700 mb-1">City *</label>
-                                    <input type="text" id="city" name="city" required class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label for="state" class="block text-sm font-medium text-brand-700 mb-1">State *</label>
-                                    <input type="text" id="state" name="state" required class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label for="pincode" class="block text-sm font-medium text-brand-700 mb-1">Postal Code (PIN) *</label>
-                                    <input type="text" id="pincode" name="pincode" required pattern="[0-9]{6}" class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                                <div>
-                                    <label for="country" class="block text-sm font-medium text-brand-700 mb-1">Country</label>
-                                    <input type="text" id="country" name="country" value="India" readonly class="w-full px-4 py-3 rounded-xl border border-brand-200 bg-brand-50 text-brand-500 outline-none">
-                                </div>
-                                <div class="md:col-span-2">
-                                    <label for="landmark" class="block text-sm font-medium text-brand-700 mb-1">Landmark (Optional)</label>
-                                    <input type="text" id="landmark" name="landmark" class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all">
-                                </div>
-                                <div class="md:col-span-2">
-                                    <label for="instructions" class="block text-sm font-medium text-brand-700 mb-1">Delivery Instructions (Optional)</label>
-                                    <textarea id="instructions" name="instructions" rows="2" class="w-full px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all"></textarea>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Payment Method -->
-                        <div class="bg-white p-6 rounded-3xl border border-brand-100 shadow-sm">
-                            <h3 class="font-serif text-2xl text-brand-900 mb-6">3. Payment Method</h3>
-                            <div class="border-2 border-brand-900 bg-brand-50 rounded-xl p-4 flex items-start gap-3">
-                                <div class="mt-1">
-                                    <i data-lucide="check-circle-2" class="w-5 h-5 text-brand-900 fill-brand-900/20"></i>
-                                </div>
-                                <div>
-                                    <p class="font-medium text-brand-900">Cash on Delivery (COD)</p>
-                                    <p class="text-sm text-brand-600 mt-1">Pay in cash when your order is delivered to your doorstep.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <button type="submit" class="w-full bg-brand-900 text-white py-4 rounded-full font-medium hover:bg-brand-800 transition-colors shadow-lg text-lg flex justify-center items-center gap-2">
-                            Place Order <i data-lucide="arrow-right" class="w-5 h-5"></i>
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Right Column: Order Summary & Trust -->
-                <div class="lg:col-span-5">
-                    <div class="bg-brand-50 p-6 rounded-3xl border border-brand-100 sticky top-32">
-                        <h3 class="font-serif text-2xl text-brand-900 mb-6">Order Summary</h3>
-                        
-                        <div id="checkout-order-items" class="space-y-4 mb-6 max-h-[40vh] overflow-y-auto pr-2 no-scrollbar">
-                            <!-- Items injected here -->
-                        </div>
-
-                        <!-- Discount Code -->
-                        <div class="mb-6 pt-4 border-t border-brand-200">
-                            <div class="flex gap-2">
-                                <input type="text" id="discount-code-input" aria-label="Discount code" placeholder="Discount code" class="flex-1 px-4 py-3 rounded-xl border border-brand-200 focus:ring-2 focus:ring-accent focus:border-accent outline-none transition-all uppercase">
-                                <button type="button" onclick="applyDiscount()" class="bg-brand-900 text-white px-6 py-3 rounded-xl font-medium hover:bg-brand-800 transition-colors">Apply</button>
-                            </div>
-                            <p id="discount-message" class="text-sm mt-2 hidden"></p>
-                        </div>
-
-                        <div class="border-t border-brand-200 pt-4 space-y-3 text-brand-700">
-                            <div class="flex justify-between">
-                                <span>Subtotal</span>
-                                <span id="checkout-subtotal" class="font-medium">₹0</span>
-                            </div>
-                            <div id="checkout-discount-row" class="flex justify-between text-green-600 hidden">
-                                <span>Discount (<span id="checkout-discount-label"></span>)</span>
-                                <span id="checkout-discount-amount" class="font-medium">-₹0</span>
-                            </div>
-                            <div class="flex justify-between">
-                                <span>Shipping</span>
-                                <span id="checkout-shipping" class="font-medium text-brand-900">₹99</span>
-                            </div>
-                            <div class="flex justify-between text-xl font-serif text-brand-900 pt-3 border-t border-brand-200">
-                                <span>Total</span>
-                                <span id="checkout-total">₹0</span>
-                            </div>
-                        </div>
-
-                        <!-- Trust Section -->
-                        <div class="mt-8 space-y-4">
-                            <div class="flex items-start gap-3 text-sm text-brand-700">
-                                <i data-lucide="truck" class="w-5 h-5 shrink-0 text-brand-900"></i>
-                                <div>
-                                    <p class="font-medium text-brand-900">Estimated Delivery</p>
-                                    <p>3-5 Business Days</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 text-sm text-brand-700">
-                                <i data-lucide="shield-check" class="w-5 h-5 shrink-0 text-brand-900"></i>
-                                <div>
-                                    <p class="font-medium text-brand-900">COD Verification</p>
-                                    <p>Orders may be confirmed via phone before shipping to ensure smooth delivery.</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-3 text-sm text-brand-700">
-                                <i data-lucide="refresh-cw" class="w-5 h-5 shrink-0 text-brand-900"></i>
-                                <div>
-                                    <p class="font-medium text-brand-900">Easy Returns</p>
-                                    <p>7-day hassle-free return policy if the product is damaged or defective.</p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- CONFIRMATION VIEW -->
-        <div id="view-confirmation" class="page-view hidden pt-32 pb-24 max-w-7xl mx-auto px-4 min-h-screen flex items-center justify-center">
-            <div class="max-w-md w-full text-center">
-                <div class="w-24 h-24 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <i data-lucide="check" class="w-12 h-12"></i>
-                </div>
-                <h1 class="font-serif text-4xl text-brand-900 mb-4">Order Confirmed!</h1>
-                <p class="text-brand-600 text-lg mb-8 leading-relaxed">Thank you for shopping with us. Your order has been received and is being processed. We will contact you shortly to confirm your delivery.</p>
-                <button onclick="navigateTo('home')" class="bg-brand-900 text-white px-8 py-4 rounded-full font-medium hover:bg-brand-800 transition-colors inline-flex items-center gap-2">
-                    <i data-lucide="shopping-bag" class="w-5 h-5"></i> Continue Shopping
-                </button>
-            </div>
-        </div>
 
-    </div>
 
-    <!-- Footer -->
-    <footer class="bg-brand-900 text-brand-50 pt-20 pb-10 mt-12">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            <div class="md:col-span-2">
-                <h2 class="font-serif text-3xl mb-6 text-white">Aaranya.</h2>
-                <p class="text-brand-200 max-w-sm mb-8 leading-relaxed font-light">
-                    Modern lifestyle essentials curated for the dynamic Indian consumer. Quality, utility, and design in every parcel.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-accent transition-colors cursor-pointer" aria-label="Facebook"><i data-lucide="facebook" class="w-5 h-5"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-full bg-brand-800 flex items-center justify-center hover:bg-accent transition-colors cursor-pointer" aria-label="Instagram"><i data-lucide="instagram" class="w-5 h-5"></i></a>
+        <!-- Materia Botanica Section -->
+        <section id="materia-botanica" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Materia Botanica</span>
+                    <p>Exploring the essence of our botanical ingredients. Section details to be added.</p>
                 </div>
             </div>
-            <div>
-                <h3 class="font-medium mb-6 text-white tracking-widest uppercase text-sm">Shop</h3>
-                <ul class="space-y-4 text-brand-200 text-sm font-light">
-                    <li><a href="#" onclick="navigateTo('home')" class="hover:text-accent transition-colors">All Products</a></li>
-                    <li><a href="#" onclick="navigateTo('about')" class="hover:text-accent transition-colors">Our Story</a></li>
-                    <li><a href="#" class="hover:text-accent transition-colors">Corporate Gifting</a></li>
-                </ul>
+        </section>
+
+
+        <!-- Philosophy Section -->
+        <section id="philosophy" class="about-section">
+            <div class="about-split-layout">
+                <div class="about-content-side">
+                    <div class="about-content-inner content-left">
+                        <span class="eyebrow">The Architecture <br>of Rhythm
+
+                        </span>
+                        <p>
+                            Beauty is not just an aesthetic achievement; it is a mathematical consequence of Rhythm. In
+                            the ancient Vedic tradition, this is known as Ṛta—the cosmic order that governs the rising
+                            of the sun, the turning of the seasons, and the pulsing of our own cells. When we fall out
+                            of rhythm, we fall out of radiance.
+                        </p>
+
+
+
+
+
+                    </div>
+                </div>
+                <div class="about-image-side">
+                    <img src="./Botanicals &amp; Herbal Wellness_files/phi.jpg" alt="Philosophy - Plants in Rhythm">
+                </div>
             </div>
-            <div>
-                <h3 class="font-medium mb-6 text-white tracking-widest uppercase text-sm">Support</h3>
-                <ul class="space-y-4 text-brand-200 text-sm font-light">
-                    <li><a href="#" onclick="navigateTo('terms')" class="hover:text-accent transition-colors">Terms & Conditions</a></li>
-                    <li><a href="#" onclick="navigateTo('privacy')" class="hover:text-accent transition-colors">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-accent transition-colors">Track Order</a></li>
-                    <li><a href="#" class="hover:text-accent transition-colors">Contact Us</a></li>
-                </ul>
+        </section>
+
+        <!-- Standards Section -->
+        <section id="standards" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Our Standards</span>
+                </div>
+
+                <div class="standards-grid">
+                    <div class="standard-item">
+                        <div class="icon large">
+                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_ethically_sourced.png" alt="Ethically Sourced Icon">
+                        </div>
+                        <p>Ethically Sourced</p>
+                    </div>
+                    <div class="standard-item">
+                        <div class="icon">
+                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_clean_formulations.png" alt="Clean Formulations Icon">
+                        </div>
+                        <p>Clean Formulations</p>
+                    </div>
+                    <div class="standard-item">
+                        <div class="icon">
+                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_dosage_specific.png" alt="Dosage-Specific Icon">
+                        </div>
+                        <p>Dosage-Specific</p>
+                    </div>
+                    <div class="standard-item">
+                        <div class="icon">
+                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_small_batch_crafted.png" alt="Small-Batch Crafted Icon">
+                        </div>
+                        <p>Small-Batch Crafted</p>
+                    </div>
+                    <div class="standard-item">
+                        <div class="icon">
+                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_no_additives.png" alt="No Additives Icon">
+                        </div>
+                        <p>No Additives</p>
+                    </div>
+                    <div class="standard-item">
+                        <div class="icon">
+                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_no_animal_testing.png" alt="No Animal Testing Icon">
+                        </div>
+                        <p>No Animal Testing</p>
+                    </div>
+                    <div class="standard-item">
+                        <div class="icon large">
+                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_vegan.png" alt="Vegan Icon">
+                        </div>
+                        <p>Vegan</p>
+                    </div>
+                    <div class="standard-item">
+                        <div class="icon">
+                            <img src="./Botanicals &amp; Herbal Wellness_files/icon_gluten_free.png" alt="Gluten Free Icon">
+                        </div>
+                        <p>Gluten-Free</p>
+                    </div>
+                </div>
+                <div class="text-center" style="margin-top: 40px;">
+                    <a href="https://sampritibotanicals.com/#" class="btn btn-view-more">Find Out More</a>
+                </div>
             </div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-brand-800 text-brand-400 text-sm flex flex-col md:flex-row justify-between items-center font-light">
-            <p>&copy; 2026 Aaranya Lifestyle Pvt. Ltd. All rights reserved.</p>
-            <div class="flex items-center gap-2 mt-4 md:mt-0">
-                <span>Made with</span> <i data-lucide="heart" class="w-4 h-4 text-accent fill-accent"></i> <span>in India</span>
+        </section>
+
+        <!-- Ritual Section -->
+        <section id="ritual" class="about-section">
+            <div class="about-split-layout">
+                <div class="about-image-side">
+                    <img src="./Botanicals &amp; Herbal Wellness_files/ritual.avif" alt="Rituals - The Discipline of Devotion">
+                </div>
+                <div class="about-content-side">
+                    <div class="about-content-inner">
+                        <span class="eyebrow"> The Discipline of Devotion</span>
+                        <p>
+                            The efficacy of an elixir is amplified by the state of the one who consumes it. At Sampriti,
+                            we advocate for the ritual over the routine
+                        </p>
+                        <p>
+                            Longevity is a quiet, cumulative
+                            practice—a daily devotion to the self that recognizes the sacredness of the metabolic state.
+                            By taking a moment to engage with the aroma, the warmth, and the bitter-sweet complexity of
+                            the herbs, you are signaling to your nervous system that it is safe to return to center.
+                            This is where the nectar is found: in the deliberate, rhythmic return to one's own essence.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Blog Section -->
+        <section id="blog-preview" class="section-padding bg-light">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Blog</span>
+                </div>
+
+                <div class="blog-grid">
+                    <!-- Blog Post 1 -->
+                    <article class="blog-card">
+                        <a class="blog-card-link" href="https://sampritibotanicals.com/blogs/hibiscus">
+                            <div class="blog-card-image">
+                                <img src="./Botanicals &amp; Herbal Wellness_files/hibiscus.jpg" alt="The Crimson Catalyst: Hibiscus in Practice">
+                            </div>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Botanical Profile</span>
+                                <h3>The Crimson Catalyst: Hibiscus in Practice</h3>
+                                <p>Hibiscus (Japa) is a high-functioning botanical characterized by its dense
+                                    concentration of anthocyanins and organic acids. Discover how these compounds
+                                    provide remarkable resilience.</p>
+                                <span class="read-more">Read Article →</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Blog Post 2 -->
+                    <article class="blog-card">
+                        <a class="blog-card-link" href="https://sampritibotanicals.com/blogs/black-turmeric">
+                            <div class="blog-card-image">
+                                <img src="./Botanicals &amp; Herbal Wellness_files/black-turmeric.png" alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery">
+                            </div>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Siddha Wisdom</span>
+                                <h3>The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery</h3>
+                                <p>In the ancient Siddha tradition—the oldest medical lineage of South India—certain
+                                    botanicals are classified as Kaya Kalpa (agents of longevity). Among these, Black
+                                    Turmeric is the rarest.</p>
+                                <span class="read-more">Read Article →</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Blog Post 3 -->
+                    <article class="blog-card">
+                        <a class="blog-card-link" href="https://sampritibotanicals.com/blogs/chandra">
+                            <div class="blog-card-image">
+                                <img src="./Botanicals &amp; Herbal Wellness_files/chandra.jpg" alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs">
+                            </div>
+                            <div class="blog-card-content">
+                                <span class="blog-category">Moon Rhythms</span>
+                                <h3>The Lunar Pulse: Moon Rhythms and the Vitality of Herbs</h3>
+                                <p>The Moon is far more than a celestial body; it is the universal "Mother of the
+                                    World," the moistening principle that governs the flow of all liquids.</p>
+                                <span class="read-more">Read Article →</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+
+                <div class="text-center" style="margin-top: 40px;">
+                    <a class="btn btn-view-more" href="https://sampritibotanicals.com/blog">View More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Subscribe Section -->
+        <section id="subscribe" class="subscribe-section">
+            <div class="subscribe-split-layout">
+                <div class="subscribe-image-side">
+                    <img src="./Botanicals &amp; Herbal Wellness_files/subscribe.jpg" alt="Subscribe to Sampriti Updates">
+                </div>
+                <div class="subscribe-content-side">
+                    <div class="subscribe-content-inner">
+                        <h2>Sign Up for Sampriti Updates</h2>
+                        <p>Stay informed on new formulations, collaborations, and everything Sampriti.</p>
+                        <form id="subscribe-form" class="subscribe-form">
+                            <input type="email" placeholder="Email address" required="">
+                            <button type="submit" class="btn btn-view-more">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="https://sampritibotanicals.com/#" class="logo">
+                        <img src="./Botanicals &amp; Herbal Wellness_files/text_logo_color_big.png" alt="Sampriti" style="max-width: 150px;">
+
+                    </a>
+                </div>
+                <div class="footer-links">
+                    <a href="https://sampritibotanicals.com/shop">Shop</a>
+                    <a href="https://sampritibotanicals.com/#about">The House</a>
+                    <a href="https://sampritibotanicals.com/#materia-botanica">Materia Botanica</a>
+                    <a href="https://sampritibotanicals.com/blog">Journal</a>
+                    <a href="https://sampritibotanicals.com/contact">Provenance</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Sampriti. All rights reserved.</p>
             </div>
         </div>
     </footer>
+    <div id="buy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>Complete Your Order</h2>
+            <p id="modal-product-name"></p>
+            <form id="buy-form">
+                <input type="hidden" id="product-name" name="product-name">
 
-    <!-- Search Overlay -->
-    <div id="search-overlay" class="fixed inset-0 bg-white z-50 opacity-0 pointer-events-none overlay-transition flex flex-col">
-        <div class="p-6 border-b border-brand-100 flex items-center gap-4">
-            <i data-lucide="search" class="w-6 h-6 text-brand-400"></i>
-            <input type="text" id="search-input" placeholder="Search products..." class="flex-1 text-xl font-medium text-brand-900 outline-none placeholder:text-brand-300 bg-transparent" aria-label="Search products" oninput="handleSearch(this.value)">
-            <button onclick="toggleSearch(false)" class="p-2 hover:bg-brand-50 rounded-full transition-colors text-brand-500 hover:text-brand-900" aria-label="Close search">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-        </div>
-        <div class="flex-1 overflow-y-auto p-6 bg-brand-50/30">
-            <div id="search-results" class="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <!-- Search results will appear here -->
-                <div class="text-brand-500 text-center col-span-full py-10">Type to start searching...</div>
-            </div>
-        </div>
-    </div>
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required="">
+                </div>
 
-    <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-brand-900/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none overlay-transition lg:hidden" onclick="toggleMobileMenu(false)"></div>
-    <div id="mobile-menu-drawer" class="fixed top-0 left-0 h-full w-64 bg-white z-50 shadow-2xl flex flex-col -translate-x-full cart-transition lg:hidden">
-        <div class="p-6 border-b border-brand-100 flex justify-between items-center bg-white">
-            <h2 class="font-serif text-2xl text-brand-900">Menu</h2>
-            <button onclick="toggleMobileMenu(false)" class="p-2 hover:bg-brand-50 rounded-full transition-colors text-brand-500 hover:text-brand-900" aria-label="Close menu">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-        </div>
-        <div class="flex flex-col p-6 gap-6 text-lg font-medium text-brand-900">
-            <a href="#" onclick="navigateTo('home'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="shopping-bag" class="w-5 h-5"></i> Shop</a>
-            <a href="#" onclick="navigateTo('about'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="info" class="w-5 h-5"></i> Our Story</a>
-            <a href="#" onclick="navigateTo('terms'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="file-text" class="w-5 h-5"></i> Terms & Conditions</a>
-            <a href="#" onclick="navigateTo('privacy'); toggleMobileMenu(false)" class="hover:text-accent transition-colors flex items-center gap-3"><i data-lucide="shield" class="w-5 h-5"></i> Privacy Policy</a>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required="">
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" name="address" rows="3" required=""></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width">Place Order</button>
+            </form>
         </div>
     </div>
+    <script src="./Botanicals &amp; Herbal Wellness_files/script.js.download"></script>
 
-    <!-- Cart Drawer -->
-    <div id="cart-overlay" class="fixed inset-0 bg-brand-900/60 backdrop-blur-sm z-40 opacity-0 pointer-events-none overlay-transition" onclick="toggleCart(false)"></div>
-    <div id="cart-drawer" class="fixed top-0 right-0 h-full w-full max-w-md bg-white z-50 shadow-2xl flex flex-col translate-x-full cart-transition">
-        <div class="p-6 border-b border-brand-100 flex justify-between items-center bg-white">
-            <h2 class="font-serif text-2xl text-brand-900" id="cart-title">Your Cart (0)</h2>
-            <button onclick="toggleCart(false)" class="p-2 hover:bg-brand-50 rounded-full transition-colors text-brand-500 hover:text-brand-900" aria-label="Close cart">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-        </div>
 
-        <div id="cart-items" class="flex-1 overflow-y-auto p-6 bg-white no-scrollbar">
-            <!-- Cart items injected here by JS -->
-        </div>
-
-        <div id="cart-footer" class="p-6 border-t border-brand-100 bg-brand-50 hidden">
-            <div class="flex justify-between mb-2 text-xl font-serif text-brand-900">
-                <span>Subtotal</span>
-                <span id="cart-subtotal">₹0</span>
-            </div>
-            <p class="text-sm text-brand-600 mb-6 font-light">Taxes included. Shipping calculated at checkout.</p>
-            <button onclick="openCheckoutPage()" class="w-full bg-brand-900 text-white py-4 rounded-full font-medium hover:bg-brand-800 transition-colors shadow-lg flex justify-center items-center gap-2">
-                Proceed to Checkout <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
-            <div class="mt-4 flex justify-center items-center gap-2 text-xs text-brand-500">
-                <i data-lucide="truck" class="w-4 h-4"></i> Cash on Delivery Only
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // --- Data ---
-        const PRODUCTS = [
-            { 
-                id: 1, 
-                name: 'Portable Car Vacuum Cleaner', 
-                price: 2499, 
-                image: 'https://m.media-amazon.com/images/I/51xLLJOLsoL._SL1000_.jpg', 
-                category: 'Auto Accessories', 
-                description: 'Keep your car spotless with this high-power portable vacuum cleaner. Designed for deep cleaning, it easily reaches tight corners and under seats.',
-                specs: { 'Brand': 'AutoClean', 'Recommended Uses For Product': 'Car Interior, Upholstery', 'Special Feature': 'Lightweight, HEPA Filter', 'Power Source': 'Corded Electric (12V)', 'Model Name': 'High Power Car Vacuum', 'Included Components': 'Vacuum, Brush Nozzle, Crevice Tube', 'Item Weight': '400 Grams', 'Colour': 'Black', 'Filter Type': 'Washable HEPA', 'Form Factor': 'Handheld' },
-                features: ['🌪️ Strong Suction – High-power motor easily picks up dust, pet hair, and crumbs.', '🔌 12V Car Plug – Plugs directly into your car\'s cigarette lighter port.', '🧹 Multiple Attachments – Includes brush and crevice tools for hard-to-reach areas.', '🧼 Washable Filter – Reusable HEPA filter ensures long-lasting performance.', '🧳 Compact Design – Easy to store in your trunk or under the seat.']
-            },
-            { 
-                id: 2, 
-                name: 'Electric Mini Shaver', 
-                price: 1299, 
-                image: 'https://m.media-amazon.com/images/I/6123OHKBtlL._SL1500_.jpg', 
-                category: 'Personal Care', 
-                description: 'Compact, powerful, and travel-friendly. This electric mini shaver gives you a clean, smooth shave on the go. Perfect for quick touch-ups.',
-                specs: { 'Brand': 'HNOSS HABITAT', 'Recommended Uses For Product': 'Facial Hair', 'Special Feature': 'Rechargeable', 'Power Source': 'Battery Powered', 'Model Name': 'Powerful Mini Electric Shaver', 'Included Components': 'Electric Shaver', 'Item Weight': '150 Grams', 'Colour': 'Black', 'Blade Material': 'Stainless Steel', 'Head Type': 'Rotary' },
-                features: ['⚡ Powerful Shaving Performance – High-speed motor for a smooth, close shave.', '🔋 Rechargeable & Portable – Convenient USB charging for home, car, or travel use.', '🧳 Perfect for Travel – Compact design fits perfectly in your bag or car.', '🎁 Ideal Gift for Men – A thoughtful gift for birthdays, Father’s Day, or any occasion.', '💨 New Upgrade – Latest shaving technology for superior performance and durability.', '🚗 Car-Friendly Design – Shave on the go with an easy-to-carry design.', '✨ Close & Comfortable Shave – Suitable for all skin types, ensuring no irritation.']
-            },
-            { 
-                id: 3, 
-                name: 'Yoga Puller Peddler', 
-                price: 599, 
-                image: 'https://m.media-amazon.com/images/I/61nBobL3gTL.jpg', 
-                category: 'Fitness', 
-                description: 'Tone your muscles and improve flexibility at home. This versatile resistance band peddler is perfect for yoga, pilates, and daily stretching routines.',
-                specs: { 'Brand': 'FitLife', 'Recommended Uses For Product': 'Yoga, Pilates, Stretching', 'Special Feature': 'High Elasticity', 'Material': 'Natural Latex & High-Density Foam', 'Model Name': 'Resistance Band Peddler', 'Included Components': '1 Resistance Peddler', 'Item Weight': '250 Grams', 'Colour': 'Purple/Black', 'Tension Level': 'Medium Resistance', 'Style': '4-Tube Design' },
-                features: ['💪 Full Body Workout – Target your arms, tummy, shoulders, legs, and butt.', '🧘‍♀️ High Elasticity – Premium latex tubes offer high tensile strength and durability.', '🏡 Home Gym Essential – Get a great workout without expensive gym equipment.', '🛡️ Safe & Comfortable – Non-slip foam handles and pedals prevent slipping.', '🧳 Lightweight & Portable – Easy to pack and use anywhere, anytime.']
-            },
-            { 
-                id: 4, 
-                name: 'Fresh Juice Portable Mixer', 
-                price: 1999, 
-                image: 'https://m.media-amazon.com/images/I/51YzRbZG7WL._SL1000_.jpg', 
-                category: 'Kitchen & Dining', 
-                description: 'Blend fresh smoothies, shakes, and juices anywhere. USB rechargeable, easy to clean, and features powerful stainless steel blades.',
-                specs: { 'Brand': 'BlendGo', 'Recommended Uses For Product': 'Smoothies, Juices, Protein Shakes', 'Special Feature': 'Portable, Self-Cleaning', 'Power Source': 'USB Rechargeable', 'Model Name': 'Fresh Juice Blender', 'Included Components': 'Blender Bottle, USB Cable', 'Item Weight': '450 Grams', 'Colour': 'Pink/White', 'Blade Material': '304 Stainless Steel (6 Blades)', 'Capacity': '380 Millilitres' },
-                features: ['🍓 Blend Anywhere – Make fresh smoothies, protein shakes, and juices on the go.', '🔋 Long Battery Life – Built-in rechargeable battery makes up to 15 cups per charge.', '💧 Easy to Clean – Self-cleaning mode; just add water and a drop of soap, then blend.', '🛡️ Safe Design – Magnetic sensing switch prevents blades from spinning when open.', '⚡ Powerful Motor – 6 sharp stainless steel blades crush ice and frozen fruits easily.']
-            },
-            { 
-                id: 5, 
-                name: 'Smart Health Band', 
-                price: 2999, 
-                image: 'https://picsum.photos/seed/healthband/800/800', 
-                category: 'Electronics', 
-                description: 'Track your steps, heart rate, and sleep patterns. Stay connected with smart notifications right on your wrist. Water-resistant and long battery life.',
-                specs: { 'Brand': 'TechFit', 'Recommended Uses For Product': 'Fitness Tracking, Health Monitoring', 'Special Feature': 'Heart Rate Monitor, Sleep Tracker', 'Power Source': 'Battery Powered', 'Model Name': 'Smart Health Band Pro', 'Included Components': 'Smart Band, Magnetic Charger', 'Item Weight': '24 Grams', 'Colour': 'Midnight Black', 'Water Resistance': '5 ATM (50 Meters)', 'Screen Size': '1.1 Inches AMOLED' },
-                features: ['❤️ 24/7 Heart Rate Monitoring – Keep track of your cardiovascular health all day.', '🩸 SpO2 Tracking – Measure your blood oxygen saturation levels anytime.', '🏃‍♂️ 11 Sports Modes – Accurately track running, cycling, swimming, and more.', '😴 Sleep Analysis – Monitor light, deep, and REM sleep stages for better rest.', '📱 Smart Notifications – Receive calls, texts, and app alerts directly on your wrist.', '🔋 14-Day Battery – Spend less time charging and more time moving.']
-            }
-        ];
-
-        let cart = [];
-        let wishlist = [];
-
-        // --- DOM Elements ---
-        const productGrid = document.getElementById('product-grid');
-        const cartItemsContainer = document.getElementById('cart-items');
-        const cartBadge = document.getElementById('cart-badge');
-        const cartTitle = document.getElementById('cart-title');
-        const cartFooter = document.getElementById('cart-footer');
-        const cartSubtotal = document.getElementById('cart-subtotal');
-        const cartDrawer = document.getElementById('cart-drawer');
-        const cartOverlay = document.getElementById('cart-overlay');
-        const mobileMenuDrawer = document.getElementById('mobile-menu-drawer');
-        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-        const searchOverlay = document.getElementById('search-overlay');
-        const searchInput = document.getElementById('search-input');
-        const searchResults = document.getElementById('search-results');
-        const navbar = document.getElementById('navbar');
-
-        // --- Format Currency ---
-        function formatINR(amount) {
-            return '₹' + amount.toLocaleString('en-IN', { maximumFractionDigits: 0 });
-        }
-
-        // --- Initialize ---
-        function init() {
-            renderProducts();
-            updateCartUI();
-            lucide.createIcons();
-
-            // Scroll listener for navbar
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 40) {
-                    navbar.classList.add('glass-nav', 'py-4');
-                    navbar.classList.remove('bg-transparent', 'py-5');
-                } else {
-                    navbar.classList.add('bg-transparent', 'py-5');
-                    navbar.classList.remove('glass-nav', 'py-4');
-                }
-            });
-        }
-
-        // --- Navigation Logic ---
-        function navigateTo(viewId) {
-            // Hide all views
-            document.querySelectorAll('.page-view').forEach(el => {
-                el.classList.add('hidden');
-                el.classList.remove('block');
-            });
-            
-            // Show target view
-            const target = document.getElementById('view-' + viewId);
-            if (target) {
-                target.classList.remove('hidden');
-                target.classList.add('block');
-            }
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function toggleWishlist(productId, event) {
-            event.stopPropagation();
-            const index = wishlist.indexOf(productId);
-            if (index > -1) {
-                wishlist.splice(index, 1);
-            } else {
-                wishlist.push(productId);
-            }
-            renderProducts();
-            lucide.createIcons();
-        }
-
-        // --- Render Products ---
-        function renderProducts() {
-            productGrid.innerHTML = PRODUCTS.map(product => `
-                <div class="group cursor-pointer flex flex-col" onclick="openProductPage(${product.id})" tabindex="0" role="button" onkeydown="if(event.key==='Enter') openProductPage(${product.id})">
-                    <div class="relative aspect-[4/5] bg-brand-50 rounded-3xl overflow-hidden mb-4 border border-brand-100">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out" referrerpolicy="no-referrer" />
-                        <button onclick="event.stopPropagation(); addToCart(${product.id})" class="absolute bottom-2 left-2 right-2 sm:bottom-4 sm:left-4 sm:right-4 bg-white/90 backdrop-blur-md text-brand-900 py-2 sm:py-3.5 rounded-xl sm:rounded-2xl text-xs sm:text-base font-medium opacity-100 translate-y-0 lg:opacity-0 lg:translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hover:bg-brand-900 hover:text-white shadow-lg flex justify-center items-center gap-1 sm:gap-2" aria-label="Add ${product.name} to cart">
-                            <i data-lucide="shopping-bag" class="w-3 h-3 sm:w-4 sm:h-4"></i> <span class="hidden sm:inline">Add to Cart</span><span class="sm:hidden">Add</span>
-                        </button>
-                        <button onclick="toggleWishlist(${product.id}, event)" class="absolute top-4 right-4 p-2.5 bg-white/70 backdrop-blur-md rounded-full ${wishlist.includes(product.id) ? 'text-rose-500 bg-white' : 'text-brand-600 hover:text-rose-500 hover:bg-white'} transition-colors shadow-sm" aria-label="${wishlist.includes(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}">
-                            <i data-lucide="heart" class="w-4 h-4 ${wishlist.includes(product.id) ? 'fill-current' : ''}"></i>
-                        </button>
-                    </div>
-                    <div class="flex flex-col flex-1 px-1">
-                        <p class="text-[10px] text-brand-500 uppercase tracking-widest mb-1.5 font-medium">${product.category}</p>
-                        <h3 class="font-medium text-brand-900 leading-tight mb-1">${product.name}</h3>
-                        <p class="font-semibold text-brand-900">${formatINR(product.price)}</p>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        // --- Cart Logic ---
-        function addToCart(productId) {
-            const product = PRODUCTS.find(p => p.id === productId);
-            const existingItem = cart.find(item => item.id === productId);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({ ...product, quantity: 1 });
-            }
-            
-            updateCartUI();
-            toggleCart(true);
-        }
-
-        function updateQuantity(productId, delta) {
-            const itemIndex = cart.findIndex(item => item.id === productId);
-            if (itemIndex > -1) {
-                cart[itemIndex].quantity += delta;
-                if (cart[itemIndex].quantity <= 0) {
-                    cart.splice(itemIndex, 1);
-                }
-            }
-            updateCartUI();
-        }
-
-        function toggleCart(isOpen) {
-            if (isOpen) {
-                cartDrawer.classList.remove('translate-x-full');
-                cartOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                cartOverlay.classList.add('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = 'hidden'; // Prevent background scrolling
-            } else {
-                cartDrawer.classList.add('translate-x-full');
-                cartOverlay.classList.add('opacity-0', 'pointer-events-none');
-                cartOverlay.classList.remove('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = '';
-            }
-        }
-
-        function toggleMobileMenu(isOpen) {
-            if (isOpen) {
-                mobileMenuDrawer.classList.remove('-translate-x-full');
-                mobileMenuOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                mobileMenuOverlay.classList.add('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = 'hidden';
-            } else {
-                mobileMenuDrawer.classList.add('-translate-x-full');
-                mobileMenuOverlay.classList.add('opacity-0', 'pointer-events-none');
-                mobileMenuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = '';
-            }
-        }
-
-        function toggleSearch(isOpen) {
-            if (isOpen) {
-                searchOverlay.classList.remove('opacity-0', 'pointer-events-none');
-                searchOverlay.classList.add('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = 'hidden';
-                setTimeout(() => searchInput.focus(), 100);
-            } else {
-                searchOverlay.classList.add('opacity-0', 'pointer-events-none');
-                searchOverlay.classList.remove('opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = '';
-                searchInput.value = '';
-                handleSearch('');
-            }
-        }
-
-        function handleSearch(query) {
-            if (!query.trim()) {
-                searchResults.innerHTML = '<div class="text-brand-500 text-center col-span-full py-10">Type to start searching...</div>';
-                return;
-            }
-            
-            const lowerQuery = query.toLowerCase();
-            const results = PRODUCTS.filter(p => 
-                p.name.toLowerCase().includes(lowerQuery) || 
-                p.category.toLowerCase().includes(lowerQuery) ||
-                p.description.toLowerCase().includes(lowerQuery)
-            );
-
-            if (results.length === 0) {
-                searchResults.innerHTML = '<div class="text-brand-500 text-center col-span-full py-10">No products found.</div>';
-                return;
-            }
-
-            searchResults.innerHTML = results.map(p => `
-                <div class="flex items-center gap-4 bg-white p-4 rounded-2xl shadow-sm cursor-pointer hover:shadow-md transition-shadow" onclick="toggleSearch(false); openProductPage(${p.id})" tabindex="0" role="button" onkeydown="if(event.key==='Enter') { toggleSearch(false); openProductPage(${p.id}); }">
-                    <img src="${p.image}" alt="${p.name}" class="w-20 h-20 object-cover rounded-xl" referrerpolicy="no-referrer">
-                    <div>
-                        <h4 class="font-medium text-brand-900">${p.name}</h4>
-                        <p class="text-sm text-brand-500">${p.category}</p>
-                        <p class="font-semibold text-brand-900 mt-1">${formatINR(p.price)}</p>
-                    </div>
-                </div>
-            `).join('');
-            lucide.createIcons();
-        }
-
-        function updateCartUI() {
-            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
-
-            // Update Badge
-            if (totalItems > 0) {
-                cartBadge.textContent = totalItems;
-                cartBadge.classList.remove('hidden');
-            } else {
-                cartBadge.classList.add('hidden');
-            }
-
-            // Update Title
-            cartTitle.textContent = `Your Cart (${totalItems})`;
-
-            // Update Items
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = `
-                    <div class="h-full flex flex-col items-center justify-center text-brand-400 space-y-4">
-                        <div class="w-24 h-24 bg-brand-50 rounded-full flex items-center justify-center mb-2">
-                            <i data-lucide="shopping-bag" class="w-10 h-10 text-brand-300"></i>
-                        </div>
-                        <p class="text-lg font-serif text-brand-900">Your cart is empty</p>
-                        <button onclick="toggleCart(false)" class="text-brand-600 font-medium underline underline-offset-4 hover:text-brand-900 transition-colors">
-                            Continue Shopping
-                        </button>
-                    </div>
-                `;
-                cartFooter.classList.add('hidden');
-            } else {
-                cartItemsContainer.innerHTML = `<div class="space-y-6">` + cart.map(item => `
-                    <div class="flex gap-4">
-                        <div class="w-24 h-24 bg-brand-50 rounded-2xl overflow-hidden shrink-0 border border-brand-100">
-                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover" referrerpolicy="no-referrer" />
-                        </div>
-                        <div class="flex-1 flex flex-col justify-between py-1">
-                            <div>
-                                <div class="flex justify-between items-start gap-2">
-                                    <h3 class="font-medium text-brand-900 leading-tight">${item.name}</h3>
-                                    <button onclick="updateQuantity(${item.id}, -${item.quantity})" class="text-brand-400 hover:text-rose-500 transition-colors p-1 -mt-1 -mr-1" aria-label="Remove item">
-                                        <i data-lucide="trash-2" class="w-4 h-4"></i>
-                                    </button>
-                                </div>
-                                <p class="text-brand-600 font-semibold mt-1">${formatINR(item.price)}</p>
-                            </div>
-                            <div class="flex items-center gap-3">
-                                <div class="flex items-center border border-brand-200 rounded-full bg-brand-50">
-                                    <button onclick="updateQuantity(${item.id}, -1)" class="w-8 h-8 flex items-center justify-center text-brand-600 hover:text-brand-900 transition-colors" aria-label="Decrease quantity">-</button>
-                                    <span class="w-6 text-center text-sm font-medium text-brand-900" aria-label="Quantity">${item.quantity}</span>
-                                    <button onclick="updateQuantity(${item.id}, 1)" class="w-8 h-8 flex items-center justify-center text-brand-600 hover:text-brand-900 transition-colors" aria-label="Increase quantity">+</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `).join('') + `</div>`;
-                
-                cartFooter.classList.remove('hidden');
-                cartSubtotal.textContent = formatINR(totalPrice);
-            }
-
-            // Re-initialize icons for newly injected HTML
-            lucide.createIcons();
-        }
-
-        function openProductPage(productId) {
-            const product = PRODUCTS.find(p => p.id === productId);
-            if (!product) return;
-
-            const container = document.getElementById('product-detail-container');
-            container.innerHTML = `
-                <div class="relative">
-                    <div class="bg-brand-50 rounded-3xl overflow-hidden border border-brand-100 aspect-square flex items-center justify-center sticky top-32">
-                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover" referrerpolicy="no-referrer" />
-                        <button onclick="toggleWishlist(${product.id}, event); openProductPage(${product.id})" class="absolute top-4 right-4 p-3 bg-white/70 backdrop-blur-md rounded-full ${wishlist.includes(product.id) ? 'text-rose-500 bg-white' : 'text-brand-600 hover:text-rose-500 hover:bg-white'} transition-colors shadow-sm" aria-label="${wishlist.includes(product.id) ? 'Remove from wishlist' : 'Add to wishlist'}">
-                            <i data-lucide="heart" class="w-6 h-6 ${wishlist.includes(product.id) ? 'fill-current' : ''}"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="flex flex-col justify-center">
-                    <p class="text-sm text-brand-500 uppercase tracking-widest mb-2 font-medium">${product.category}</p>
-                    <h1 class="font-serif text-4xl md:text-5xl text-brand-900 mb-4">${product.name}</h1>
-                    <p class="text-2xl font-semibold text-brand-900 mb-6">${formatINR(product.price)}</p>
-                    <p class="text-brand-700 text-lg leading-relaxed mb-8 font-light">${product.description}</p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <button onclick="addToCart(${product.id})" class="flex-1 bg-white border-2 border-brand-900 text-brand-900 py-4 rounded-full font-medium hover:bg-brand-50 transition-colors flex justify-center items-center gap-2">
-                            <i data-lucide="shopping-bag" class="w-5 h-5"></i> Add to Cart
-                        </button>
-                        <button onclick="openCheckoutPage(${product.id})" class="flex-1 bg-accent text-white py-4 rounded-full font-medium hover:bg-amber-500 transition-colors shadow-lg flex justify-center items-center gap-2">
-                            <i data-lucide="zap" class="w-5 h-5"></i> Buy Now
-                        </button>
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4 border-t border-brand-100 pt-8">
-                        <div class="flex items-center gap-3 text-brand-700">
-                            <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-900">
-                                <i data-lucide="truck" class="w-5 h-5"></i>
-                            </div>
-                            <span class="text-sm font-medium">Free Delivery</span>
-                        </div>
-                        <div class="flex items-center gap-3 text-brand-700">
-                            <div class="w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-900">
-                                <i data-lucide="banknote" class="w-5 h-5"></i>
-                            </div>
-                            <span class="text-sm font-medium">Cash on Delivery</span>
-                        </div>
-                    </div>
-
-                    ${product.specs ? `
-                    <div class="mt-10 pt-8 border-t border-brand-100">
-                        <h3 class="font-serif text-2xl text-brand-900 mb-6">Product Specifications</h3>
-                        <div class="grid grid-cols-1 gap-y-3 text-sm">
-                            ${Object.entries(product.specs).map(([key, value]) => `
-                                <div class="grid grid-cols-3 gap-4">
-                                    <div class="font-medium text-brand-900 col-span-1">${key}</div>
-                                    <div class="text-brand-700 col-span-2">${value}</div>
-                                </div>
-                            `).join('')}
-                        </div>
-                    </div>
-                    ` : ''}
-
-                    ${product.features ? `
-                    <div class="mt-10 pt-8 border-t border-brand-100">
-                        <h3 class="font-serif text-2xl text-brand-900 mb-6">About this item</h3>
-                        <ul class="space-y-3">
-                            ${product.features.map(feature => `
-                                <li class="flex gap-3 text-brand-700 font-light leading-relaxed">
-                                    <span class="shrink-0 mt-2 w-1.5 h-1.5 rounded-full bg-brand-400"></span>
-                                    <span>${feature}</span>
-                                </li>
-                            `).join('')}
-                        </ul>
-                    </div>
-                    ` : ''}
-                </div>
-            `;
-            
-            // Render Suggested Products
-            const suggestedContainer = document.getElementById('suggested-products-container');
-            const suggestedProducts = PRODUCTS.filter(p => p.id !== productId).slice(0, 4);
-            
-            suggestedContainer.innerHTML = `
-                <div class="flex justify-between items-end mb-8">
-                    <h3 class="font-serif text-3xl text-brand-900">You May Also Like</h3>
-                </div>
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-8">
-                    ${suggestedProducts.map(p => `
-                        <div class="group cursor-pointer text-left" onclick="openProductPage(${p.id})" tabindex="0" role="button" onkeydown="if(event.key==='Enter') openProductPage(${p.id})">
-                            <div class="relative overflow-hidden rounded-2xl mb-4 bg-brand-50 aspect-square border border-brand-100">
-                                <img src="${p.image}" alt="${p.name}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" referrerpolicy="no-referrer">
-                            </div>
-                            <h3 class="font-medium text-brand-900 text-lg mb-1 group-hover:text-accent transition-colors line-clamp-1">${p.name}</h3>
-                            <p class="text-brand-500 font-semibold">${formatINR(p.price)}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-
-            // Render Reviews
-            const reviewsContainer = document.getElementById('product-reviews-container');
-            const reviews = [
-                { name: "Rahul S.", rating: 5, date: "12 Oct 2025", text: `Amazing product! The ${product.name} exceeded my expectations. Highly recommended.` },
-                { name: "Priya M.", rating: 4, date: "28 Sep 2025", text: "Good quality and works as described. Delivery was a bit delayed but overall satisfied." },
-                { name: "Amit K.", rating: 5, date: "15 Aug 2025", text: "Value for money. I've been using it for a few weeks now and it's fantastic." }
-            ];
-            const averageRating = (reviews.reduce((acc, rev) => acc + rev.rating, 0) / reviews.length).toFixed(1);
-            
-            reviewsContainer.innerHTML = `
-                <h3 class="font-serif text-3xl text-brand-900 mb-8">Customer Reviews</h3>
-                <div class="flex items-center gap-6 mb-10">
-                    <div class="text-6xl font-serif text-brand-900">${averageRating}</div>
-                    <div>
-                        <div class="flex text-accent mb-2">
-                            ${Array(5).fill(0).map((_, i) => `<i data-lucide="star" class="w-6 h-6 ${i < Math.round(averageRating) ? 'fill-accent' : 'text-brand-200'}"></i>`).join('')}
-                        </div>
-                        <p class="text-brand-600">Based on ${reviews.length} reviews</p>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    ${reviews.map(review => `
-                        <div class="bg-brand-50 p-6 rounded-2xl border border-brand-100">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <h4 class="font-medium text-brand-900">${review.name}</h4>
-                                    <p class="text-xs text-brand-500 mt-1">${review.date}</p>
-                                </div>
-                                <div class="flex text-accent">
-                                    ${Array(5).fill(0).map((_, i) => `<i data-lucide="star" class="w-4 h-4 ${i < review.rating ? 'fill-accent' : 'text-brand-200'}"></i>`).join('')}
-                                </div>
-                            </div>
-                            <p class="text-brand-700 font-light text-sm leading-relaxed">${review.text}</p>
-                        </div>
-                    `).join('')}
-                </div>
-            `;
-
-            lucide.createIcons();
-            navigateTo('product');
-            window.scrollTo(0, 0);
-        }
-
-        let checkoutMode = 'cart';
-        let currentCheckoutSubtotal = 0;
-        let currentCheckoutShipping = 99;
-        let currentDiscountAmount = 0;
-
-        function openCheckoutPage(productId = null) {
-            // Reset discount state
-            currentDiscountAmount = 0;
-            document.getElementById('discount-code-input').value = '';
-            document.getElementById('discount-message').classList.add('hidden');
-            document.getElementById('checkout-discount-row').classList.add('hidden');
-
-            const itemsContainer = document.getElementById('checkout-order-items');
-            let subtotal = 0;
-            let shipping = 99; // Flat shipping rate
-            let total = 0;
-            
-            let productNames = [];
-            let totalQuantity = 0;
-
-            if (productId) {
-                checkoutMode = 'single';
-                const product = PRODUCTS.find(p => p.id === productId);
-                if (!product) return;
-                
-                subtotal = product.price;
-                totalQuantity = 1;
-                productNames.push(product.name);
-
-                itemsContainer.innerHTML = `
-                    <div class="flex gap-4 items-center">
-                        <img src="${product.image}" alt="${product.name}" class="w-16 h-16 object-cover rounded-xl border border-brand-200" referrerpolicy="no-referrer">
-                        <div class="flex-1">
-                            <h4 class="font-medium text-brand-900 line-clamp-1">${product.name}</h4>
-                            <p class="text-sm text-brand-500">Qty: 1</p>
-                        </div>
-                        <div class="font-semibold text-brand-900">${formatINR(product.price)}</div>
-                    </div>
-                `;
-            } else {
-                checkoutMode = 'cart';
-                if (cart.length === 0) {
-                    alert('Your cart is empty!');
-                    return;
-                }
-                
-                subtotal = cartTotal;
-                
-                itemsContainer.innerHTML = cart.map(item => {
-                    const product = PRODUCTS.find(p => p.id === item.productId);
-                    totalQuantity += item.quantity;
-                    productNames.push(`${product.name} (x${item.quantity})`);
-                    return `
-                        <div class="flex gap-4 items-center">
-                            <img src="${product.image}" alt="${product.name}" class="w-16 h-16 object-cover rounded-xl border border-brand-200" referrerpolicy="no-referrer">
-                            <div class="flex-1">
-                                <h4 class="font-medium text-brand-900 line-clamp-1">${product.name}</h4>
-                                <p class="text-sm text-brand-500">Qty: ${item.quantity}</p>
-                            </div>
-                            <div class="font-semibold text-brand-900">${formatINR(product.price * item.quantity)}</div>
-                        </div>
-                    `;
-                }).join('');
-                
-                toggleCart(false);
-            }
-
-            currentCheckoutSubtotal = subtotal;
-            currentCheckoutShipping = shipping;
-            updateCheckoutTotals();
-
-            // Set hidden form fields for Google Sheets
-            document.getElementById('checkout-form-product').value = productNames.join(', ');
-            document.getElementById('checkout-form-quantity').value = totalQuantity;
-
-            lucide.createIcons();
-            navigateTo('checkout');
-            window.scrollTo(0, 0);
-        }
-
-        function updateCheckoutTotals() {
-            const total = currentCheckoutSubtotal - currentDiscountAmount + currentCheckoutShipping;
-            document.getElementById('checkout-subtotal').innerText = formatINR(currentCheckoutSubtotal);
-            document.getElementById('checkout-shipping').innerText = formatINR(currentCheckoutShipping);
-            document.getElementById('checkout-total').innerText = formatINR(total);
-            document.getElementById('checkout-form-amount').value = total;
-        }
-
-        function applyDiscount() {
-            const codeInput = document.getElementById('discount-code-input');
-            const messageEl = document.getElementById('discount-message');
-            const code = codeInput.value.trim().toUpperCase();
-            
-            if (!code) return;
-
-            let discount = 0;
-            let label = '';
-            
-            // Example discount logic
-            if (code === 'WELCOME10') {
-                discount = currentCheckoutSubtotal * 0.10;
-                label = '10% Off';
-            } else if (code === 'SAVE200') {
-                discount = 200;
-                label = '₹200 Off';
-            } else {
-                messageEl.textContent = 'Invalid discount code';
-                messageEl.className = 'text-sm mt-2 text-red-500 block';
-                return;
-            }
-
-            if (discount > currentCheckoutSubtotal) discount = currentCheckoutSubtotal;
-
-            currentDiscountAmount = discount;
-            
-            messageEl.textContent = 'Discount applied successfully!';
-            messageEl.className = 'text-sm mt-2 text-green-600 block';
-            
-            document.getElementById('checkout-discount-label').textContent = code;
-            document.getElementById('checkout-discount-amount').textContent = '-' + formatINR(discount);
-            document.getElementById('checkout-discount-row').classList.remove('hidden');
-            
-            updateCheckoutTotals();
-        }
-
-        function submitOrder(event) {
-            event.preventDefault();
-            
-            document.getElementById('checkout-form-date').value = new Date().toISOString();
-            
-            // Simulate form submission to Google Sheets
-            const formData = new FormData(event.target);
-            const data = Object.fromEntries(formData.entries());
-            console.log('Order Data ready for Google Sheets:', data);
-            
-            if (checkoutMode === 'cart') {
-                cart = [];
-                updateCartUI();
-            }
-            
-            event.target.reset();
-            navigateTo('confirmation');
-            window.scrollTo(0, 0);
-        }
-
-        // Run init on load
-        document.addEventListener('DOMContentLoaded', init);
-    </script>
-</body>
-</html>
+</body></html>

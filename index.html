@@ -2264,10 +2264,39 @@ body.no-hero>main {
         <div id="home-view">
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
-            <img class="hero-video-bg" src="https://i.pinimg.com/736x/28/d4/08/28d4087ef99ca2adc2e07c8d959babfb.jpg" alt="Sacred Botanicals" referrerPolicy="no-referrer">
-            <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-                <h6 class="hero-title hero-title-small" style="letter-spacing: 0.2em; font-size: 0.8rem; margin-bottom: 0.5rem;">OUR APOTHECARY</h6>
-                <h1 class="hero-title" style="font-size: 3.5rem; letter-spacing: 0.1em; font-weight: 400; margin: 0;">SACRED BOTANICALS</h1>
+            <video class="hero-video-bg" autoplay="" muted="" loop="" playsinline="">
+                <source src="https://sampritibotanicals.com/assets/original/m.mp4" type="video/mp4">
+            </video>
+            <div class="container">
+                <h6 class="hero-title hero-title-small">ROOTED IN </h6>
+                <h1 class="hero-title">LIVING HERBAL LINEAGES</h1>
+                <h6 class="hero-title hero-title-small"> A botanical house of ritual science and disciplined
+                    formulation, guided by the quiet intelligence of the earth.</h6>
+                <a href="#products" class="btn btn-primary">Discover the collection</a>
+            </div>
+            <div class="hero-video-controls">
+                <button id="hero-play-pause" class="hero-ctrl-btn" aria-label="Pause video">
+                    <!-- Pause icon (shown when playing) -->
+                    <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <rect x="6" y="4" width="4" height="16"></rect>
+                        <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                    <!-- Play icon (shown when paused) -->
+                    <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                        <polygon points="5,3 19,12 5,21"></polygon>
+                    </svg>
+                </button>
+                <button id="hero-mute-unmute" class="hero-ctrl-btn" aria-label="Unmute video">
+                    <!-- Mute icon (shown when muted) -->
+                    <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z" opacity=".3"></path>
+                        <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"></line>
+                    </svg>
+                    <!-- Unmute icon (shown when unmuted) -->
+                    <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display:none">
+                        <path d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z"></path>
+                    </svg>
+                </button>
             </div>
         </section>
         <!-- Products Section -->
@@ -2525,9 +2554,10 @@ body.no-hero>main {
             <!-- Shop Hero Section -->
             <section id="shop-hero" class="hero-section">
                 <img class="hero-video-bg" src="https://i.pinimg.com/736x/28/d4/08/28d4087ef99ca2adc2e07c8d959babfb.jpg" alt="Sacred Botanicals" referrerPolicy="no-referrer">
-                <div class="container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
-                    <h6 class="hero-title hero-title-small" style="letter-spacing: 0.2em; font-size: 0.8rem; margin-bottom: 0.5rem;">OUR APOTHECARY</h6>
-                    <h1 class="hero-title" style="font-size: 3.5rem; letter-spacing: 0.1em; font-weight: 400; margin: 0;">SACRED BOTANICALS</h1>
+                <div class="container">
+                    <h6 class="hero-title hero-title-small">OUR APOTHECARY</h6>
+                    <h1 class="hero-title">SACRED BOTANICALS</h1>
+                    <a href="#shop-products" class="btn btn-primary">Explore the collection</a>
                 </div>
             </section>
 

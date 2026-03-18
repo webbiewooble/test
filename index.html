@@ -218,6 +218,17 @@ ul {
     color: white;
 }
 
+.subscribe-section { padding: 0; }
+.subscribe-split-layout { display: flex; flex-wrap: wrap; }
+.subscribe-image-side { flex: 1; min-width: 300px; }
+.subscribe-image-side img { width: 100%; height: 100%; object-fit: cover; }
+.subscribe-content-side { flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: center; padding: 60px; background-color: #f9f9f7; }
+.subscribe-content-inner { max-width: 400px; }
+.subscribe-content-inner h2 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 20px; }
+.subscribe-form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+.subscribe-form input { padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
+.btn-submit { background-color: var(--primary-color-1); color: white; padding: 12px; border: none; cursor: pointer; }
+
 /* Header */
 .main-header {
     background-color: transparent;
@@ -2239,10 +2250,10 @@ body.no-hero>main {
             <nav class="main-nav">
                 <button class="close-menu" aria-label="Close menu">×</button>
                 <ul>
-                    <li><a href="#products">SHOP</a></li>
+                    <li><a href="#new-collection">SHOP</a></li>
                     <li><a href="#about">THE HOUSE</a></li>
-                    <li><a href="#materia-botanica">MATERIA BOTANICA</a></li>
                     <li><a href="#blog-preview">JOURNAL</a></li>
+                    <li><a href="#provenance">PROVENANCE</a></li>
                 </ul>
             </nav>
         </div>
@@ -2290,41 +2301,33 @@ body.no-hero>main {
         <!-- Products Section -->
         <section id="products" class="section-padding bg-light">
             <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Signature Rituals</span>
-                    <p>A collection of precisely composed formulations honoring the body's essential cycles: activation
-                        and restoration. </p>
+                <div class="section-header text-center" style="margin-bottom: 50px;">
+                    <span class="eyebrow">OUR APOTHECARY</span>
+                    <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SACRED BOTANICALS</h2>
                 </div>
 
-                <div class="products-grid">
+                <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
                     <!-- Product 1: Shakti Peya -->
-                    <div class="product-grid-item" style="cursor: pointer;" onclick="showProduct('shakti')">
-                        <div class="product-grid-image">
-                            <img class="img-default" src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir">
-                            <img class="img-hover" src="https://sampritibotanicals.com/assets/images/shakthi-hover.png" alt="Shakti Peya - Energy Elixir Hover">
+                    <div class="product-grid-item" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;" onclick="showProduct('shakti')">
+                        <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
+                            <img class="img-default" src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir" style="max-height: 100%; width: auto; object-fit: contain;">
                         </div>
-                        <h3>SHAKTI PEYA | Energy Elixir</h3>
-                        <p>Activation ⋅ Anti-Aging ⋅ Radiance</p>
-                        <p>9 Test Tube Kit</p>
-                        <p>$33</p>
-                        <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation();">Add to cart</button>
+                        <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Energy Elixir</p>
+                        <p style="color: #333; font-weight: 600;">$33</p>
+                        <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation();" style="margin-top: 15px;">Add to cart</button>
                     </div>
 
                     <!-- Product 2: Chandra Rasa -->
-                    <div class="product-grid-item" style="cursor: pointer;" onclick="showProduct('chandra')">
-                        <div class="product-grid-image">
-                            <img class="img-default" src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion">
-                            <img class="img-hover" src="https://sampritibotanicals.com/assets/images/chandrai-hover.png" alt="Chandra Rasa - Sleep Potion Hover">
+                    <div class="product-grid-item" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;" onclick="showProduct('chandra')">
+                        <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
+                            <img class="img-default" src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion" style="max-height: 100%; width: auto; object-fit: contain;">
                         </div>
-                        <h3>CHANDRA RASA | Sleep Potion</h3>
-                        <p>Calm ⋅ Settling ⋅ Restorative</p>
-                        <p>9 Test Tube Kit</p>
-
-                        <p>$33</p>
-                        <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation();">Add to cart</button>
+                        <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Sleep Potion</p>
+                        <p style="color: #333; font-weight: 600;">$33</p>
+                        <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation();" style="margin-top: 15px;">Add to cart</button>
                     </div>
-
-
                 </div>
 
             </div>
@@ -2359,17 +2362,6 @@ body.no-hero>main {
             </div>
         </section>
 
-
-
-        <!-- Materia Botanica Section -->
-        <section id="materia-botanica" class="section-padding">
-            <div class="container">
-                <div class="section-header text-center">
-                    <span class="eyebrow">Materia Botanica</span>
-                    <p>Exploring the essence of our botanical ingredients. Section details to be added.</p>
-                </div>
-            </div>
-        </section>
 
 
         <!-- Philosophy Section -->
@@ -2553,6 +2545,16 @@ body.no-hero>main {
             </div>
         </section>
 
+        <section id="provenance" class="section-padding">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="eyebrow">Provenance</span>
+                    <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">OUR ORIGINS</h2>
+                    <p>Exploring the source and journey of our botanical ingredients. Section details to be added.</p>
+                </div>
+            </div>
+        </section>
+
 
         </div> <!-- End home-view -->
 
@@ -2574,7 +2576,10 @@ body.no-hero>main {
                             <div class="product-description-full">
                                 <p>A potent blend of adaptogens and revitalizing herbs designed to awaken the body's natural energy reserves. Formulated with ethically sourced botanicals to promote sustained vitality without the crash.</p>
                             </div>
-                            <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA">Add to cart</button>
+                            <div style="display: flex; gap: 15px; margin-bottom: 30px;">
+                                <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" style="flex: 1; height: 55px; padding: 0; display: flex; align-items: center; justify-content: center;">Add to cart</button>
+                                <button class="btn btn-secondary direct-buy-btn" data-product="SHAKTI PEYA" style="flex: 1; height: 55px; padding: 0; display: flex; align-items: center; justify-content: center; background: transparent; color: #333; border: 1px solid #333;">Buy Now</button>
+                            </div>
                             
                             <div class="product-accordion">
                                 <div class="accordion-item active">
@@ -2677,7 +2682,10 @@ body.no-hero>main {
                             <div class="product-description-full">
                                 <p>A calming nocturnal infusion crafted to settle the nervous system and prepare the mind for deep, restorative sleep. Blends traditional nervines to ease tension and invite tranquility.</p>
                             </div>
-                            <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA">Add to cart</button>
+                            <div style="display: flex; gap: 15px; margin-bottom: 30px;">
+                                <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" style="flex: 1; height: 55px; padding: 0; display: flex; align-items: center; justify-content: center;">Add to cart</button>
+                                <button class="btn btn-secondary direct-buy-btn" data-product="CHANDRA RASA" style="flex: 1; height: 55px; padding: 0; display: flex; align-items: center; justify-content: center; background: transparent; color: #333; border: 1px solid #333;">Buy Now</button>
+                            </div>
                             
                             <div class="product-accordion">
                                 <div class="accordion-item active">
@@ -2899,29 +2907,60 @@ body.no-hero>main {
         </div>
     </main>
 
+    <section id="new-collection" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header text-center" style="margin-bottom: 50px;">
+                <span class="eyebrow">OUR APOTHECARY</span>
+                <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SACRED BOTANICALS</h2>
+            </div>
+
+            <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                <!-- Product 1: Shakti Peya -->
+                <div class="product-grid-item" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
+                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir" style="max-height: 100%; width: auto; object-fit: contain;">
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Energy Elixir</p>
+                    <p style="color: #333; font-weight: 600;">$33</p>
+                    <button class="btn btn-primary" style="margin-top: 15px;">Add to cart</button>
+                </div>
+
+                <!-- Product 2: Chandra Rasa -->
+                <div class="product-grid-item" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
+                    <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
+                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion" style="max-height: 100%; width: auto; object-fit: contain;">
+                    </div>
+                    <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Sleep Potion</p>
+                    <p style="color: #333; font-weight: 600;">$33</p>
+                    <button class="btn btn-primary" style="margin-top: 15px;">Add to cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="subscribe" class="subscribe-section">
+        <div class="subscribe-split-layout">
+            <div class="subscribe-image-side">
+                <img src="https://sampritibotanicals.com/assets/images/subscribe.jpg" alt="Subscribe to Sampriti Updates" referrerPolicy="no-referrer">
+            </div>
+            <div class="subscribe-content-side">
+                <div class="subscribe-content-inner">
+                    <h2>Sign Up for Sampriti Updates</h2>
+                    <p>Stay informed on new formulations, collaborations, and everything Sampriti Botanicals.</p>
+                    <form id="subscribe-form" class="subscribe-form">
+                        <input type="email" placeholder="Email address" required>
+                        <button type="submit" class="btn-submit">Join the Circle</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="main-footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col subscribe-col">
-                    <h3>Subscribe to Sampriti communications</h3>
-                    <form class="footer-subscribe-form">
-                        <input type="email" placeholder="Email address*" required>
-                        <input type="tel" placeholder="Phone number">
-                        
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="sms-consent">
-                            <label for="sms-consent">By submitting this form, I expressly agree to Sampriti, directly or by third parties acting on its behalf, sending me promotional &amp; marketing messages (e.g. cart reminders) - including texts or calls using automated means (including for the selection or dialing of a telephone number) or pre-recorded or artificial voice messages - to the mobile number I provided and to the Mobile Terms (which include an arbitration provision to resolve disputes). I confirm I am the owner of the # provided, and understand consent is not a condition of purchase. Msg frequency varies. Msg &amp; Data Rates May Apply. Text HELP for help and STOP to cancel. Privacy Policy Notice of Financial Incentives.</label>
-                        </div>
-
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="email-consent">
-                            <label for="email-consent">Receive email communications<br>By submitting this form, I confirm I am a US resident and (1) agree to Sampriti's Terms &amp; Conditions (which includes an arbitration provision) and Marketing Disclosure; and (2) have read and acknowledge Sampriti's Privacy Notice and Notice of Financial Incentives.</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-view-more">Submit</button>
-                    </form>
-                </div>
-                
                 <div class="footer-col">
                     <h3>Orders and support</h3>
                     <ul>
@@ -3536,6 +3575,25 @@ body.no-hero>main {
                 cart.push({ name: productKey, price: 0, quantity: 1 });
                 updateCartUI();
                 alert('Added to cart!');
+            }
+        });
+    });
+
+    // Direct Buy Now
+    document.querySelectorAll('.direct-buy-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const productKey = btn.getAttribute('data-product');
+            const product = productsData[productKey];
+            
+            if (product) {
+                const existingItem = cart.find(item => item.name === product.name);
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({ ...product, quantity: 1 });
+                }
+                updateCartUI();
+                openCheckoutFromCart();
             }
         });
     });

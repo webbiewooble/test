@@ -2203,6 +2203,13 @@ body.no-hero>main {
     .aesop-btn:hover {
         background: #000;
     }
+    .razorpay-btn {
+        background-color: #3399cc !important;
+        color: white !important;
+    }
+    .razorpay-btn:hover {
+        background-color: #2b82af !important;
+    }
     @keyframes slideInRight {
         from { transform: translateX(100%); }
         to { transform: translateX(0); }
@@ -2852,22 +2859,18 @@ body.no-hero>main {
                         
                         <div class="form-group" style="margin-bottom: 35px;">
                             <div style="display: flex; flex-direction: column; gap: 15px;">
-                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; color: #666;">
-                                    <input type="radio" name="payment" value="credit_card" required="">
-                                    Credit / Debit Card
-                                </label>
-                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; color: #666;">
-                                    <input type="radio" name="payment" value="upi">
-                                    UPI (Google Pay, PhonePe, Paytm)
-                                </label>
-                                <label style="display: flex; align-items: center; gap: 10px; cursor: pointer; font-weight: normal; color: #666;">
-                                    <input type="radio" name="payment" value="cod">
-                                    Cash on Delivery (COD)
+                                <label style="display: flex; align-items: center; gap: 15px; cursor: pointer; font-weight: 500; color: #333; padding: 20px; border: 2px solid #3399cc; border-radius: 8px; background: #f0f9ff; transition: all 0.2s ease;">
+                                    <input type="radio" name="payment" value="razorpay" checked required="" style="width: 20px; height: 20px; accent-color: #3399cc;">
+                                    <div style="display: flex; flex-direction: column;">
+                                        <span style="font-size: 1.1rem;">Razorpay Secure Payment</span>
+                                        <span style="font-size: 0.85rem; color: #666; font-weight: normal;">Cards, UPI, Netbanking, Wallets</span>
+                                    </div>
+                                    <img src="https://cdn.razorpay.com/static/assets/logo/payment_method.svg" alt="Razorpay" style="height: 24px; margin-left: auto;">
                                 </label>
                             </div>
                         </div>
 
-                        <button type="submit" class="aesop-btn" style="font-size: 1.1rem; padding: 20px;">Place Order</button>
+                        <button type="submit" class="aesop-btn razorpay-btn" style="font-size: 1.1rem; padding: 20px;">Pay Now</button>
                         </form>
                     </div>
                     
@@ -3561,12 +3564,12 @@ body.no-hero>main {
         // Basic visual feedback
         const submitBtn = buyForm.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Processing...';
+        submitBtn.textContent = 'Redirecting to Razorpay...';
         submitBtn.disabled = true;
 
         // Simulate network request
         setTimeout(() => {
-            alert('Order successfully placed! We will contact you shortly.');
+            alert('Payment successful! Your order has been placed.');
             buyForm.reset();
             showHome();
             cart = [];
@@ -3574,7 +3577,7 @@ body.no-hero>main {
             
             submitBtn.textContent = originalText;
             submitBtn.disabled = false;
-        }, 1000);
+        }, 2000);
     });
 });
 </script>

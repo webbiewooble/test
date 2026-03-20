@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- saved from url=(0031)# -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
+    <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Botanicals & Herbal Wellness</title>
     <link rel="icon" type="image/png" href="https://sampritibotanicals.com/assets/images/logo-trans.png">
@@ -24,30 +24,28 @@
     <meta property="twitter:title" content="Botanicals & Herbal Wellness">
     <meta property="twitter:description" content="Rooted in India's living herbal lineages. Sampriti arises from a continuum of deep botanical understanding.">
     <meta property="twitter:image" content="http://sampritibotanicals.com/assets/images/brand2.jpg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>/* CSS Variables */
 :root {
-    --primary-color-1: #333;
-    /* Product 1 (Shakti Peya) - Brownish Red */
+    --primary-color-1: #333333;
     --primary-color-2: #252525;
-    /* Product 2 (Chandra Rasa) - Deep Blue/Navy */
-    --text-color: #252525;
-    --text-light: #555555;
-    --bg-color: #fffef2;
-    --bg-light: #f9f8f4;
+    --text-color: #333333;
+    --text-light: #666666;
+    --text-muted: #888888;
+    --bg-color: #FFFEF2;
+    --bg-light: #F6F5F3;
+    --border-color: #E5E5E5;
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
-    --container-width: 1200px;
-    --spacing-xs: 8px;
-    --spacing-sm: 16px;
-    --spacing-md: 32px;
-    --spacing-lg: 64px;
-    --spacing-xl: 96px;
-    --aman-bg: #f9f8f4;
-    --aman-ink: #1a1a1a;
-    --aman-gold: #b5a48b;
+    --container-width: 1440px;
+    --spacing-xs: 12px;
+    --spacing-sm: 24px;
+    --spacing-md: 48px;
+    --spacing-lg: 96px;
+    --spacing-xl: 144px;
 }
 
 /* Aman-inspired Provenance Styles */
@@ -243,7 +241,7 @@ h6 {
     font-family: var(--font-heading);
     color: var(--primary-color-2);
     line-height: 1.3;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.02em;
     margin-bottom: var(--spacing-sm);
     font-weight: 400;
 }
@@ -256,7 +254,7 @@ h6 {
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 h3 {
@@ -325,59 +323,62 @@ ul {
 }
 
 .eyebrow {
-    font-size: 1.875rem;
-    letter-spacing: 2px;
+    font-size: 0.875rem;
+    letter-spacing: 0.15em;
     color: var(--primary-color-1);
-    /* font-weight: 600; */
+    text-transform: uppercase;
     display: block;
     margin-bottom: var(--spacing-xs);
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
+    font-weight: 500;
 }
 
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 12px 30px;
+    padding: 16px 24px;
     font-family: var(--font-body);
     font-weight: 400;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     cursor: pointer;
-    border: none;
-    font-size: 0.85rem;
+    border: 1px solid var(--primary-color-1);
+    font-size: 0.75rem;
     transition: all 0.3s ease;
+    background-color: transparent;
+    color: var(--primary-color-1);
 }
 
 .btn-primary {
     background-color: var(--primary-color-1);
-    color: white;
+    color: var(--bg-color);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-color-2);
-
+    background-color: var(--text-light);
+    border-color: var(--text-light);
 }
 
 .btn-secondary {
     background-color: transparent;
-    border: 1px solid var(--primary-color-2);
-    color: var(--primary-color-2);
+    border: 1px solid var(--primary-color-1);
+    color: var(--primary-color-1);
 }
 
 .btn-secondary:hover {
-    background-color: var(--primary-color-2);
-    color: white;
+    background-color: var(--primary-color-1);
+    color: var(--bg-color);
 }
 
 .btn-view-more {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: transparent;
     color: var(--primary-color-1);
     border: 1px solid var(--primary-color-1);
 }
 
 .btn-view-more:hover {
     background-color: var(--primary-color-1);
-    color: white;
+    color: var(--bg-color);
 }
 
 /* Payment Method Styles */
@@ -445,98 +446,217 @@ ul {
 
 /* Header */
 .main-header {
-    background-color: transparent;
-    padding: var(--spacing-sm) 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    background-color: transparent;
+    transition: background-color 0.4s ease;
 }
 
 .main-header.scrolled {
     background-color: var(--bg-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
 }
 
-/* On pages without a hero, offset main content below the fixed header */
-body.no-hero>main {
-    padding-top: 130px;
+.header-top-bar {
+    background-color: #252525;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8rem;
+    font-weight: 400;
 }
 
-.main-header .container {
+.header-top-bar p {
+    margin: 0;
+}
+
+.header-top-bar span {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.header-main {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    /* gap: var(--spacing-sm); */
-    gap: 10px;
-    position: relative;
+    padding: 20px 40px;
 }
 
-.header-actions {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
+.header-nav-left ul,
+.header-nav-right ul {
     display: flex;
-    align-items: center;
-    gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
 }
 
-.cart-toggle,
-.search-toggle {
+.header-nav-left a,
+.header-nav-right a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: opacity 0.3s ease;
+}
+
+.header-nav-left a:hover,
+.header-nav-right a:hover {
+    opacity: 0.6;
+}
+
+.mobile-menu-toggle {
+    display: none;
     background: none;
     border: none;
-    color: white;
     cursor: pointer;
-    padding: 5px;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.3s ease;
+    padding: 0;
 }
 
-.main-header.scrolled .cart-toggle,
-.main-header.scrolled .search-toggle {
-    color: var(--primary-color-2);
-}
-
-.cart-count {
-    position: absolute;
-    top: -2px;
-    right: -5px;
-    background-color: var(--primary-color-1);
-    color: white;
-    font-size: 0.7rem;
-    font-weight: bold;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.logo {
+/* Mobile Nav */
+.mobile-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-color);
+    z-index: 1100;
+    transition: left 0.4s ease;
+    padding: 40px;
     display: flex;
     flex-direction: column;
+}
+
+.mobile-nav.active {
+    left: 0;
+}
+
+.mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 5px;
+    margin-bottom: 40px;
+}
+
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
     text-decoration: none;
+    color: #333;
 }
 
-.logo img {
-    height: auto;
-    max-height: 60px;
-    filter: brightness(0) invert(1);
-    transition: filter 0.4s ease;
+.close-menu {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
 }
 
-.main-header.scrolled .logo img {
-    filter: brightness(0) invert(0);
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mobile-nav li {
+    margin-bottom: 20px;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    background-color: #333;
+    overflow: hidden;
+}
+
+.hero-split {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content-side {
+    flex: 0 0 40%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px;
+}
+
+.hero-image-side {
+    flex: 0 0 60%;
+    position: relative;
+}
+
+.hero-image-side video,
+.hero-image-side img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 18px 24px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    width: fit-content;
+}
+
+.btn-hero:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+.btn-hero svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-hero:hover svg {
+    transform: translateX(5px);
 }
 
 
@@ -551,7 +671,7 @@ body.no-hero>main {
 .main-nav a {
     font-family: var(--font-body);
     font-weight: 400;
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     letter-spacing: 0.05em;
     color: white;
     transition: color 0.3s ease;
@@ -657,18 +777,34 @@ body.no-hero>main {
 }
 
 .hero-title {
-    font-size: 2.3rem;
+    font-size: 1.5rem;
     max-width: 900px;
-    /* margin: 0 auto var(--spacing-md); */
-    /* color: var(--primary-color-2); */
+    margin: 10px auto 20px;
     color: #fff;
-    font-weight: 300;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+}
+
+.section-header h2 {
+    font-size: 1.25rem !important;
+    letter-spacing: 0.06em;
 }
 
 .hero-title-small {
-    font-size: 1.1rem !important;
+    font-size: 0.875rem !important;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     margin-bottom: 0 !important;
+    font-weight: 400;
+}
 
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
 }
 
 @media (max-width: 768px) {
@@ -684,9 +820,18 @@ body.no-hero>main {
         transform: none;
     }
 
+    .hero-title {
+        font-size: 1.75rem !important;
+    }
+
     .hero-title-small {
-        font-size: 1rem !important;
+        font-size: 0.75rem !important;
         margin-bottom: 0 !important;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
     }
 
     .eyebrow {
@@ -753,7 +898,7 @@ body.no-hero>main {
 
 /* Remove old About styles that interfere */
 .about-content p {
-    font-size: 1.1rem;
+    font-size: 0.875rem;
     margin-bottom: var(--spacing-md);
 }
 
@@ -865,8 +1010,9 @@ body.no-hero>main {
 /* Product Cards */
 
 .buy-now-btn {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     width: 100%;
+    margin-top: auto;
 }
 
 .product-card {
@@ -1011,41 +1157,31 @@ body.no-hero>main {
 
 /* Footer */
 .main-footer {
-    background-color: #252525;
-    color: white;
-    padding: var(--spacing-xl) 0 var(--spacing-md);
-    margin-top: 100px;
-    font-size: 0.9rem;
+    background-color: #212121;
+    color: #fff;
+    padding: 80px 0 40px;
+    margin-top: 120px;
+    font-size: 0.8125rem;
+    line-height: 1.6;
 }
-
-
 
 .footer-grid {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-}
-
-@media (max-width: 1024px) {
-    .footer-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
+    gap: 60px;
+    margin-bottom: 80px;
 }
 
 .footer-col h3 {
-    font-family: var(--font-heading);
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    color: white;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-    padding-bottom: 10px;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    margin-bottom: 24px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 12px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .footer-col ul {
@@ -1054,13 +1190,27 @@ body.no-hero>main {
 }
 
 .footer-col ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .footer-col a {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
 }
 
 .footer-col a:hover {
@@ -1114,6 +1264,7 @@ body.no-hero>main {
     margin-top: 10px;
     border-color: white;
     color: white;
+    background-color: transparent;
 }
 
 .footer-subscribe-form .btn:hover {
@@ -1178,7 +1329,7 @@ body.no-hero>main {
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 1.35rem;
     }
 
     .main-header .container {
@@ -1258,24 +1409,27 @@ body.no-hero>main {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 400;
     color: var(--text-color);
+    font-size: 0.875rem;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border-color);
     font-family: var(--font-body);
-    font-size: 1rem;
+    font-size: 0.875rem;
     transition: border-color 0.3s;
+    background-color: transparent;
+    border-radius: 0;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: var(--primary-color-2);
     outline: none;
+    border-color: var(--primary-color-1);
 }
 
 .full-width {
@@ -1375,12 +1529,11 @@ body.no-hero>main {
 .styled-contact-form input,
 .styled-contact-form textarea {
     width: 100%;
-    padding: 15px;
-    border: 1px solid #e0e0e0;
+    padding: 12px;
+    border: 1px solid var(--border-color);
     border-radius: 0;
-    /* Sharp edges as per reference */
     font-family: var(--font-body);
-    font-size: 0.95rem;
+    font-size: 0.875rem;
     color: var(--text-color);
     background-color: transparent;
     transition: border-color 0.3s;
@@ -1388,34 +1541,38 @@ body.no-hero>main {
 
 .styled-contact-form input:focus,
 .styled-contact-form textarea:focus {
-    border-color: #aaa;
+    border-color: var(--primary-color-1);
     outline: none;
 }
 
 .styled-contact-form input::placeholder,
 .styled-contact-form textarea::placeholder {
-    color: #999;
-    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-size: 0.875rem;
 }
 
 .contact-submit-btn {
-    background-color: #C19A6B;
-    /* Muted gold/brown tone from reference */
-    color: white;
-    border: none;
-    /* Pill shape */
-    padding: 12px 35px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    letter-spacing: 1px;
+    background-color: var(--primary-color-1);
+    color: var(--bg-color);
+    border: 1px solid var(--primary-color-1);
+    padding: 16px 24px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     margin-top: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    font-family: var(--font-body);
 }
 
-/* Blog Page Styles */
-.blog-hero-section {
+.contact-submit-btn:hover {
+    background-color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+/* Recommended Reading Page Styles */
+.recommended-reading-hero-section {
     position: relative;
     height: 70vh;
     background-image: url('https://sampritibotanicals.com/assets/images/blog/cardamon.jpg');
@@ -1539,66 +1696,169 @@ body.no-hero>main {
 /* Product Grid Styles (Homepage) */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 32px 24px;
     margin-top: var(--spacing-md);
 }
 
+@media (max-width: 768px) {
+    .products-grid:not(.swiper) {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        scroll-snap-type: x mandatory !important;
+        gap: 12px !important;
+        padding-bottom: 12px !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+    }
+    .products-grid:not(.swiper)::-webkit-scrollbar {
+        display: none !important;
+    }
+    .product-grid-item {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        flex: 0 0 calc(50% - 6px) !important;
+        width: calc(50% - 6px) !important;
+        min-width: 0 !important;
+        scroll-snap-align: start !important;
+        height: auto !important;
+    }
+    .product-grid-image {
+        aspect-ratio: 4 / 5 !important;
+        height: auto !important;
+    }
+    .product-grid-item h3 {
+        font-size: 0.6rem !important;
+    }
+    .product-grid-subtitle {
+        font-size: 0.7rem !important;
+    }
+    .product-grid-description {
+        font-size: 0.65rem !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        display: block !important;
+    }
+    .product-grid-price {
+        font-size: 0.7rem !important;
+    }
+    .buy-now-btn {
+        padding: 10px 14px !important;
+        font-size: 0.65rem !important;
+        width: 100% !important;
+    }
+}
+
+/* ===== AESOP-STYLE PRODUCT GRID CARDS ===== */
 .product-grid-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    /* padding: var(--spacing-md); */
-    /* background-color: white; */
-    /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: flex-start;
+    text-align: left;
+    transition: opacity 0.3s ease;
     text-decoration: none;
     color: inherit;
+    height: 100%;
+    cursor: pointer;
 }
 
+.product-grid-item:hover {
+    opacity: 1;
+}
+
+.product-grid-item:hover .product-grid-image img {
+    transform: scale(1.03);
+}
 
 .product-grid-image {
     width: 100%;
-    height: 250px;
+    aspect-ratio: 1 / 1;
+    height: auto;
     overflow: hidden;
-    margin-bottom: var(--spacing-sm);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
+    margin-bottom: 18px;
+    display: block;
+    background-color: #f6f5f3;
+    position: relative;
 }
 
 .product-grid-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
+    display: block;
 }
 
-/* .product-grid-item:hover .product-grid-image img {
-    transform: scale(1.05);
-} */
-
 .product-grid-item h3 {
-    font-size: 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
     margin-bottom: 5px;
-    /* Ensure heading font is used */
-    color: var(--primary-color-2);
+    font-family: var(--font-body);
+    color: var(--primary-color-1);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.4;
 }
 
 .product-grid-subtitle {
     font-family: var(--font-heading);
+    color: var(--text-light);
+    margin-bottom: 12px;
+    font-size: 0.9rem;
     font-style: italic;
-    color: var(--primary-color-1);
-    margin-bottom: 10px;
-    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.4;
 }
 
-.product-grid-price {
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--text-color);
+.product-grid-description {
+    color: var(--text-light);
+    font-size: 0.875rem;
+    margin-bottom: 15px;
+    max-width: 100%;
+    line-height: 1.6;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+/* Swiper Navigation Customization */
+.products-grid.swiper {
+    padding-bottom: 40px;
+    position: relative;
+}
+
+.swiper-pagination {
+    position: absolute !important;
+    bottom: 5px !important;
+    left: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    gap: 6px !important;
+}
+
+.swiper-pagination-bullet {
+    width: 16px !important;
+    height: 2px !important;
+    border-radius: 0 !important;
+    background: #eae8e0 !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    transition: all 0.3s ease !important;
+}
+
+.swiper-pagination-bullet-active {
+    background: #333 !important;
+    width: 32px !important;
 }
 
 /* Product Detail Page Styles */
@@ -1945,20 +2205,25 @@ body.no-hero>main {
     height: 250px;
     object-fit: cover;
     margin-bottom: 10px;
-    background-color: #f9f9f9;
+    background-color: transparent;
     border: none;
     display: block;
 }
 
 .mini-product-card h4 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin-bottom: 5px;
     font-family: var(--font-heading);
     color: var(--primary-color-2);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-clamp: 2;
 }
 
 .mini-product-card p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: var(--text-light);
     margin-bottom: 0;
 }
@@ -1991,131 +2256,152 @@ body.no-hero>main {
     font-style: normal;
 }
 
-/* Blog Styles */
-.blog-grid {
+/* Recommended Reading Styles */
+.recommended-reading-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: var(--spacing-md);
     margin-top: var(--spacing-md);
 }
 
-.blog-card {
-    background-color: white;
+@media (max-width: 768px) {
+    .recommended-reading-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 15px !important;
+    }
+    .recommended-reading-card-image {
+        height: 150px !important;
+    }
+    .recommended-reading-card-content h3 {
+        font-size: 0.85rem !important;
+    }
+    .recommended-reading-card-content p {
+        font-size: 0.7rem !important;
+    }
+}
+
+.recommended-reading-card {
+    background-color: transparent;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: opacity 0.3s ease;
 }
 
-.blog-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+.recommended-reading-card:hover {
+    opacity: 0.8;
 }
 
-.blog-card-link {
+.recommended-reading-card-link {
     display: block;
     height: 100%;
 }
 
-.blog-card-image {
+.recommended-reading-card-image {
     height: 200px;
     overflow: hidden;
 }
 
-.blog-card-image img {
+.recommended-reading-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
 
-.blog-card:hover .blog-card-image img {
+.recommended-reading-card:hover .recommended-reading-card-image img {
     transform: scale(1.05);
 }
 
-.blog-card-content {
-    padding: var(--spacing-md);
+.recommended-reading-card-content {
+    padding: var(--spacing-sm) 0;
 }
 
-.blog-category {
-    font-size: 0.8rem;
+.recommended-reading-category {
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--primary-color-1);
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
     display: block;
     margin-bottom: var(--spacing-xs);
-    font-weight: 600;
+    font-weight: 400;
 }
 
-.blog-card-content h3 {
-    font-size: 1.4rem;
-    margin-bottom: var(--spacing-sm);
+.recommended-reading-card-content h3 {
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-xs);
     line-height: 1.3;
+    font-family: var(--font-heading);
+    color: var(--primary-color-2);
+    font-weight: 400;
 }
 
-.blog-card-content p {
-    color: var(--text-light);
-    font-size: 0.95rem;
+.recommended-reading-card-content p {
+    color: var(--text-color);
+    font-size: 0.8rem;
     margin-bottom: var(--spacing-sm);
     display: -webkit-box;
-    -webkit-line-clamp: 3;
-    line-clamp: 3;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.read-more {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--primary-color-2);
+.recommended-reading-read-more {
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: var(--primary-color-1);
     display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-/* Blog Detail Page */
-.blog-post-page .blog-post-header {
+/* Recommended Reading Detail Page */
+.recommended-reading-post-page .recommended-reading-post-header {
     margin-bottom: var(--spacing-lg);
 }
 
-.blog-post-header h1 {
-    font-size: 3rem;
+.recommended-reading-post-header h1 {
+    font-size: 2.25rem;
     margin-top: var(--spacing-xs);
     margin-bottom: var(--spacing-sm);
+    font-weight: 400;
 }
 
-.blog-meta {
-    font-style: italic;
-    color: var(--text-light);
+.recommended-reading-meta {
+    font-style: normal;
+    font-size: 0.875rem;
+    color: var(--text-muted);
 }
 
-.blog-post-image {
+.recommended-reading-post-image {
     margin-bottom: var(--spacing-lg);
     overflow: hidden;
     max-height: 800px;
     /* Limit height to keep content accessible */
 }
 
-.blog-post-image img {
+.recommended-reading-post-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.blog-post-content {
+.recommended-reading-post-content {
     font-size: 1.1rem;
     line-height: 1.8;
 }
 
-.blog-post-content p {
+.recommended-reading-post-content p {
     margin-bottom: var(--spacing-md);
 }
 
-.blog-post-content .lead {
+.recommended-reading-post-content .lead {
     font-size: 1.25rem;
     font-weight: 500;
     color: var(--primary-color-2);
     margin-bottom: var(--spacing-lg);
 }
 
-.blog-post-content h3 {
+.recommended-reading-post-content h3 {
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-sm);
     font-size: 1.1rem;
@@ -2129,9 +2415,9 @@ body.no-hero>main {
 
 .recipe-box h3 {
     margin-top: var(--spacing-md);
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: var(--text-color);
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .recipe-box h3:first-child {
@@ -2150,11 +2436,11 @@ body.no-hero>main {
 }
 
 .ingredient-list li::before {
-    content: "•";
-    color: var(--primary-color-1);
+    content: "—";
+    color: var(--text-muted);
     position: absolute;
     left: 0;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .method-list li {
@@ -2163,21 +2449,21 @@ body.no-hero>main {
 }
 
 .recipe-note {
-    font-style: italic;
-    font-size: 0.95rem;
-    color: var(--text-light);
+    font-style: normal;
+    font-size: 0.875rem;
+    color: var(--text-muted);
     margin-top: var(--spacing-md);
 }
 
-.blog-navigation {
+.recommended-reading-navigation {
     margin-top: var(--spacing-xl);
-    padding-top: var(--spacing-md);
-    border-top: 1px solid #eee;
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid var(--border-color);
 }
 
 @media (max-width: 768px) {
-    .blog-post-header h1 {
-        font-size: 2rem;
+    .recommended-reading-post-header h1 {
+        font-size: 1.75rem;
     }
 
     .recipe-box {
@@ -2263,10 +2549,9 @@ body.no-hero>main {
         position: fixed;
         top: 0;
         right: -100%;
-        width: 280px;
+        width: 100%;
         height: 100vh;
         background-color: var(--bg-color);
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
         transition: right 0.3s ease;
         z-index: 1001;
         display: flex;
@@ -2283,7 +2568,7 @@ body.no-hero>main {
     }
     .main-nav a {
         color: var(--primary-color-2) !important;
-        font-size: 1.1rem !important;
+        font-size: 0.875rem !important;
     }
     .close-menu {
         position: absolute;
@@ -2291,11 +2576,12 @@ body.no-hero>main {
         right: 20px;
         background: none;
         border: none;
-        font-size: 2.5rem;
+        font-size: 2rem;
         color: var(--primary-color-2);
         cursor: pointer;
         display: block;
         line-height: 1;
+        font-weight: 300;
     }
     .nav-overlay {
         display: none;
@@ -2314,11 +2600,11 @@ body.no-hero>main {
 
     /* Hero Section */
     .hero-title {
-        font-size: 2rem !important;
+        font-size: 1.25rem !important;
         line-height: 1.3;
     }
     .hero-title-small {
-        font-size: 1rem !important;
+        font-size: 0.75rem !important;
         margin-bottom: 10px !important;
     }
     #hero a.btn.btn-primary {
@@ -2335,17 +2621,14 @@ body.no-hero>main {
     }
 
     /* Products Grid */
-    .products-grid {
-        grid-template-columns: 1fr !important;
-        gap: 40px !important;
-    }
     .product-grid-image {
-        height: 250px !important;
+        aspect-ratio: 4 / 5 !important;
+        height: auto !important;
     }
     .product-grid-image img,
     .product-grid-image .img-default,
     .product-grid-image .img-hover {
-        object-fit: contain !important;
+        object-fit: cover !important;
     }
     .product-grid-item h3 {
         font-size: 1.25rem !important;
@@ -2405,21 +2688,20 @@ body.no-hero>main {
         width: 100%;
         max-width: 450px;
         height: 100vh;
-        background-color: #fffef2;
+        background-color: var(--bg-color);
         margin: 0;
         border-radius: 0;
         padding: 0;
         display: flex;
         flex-direction: column;
         animation: slideInRight 0.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-        box-shadow: -5px 0 30px rgba(0,0,0,0.1);
     }
     .cart-drawer-header {
         padding: 25px 30px;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        border-bottom: 1px solid #eae8e0;
+        border-bottom: 1px solid var(--border-color);
     }
     .cart-drawer-body {
         flex: 1;
@@ -2428,22 +2710,25 @@ body.no-hero>main {
     }
     .cart-drawer-footer {
         padding: 25px 30px;
-        border-top: 1px solid #eae8e0;
-        background: #fffef2;
+        border-top: 1px solid var(--border-color);
+        background: var(--bg-color);
     }
     .aesop-btn {
-        background: #333;
-        color: #fffef2;
-        border: none;
-        padding: 18px 20px;
+        background: var(--primary-color-1);
+        color: var(--bg-color);
+        border: 1px solid var(--primary-color-1);
+        padding: 16px 24px;
         width: 100%;
         font-family: var(--font-body);
-        font-size: 1rem;
+        font-size: 0.75rem;
         cursor: pointer;
-        transition: background 0.3s ease;
+        transition: all 0.3s ease;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
     }
     .aesop-btn:hover {
-        background: #000;
+        background: var(--text-light);
+        border-color: var(--text-light);
     }
     .razorpay-btn {
         background-color: #3399cc !important;
@@ -2459,30 +2744,30 @@ body.no-hero>main {
     /* Aesop Style Product Page */
     .aesop-product {
         background-color: var(--bg-color);
-        color: #333;
-        padding-top: 40px;
+        color: var(--text-color);
+        padding-top: 60px;
     }
 
     .aesop-grid {
         display: grid;
-        grid-template-columns: 1.2fr 1fr;
-        gap: 80px;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 100px;
         align-items: start;
     }
 
     @media (max-width: 992px) {
         .aesop-grid {
             grid-template-columns: 1fr;
-            gap: 40px;
+            gap: 60px;
         }
         .aesop-info-col {
-            padding-right: 0 !sync;
+            padding-right: 0;
         }
     }
 
     .aesop-image-col {
         position: sticky;
-        top: 120px;
+        top: 140px;
     }
 
     @media (max-width: 992px) {
@@ -2495,54 +2780,64 @@ body.no-hero>main {
         width: 100%;
         height: auto;
         object-fit: cover;
+        background-color: #f6f5f3;
     }
 
     .aesop-info-col {
-        padding-right: 60px;
+        padding-right: 40px;
     }
 
     .aesop-category {
         font-size: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 15px;
-        color: #666;
-        font-weight: 500;
+        letter-spacing: 0.05em;
+        margin-bottom: 20px;
+        color: var(--text-muted);
+        font-weight: 400;
     }
 
     .aesop-title {
-        font-size: 2.8rem;
         font-family: var(--font-heading);
-        margin-bottom: 25px;
+        font-size: 2.5rem;
+        margin-bottom: 15px;
         line-height: 1.1;
-        color: #333;
+        font-weight: 400;
+        color: var(--primary-color-2);
     }
 
     .aesop-description {
-        font-size: 1.05rem;
-        line-height: 1.7;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 30px;
+        color: var(--text-color);
+    }
+
+    .aesop-price {
+        font-size: 1.125rem;
         margin-bottom: 40px;
-        color: #333;
+        font-weight: 400;
     }
 
     .aesop-meta-item {
-        border-top: 1px solid #d1d1d1;
-        padding: 25px 0;
+        margin-bottom: 30px;
+        border-top: 1px solid var(--border-color);
+        padding-top: 20px;
     }
 
     .aesop-meta-label {
-        font-weight: 600;
-        font-size: 0.85rem;
-        margin-bottom: 12px;
-        display: block;
+        font-size: 0.75rem;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 0.05em;
+        margin-bottom: 8px;
+        color: var(--text-color);
+        font-weight: 500;
+        display: block;
     }
 
     .aesop-meta-value {
-        font-size: 0.95rem;
-        color: #444;
-        line-height: 1.6;
+        font-size: 0.875rem;
+        color: var(--text-muted);
+        line-height: 1.5;
     }
 
     .aesop-actions {
@@ -2554,149 +2849,242 @@ body.no-hero>main {
 
     .aesop-btn {
         width: 100%;
-        padding: 20px;
+        padding: 16px 24px;
         text-align: center;
-        font-family: var(--font-heading);
-        font-size: 0.85rem;
-        letter-spacing: 1.5px;
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        letter-spacing: 0.05em;
         cursor: pointer;
         transition: all 0.3s ease;
         text-transform: uppercase;
     }
 
     .aesop-btn-black {
-        background: #333;
-        color: #fff;
-        border: 1px solid #333;
+        background: var(--primary-color-1);
+        color: var(--bg-color);
+        border: 1px solid var(--primary-color-1);
     }
 
     .aesop-btn-black:hover {
-        background: #000;
-        border-color: #000;
+        background: var(--text-light);
+        border-color: var(--text-light);
     }
 
     .aesop-btn-outline {
         background: transparent;
-        color: #333;
-        border: 1px solid #333;
+        color: var(--primary-color-1);
+        border: 1px solid var(--primary-color-1);
     }
 
     .aesop-btn-outline:hover {
-        background: #333;
-        color: #fff;
+        background: var(--primary-color-1);
+        color: var(--bg-color);
     }
 
     .aesop-price {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin-bottom: 30px;
         font-weight: 400;
+        color: var(--text-color);
     }
 </style>
+    <style>
+        .products-grid.swiper {
+            display: block;
+        }
+        .products-grid.swiper .swiper-wrapper {
+            display: flex;
+        }
+    </style>
 </head>
 
 <body>
     <header class="main-header">
-        <div class="container">
-            <a href="#" class="logo">
-                <img src="https://sampritibotanicals.com/assets/original/logo/text_logo_color_big.png" alt="Sampriti Logo">
-            </a>
-            <div class="header-actions">
-                <button class="search-toggle" aria-label="Open search" onclick="openSearchModal()">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                </button>
-                <button class="cart-toggle" aria-label="Open cart" onclick="openCartModal()">
-                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-                    <span class="cart-count">0</span>
-                </button>
-                <button class="mobile-menu-toggle" aria-label="Open menu">
-                    <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
-                </button>
-            </div>
-            <div class="nav-overlay"></div>
-            <nav class="main-nav">
-                <button class="close-menu" aria-label="Close menu">×</button>
+        <div class="header-top-bar">
+            <p>Enjoy complimentary shipping on orders over $100. <span>+</span></p>
+        </div>
+        <div class="header-main">
+            <nav class="header-nav-left">
                 <ul>
-                    <li><a href="#home" onclick="showHome(); return false;">HOME</a></li>
-                    <li><a href="#shop" onclick="showShop(); return false;">SHOP</a></li>
-                    <li><a href="#materia" onclick="showMateria(); return false;">MATERIA BOTANICA</a></li>
-                    <li><a href="#about">THE HOUSE</a></li>
-                    <li><a href="#journal" onclick="showJournal(); return false;">JOURNAL</a></li>
-                    <li><a href="#provenance" onclick="showProvenance(); return false;">PROVENANCE</a></li>
+                    <li><a href="#shop" onclick="showShop(); return false;">Skin Care</a></li>
+                    <li><a href="#shop" onclick="showShop(); return false;">Body & Hand</a></li>
+                    <li><a href="#shop" onclick="showShop(); return false;">Hair</a></li>
+                    <li><a href="#shop" onclick="showShop(); return false;">Fragrance</a></li>
+                    <li><a href="#shop" onclick="showShop(); return false;">Home</a></li>
+                    <li><a href="#shop" onclick="showShop(); return false;">Kits & Travel</a></li>
+                    <li><a href="#shop" onclick="showShop(); return false;">Gifts</a></li>
+                    <li><a href="#recommended-reading" onclick="showRecommendedReading(); return false;">Read</a></li>
+                    <li><a href="#provenance" onclick="showProvenance(); return false;">Stores</a></li>
+                    <li><a href="#" class="search-link" onclick="openSearchModal(); return false;">Search</a></li>
                 </ul>
             </nav>
+            <div class="header-nav-right">
+                <ul>
+                    <li><a href="#">Log in</a></li>
+                    <li><a href="#">Cabinet</a></li>
+                    <li><a href="#" onclick="openCartModal(); return false;">Cart <span class="cart-count">0</span></a></li>
+                </ul>
+            </div>
+            <button class="mobile-menu-toggle" aria-label="Open menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
         </div>
+        <div class="nav-overlay"></div>
+        <nav class="mobile-nav">
+            <div class="mobile-nav-header">
+                <a href="#" class="logo-text">SAMPRITI</a>
+                <button class="close-menu" aria-label="Close menu">×</button>
+            </div>
+            <ul>
+                <li><a href="#shop" onclick="showShop(); return false;">Skin Care</a></li>
+                <li><a href="#shop" onclick="showShop(); return false;">Body & Hand</a></li>
+                <li><a href="#shop" onclick="showShop(); return false;">Hair</a></li>
+                <li><a href="#shop" onclick="showShop(); return false;">Fragrance</a></li>
+                <li><a href="#shop" onclick="showShop(); return false;">Home</a></li>
+                <li><a href="#shop" onclick="showShop(); return false;">Kits & Travel</a></li>
+                <li><a href="#shop" onclick="showShop(); return false;">Gifts</a></li>
+                <li><a href="#recommended-reading" onclick="showRecommendedReading(); return false;">Read</a></li>
+                <li><a href="#provenance" onclick="showProvenance(); return false;">Stores</a></li>
+            </ul>
+        </nav>
     </header>
 
     <main>
         <div id="home-view">
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
-            <video class="hero-video-bg" autoplay="" muted="" loop="" playsinline="">
-                <source src="https://sampritibotanicals.com/assets/original/m.mp4" type="video/mp4">
-            </video>
-            <div class="container">
-                <h6 class="hero-title hero-title-small">ROOTED IN </h6>
-                <h1 class="hero-title">LIVING HERBAL LINEAGES</h1>
-                <h6 class="hero-title hero-title-small"> A botanical house of ritual science and disciplined
-                    formulation, guided by the quiet intelligence of the earth.</h6>
-                <a href="#products" class="btn btn-primary">Discover the collection</a>
-            </div>
-            <div class="hero-video-controls">
-                <button id="hero-play-pause" class="hero-ctrl-btn" aria-label="Pause video">
-                    <!-- Pause icon (shown when playing) -->
-                    <svg class="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <rect x="6" y="4" width="4" height="16"></rect>
-                        <rect x="14" y="4" width="4" height="16"></rect>
-                    </svg>
-                    <!-- Play icon (shown when paused) -->
-                    <svg class="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display:none">
-                        <polygon points="5,3 19,12 5,21"></polygon>
-                    </svg>
-                </button>
-                <button id="hero-mute-unmute" class="hero-ctrl-btn" aria-label="Unmute video">
-                    <!-- Mute icon (shown when muted) -->
-                    <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z" opacity=".3"></path>
-                        <line x1="1" y1="1" x2="23" y2="23" stroke="currentColor" stroke-width="2"></line>
-                    </svg>
-                    <!-- Unmute icon (shown when unmuted) -->
-                    <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" style="display:none">
-                        <path d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z"></path>
-                    </svg>
-                </button>
+            <div class="hero-split">
+                <div class="hero-content-side">
+                    <span class="hero-eyebrow">The Gift of Choice</span>
+                    <h1 class="hero-title">A gesture of consideration</h1>
+                    <p class="hero-description">For those who value the quiet rituals of self-care, our digital gift cards offer a moment of pause and the freedom to select from our range of botanical formulations.</p>
+                    <a href="#shop" class="btn-hero">
+                        Purchase a gift card
+                        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 6H11M11 6L6 1M11 6L6 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="hero-image-side">
+                    <video autoplay="" muted="" loop="" playsinline="">
+                        <source src="https://sampritibotanicals.com/assets/original/m.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </section>
         <!-- Products Section -->
-        <section id="products" class="section-padding bg-light">
+        <section id="products" class="section-padding bg-light" style="padding: 60px 0;">
             <div class="container">
-                <div class="section-header text-center" style="margin-bottom: 50px;">
+                <div class="section-header text-center" style="margin-bottom: 30px;">
                     <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
+                    <p style="color: #666; font-size: 1rem; max-width: 600px; margin: 0 auto 30px;">High-functioning botanical formulations rooted in ancient herbal lineages, designed to restore rhythm and vitality through daily ritual.</p>
                 </div>
 
-                <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
-                    <!-- Product 1: Shakti Peya -->
-                    <div class="product-grid-item" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;" onclick="showProduct('shakti')">
-                        <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                            <img class="img-default" src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir" style="max-height: 100%; width: auto; object-fit: contain;">
+                <div class="products-grid swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Product 1: Shakti Peya -->
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('shakti')">
+                            <div class="product-grid-image">
+                                <img class="img-default" src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir">
+                            </div>
+                            <h3>SHAKTI PEYA</h3>
+                            <p class="product-grid-subtitle">Energy Elixir</p>
+                            <p class="product-grid-description">A potent energy elixir crafted to enhance metabolic vitality and mental clarity.</p>
+                            <p class="product-grid-price">$33</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation();">Add to cart</button>
                         </div>
-                        <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
-                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Energy Elixir</p>
-                        <p style="color: #333; font-weight: 600;">$33</p>
-                        <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation();" style="margin-top: 15px;">Add to cart</button>
-                    </div>
 
-                    <!-- Product 2: Chandra Rasa -->
-                    <div class="product-grid-item" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;" onclick="showProduct('chandra')">
-                        <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                            <img class="img-default" src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion" style="max-height: 100%; width: auto; object-fit: contain;">
+                        <!-- Product 2: Chandra Rasa -->
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('chandra')">
+                            <div class="product-grid-image">
+                                <img class="img-default" src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion">
+                            </div>
+                            <h3>CHANDRA RASA</h3>
+                            <p class="product-grid-subtitle">Sleep Potion</p>
+                            <p class="product-grid-description">A soothing sleep potion designed to promote deep restoration and lunar balance.</p>
+                            <p class="product-grid-price">$33</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation();">Add to cart</button>
                         </div>
-                        <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
-                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Sleep Potion</p>
-                        <p style="color: #333; font-weight: 600;">$33</p>
-                        <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation();" style="margin-top: 15px;">Add to cart</button>
+
+                        <!-- Product 3: Shotharaha -->
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('shotharaha')">
+                            <div class="product-grid-image">
+                                <img class="img-default" src="https://sampritibotanicals.com/assets/images/shotharaha.avif" alt="Shotharaha - Dual Black Recovery">
+                            </div>
+                            <h3>SHOTHARAHA</h3>
+                            <p class="product-grid-subtitle">Dual Black Recovery</p>
+                            <p class="product-grid-description">A specialized blend to support healthy inflammatory response and fluid balance.</p>
+                            <p class="product-grid-price">$33</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="SHOTHARAHA" onclick="event.stopPropagation();">Add to cart</button>
+                        </div>
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
 
+            </div>
+        </section>
+
+        <!-- Materia Botanica Slider Section -->
+        <section id="materia-slider" class="section-padding" style="background-color: #fff; padding: 60px 0;">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 30px;">
+                    <span class="eyebrow">THE BOTANICAL ARCHIVE</span>
+                    <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">MATERIA BOTANICA</h2>
+                    <p style="color: #666; font-size: 1rem; max-width: 600px; margin: 0 auto 30px;">A collection of high-functioning botanical infusions, each chosen for its unique therapeutic profile and ancestral significance.</p>
+                </div>
+
+                <div class="products-grid swiper">
+                    <div class="swiper-wrapper">
+                        <!-- Product 1: Hibiscus -->
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('hibiscus')">
+                            <div class="product-grid-image">
+                                <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerPolicy="no-referrer">
+                            </div>
+                            <h3>HIBISCUS</h3>
+                            <p class="product-grid-subtitle">Rosa-Sinensis</p>
+                            <p class="product-grid-description">A vibrant botanical infusion rich in antioxidants for cardiovascular resilience.</p>
+                            <p class="product-grid-price">$42</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="HIBISCUS" onclick="event.stopPropagation()">Add to cart</button>
+                        </div>
+
+                        <!-- Product 2: Rose -->
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('rose')">
+                            <div class="product-grid-image">
+                                <img src="https://picsum.photos/seed/rose/800/1000" alt="Rosa Damascena" referrerPolicy="no-referrer">
+                            </div>
+                            <h3>ROSE</h3>
+                            <p class="product-grid-subtitle">Rosa Damascena</p>
+                            <p class="product-grid-description">A delicate floral essence to soothe the heart and refine natural radiance.</p>
+                            <p class="product-grid-price">$56</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="ROSE" onclick="event.stopPropagation()">Add to cart</button>
+                        </div>
+
+                        <!-- Product 3: Black Turmeric -->
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('turmeric')">
+                            <div class="product-grid-image">
+                                <img src="https://picsum.photos/seed/turmeric/800/1000" alt="Curcuma Caesia" referrerPolicy="no-referrer">
+                            </div>
+                            <h3>BLACK TURMERIC</h3>
+                            <p class="product-grid-subtitle">Curcuma Caesia</p>
+                            <p class="product-grid-description">A rare Kaya Kalpa agent for profound recovery and cellular longevity.</p>
+                            <p class="product-grid-price">$48</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="BLACK TURMERIC" onclick="event.stopPropagation()">Add to cart</button>
+                        </div>
+
+                        <!-- Product 4: Blue Butterfly Pea -->
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('butterflypea')">
+                            <div class="product-grid-image">
+                                <img src="https://picsum.photos/seed/butterflypea/800/1000" alt="Clitoria Ternatea" referrerPolicy="no-referrer">
+                            </div>
+                            <h3>BLUE BUTTERFLY PEA</h3>
+                            <p class="product-grid-subtitle">Clitoria Ternatea</p>
+                            <p class="product-grid-description">A brilliant blue infusion to enhance cognitive function and reduce stress.</p>
+                            <p class="product-grid-price">$38</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="BLUE BUTTERFLY PEA" onclick="event.stopPropagation()">Add to cart</button>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
             </div>
         </section>
 
@@ -2847,112 +3235,112 @@ body.no-hero>main {
         </section>
 
 
-        <!-- Blog Section -->
-        <section id="blog-preview" class="section-padding bg-light">
+        <!-- Recommended Reading Section -->
+        <section id="recommended-reading-preview" class="section-padding bg-light">
             <div class="container">
                 <div class="section-header text-center">
-                    <span class="eyebrow">Blog</span>
+                    <span class="eyebrow">Recommended Reading</span>
                 </div>
 
-                <div class="blog-grid">
-                    <!-- Blog Post 1 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-hibiscus">
-                            <div class="blog-card-image">
+                <div class="recommended-reading-grid">
+                    <!-- Recommended Reading Post 1 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-hibiscus">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg" alt="The Crimson Catalyst: Hibiscus in Practice">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Botanical Profile</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Botanical Profile</span>
                                 <h3>The Crimson Catalyst: Hibiscus in Practice</h3>
                                 <p>Hibiscus (Japa) is a high-functioning botanical characterized by its dense
                                     concentration of anthocyanins and organic acids. Discover how these compounds
                                     provide remarkable resilience.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 2 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-black-turmeric">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 2 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-black-turmeric">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Siddha Wisdom</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Siddha Wisdom</span>
                                 <h3>The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery</h3>
                                 <p>In the ancient Siddha tradition—the oldest medical lineage of South India—certain
                                     botanicals are classified as Kaya Kalpa (agents of longevity). Among these, Black
                                     Turmeric is the rarest.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 3 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-lunar-pulse">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 3 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-lunar-pulse">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/blog/chandra.jpg" alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Moon Rhythms</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Moon Rhythms</span>
                                 <h3>The Lunar Pulse: Moon Rhythms and the Vitality of Herbs</h3>
                                 <p>The Moon is far more than a celestial body; it is the universal "Mother of the
                                     World," the moistening principle that governs the flow of all liquids.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 4 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-art-of-infusion">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 4 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-art-of-infusion">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://picsum.photos/seed/herb1/600/400" alt="Placeholder Article 4">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Placeholder</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Placeholder</span>
                                 <h3>The Art of Infusion</h3>
                                 <p>Explore the delicate balance of time, temperature, and botanical integrity in crafting the perfect herbal infusion.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 5 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-seasonal-rhythms">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 5 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-seasonal-rhythms">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://picsum.photos/seed/herb2/600/400" alt="Placeholder Article 5">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Placeholder</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Placeholder</span>
                                 <h3>Seasonal Rhythms</h3>
                                 <p>Aligning your daily rituals with the changing seasons to optimize vitality and well-being.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 6 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-science-of-scent">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 6 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-science-of-scent">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://picsum.photos/seed/herb3/600/400" alt="Placeholder Article 6">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Placeholder</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Placeholder</span>
                                 <h3>The Science of Scent</h3>
                                 <p>Understanding how aromatic compounds interact with our nervous system to induce calm and clarity.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
                 </div>
 
                 <div class="text-center" style="margin-top: 40px;">
-                    <a class="btn btn-view-more" href="#" onclick="showJournal(); return false;">View More</a>
+                    <a class="btn btn-view-more" href="#" onclick="showRecommendedReading(); return false;">View More</a>
                 </div>
             </div>
         </section>
@@ -2960,105 +3348,105 @@ body.no-hero>main {
 
         </div> <!-- End home-view -->
 
-        <div id="journal-view" style="display: none;">
+        <div id="recommended-reading-view" style="display: none;">
             <section class="section-padding" style="padding-top: 100px;">
                 <div class="container">
                     <header style="margin-bottom: 60px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
-                        <h1 style="font-family: var(--font-heading); font-size: 3rem; color: #333;">The Library</h1>
+                        <h1 style="font-family: var(--font-heading); font-size: 3rem; color: #333;">Recommended Reading</h1>
                         <p style="font-size: 1.2rem; color: #666; margin-top: 10px;">A collection of essays, stories, and botanical insights.</p>
                     </header>
-                    <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px;">
-                    <!-- Blog Post 1 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-hibiscus">
-                            <div class="blog-card-image">
+                    <div class="recommended-reading-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px;">
+                    <!-- Recommended Reading Post 1 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-hibiscus">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg" alt="The Crimson Catalyst: Hibiscus in Practice">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Botanical Profile</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Botanical Profile</span>
                                 <h3>The Crimson Catalyst: Hibiscus in Practice</h3>
                                 <p>Hibiscus (Japa) is a high-functioning botanical characterized by its dense
                                     concentration of anthocyanins and organic acids. Discover how these compounds
                                     provide remarkable resilience.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 2 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-black-turmeric">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 2 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-black-turmeric">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Siddha Wisdom</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Siddha Wisdom</span>
                                 <h3>The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery</h3>
                                 <p>In the ancient Siddha tradition—the oldest medical lineage of South India—certain
                                     botanicals are classified as Kaya Kalpa (agents of longevity). Among these, Black
                                     Turmeric is the rarest.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 3 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-lunar-pulse">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 3 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-lunar-pulse">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/blog/chandra.jpg" alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Moon Rhythms</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Moon Rhythms</span>
                                 <h3>The Lunar Pulse: Moon Rhythms and the Vitality of Herbs</h3>
                                 <p>The Moon is far more than a celestial body; it is the universal "Mother of the
                                     World," the moistening principle that governs the flow of all liquids.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 4 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-art-of-infusion">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 4 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-art-of-infusion">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://picsum.photos/seed/herb1/600/400" alt="Placeholder Article 4">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Placeholder</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Placeholder</span>
                                 <h3>The Art of Infusion</h3>
                                 <p>Explore the delicate balance of time, temperature, and botanical integrity in crafting the perfect herbal infusion.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 5 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-seasonal-rhythms">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 5 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-seasonal-rhythms">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://picsum.photos/seed/herb2/600/400" alt="Placeholder Article 5">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Placeholder</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Placeholder</span>
                                 <h3>Seasonal Rhythms</h3>
                                 <p>Aligning your daily rituals with the changing seasons to optimize vitality and well-being.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
 
-                    <!-- Blog Post 6 -->
-                    <article class="blog-card">
-                        <a class="blog-card-link" href="#article-science-of-scent">
-                            <div class="blog-card-image">
+                    <!-- Recommended Reading Post 6 -->
+                    <article class="recommended-reading-card">
+                        <a class="recommended-reading-card-link" href="#article-science-of-scent">
+                            <div class="recommended-reading-card-image">
                                 <img src="https://picsum.photos/seed/herb3/600/400" alt="Placeholder Article 6">
                             </div>
-                            <div class="blog-card-content">
-                                <span class="blog-category">Placeholder</span>
+                            <div class="recommended-reading-card-content">
+                                <span class="recommended-reading-category">Placeholder</span>
                                 <h3>The Science of Scent</h3>
                                 <p>Understanding how aromatic compounds interact with our nervous system to induce calm and clarity.</p>
-                                <span class="read-more">Read Article →</span>
+                                <span class="recommended-reading-read-more">Read Article →</span>
                             </div>
                         </a>
                     </article>
@@ -3079,57 +3467,64 @@ body.no-hero>main {
                 </div>
             </section>
 
-            <section id="materia-products" class="section-padding bg-light">
+            <section id="materia-products" class="section-padding bg-light" style="padding: 60px 0;">
                 <div class="container">
-                    <div class="section-header text-center" style="margin-bottom: 50px;">
+                    <div class="section-header text-center" style="margin-bottom: 30px;">
                         <span class="eyebrow">THE BOTANICAL ARCHIVE</span>
                         <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">MATERIA BOTANICA</h2>
                     </div>
 
-                    <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                    <div class="products-grid swiper">
+                        <div class="swiper-wrapper">
                         <!-- Product 1: Hibiscus -->
-                        <div class="product-grid-item" onclick="showProduct('hibiscus')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                            <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                                <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" style="max-height: 100%; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('hibiscus')">
+                            <div class="product-grid-image">
+                                <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerPolicy="no-referrer">
                             </div>
-                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">HIBISCUS</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Rosa-Sinensis</p>
-                            <p style="color: #333; font-weight: 600;">$42</p>
-                            <button class="btn btn-primary buy-now-btn" data-product="HIBISCUS" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                            <h3>HIBISCUS</h3>
+                            <p class="product-grid-subtitle">Rosa-Sinensis</p>
+                            <p class="product-grid-description">A vibrant botanical infusion rich in antioxidants for cardiovascular resilience.</p>
+                            <p class="product-grid-price">$42</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="HIBISCUS" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
                         <!-- Product 2: Rose -->
-                        <div class="product-grid-item" onclick="showProduct('rose')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                            <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                                <img src="https://picsum.photos/seed/rose/800/1000" alt="Rosa Damascena" style="max-height: 100%; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('rose')">
+                            <div class="product-grid-image">
+                                <img src="https://picsum.photos/seed/rose/800/1000" alt="Rosa Damascena" referrerPolicy="no-referrer">
                             </div>
-                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">ROSE</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Rosa Damascena</p>
-                            <p style="color: #333; font-weight: 600;">$56</p>
-                            <button class="btn btn-primary buy-now-btn" data-product="ROSE" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                            <h3>ROSE</h3>
+                            <p class="product-grid-subtitle">Rosa Damascena</p>
+                            <p class="product-grid-description">A delicate floral essence to soothe the heart and refine natural radiance.</p>
+                            <p class="product-grid-price">$56</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="ROSE" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
                         <!-- Product 3: Black Turmeric -->
-                        <div class="product-grid-item" onclick="showProduct('turmeric')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                            <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                                <img src="https://picsum.photos/seed/turmeric/800/1000" alt="Curcuma Caesia" style="max-height: 100%; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('turmeric')">
+                            <div class="product-grid-image">
+                                <img src="https://picsum.photos/seed/turmeric/800/1000" alt="Curcuma Caesia" referrerPolicy="no-referrer">
                             </div>
-                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">BLACK TURMERIC</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Curcuma Caesia</p>
-                            <p style="color: #333; font-weight: 600;">$48</p>
-                            <button class="btn btn-primary buy-now-btn" data-product="BLACK TURMERIC" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                            <h3>BLACK TURMERIC</h3>
+                            <p class="product-grid-subtitle">Curcuma Caesia</p>
+                            <p class="product-grid-description">A rare Kaya Kalpa agent for profound recovery and cellular longevity.</p>
+                            <p class="product-grid-price">$48</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="BLACK TURMERIC" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
                         <!-- Product 4: Blue Butterfly Pea -->
-                        <div class="product-grid-item" onclick="showProduct('butterflypea')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                            <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                                <img src="https://picsum.photos/seed/butterflypea/800/1000" alt="Clitoria Ternatea" style="max-height: 100%; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('butterflypea')">
+                            <div class="product-grid-image">
+                                <img src="https://picsum.photos/seed/butterflypea/800/1000" alt="Clitoria Ternatea" referrerPolicy="no-referrer">
                             </div>
-                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">BLUE BUTTERFLY PEA</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Clitoria Ternatea</p>
-                            <p style="color: #333; font-weight: 600;">$38</p>
-                            <button class="btn btn-primary buy-now-btn" data-product="BLUE BUTTERFLY PEA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                            <h3>BLUE BUTTERFLY PEA</h3>
+                            <p class="product-grid-subtitle">Clitoria Ternatea</p>
+                            <p class="product-grid-description">A brilliant blue infusion to enhance cognitive function and reduce stress.</p>
+                            <p class="product-grid-price">$38</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="BLUE BUTTERFLY PEA" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </section>
@@ -3140,49 +3535,57 @@ body.no-hero>main {
                 <img class="hero-video-bg" src="https://i.pinimg.com/736x/28/d4/08/28d4087ef99ca2adc2e07c8d959babfb.jpg" alt="Sacred Botanicals" referrerPolicy="no-referrer">
                 <div class="container">
                     <h1 class="hero-title">SIGNATURE RITUALS</h1>
+                    <p style="color: rgba(255, 255, 255, 0.9); font-size: 1.1rem; max-width: 600px; margin: 0 auto 30px;">High-functioning botanical formulations rooted in ancient herbal lineages, designed to restore rhythm and vitality through daily ritual.</p>
                     <a href="#shop-products" class="btn btn-primary">Explore the collection</a>
                 </div>
             </section>
 
-            <section id="shop-products" class="section-padding bg-light">
+            <section id="shop-products" class="section-padding bg-light" style="padding: 60px 0;">
                 <div class="container">
-                    <div class="section-header text-center" style="margin-bottom: 50px;">
+                    <div class="section-header text-center" style="margin-bottom: 30px;">
                         <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
+                        <p style="color: #666; font-size: 1rem; max-width: 600px; margin: 0 auto 30px;">High-functioning botanical formulations rooted in ancient herbal lineages, designed to restore rhythm and vitality through daily ritual.</p>
                     </div>
 
-                    <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                    <div class="products-grid swiper">
+                        <div class="swiper-wrapper">
                         <!-- Product 1: Shakti Peya -->
-                        <div class="product-grid-item" onclick="showProduct('shakti')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                            <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                                <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir" style="max-height: 100%; width: auto; object-fit: contain;">
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('shakti')">
+                            <div class="product-grid-image">
+                                <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir">
                             </div>
-                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Energy Elixir</p>
-                            <p style="color: #333; font-weight: 600;">$33</p>
-                            <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                            <h3>SHAKTI PEYA</h3>
+                            <p class="product-grid-subtitle">Energy Elixir</p>
+                            <p class="product-grid-description">A potent energy elixir crafted to enhance metabolic vitality and mental clarity.</p>
+                            <p class="product-grid-price">$33</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
                         <!-- Product 2: Chandra Rasa -->
-                        <div class="product-grid-item" onclick="showProduct('chandra')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                            <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                                <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion" style="max-height: 100%; width: auto; object-fit: contain;">
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('chandra')">
+                            <div class="product-grid-image">
+                                <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion">
                             </div>
-                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Sleep Potion</p>
-                            <p style="color: #333; font-weight: 600;">$33</p>
-                            <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                            <h3>CHANDRA RASA</h3>
+                            <p class="product-grid-subtitle">Sleep Potion</p>
+                            <p class="product-grid-description">A soothing sleep potion designed to promote deep restoration and lunar balance.</p>
+                            <p class="product-grid-price">$33</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
                         <!-- Product 3: Shotharaha -->
-                        <div class="product-grid-item" onclick="showProduct('shotharaha')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                            <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                                <img src="https://sampritibotanicals.com/assets/images/shotharaha.avif" alt="Shotharaha - Dual Black Recovery" style="max-height: 100%; width: auto; object-fit: contain;">
+                        <div class="product-grid-item swiper-slide" onclick="showProduct('shotharaha')">
+                            <div class="product-grid-image">
+                                <img src="https://sampritibotanicals.com/assets/images/shotharaha.avif" alt="Shotharaha - Dual Black Recovery">
                             </div>
-                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHOTHARAHA</h3>
-                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Dual Black Recovery</p>
-                            <p style="color: #333; font-weight: 600;">$33</p>
-                            <button class="btn btn-primary buy-now-btn" data-product="SHOTHARAHA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                            <h3>SHOTHARAHA</h3>
+                            <p class="product-grid-subtitle">Dual Black Recovery</p>
+                            <p class="product-grid-description">A specialized blend to support healthy inflammatory response and fluid balance.</p>
+                            <p class="product-grid-price">$33</p>
+                            <button class="btn btn-primary buy-now-btn" data-product="SHOTHARAHA" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </section>
@@ -3191,7 +3594,7 @@ body.no-hero>main {
         <!-- Article View -->
         <div id="article-view" style="display: none; padding-top: 120px; padding-bottom: 80px;">
             <div class="container" style="max-width: 800px; margin: 0 auto;">
-                <a href="#" onclick="showJournal(); return false;" class="back-link" style="margin-bottom: 30px; display: inline-block; color: #333; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">← Back to Journal</a>
+                <a href="#" onclick="showRecommendedReading(); return false;" class="back-link" style="margin-bottom: 30px; display: inline-block; color: #333; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">← Back to Recommended Reading</a>
                 <article id="article-content">
                     <!-- Content will be injected here -->
                 </article>
@@ -3694,17 +4097,17 @@ body.no-hero>main {
             </section>
         </div>
 
-        <div id="checkout-view" style="display: none; padding-top: 120px; padding-bottom: 80px; background-color: #fffef2; min-height: 100vh;">
+        <div id="checkout-view" style="display: none; padding-top: 120px; padding-bottom: 80px; background-color: var(--bg-color); min-height: 100vh;">
             <div class="container" style="max-width: 1000px; margin: 0 auto;">
-                <a href="#" onclick="showHome(); return false;" class="back-link" style="margin-bottom: 30px; display: inline-block; color: #333; text-decoration: none;">← Back to Shop</a>
-                <h2 style="font-size: 2rem; margin-bottom: 20px; font-family: var(--font-heading); color: #333; text-align: center;">Complete Your Order</h2>
+                <a href="#" onclick="showHome(); return false;" class="back-link" style="margin-bottom: 30px; display: inline-block; color: var(--text-color); text-decoration: none;">← Back to Shop</a>
+                <h2 style="font-size: 2rem; margin-bottom: 20px; font-family: var(--font-heading); color: var(--primary-color-2); text-align: center;">Complete Your Order</h2>
                 
                 <div class="checkout-grid">
-                    <div style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <div style="background: transparent; padding: 40px 0; border-radius: 0; box-shadow: none;">
                         <form id="buy-form">
                             <input type="hidden" id="product-name" name="product-name">
 
-                            <h3 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">1. Customer Information</h3>
+                            <h3 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; color: var(--primary-color-2);">1. Customer Information</h3>
                         
                         <div class="form-group">
                             <label for="name" style="color: #666;">Full Name *</label>
@@ -3723,7 +4126,7 @@ body.no-hero>main {
                             </div>
                         </div>
 
-                        <h3 style="margin: 35px 0 20px 0; font-size: 1.3rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">2. Shipping Address</h3>
+                        <h3 style="margin: 35px 0 20px 0; font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; color: var(--primary-color-2);">2. Shipping Address</h3>
 
                         <div class="form-group">
                             <label for="house" style="color: #666;">House / Flat / Building Number *</label>
@@ -3780,7 +4183,7 @@ body.no-hero>main {
                             <textarea id="instructions" name="instructions" rows="2" style="border: 1px solid #ccc; padding: 12px; border-radius: 4px; width: 100%;"></textarea>
                         </div>
 
-                        <h3 style="margin: 35px 0 20px 0; font-size: 1.3rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">3. Payment Method</h3>
+                        <h3 style="margin: 35px 0 20px 0; font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; color: var(--primary-color-2);">3. Payment Method</h3>
                         
                         <div id="payment-methods-container" style="margin-bottom: 25px;">
                             <!-- Payment methods will be injected here based on country -->
@@ -3794,22 +4197,22 @@ body.no-hero>main {
                         </form>
                     </div>
                     
-                    <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 100px;">
-                        <h3 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">Order Summary</h3>
+                    <div style="background: transparent; padding: 30px 0; border-radius: 0; box-shadow: none; position: sticky; top: 100px;">
+                        <h3 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; color: var(--primary-color-2);">Order Summary</h3>
                         <div id="checkout-items" style="margin-bottom: 20px;">
                             <!-- Items will be injected here -->
                         </div>
-                        <div style="border-top: 1px solid #eae8e0; padding-top: 15px; margin-bottom: 15px;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: #666;">
+                        <div style="border-top: 1px solid var(--border-color); padding-top: 15px; margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--text-light);">
                                 <span>Subtotal</span>
                                 <span id="checkout-subtotal">$0.00</span>
                             </div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: #666;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px; color: var(--text-light);">
                                 <span>Shipping</span>
                                 <span>Free</span>
                             </div>
                         </div>
-                        <div style="border-top: 1px solid #eae8e0; padding-top: 15px; display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2rem; color: #333;">
+                        <div style="border-top: 1px solid var(--border-color); padding-top: 15px; display: flex; justify-content: space-between; font-weight: 400; font-size: 1.2rem; color: var(--text-color);">
                             <span>Total</span>
                             <span id="checkout-total">$0.00</span>
                         </div>
@@ -3823,40 +4226,44 @@ body.no-hero>main {
         <div class="container">
             <div class="section-header text-center" style="margin-bottom: 50px;">
                 <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
+                <p style="color: #666; font-size: 1rem; max-width: 600px; margin: 0 auto 30px;">High-functioning botanical formulations rooted in ancient herbal lineages, designed to restore rhythm and vitality through daily ritual.</p>
             </div>
 
-            <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+            <div class="products-grid">
                 <!-- Product 1: Shakti Peya -->
-                <div class="product-grid-item" onclick="showProduct('shakti')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                    <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir" style="max-height: 100%; width: auto; object-fit: contain;">
+                <div class="product-grid-item" onclick="showProduct('shakti')">
+                    <div class="product-grid-image">
+                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir">
                     </div>
-                    <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Energy Elixir</p>
-                    <p style="color: #333; font-weight: 600;">$33</p>
-                    <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                    <h3>SHAKTI PEYA</h3>
+                    <p class="product-grid-subtitle">Energy Elixir</p>
+                    <p class="product-grid-description">A potent energy elixir crafted to enhance metabolic vitality and mental clarity.</p>
+                    <p class="product-grid-price">$33</p>
+                    <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
 
                 <!-- Product 2: Chandra Rasa -->
-                <div class="product-grid-item" onclick="showProduct('chandra')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                    <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion" style="max-height: 100%; width: auto; object-fit: contain;">
+                <div class="product-grid-item" onclick="showProduct('chandra')">
+                    <div class="product-grid-image">
+                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion">
                     </div>
-                    <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Sleep Potion</p>
-                    <p style="color: #333; font-weight: 600;">$33</p>
-                    <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                    <h3>CHANDRA RASA</h3>
+                    <p class="product-grid-subtitle">Sleep Potion</p>
+                    <p class="product-grid-description">A soothing sleep potion designed to promote deep restoration and lunar balance.</p>
+                    <p class="product-grid-price">$33</p>
+                    <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
 
                 <!-- Product 3: Shotharaha -->
-                <div class="product-grid-item" onclick="showProduct('shotharaha')" style="cursor: pointer; display: flex; flex-direction: column; align-items: center; text-align: center;">
-                    <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
-                        <img src="https://sampritibotanicals.com/assets/images/shotharaha.avif" alt="Shotharaha - Dual Black Recovery" style="max-height: 100%; width: auto; object-fit: contain;">
+                <div class="product-grid-item" onclick="showProduct('shotharaha')">
+                    <div class="product-grid-image">
+                        <img src="https://sampritibotanicals.com/assets/images/shotharaha.avif" alt="Shotharaha - Dual Black Recovery">
                     </div>
-                    <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHOTHARAHA</h3>
-                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Dual Black Recovery</p>
-                    <p style="color: #333; font-weight: 600;">$33</p>
-                    <button class="btn btn-primary buy-now-btn" data-product="SHOTHARAHA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
+                    <h3>SHOTHARAHA</h3>
+                    <p class="product-grid-subtitle">Dual Black Recovery</p>
+                    <p class="product-grid-description">A specialized blend to support healthy inflammatory response and fluid balance.</p>
+                    <p class="product-grid-price">$33</p>
+                    <button class="btn btn-primary buy-now-btn" data-product="SHOTHARAHA" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
             </div>
         </div>
@@ -3885,7 +4292,7 @@ body.no-hero>main {
             <div class="footer-grid">
                 <div class="footer-col brand-col">
                     <a href="#" class="footer-logo">
-                        <img src="https://sampritibotanicals.com/assets/original/logo/text_logo_color_big.png" alt="Sampriti Logo" style="max-width: 180px; height: auto; filter: brightness(0) invert(1);">
+                        <img src="https://sampritibotanicals.com/assets/original/logo/text_logo_color_big.png" alt="Sampriti Logo" style="max-width: 140px; height: auto; filter: brightness(0) invert(1); opacity: 0.8;">
                     </a>
                 </div>
 
@@ -3904,45 +4311,44 @@ body.no-hero>main {
                     <ul>
                         <li><a href="#">Our story</a></li>
                         <li><a href="#provenance">Sustainability</a></li>
-                        <li><a href="#" onclick="showJournal(); return false;">Journal</a></li>
+                        <li><a href="#" onclick="showRecommendedReading(); return false;">Recommended Reading</a></li>
                         <li><a href="#">Customer Review</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="footer-bottom-new">
-                <div class="footer-bottom-info">
-                    <p>© 2026 Sampriti. All rights reserved.</p>
-                </div>
+            <div class="footer-bottom">
+                <p>© 2026 Sampriti. All rights reserved.</p>
+                <p>Rooted in living herbal lineages.</p>
             </div>
         </div>
     </footer>
     <div id="cart-modal" class="modal" style="display: none; justify-content: flex-end; align-items: flex-start; padding: 0;">
         <div class="cart-drawer-content" onclick="event.stopPropagation()">
             <div class="cart-drawer-header">
-                <h2 style="font-size: 1.2rem; margin: 0; font-weight: 400; font-family: var(--font-heading); color: #333;">Cart</h2>
-                <span class="close-cart" style="font-size: 28px; cursor: pointer; color: #333; line-height: 1; font-weight: 300;">×</span>
+                <h2 style="font-size: 1rem; margin: 0; font-weight: 400; text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-color);">Your Cart</h2>
+                <span class="close-cart" style="font-size: 24px; cursor: pointer; color: var(--text-color); line-height: 1; font-weight: 300;">×</span>
             </div>
             
             <div class="cart-drawer-body">
-                <div id="cart-free-shipping-msg" style="margin-bottom: 25px; font-size: 0.9rem; color: #333; border-bottom: 1px solid #eae8e0; padding-bottom: 15px; display: none;">
+                <div id="cart-free-shipping-msg" style="margin-bottom: 30px; font-size: 0.875rem; color: var(--text-color); border-bottom: 1px solid var(--border-color); padding-bottom: 20px; display: none;">
                     <!-- Dynamic free shipping message -->
                 </div>
 
-                <div id="cart-items" style="color: #333;">
-                    <p style="text-align: center; margin-top: 40px; color: #666;">Your cart is currently empty.</p>
+                <div id="cart-items" style="color: var(--text-color);">
+                    <p style="text-align: center; margin-top: 60px; color: var(--text-muted); font-size: 0.875rem;">Your cart is currently empty.</p>
                 </div>
                 
-                <h3 id="cart-cross-sell-header" style="font-size: 1rem; margin-bottom: 15px; margin-top: 40px; font-weight: 400; border-top: 1px solid #eae8e0; padding-top: 20px; color: #333;">You may also like</h3>
-                <div id="cart-cross-sell-products" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px;">
+                <h3 id="cart-cross-sell-header" style="font-size: 0.875rem; margin-bottom: 20px; margin-top: 60px; font-weight: 400; border-top: 1px solid var(--border-color); padding-top: 30px; color: var(--text-color); text-transform: uppercase; letter-spacing: 0.05em;">You may also like</h3>
+                <div id="cart-cross-sell-products" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 15px;">
                     <!-- Cross-sell items -->
                 </div>
             </div>
 
             <div class="cart-drawer-footer" id="cart-drawer-footer" style="display: none;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 1.1rem; font-family: var(--font-heading); color: #333;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 25px; font-size: 1rem; color: var(--text-color);">
                     <span>Subtotal</span>
-                    <span id="cart-subtotal">$0.00</span>
+                    <span id="cart-subtotal" style="font-weight: 400;">$0.00</span>
                 </div>
                 <button class="aesop-btn" onclick="openCheckoutFromCart()">Checkout</button>
             </div>
@@ -3951,14 +4357,14 @@ body.no-hero>main {
 
     <!-- Search Modal -->
     <div id="search-modal" class="modal">
-        <div class="modal-content" style="max-width: 600px;">
-            <span class="close-search" style="position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; cursor: pointer; color: var(--text-light);">×</span>
-            <h2>Search</h2>
-            <div style="margin: 20px 0; display: flex; gap: 10px;">
-                <input type="text" id="search-input" placeholder="Search products, ingredients, journal..." style="flex: 1; padding: 12px 15px; border: 1px solid #ccc; font-family: var(--font-body); font-size: 1rem;">
-                <button class="btn btn-primary" onclick="performSearch()">Search</button>
+        <div class="modal-content" style="max-width: 600px; padding: 40px; border-radius: 0;">
+            <span class="close-search" style="position: absolute; right: 20px; top: 15px; font-size: 24px; font-weight: 300; cursor: pointer; color: var(--text-color);">×</span>
+            <h2 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 30px; font-weight: 400;">Search</h2>
+            <div style="margin: 20px 0; display: flex; gap: 0; border-bottom: 1px solid var(--border-color);">
+                <input type="text" id="search-input" placeholder="Search products, ingredients, recommended reading..." style="flex: 1; padding: 15px 0; border: none; font-family: var(--font-body); font-size: 1rem; background: transparent; outline: none;">
+                <button class="aesop-btn" style="width: auto; padding: 0 20px; background: transparent; color: var(--text-color); border: none;" onclick="performSearch()">Search</button>
             </div>
-            <div id="search-results" style="margin-top: 20px; text-align: left; max-height: 300px; overflow-y: auto;">
+            <div id="search-results" style="margin-top: 30px; text-align: left; max-height: 400px; overflow-y: auto;">
                 <!-- Search results will appear here -->
             </div>
         </div>
@@ -3966,31 +4372,53 @@ body.no-hero>main {
 
     <!-- Added to Cart Modal -->
     <div id="added-modal" class="modal">
-        <div class="modal-content" style="max-width: 500px; padding: 30px;">
-            <span class="close-added" style="position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; cursor: pointer; color: var(--text-light);">×</span>
-            <h2 style="font-size: 1.5rem; margin-bottom: 15px; text-align: center;">Added product(s)</h2>
+        <div class="modal-content" style="max-width: 500px; padding: 40px; border-radius: 0;">
+            <span class="close-added" style="position: absolute; right: 20px; top: 15px; font-size: 24px; font-weight: 300; cursor: pointer; color: var(--text-color);">×</span>
+            <h2 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 30px; text-align: center; font-weight: 400;">Added to your cart</h2>
             
-            <div id="free-shipping-msg" style="background: #f8f8f8; padding: 12px; text-align: center; margin-bottom: 25px; font-weight: 500; font-size: 0.95rem;">
+            <div id="free-shipping-msg" style="background: #f6f5f3; padding: 15px; text-align: center; margin-bottom: 30px; font-size: 0.875rem; color: var(--text-color);">
                 <!-- Dynamic free shipping message -->
             </div>
 
-            <div id="added-product-details" style="display: flex; gap: 20px; margin-bottom: 25px; align-items: center; border-bottom: 1px solid #eee; padding-bottom: 25px;">
+            <div id="added-product-details" style="display: flex; gap: 20px; margin-bottom: 30px; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 30px;">
                 <!-- Dynamic product details -->
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px;">
-                <button class="btn btn-primary full-width" onclick="closeAddedModal(); openCartModal()">View your cart</button>
-                <button class="btn btn-secondary full-width" style="background: transparent; color: var(--text-color); border: 1px solid var(--text-color);" onclick="closeAddedModal()">Continue shopping</button>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 30px;">
+                <button class="aesop-btn" onclick="closeAddedModal(); openCartModal()">View your cart</button>
+                <button class="aesop-btn" style="background: transparent; color: var(--text-color); border: 1px solid var(--border-color);" onclick="closeAddedModal()">Continue shopping</button>
             </div>
 
-            <h3 style="font-size: 1.1rem; margin-bottom: 15px; text-align: center;">Others also considered</h3>
-            <div id="cross-sell-products" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px;">
+            <h3 style="font-size: 0.875rem; margin-bottom: 20px; text-align: center; font-weight: 400; text-transform: uppercase; letter-spacing: 0.05em;">Others also considered</h3>
+            <div id="cross-sell-products" style="display: flex; gap: 20px; overflow-x: auto; padding-bottom: 10px;">
                 <!-- Cross-sell items -->
             </div>
         </div>
     </div>
 
-    <script>document.addEventListener('DOMContentLoaded', () => {
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Swiper
+    const swiperInstances = document.querySelectorAll('.products-grid.swiper');
+    swiperInstances.forEach(el => {
+        new Swiper(el, {
+            slidesPerView: 1.8,
+            spaceBetween: 15,
+            pagination: {
+                el: el.querySelector('.swiper-pagination'),
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 3.2,
+                },
+                992: {
+                    slidesPerView: 5,
+                },
+            },
+        });
+    });
     // --- Scroll-aware header ---
     const mainHeader = document.querySelector('.main-header');
     const heroSection = document.getElementById('hero');
@@ -4201,7 +4629,7 @@ body.no-hero>main {
         document.getElementById('shop-view').style.display = 'none';
         document.getElementById('materia-view').style.display = 'none';
         document.getElementById('provenance-view').style.display = 'none';
-        document.getElementById('journal-view').style.display = 'none';
+        document.getElementById('recommended-reading-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
         document.getElementById('article-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'block';
@@ -4226,8 +4654,8 @@ body.no-hero>main {
 
     window.addEventListener('hashchange', () => {
         const hash = window.location.hash;
-        if (hash === '#journal') {
-            window.showJournal();
+        if (hash === '#recommended-reading') {
+            window.showRecommendedReading();
         } else if (hash === '#shop') {
             window.showShop();
         } else if (hash === '#materia') {
@@ -4247,7 +4675,7 @@ body.no-hero>main {
         document.getElementById('shop-view').style.display = 'none';
         document.getElementById('materia-view').style.display = 'none';
         document.getElementById('provenance-view').style.display = 'none';
-        document.getElementById('journal-view').style.display = 'none';
+        document.getElementById('recommended-reading-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
         document.getElementById('article-view').style.display = 'none';
@@ -4261,7 +4689,7 @@ body.no-hero>main {
         document.getElementById('shop-view').style.display = 'none';
         document.getElementById('materia-view').style.display = 'block';
         document.getElementById('provenance-view').style.display = 'none';
-        document.getElementById('journal-view').style.display = 'none';
+        document.getElementById('recommended-reading-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
         document.getElementById('article-view').style.display = 'none';
@@ -4275,7 +4703,7 @@ body.no-hero>main {
         document.getElementById('shop-view').style.display = 'none';
         document.getElementById('materia-view').style.display = 'none';
         document.getElementById('provenance-view').style.display = 'block';
-        document.getElementById('journal-view').style.display = 'none';
+        document.getElementById('recommended-reading-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
         document.getElementById('article-view').style.display = 'none';
@@ -4284,16 +4712,16 @@ body.no-hero>main {
         if (typeof updateHeader === 'function') updateHeader();
     };
 
-    window.showJournal = function() {
+    window.showRecommendedReading = function() {
         document.getElementById('home-view').style.display = 'none';
         document.getElementById('shop-view').style.display = 'none';
         document.getElementById('materia-view').style.display = 'none';
         document.getElementById('provenance-view').style.display = 'none';
-        document.getElementById('journal-view').style.display = 'block';
+        document.getElementById('recommended-reading-view').style.display = 'block';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
         document.getElementById('article-view').style.display = 'none';
-        window.location.hash = '#journal';
+        window.location.hash = '#recommended-reading';
         window.scrollTo(0, 0);
         if (typeof updateHeader === 'function') updateHeader();
     };
@@ -4303,7 +4731,7 @@ body.no-hero>main {
         document.getElementById('shop-view').style.display = 'block';
         document.getElementById('materia-view').style.display = 'none';
         document.getElementById('provenance-view').style.display = 'none';
-        document.getElementById('journal-view').style.display = 'none';
+        document.getElementById('recommended-reading-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
         document.getElementById('article-view').style.display = 'none';
@@ -4326,7 +4754,7 @@ body.no-hero>main {
         document.getElementById('shop-view').style.display = 'none';
         document.getElementById('materia-view').style.display = 'none';
         document.getElementById('provenance-view').style.display = 'none';
-        document.getElementById('journal-view').style.display = 'none';
+        document.getElementById('recommended-reading-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'block';
         document.getElementById('article-view').style.display = 'none';
@@ -4383,11 +4811,11 @@ body.no-hero>main {
             } else if (text === 'PROVENANCE') {
                 e.preventDefault();
                 showProvenance();
-            } else if (text === 'JOURNAL') {
+            } else if (text === 'RECOMMENDED READING') {
                 e.preventDefault();
-                showJournal();
+                showRecommendedReading();
             } else if (href && href.startsWith('#') && href !== '#') {
-                // Handle internal anchors like #about, #blog-preview
+                // Handle internal anchors like #about, #recommended-reading-preview
                 if (document.getElementById('home-view').style.display === 'none') {
                     e.preventDefault();
                     showHome();
@@ -4496,7 +4924,7 @@ body.no-hero>main {
         document.getElementById('shop-view').style.display = 'none';
         document.getElementById('materia-view').style.display = 'none';
         document.getElementById('provenance-view').style.display = 'none';
-        document.getElementById('journal-view').style.display = 'none';
+        document.getElementById('recommended-reading-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
         document.getElementById('article-view').style.display = 'block';
@@ -4658,8 +5086,8 @@ body.no-hero>main {
                     cartCrossSellContainer.innerHTML += `
                         <div style="min-width: 120px; text-align: left; cursor: pointer;" onclick="closeCartModal(); showProduct('${crossProduct.id}')">
                             <img src="${crossProduct.image}" style="width: 100%; height: 120px; object-fit: contain; margin-bottom: 10px; background: #f9f9f9;">
-                            <div style="font-size: 0.85rem; font-weight: 500; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #333;">${crossProduct.name}</div>
-                            <div style="font-size: 0.85rem; color: #666;">$${crossProduct.price.toFixed(2)}</div>
+                            <div style="font-size: 0.8rem; font-weight: 500; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-clamp: 2; color: #333;">${crossProduct.name}</div>
+                            <div style="font-size: 0.8rem; color: #666;">$${crossProduct.price.toFixed(2)}</div>
                         </div>
                     `;
                 }
@@ -4695,17 +5123,17 @@ body.no-hero>main {
                         <img src="${item.image}" alt="${item.name}" style="width: 80px; height: 100px; object-fit: contain; background: #f9f9f9;">
                         <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                <div style="font-family: var(--font-heading); font-size: 1rem; color: #333; max-width: 70%;">${item.name}</div>
-                                <div style="font-size: 1rem; color: #333;">$${(item.price * item.quantity).toFixed(2)}</div>
+                                <div style="font-family: var(--font-heading); font-size: 0.9rem; color: #333; max-width: 70%; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-clamp: 2;">${item.name}</div>
+                                <div style="font-size: 0.9rem; color: #333;">$${(item.price * item.quantity).toFixed(2)}</div>
                             </div>
-                            <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">9 Test Tube Kit</div>
+                            <div style="color: #666; font-size: 0.8rem; margin-top: 5px;">9 Test Tube Kit</div>
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
                                 <div style="display: flex; align-items: center; border: 1px solid #ccc; padding: 5px 10px;">
                                     <button onclick="updateCartItemQuantity(${index}, -1)" style="background:none; border:none; cursor: pointer; color: #333;">-</button>
-                                    <span style="margin: 0 15px; font-size: 0.9rem; color: #333;">${item.quantity}</span>
+                                    <span style="margin: 0 15px; font-size: 0.85rem; color: #333;">${item.quantity}</span>
                                     <button onclick="updateCartItemQuantity(${index}, 1)" style="background:none; border:none; cursor: pointer; color: #333;">+</button>
                                 </div>
-                                <button onclick="removeFromCart(${index})" style="background:none; border:none; text-decoration: underline; font-size: 0.85rem; cursor: pointer; color: #666;">Remove</button>
+                                <button onclick="removeFromCart(${index})" style="background:none; border:none; text-decoration: underline; font-size: 0.8rem; cursor: pointer; color: #666;">Remove</button>
                             </div>
                         </div>
                     `;
@@ -4744,17 +5172,17 @@ body.no-hero>main {
 
         const detailsContainer = document.getElementById('added-product-details');
         detailsContainer.innerHTML = `
-            <img src="${product.image}" alt="${product.name}" style="width: 80px; height: 80px; object-fit: contain; background: #f9f9f9; padding: 5px;">
+            <img src="${product.image}" alt="${product.name}" style="width: 80px; height: 80px; object-fit: contain; background: transparent; padding: 5px;">
             <div style="flex: 1;">
-                <h4 style="margin: 0 0 5px 0; font-size: 1rem;">${product.name}</h4>
-                <p style="margin: 0 0 10px 0; color: var(--text-light); font-size: 0.9rem;">$${product.price.toFixed(2)}</p>
+                <h4 style="margin: 0 0 5px 0; font-size: 0.9rem; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-clamp: 2;">${product.name}</h4>
+                <p style="margin: 0 0 10px 0; color: var(--text-light); font-size: 0.8rem;">$${product.price.toFixed(2)}</p>
                 <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 4px; width: fit-content;">
-                    <button onclick="updateCartItemQuantity(${cartItemIndex}, -1); showAddedToCartModal('${productKey}');" style="background:none; border:none; padding: 5px 12px; cursor: pointer; font-size: 1.1rem;">-</button>
-                    <span style="padding: 0 15px; font-size: 0.95rem;">${cartItem.quantity}</span>
-                    <button onclick="updateCartItemQuantity(${cartItemIndex}, 1); showAddedToCartModal('${productKey}');" style="background:none; border:none; padding: 5px 12px; cursor: pointer; font-size: 1.1rem;">+</button>
+                    <button onclick="updateCartItemQuantity(${cartItemIndex}, -1); showAddedToCartModal('${productKey}');" style="background:none; border:none; padding: 5px 12px; cursor: pointer; font-size: 1rem;">-</button>
+                    <span style="padding: 0 15px; font-size: 0.85rem;">${cartItem.quantity}</span>
+                    <button onclick="updateCartItemQuantity(${cartItemIndex}, 1); showAddedToCartModal('${productKey}');" style="background:none; border:none; padding: 5px 12px; cursor: pointer; font-size: 1rem;">+</button>
                 </div>
             </div>
-            <div style="text-align: right; font-weight: bold; font-size: 1.1rem;">
+            <div style="text-align: right; font-weight: bold; font-size: 1rem;">
                 $${(product.price * cartItem.quantity).toFixed(2)}
             </div>
         `;
@@ -4768,8 +5196,8 @@ body.no-hero>main {
                 crossSellContainer.innerHTML += `
                     <div style="min-width: 120px; text-align: center; border: 1px solid #eee; padding: 10px; border-radius: 8px; cursor: pointer;" onclick="closeAddedModal(); showProduct('${crossProduct.id}')">
                         <img src="${crossProduct.image}" style="width: 100%; height: 80px; object-fit: contain; margin-bottom: 10px;">
-                        <div style="font-size: 0.75rem; font-weight: 500; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${crossProduct.name}</div>
-                        <div style="font-size: 0.8rem; color: var(--text-light);">$${crossProduct.price.toFixed(2)}</div>
+                        <div style="font-size: 0.7rem; font-weight: 500; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-clamp: 2;">${crossProduct.name}</div>
+                        <div style="font-size: 0.75rem; color: var(--text-light);">$${crossProduct.price.toFixed(2)}</div>
                     </div>
                 `;
             }

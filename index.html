@@ -26,18 +26,18 @@
     <meta property="twitter:image" content="http://sampritibotanicals.com/assets/images/brand2.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Tenor+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>/* CSS Variables */
 :root {
     --primary-color-1: #333;
     /* Product 1 (Shakti Peya) - Brownish Red */
     --primary-color-2: #252525;
     /* Product 2 (Chandra Rasa) - Deep Blue/Navy */
-    --text-color: #333333;
-    --text-light: #666666;
+    --text-color: #252525;
+    --text-light: #555555;
     --bg-color: #fffef2;
-    --bg-light: #fffef2;
-    --font-heading: 'Tenor Sans', sans-serif;
+    --bg-light: #f9f8f4;
+    --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
     --container-width: 1200px;
     --spacing-xs: 8px;
@@ -81,14 +81,14 @@
 }
 
 .provenance-hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
+    font-size: clamp(3rem, 8vw, 5rem);
     font-weight: 300;
     letter-spacing: -0.02em;
     margin-bottom: 20px;
 }
 
 .provenance-hero-content p {
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     font-weight: 300;
     letter-spacing: 0.05em;
     text-transform: uppercase;
@@ -113,13 +113,13 @@
 }
 
 .aman-intro h2 {
-    font-size: 0.875rem;
+    font-size: 2.5rem;
     margin-bottom: 30px;
     font-weight: 300;
 }
 
 .aman-intro p {
-    font-size: 0.5rem;
+    font-size: 1.1rem;
     line-height: 1.8;
     color: #444;
 }
@@ -160,23 +160,23 @@
 }
 
 .aman-card-content h3 {
-    font-size: 0.875rem;
+    font-size: 1.8rem;
     margin-bottom: 15px;
     font-weight: 300;
 }
 
 .aman-card-content p {
-    font-size: 0.875rem;
+    font-size: 1rem;
     line-height: 1.7;
     color: #555;
     margin-bottom: 20px;
 }
 
 .aman-card-link {
-    font-size: 0.625rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    font-weight: 500;
+    font-weight: 600;
     color: var(--aman-gold);
     display: flex;
     align-items: center;
@@ -221,10 +221,10 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.8;
     background-color: var(--bg-color);
     font-weight: 300;
-    font-size: 0.875rem;
+    letter-spacing: 0.02em;
     overflow-x: hidden;
 }
 
@@ -241,10 +241,11 @@ h4,
 h5,
 h6 {
     font-family: var(--font-heading);
-    /* color: var(--primary-color-2); */
-    /* Using the deep blue for headings for elegance */
-    line-height: 1.2;
+    color: var(--primary-color-2);
+    line-height: 1.3;
+    letter-spacing: 0.03em;
     margin-bottom: var(--spacing-sm);
+    font-weight: 400;
 }
 
 h3,
@@ -255,12 +256,12 @@ h6 {
 }
 
 h2 {
-    font-size: 0.875rem;
+    font-size: 2.5rem;
 }
 
 h3 {
-    font-size: 0.875rem;
-    font-family: var(--font-body);
+    font-size: 1.75rem;
+    font-family: var(--font-heading);
 
 }
 
@@ -281,7 +282,7 @@ p {
 }
 
 .how-to-use-section h3 {
-    font-size: 0.875rem;
+    font-size: 1.3rem;
 }
 
 .sub-heading {
@@ -324,10 +325,10 @@ ul {
 }
 
 .eyebrow {
-    font-size: 0.875rem;
+    font-size: 1.875rem;
     letter-spacing: 2px;
     color: var(--primary-color-1);
-    /* font-weight: 500; */
+    /* font-weight: 600; */
     display: block;
     margin-bottom: var(--spacing-xs);
     font-family: var(--font-heading);
@@ -337,12 +338,13 @@ ul {
 .btn {
     display: inline-block;
     padding: 12px 30px;
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-weight: 400;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
     cursor: pointer;
     border: none;
-    font-size: 0.875rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
 }
 
@@ -384,7 +386,7 @@ ul {
     align-items: center;
     gap: 15px;
     cursor: pointer;
-    font-weight: 400;
+    font-weight: 500;
     color: #333;
     padding: 15px;
     border: 1px solid #ccc;
@@ -436,7 +438,7 @@ ul {
 .subscribe-image-side img { width: 100%; height: 100%; object-fit: cover; }
 .subscribe-content-side { flex: 1; min-width: 300px; display: flex; align-items: center; justify-content: center; padding: 60px; background-color: #f9f9f7; }
 .subscribe-content-inner { max-width: 400px; }
-.subscribe-content-inner h2 { font-family: var(--font-heading); font-size: 1.125rem; margin-bottom: 20px; }
+.subscribe-content-inner h2 { font-family: var(--font-heading); font-size: 2rem; margin-bottom: 20px; }
 .subscribe-form { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
 .subscribe-form input { padding: 12px; border: 1px solid #ccc; border-radius: 4px; }
 .btn-submit { background-color: var(--primary-color-1); color: white; padding: 12px; border: none; cursor: pointer; }
@@ -508,7 +510,7 @@ body.no-hero>main {
     right: -5px;
     background-color: var(--primary-color-1);
     color: white;
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     font-weight: bold;
     width: 16px;
     height: 16px;
@@ -547,9 +549,10 @@ body.no-hero>main {
 }
 
 .main-nav a {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-weight: 400;
-    font-size: 0.625rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
     color: white;
     transition: color 0.3s ease;
     text-transform: uppercase;
@@ -596,6 +599,12 @@ body.no-hero>main {
     top: 65%;
     transform: translateY(-50%);
     z-index: 1;
+}
+
+#hero .container {
+    top: auto;
+    bottom: 80px;
+    transform: none;
 }
 
 /* Hero Video Controls */
@@ -648,7 +657,7 @@ body.no-hero>main {
 }
 
 .hero-title {
-    font-size: 1.625rem;
+    font-size: 2.3rem;
     max-width: 900px;
     /* margin: 0 auto var(--spacing-md); */
     /* color: var(--primary-color-2); */
@@ -657,7 +666,7 @@ body.no-hero>main {
 }
 
 .hero-title-small {
-    font-size: 0.875rem !important;
+    font-size: 1.1rem !important;
     margin-bottom: 0 !important;
 
 }
@@ -669,18 +678,24 @@ body.no-hero>main {
         transform: translateY(-50%);
     }
 
+    #hero .container {
+        top: auto;
+        bottom: 60px;
+        transform: none;
+    }
+
     .hero-title-small {
-        font-size: 0.875rem !important;
+        font-size: 1rem !important;
         margin-bottom: 0 !important;
     }
 
     .eyebrow {
-        font-size: 0.875rem;
+        font-size: 1.375rem;
     }
 }
 
 .hero-subtitle {
-    font-size: 0.5rem;
+    font-size: 1.25rem;
     color: var(--text-light);
     margin-bottom: var(--spacing-md);
 }
@@ -738,7 +753,7 @@ body.no-hero>main {
 
 /* Remove old About styles that interfere */
 .about-content p {
-    font-size: 0.5rem;
+    font-size: 1.1rem;
     margin-bottom: var(--spacing-md);
 }
 
@@ -839,7 +854,7 @@ body.no-hero>main {
 }
 
 .standard-item p {
-    font-size: 0.5rem;
+    font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #666;
@@ -895,7 +910,7 @@ body.no-hero>main {
 }
 
 .product-subtitle {
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     color: var(--primary-color-1);
     margin-bottom: 0;
     font-family: var(--font-heading);
@@ -903,7 +918,7 @@ body.no-hero>main {
 }
 
 .product-specs {
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     color: var(--text-light);
 }
 
@@ -913,14 +928,14 @@ body.no-hero>main {
 }
 
 .ingredients-list h4 {
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     border-bottom: 2px solid #eee;
     padding-bottom: 8px;
     margin-bottom: 12px;
 }
 
 .ingredients-list ul li {
-    font-size: 0.625rem;
+    font-size: 0.95rem;
     margin-bottom: 6px;
     position: relative;
     padding-left: 15px;
@@ -947,7 +962,7 @@ body.no-hero>main {
     list-style: none;
     padding: 16px 0;
     font-family: var(--font-heading);
-    font-size: 0.875rem;
+    font-size: 1rem;
     color: var(--primary-color-2);
     cursor: pointer;
     position: relative;
@@ -962,7 +977,7 @@ body.no-hero>main {
 
 .product-collapsible summary::after {
     content: "▼";
-    font-size: 0.625rem;
+    font-size: 0.9rem;
     transition: transform 0.3s ease;
 }
 
@@ -973,7 +988,7 @@ body.no-hero>main {
 .product-collapsible .collapsible-content {
     padding-bottom: 16px;
     color: var(--text-light);
-    font-size: 0.625rem;
+    font-size: 0.95rem;
     line-height: 1.6;
 }
 
@@ -987,7 +1002,7 @@ body.no-hero>main {
 
 .image-text-placeholder {
     font-family: var(--font-heading);
-    font-size: 1.125rem;
+    font-size: 2rem;
     letter-spacing: 4px;
     text-transform: uppercase;
 }
@@ -1000,7 +1015,7 @@ body.no-hero>main {
     color: white;
     padding: var(--spacing-xl) 0 var(--spacing-md);
     margin-top: 100px;
-    font-size: 0.625rem;
+    font-size: 0.9rem;
 }
 
 
@@ -1026,7 +1041,7 @@ body.no-hero>main {
 
 .footer-col h3 {
     font-family: var(--font-heading);
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     margin-bottom: 20px;
     color: white;
     border-bottom: 1px solid rgba(255,255,255,0.2);
@@ -1089,7 +1104,7 @@ body.no-hero>main {
 }
 
 .checkbox-group label {
-    font-size: 0.625rem;
+    font-size: 0.75rem;
     color: rgba(255,255,255,0.6);
     line-height: 1.4;
 }
@@ -1117,7 +1132,7 @@ body.no-hero>main {
 
 .footer-bottom-info p {
     color: rgba(255, 255, 255, 0.6);
-    font-size: 0.625rem;
+    font-size: 0.85rem;
     margin: 0;
 }
 
@@ -1134,7 +1149,7 @@ body.no-hero>main {
 
 .footer-bottom-links a {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.625rem;
+    font-size: 0.85rem;
     text-decoration: none;
 }
 
@@ -1163,7 +1178,7 @@ body.no-hero>main {
     }
 
     .hero-title {
-        font-size: 1.125rem;
+        font-size: 2rem;
     }
 
     .main-header .container {
@@ -1209,7 +1224,7 @@ body.no-hero>main {
     top: 15px;
     right: 20px;
     color: #aaa;
-    font-size: 20px;
+    font-size: 28px;
     font-weight: bold;
     cursor: pointer;
     transition: color 0.2s;
@@ -1228,12 +1243,12 @@ body.no-hero>main {
 
 #modal-product-name {
     color: var(--primary-color-1);
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 25px;
     border-bottom: 1px solid #eee;
     padding-bottom: 15px;
     font-family: var(--font-heading);
-    font-size: 0.875rem;
+    font-size: 1.2rem;
 }
 
 .form-group {
@@ -1243,7 +1258,7 @@ body.no-hero>main {
 .form-group label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--text-color);
 }
 
@@ -1253,7 +1268,7 @@ body.no-hero>main {
     padding: 12px;
     border: 1px solid #ddd;
     font-family: var(--font-body);
-    font-size: 0.875rem;
+    font-size: 1rem;
     transition: border-color 0.3s;
 }
 
@@ -1322,7 +1337,7 @@ body.no-hero>main {
 .contact-hero-title {
     position: relative;
     color: white;
-    font-size: 2.25rem;
+    font-size: 3.5rem;
     z-index: 1;
     margin-bottom: 0;
 }
@@ -1340,13 +1355,13 @@ body.no-hero>main {
 }
 
 .contact-section-title {
-    font-size: 1.125rem;
+    font-size: 2rem;
     margin-bottom: var(--spacing-sm);
     color: var(--primary-color-1);
 }
 
 .contact-description {
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin-bottom: var(--spacing-md);
     color: var(--text-light);
     line-height: 1.6;
@@ -1365,7 +1380,7 @@ body.no-hero>main {
     border-radius: 0;
     /* Sharp edges as per reference */
     font-family: var(--font-body);
-    font-size: 0.625rem;
+    font-size: 0.95rem;
     color: var(--text-color);
     background-color: transparent;
     transition: border-color 0.3s;
@@ -1380,7 +1395,7 @@ body.no-hero>main {
 .styled-contact-form input::placeholder,
 .styled-contact-form textarea::placeholder {
     color: #999;
-    font-size: 0.625rem;
+    font-size: 0.9rem;
 }
 
 .contact-submit-btn {
@@ -1390,8 +1405,8 @@ body.no-hero>main {
     border: none;
     /* Pill shape */
     padding: 12px 35px;
-    font-size: 0.625rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
     margin-top: 10px;
@@ -1431,14 +1446,14 @@ body.no-hero>main {
 }
 
 .contact-info-title {
-    font-size: 0.875rem;
+    font-size: 1.25rem;
     margin-bottom: 15px;
     font-family: var(--font-heading);
     color: var(--primary-color-1);
 }
 
 .contact-info-block p {
-    font-size: 0.625rem;
+    font-size: 0.95rem;
     color: var(--text-light);
     line-height: 1.6;
 }
@@ -1566,7 +1581,7 @@ body.no-hero>main {
 } */
 
 .product-grid-item h3 {
-    font-size: 0.875rem;
+    font-size: 1.25rem;
     margin-bottom: 5px;
     /* Ensure heading font is used */
     color: var(--primary-color-2);
@@ -1577,12 +1592,12 @@ body.no-hero>main {
     font-style: italic;
     color: var(--primary-color-1);
     margin-bottom: 10px;
-    font-size: 0.875rem;
+    font-size: 1rem;
 }
 
 .product-grid-price {
-    font-weight: 500;
-    font-size: 0.875rem;
+    font-weight: 600;
+    font-size: 1.1rem;
     color: var(--text-color);
 }
 
@@ -1621,30 +1636,28 @@ body.no-hero>main {
 }
 
 .product-detail-info h1 {
-    font-size: 0.875rem;
+    font-size: 2.5rem;
     margin-bottom: 5px;
     color: var(--primary-color-2);
 }
 
 .product-subtitle-large {
     font-family: var(--font-heading);
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     color: var(--primary-color-1);
     margin-bottom: 10px;
 }
 
 .price {
-    font-size: 1.125rem;
-    font-weight: 400;
+    font-size: 1.5rem;
+    font-weight: 500;
     margin-bottom: 20px;
     color: var(--text-color);
 }
 
-.product-description-full p {
-    font-size: 0.625rem;
-}
 .product-description-full {
-    font-size: 0.625rem;
+    margin-bottom: var(--spacing-md);
+    font-size: 1.05rem;
     line-height: 1.7;
     color: var(--text-light);
 }
@@ -1668,7 +1681,7 @@ body.no-hero>main {
     background: none;
     border: none;
     font-family: var(--font-heading);
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     color: var(--text-color);
     cursor: pointer;
     text-align: left;
@@ -1679,7 +1692,7 @@ body.no-hero>main {
 }
 
 .accordion-icon {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-weight: 300;
     transition: transform 0.3s ease;
 }
@@ -1722,7 +1735,7 @@ body.no-hero>main {
 }
 
 .reviews-section h3 {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     margin-bottom: var(--spacing-md);
 }
 
@@ -1738,7 +1751,7 @@ body.no-hero>main {
 
 .stars {
     color: #C19A6B;
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     margin-bottom: 5px;
     letter-spacing: 2px;
 }
@@ -1751,9 +1764,9 @@ body.no-hero>main {
 }
 
 .review-author {
-    font-size: 0.625rem;
+    font-size: 0.9rem;
     color: var(--text-light);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 @media (max-width: 768px) {
@@ -1779,25 +1792,25 @@ body.no-hero>main {
         border: none;
     }
     .product-detail-info h1 {
-        font-size: 0.875rem;
+        font-size: 1.8rem;
         line-height: 1.2;
         margin-bottom: 8px;
         letter-spacing: -0.5px;
     }
     .product-subtitle-large {
-        font-size: 0.875rem;
+        font-size: 1.1rem;
         margin-bottom: 15px;
         color: var(--primary-color-1);
-        font-weight: 400;
+        font-weight: 500;
     }
     .price {
-        font-size: 1.125rem;
+        font-size: 1.5rem;
         margin-bottom: 25px;
-        font-weight: 500;
+        font-weight: 600;
         color: var(--primary-color-2);
     }
     .product-description-full {
-    font-size: 0.625rem;
+        font-size: 1.05rem;
         line-height: 1.6;
         margin-bottom: 30px;
     }
@@ -1813,7 +1826,7 @@ body.no-hero>main {
         display: none;
     }
     .product-tab {
-        font-size: 0.875rem;
+        font-size: 1rem;
     }
     .horizontal-scroll {
         scroll-snap-type: x mandatory;
@@ -1835,13 +1848,13 @@ body.no-hero>main {
         object-fit: contain !important;
     }
     .mini-product-card h4 {
-        font-size: 0.625rem;
+        font-size: 0.95rem;
     }
     .back-link {
         display: inline-flex;
         align-items: center;
         margin-bottom: 20px;
-        font-size: 0.625rem;
+        font-size: 0.95rem;
         background: #fff;
         padding: 8px 16px;
         border-radius: 20px;
@@ -1849,7 +1862,7 @@ body.no-hero>main {
         border: 1px solid #eee;
         text-transform: uppercase;
         letter-spacing: 1px;
-        font-weight: 500;
+        font-weight: 600;
     }
 }
 
@@ -1872,7 +1885,7 @@ body.no-hero>main {
     background: none;
     border: none;
     font-family: var(--font-heading);
-    font-size: 0.875rem;
+    font-size: 1.2rem;
     color: var(--text-light);
     cursor: pointer;
     padding-bottom: 10px;
@@ -1938,14 +1951,14 @@ body.no-hero>main {
 }
 
 .mini-product-card h4 {
-    font-size: 0.875rem;
+    font-size: 1rem;
     margin-bottom: 5px;
     font-family: var(--font-heading);
     color: var(--primary-color-2);
 }
 
 .mini-product-card p {
-    font-size: 0.625rem;
+    font-size: 0.9rem;
     color: var(--text-light);
     margin-bottom: 0;
 }
@@ -1972,8 +1985,8 @@ body.no-hero>main {
     font-style: italic;
 }
 
-.tenor-sans-regular {
-    font-family: "Tenor Sans", sans-serif;
+.playfair-display-regular {
+    font-family: "Playfair Display", serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -2024,24 +2037,24 @@ body.no-hero>main {
 }
 
 .blog-category {
-    font-size: 0.625rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: var(--primary-color-1);
     display: block;
     margin-bottom: var(--spacing-xs);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .blog-card-content h3 {
-    font-size: 0.875rem;
+    font-size: 1.4rem;
     margin-bottom: var(--spacing-sm);
     line-height: 1.3;
 }
 
 .blog-card-content p {
     color: var(--text-light);
-    font-size: 0.625rem;
+    font-size: 0.95rem;
     margin-bottom: var(--spacing-sm);
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -2051,8 +2064,8 @@ body.no-hero>main {
 }
 
 .read-more {
-    font-size: 0.625rem;
-    font-weight: 500;
+    font-size: 0.9rem;
+    font-weight: 600;
     color: var(--primary-color-2);
     display: inline-block;
 }
@@ -2063,7 +2076,7 @@ body.no-hero>main {
 }
 
 .blog-post-header h1 {
-    font-size: 1.125rem;
+    font-size: 3rem;
     margin-top: var(--spacing-xs);
     margin-bottom: var(--spacing-sm);
 }
@@ -2087,7 +2100,7 @@ body.no-hero>main {
 }
 
 .blog-post-content {
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     line-height: 1.8;
 }
 
@@ -2096,8 +2109,8 @@ body.no-hero>main {
 }
 
 .blog-post-content .lead {
-    font-size: 0.875rem;
-    font-weight: 400;
+    font-size: 1.25rem;
+    font-weight: 500;
     color: var(--primary-color-2);
     margin-bottom: var(--spacing-lg);
 }
@@ -2105,9 +2118,9 @@ body.no-hero>main {
 .blog-post-content h3 {
     margin-top: var(--spacing-lg);
     margin-bottom: var(--spacing-sm);
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .recipe-box {
@@ -2116,9 +2129,9 @@ body.no-hero>main {
 
 .recipe-box h3 {
     margin-top: var(--spacing-md);
-    font-size: 0.875rem;
+    font-size: 1.1rem;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .recipe-box h3:first-child {
@@ -2151,7 +2164,7 @@ body.no-hero>main {
 
 .recipe-note {
     font-style: italic;
-    font-size: 0.625rem;
+    font-size: 0.95rem;
     color: var(--text-light);
     margin-top: var(--spacing-md);
 }
@@ -2164,7 +2177,7 @@ body.no-hero>main {
 
 @media (max-width: 768px) {
     .blog-post-header h1 {
-        font-size: 1.125rem;
+        font-size: 2rem;
     }
 
     .recipe-box {
@@ -2270,7 +2283,7 @@ body.no-hero>main {
     }
     .main-nav a {
         color: var(--primary-color-2) !important;
-        font-size: 0.875rem !important;
+        font-size: 1.1rem !important;
     }
     .close-menu {
         position: absolute;
@@ -2278,7 +2291,7 @@ body.no-hero>main {
         right: 20px;
         background: none;
         border: none;
-        font-size: 0.875rem;
+        font-size: 2.5rem;
         color: var(--primary-color-2);
         cursor: pointer;
         display: block;
@@ -2301,11 +2314,11 @@ body.no-hero>main {
 
     /* Hero Section */
     .hero-title {
-        font-size: 1.125rem !important;
+        font-size: 2rem !important;
         line-height: 1.3;
     }
     .hero-title-small {
-        font-size: 0.875rem !important;
+        font-size: 1rem !important;
         margin-bottom: 10px !important;
     }
     #hero a.btn.btn-primary {
@@ -2318,7 +2331,7 @@ body.no-hero>main {
         text-align: center;
     }
     .about-content-inner p {
-        font-size: 0.875rem !important;
+        font-size: 1rem !important;
     }
 
     /* Products Grid */
@@ -2335,7 +2348,7 @@ body.no-hero>main {
         object-fit: contain !important;
     }
     .product-grid-item h3 {
-        font-size: 0.875rem !important;
+        font-size: 1.25rem !important;
     }
     .product-grid-item .buy-now-btn {
         width: 100%;
@@ -2425,7 +2438,7 @@ body.no-hero>main {
         padding: 18px 20px;
         width: 100%;
         font-family: var(--font-body);
-        font-size: 0.875rem;
+        font-size: 1rem;
         cursor: pointer;
         transition: background 0.3s ease;
     }
@@ -2489,16 +2502,16 @@ body.no-hero>main {
     }
 
     .aesop-category {
-        font-size: 0.625rem;
+        font-size: 0.75rem;
         text-transform: uppercase;
         letter-spacing: 2px;
         margin-bottom: 15px;
         color: #666;
-        font-weight: 400;
+        font-weight: 500;
     }
 
     .aesop-title {
-        font-size: 0.875rem;
+        font-size: 2.8rem;
         font-family: var(--font-heading);
         margin-bottom: 25px;
         line-height: 1.1;
@@ -2506,7 +2519,7 @@ body.no-hero>main {
     }
 
     .aesop-description {
-    font-size: 0.625rem;
+        font-size: 1.05rem;
         line-height: 1.7;
         margin-bottom: 40px;
         color: #333;
@@ -2518,8 +2531,8 @@ body.no-hero>main {
     }
 
     .aesop-meta-label {
-        font-weight: 500;
-        font-size: 0.625rem;
+        font-weight: 600;
+        font-size: 0.85rem;
         margin-bottom: 12px;
         display: block;
         text-transform: uppercase;
@@ -2527,7 +2540,7 @@ body.no-hero>main {
     }
 
     .aesop-meta-value {
-        font-size: 0.625rem;
+        font-size: 0.95rem;
         color: #444;
         line-height: 1.6;
     }
@@ -2544,7 +2557,7 @@ body.no-hero>main {
         padding: 20px;
         text-align: center;
         font-family: var(--font-heading);
-        font-size: 0.625rem;
+        font-size: 0.85rem;
         letter-spacing: 1.5px;
         cursor: pointer;
         transition: all 0.3s ease;
@@ -2574,7 +2587,7 @@ body.no-hero>main {
     }
 
     .aesop-price {
-        font-size: 0.875rem;
+        font-size: 1.2rem;
         margin-bottom: 30px;
         font-weight: 400;
     }
@@ -2657,7 +2670,7 @@ body.no-hero>main {
         <section id="products" class="section-padding bg-light">
             <div class="container">
                 <div class="section-header text-center" style="margin-bottom: 50px;">
-                    <h2 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
+                    <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
                 </div>
 
                 <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
@@ -2666,9 +2679,9 @@ body.no-hero>main {
                         <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                             <img class="img-default" src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir" style="max-height: 100%; width: auto; object-fit: contain;">
                         </div>
-                        <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
-                        <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Energy Elixir</p>
-                        <p style="color: #333; font-weight: 500;">$33</p>
+                        <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Energy Elixir</p>
+                        <p style="color: #333; font-weight: 600;">$33</p>
                         <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation();" style="margin-top: 15px;">Add to cart</button>
                     </div>
 
@@ -2677,9 +2690,9 @@ body.no-hero>main {
                         <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                             <img class="img-default" src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion" style="max-height: 100%; width: auto; object-fit: contain;">
                         </div>
-                        <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
-                        <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Sleep Potion</p>
-                        <p style="color: #333; font-weight: 500;">$33</p>
+                        <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
+                        <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Sleep Potion</p>
+                        <p style="color: #333; font-weight: 600;">$33</p>
                         <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation();" style="margin-top: 15px;">Add to cart</button>
                     </div>
                 </div>
@@ -2844,7 +2857,7 @@ body.no-hero>main {
                 <div class="blog-grid">
                     <!-- Blog Post 1 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-hibiscus">
                             <div class="blog-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg" alt="The Crimson Catalyst: Hibiscus in Practice">
                             </div>
@@ -2861,7 +2874,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 2 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-black-turmeric">
                             <div class="blog-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery">
                             </div>
@@ -2878,7 +2891,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 3 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-lunar-pulse">
                             <div class="blog-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/blog/chandra.jpg" alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs">
                             </div>
@@ -2894,7 +2907,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 4 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-art-of-infusion">
                             <div class="blog-card-image">
                                 <img src="https://picsum.photos/seed/herb1/600/400" alt="Placeholder Article 4">
                             </div>
@@ -2909,7 +2922,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 5 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-seasonal-rhythms">
                             <div class="blog-card-image">
                                 <img src="https://picsum.photos/seed/herb2/600/400" alt="Placeholder Article 5">
                             </div>
@@ -2924,7 +2937,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 6 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-science-of-scent">
                             <div class="blog-card-image">
                                 <img src="https://picsum.photos/seed/herb3/600/400" alt="Placeholder Article 6">
                             </div>
@@ -2951,13 +2964,13 @@ body.no-hero>main {
             <section class="section-padding" style="padding-top: 100px;">
                 <div class="container">
                     <header style="margin-bottom: 60px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
-                        <h1 style="font-family: var(--font-heading); font-size: 1.125rem; color: #333;">The Library</h1>
-                        <p style="font-size: 0.875rem; color: #666; margin-top: 10px;">A collection of essays, stories, and botanical insights.</p>
+                        <h1 style="font-family: var(--font-heading); font-size: 3rem; color: #333;">The Library</h1>
+                        <p style="font-size: 1.2rem; color: #666; margin-top: 10px;">A collection of essays, stories, and botanical insights.</p>
                     </header>
                     <div class="blog-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 40px;">
                     <!-- Blog Post 1 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-hibiscus">
                             <div class="blog-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg" alt="The Crimson Catalyst: Hibiscus in Practice">
                             </div>
@@ -2974,7 +2987,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 2 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-black-turmeric">
                             <div class="blog-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery">
                             </div>
@@ -2991,7 +3004,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 3 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-lunar-pulse">
                             <div class="blog-card-image">
                                 <img src="https://sampritibotanicals.com/assets/images/blog/chandra.jpg" alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs">
                             </div>
@@ -3007,7 +3020,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 4 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-art-of-infusion">
                             <div class="blog-card-image">
                                 <img src="https://picsum.photos/seed/herb1/600/400" alt="Placeholder Article 4">
                             </div>
@@ -3022,7 +3035,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 5 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-seasonal-rhythms">
                             <div class="blog-card-image">
                                 <img src="https://picsum.photos/seed/herb2/600/400" alt="Placeholder Article 5">
                             </div>
@@ -3037,7 +3050,7 @@ body.no-hero>main {
 
                     <!-- Blog Post 6 -->
                     <article class="blog-card">
-                        <a class="blog-card-link" href="#blog-preview">
+                        <a class="blog-card-link" href="#article-science-of-scent">
                             <div class="blog-card-image">
                                 <img src="https://picsum.photos/seed/herb3/600/400" alt="Placeholder Article 6">
                             </div>
@@ -3070,7 +3083,7 @@ body.no-hero>main {
                 <div class="container">
                     <div class="section-header text-center" style="margin-bottom: 50px;">
                         <span class="eyebrow">THE BOTANICAL ARCHIVE</span>
-                        <h2 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">MATERIA BOTANICA</h2>
+                        <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">MATERIA BOTANICA</h2>
                     </div>
 
                     <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
@@ -3079,9 +3092,9 @@ body.no-hero>main {
                             <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                                 <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" style="max-height: 100%; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
                             </div>
-                            <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">HIBISCUS</h3>
-                            <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Rosa-Sinensis</p>
-                            <p style="color: #333; font-weight: 500;">$42</p>
+                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">HIBISCUS</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Rosa-Sinensis</p>
+                            <p style="color: #333; font-weight: 600;">$42</p>
                             <button class="btn btn-primary buy-now-btn" data-product="HIBISCUS" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
@@ -3090,9 +3103,9 @@ body.no-hero>main {
                             <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                                 <img src="https://picsum.photos/seed/rose/800/1000" alt="Rosa Damascena" style="max-height: 100%; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
                             </div>
-                            <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">ROSE</h3>
-                            <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Rosa Damascena</p>
-                            <p style="color: #333; font-weight: 500;">$56</p>
+                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">ROSE</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Rosa Damascena</p>
+                            <p style="color: #333; font-weight: 600;">$56</p>
                             <button class="btn btn-primary buy-now-btn" data-product="ROSE" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
@@ -3101,9 +3114,9 @@ body.no-hero>main {
                             <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                                 <img src="https://picsum.photos/seed/turmeric/800/1000" alt="Curcuma Caesia" style="max-height: 100%; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
                             </div>
-                            <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">BLACK TURMERIC</h3>
-                            <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Curcuma Caesia</p>
-                            <p style="color: #333; font-weight: 500;">$48</p>
+                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">BLACK TURMERIC</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Curcuma Caesia</p>
+                            <p style="color: #333; font-weight: 600;">$48</p>
                             <button class="btn btn-primary buy-now-btn" data-product="BLACK TURMERIC" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
@@ -3112,9 +3125,9 @@ body.no-hero>main {
                             <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                                 <img src="https://picsum.photos/seed/butterflypea/800/1000" alt="Clitoria Ternatea" style="max-height: 100%; width: auto; object-fit: contain;" referrerPolicy="no-referrer">
                             </div>
-                            <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">BLUE BUTTERFLY PEA</h3>
-                            <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Clitoria Ternatea</p>
-                            <p style="color: #333; font-weight: 500;">$38</p>
+                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">BLUE BUTTERFLY PEA</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Clitoria Ternatea</p>
+                            <p style="color: #333; font-weight: 600;">$38</p>
                             <button class="btn btn-primary buy-now-btn" data-product="BLUE BUTTERFLY PEA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
                     </div>
@@ -3134,7 +3147,7 @@ body.no-hero>main {
             <section id="shop-products" class="section-padding bg-light">
                 <div class="container">
                     <div class="section-header text-center" style="margin-bottom: 50px;">
-                        <h2 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
+                        <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
                     </div>
 
                     <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
@@ -3143,9 +3156,9 @@ body.no-hero>main {
                             <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                                 <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir" style="max-height: 100%; width: auto; object-fit: contain;">
                             </div>
-                            <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
-                            <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Energy Elixir</p>
-                            <p style="color: #333; font-weight: 500;">$33</p>
+                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Energy Elixir</p>
+                            <p style="color: #333; font-weight: 600;">$33</p>
                             <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
@@ -3154,9 +3167,9 @@ body.no-hero>main {
                             <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                                 <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion" style="max-height: 100%; width: auto; object-fit: contain;">
                             </div>
-                            <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
-                            <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Sleep Potion</p>
-                            <p style="color: #333; font-weight: 500;">$33</p>
+                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Sleep Potion</p>
+                            <p style="color: #333; font-weight: 600;">$33</p>
                             <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
 
@@ -3165,14 +3178,24 @@ body.no-hero>main {
                             <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                                 <img src="https://sampritibotanicals.com/assets/images/shotharaha.avif" alt="Shotharaha - Dual Black Recovery" style="max-height: 100%; width: auto; object-fit: contain;">
                             </div>
-                            <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHOTHARAHA</h3>
-                            <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Dual Black Recovery</p>
-                            <p style="color: #333; font-weight: 500;">$33</p>
+                            <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHOTHARAHA</h3>
+                            <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Dual Black Recovery</p>
+                            <p style="color: #333; font-weight: 600;">$33</p>
                             <button class="btn btn-primary buy-now-btn" data-product="SHOTHARAHA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                         </div>
                     </div>
                 </div>
             </section>
+        </div>
+
+        <!-- Article View -->
+        <div id="article-view" style="display: none; padding-top: 120px; padding-bottom: 80px;">
+            <div class="container" style="max-width: 800px; margin: 0 auto;">
+                <a href="#" onclick="showJournal(); return false;" class="back-link" style="margin-bottom: 30px; display: inline-block; color: #333; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.05em;">← Back to Journal</a>
+                <article id="article-content">
+                    <!-- Content will be injected here -->
+                </article>
+            </div>
         </div>
 
         <!-- Product Detail View -->
@@ -3674,14 +3697,14 @@ body.no-hero>main {
         <div id="checkout-view" style="display: none; padding-top: 120px; padding-bottom: 80px; background-color: #fffef2; min-height: 100vh;">
             <div class="container" style="max-width: 1000px; margin: 0 auto;">
                 <a href="#" onclick="showHome(); return false;" class="back-link" style="margin-bottom: 30px; display: inline-block; color: #333; text-decoration: none;">← Back to Shop</a>
-                <h2 style="font-size: 1.125rem; margin-bottom: 20px; font-family: var(--font-heading); color: #333; text-align: center;">Complete Your Order</h2>
+                <h2 style="font-size: 2rem; margin-bottom: 20px; font-family: var(--font-heading); color: #333; text-align: center;">Complete Your Order</h2>
                 
                 <div class="checkout-grid">
                     <div style="background: white; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
                         <form id="buy-form">
                             <input type="hidden" id="product-name" name="product-name">
 
-                            <h3 style="margin-bottom: 20px; font-size: 0.875rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">1. Customer Information</h3>
+                            <h3 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">1. Customer Information</h3>
                         
                         <div class="form-group">
                             <label for="name" style="color: #666;">Full Name *</label>
@@ -3690,17 +3713,17 @@ body.no-hero>main {
 
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                             <div class="form-group">
-                                <label for="phone" style="color: #666;">Phone Number * <span style="font-size: 0.625rem; color: #999; font-weight: normal;">(10-digit mobile number)</span></label>
+                                <label for="phone" style="color: #666;">Phone Number * <span style="font-size: 0.8rem; color: #999; font-weight: normal;">(10-digit mobile number)</span></label>
                                 <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required="" style="border: 1px solid #ccc; padding: 12px; border-radius: 4px; width: 100%;">
                             </div>
 
                             <div class="form-group">
-                                <label for="email" style="color: #666;">Email Address <span style="font-size: 0.625rem; color: #999; font-weight: normal;">(Optional)</span></label>
+                                <label for="email" style="color: #666;">Email Address <span style="font-size: 0.8rem; color: #999; font-weight: normal;">(Optional)</span></label>
                                 <input type="email" id="email" name="email" style="border: 1px solid #ccc; padding: 12px; border-radius: 4px; width: 100%;">
                             </div>
                         </div>
 
-                        <h3 style="margin: 35px 0 20px 0; font-size: 0.875rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">2. Shipping Address</h3>
+                        <h3 style="margin: 35px 0 20px 0; font-size: 1.3rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">2. Shipping Address</h3>
 
                         <div class="form-group">
                             <label for="house" style="color: #666;">House / Flat / Building Number *</label>
@@ -3732,7 +3755,7 @@ body.no-hero>main {
 
                             <div class="form-group">
                                 <label for="country" style="color: #666;">Country *</label>
-                                <select id="country" name="country" required="" style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 4px; font-family: var(--font-body); font-size: 0.875rem; background-color: white; appearance: none;">
+                                <select id="country" name="country" required="" style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 4px; font-family: var(--font-body); font-size: 1rem; background-color: white; appearance: none;">
                                     <option value="India">India</option>
                                     <option value="United States">United States</option>
                                     <option value="United Kingdom">United Kingdom</option>
@@ -3748,16 +3771,16 @@ body.no-hero>main {
                         </div>
 
                         <div class="form-group">
-                            <label for="landmark" style="color: #666;">Landmark <span style="font-size: 0.625rem; color: #999; font-weight: normal;">(Optional)</span></label>
+                            <label for="landmark" style="color: #666;">Landmark <span style="font-size: 0.8rem; color: #999; font-weight: normal;">(Optional)</span></label>
                             <input type="text" id="landmark" name="landmark" style="border: 1px solid #ccc; padding: 12px; border-radius: 4px; width: 100%;">
                         </div>
 
                         <div class="form-group">
-                            <label for="instructions" style="color: #666;">Delivery Instructions <span style="font-size: 0.625rem; color: #999; font-weight: normal;">(Optional)</span></label>
+                            <label for="instructions" style="color: #666;">Delivery Instructions <span style="font-size: 0.8rem; color: #999; font-weight: normal;">(Optional)</span></label>
                             <textarea id="instructions" name="instructions" rows="2" style="border: 1px solid #ccc; padding: 12px; border-radius: 4px; width: 100%;"></textarea>
                         </div>
 
-                        <h3 style="margin: 35px 0 20px 0; font-size: 0.875rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">3. Payment Method</h3>
+                        <h3 style="margin: 35px 0 20px 0; font-size: 1.3rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">3. Payment Method</h3>
                         
                         <div id="payment-methods-container" style="margin-bottom: 25px;">
                             <!-- Payment methods will be injected here based on country -->
@@ -3767,12 +3790,12 @@ body.no-hero>main {
                             <!-- Payment details (Card fields, UPI fields) will be injected here -->
                         </div>
 
-                        <button type="submit" id="place-order-btn" class="aesop-btn" style="font-size: 0.875rem; padding: 20px; margin-top: 20px;">Place Order</button>
+                        <button type="submit" id="place-order-btn" class="aesop-btn" style="font-size: 1.1rem; padding: 20px; margin-top: 20px;">Place Order</button>
                         </form>
                     </div>
                     
                     <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); position: sticky; top: 100px;">
-                        <h3 style="margin-bottom: 20px; font-size: 0.875rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">Order Summary</h3>
+                        <h3 style="margin-bottom: 20px; font-size: 1.3rem; border-bottom: 1px solid #eae8e0; padding-bottom: 10px; color: #333;">Order Summary</h3>
                         <div id="checkout-items" style="margin-bottom: 20px;">
                             <!-- Items will be injected here -->
                         </div>
@@ -3786,7 +3809,7 @@ body.no-hero>main {
                                 <span>Free</span>
                             </div>
                         </div>
-                        <div style="border-top: 1px solid #eae8e0; padding-top: 15px; display: flex; justify-content: space-between; font-weight: bold; font-size: 0.875rem; color: #333;">
+                        <div style="border-top: 1px solid #eae8e0; padding-top: 15px; display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2rem; color: #333;">
                             <span>Total</span>
                             <span id="checkout-total">$0.00</span>
                         </div>
@@ -3799,7 +3822,7 @@ body.no-hero>main {
     <section id="new-collection" class="section-padding bg-light">
         <div class="container">
             <div class="section-header text-center" style="margin-bottom: 50px;">
-                <h2 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
+                <h2 style="font-size: 2.5rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">SIGNATURE RITUALS</h2>
             </div>
 
             <div class="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
@@ -3808,9 +3831,9 @@ body.no-hero>main {
                     <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                         <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya - Energy Elixir" style="max-height: 100%; width: auto; object-fit: contain;">
                     </div>
-                    <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
-                    <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Energy Elixir</p>
-                    <p style="color: #333; font-weight: 500;">$33</p>
+                    <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHAKTI PEYA</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Energy Elixir</p>
+                    <p style="color: #333; font-weight: 600;">$33</p>
                     <button class="btn btn-primary buy-now-btn" data-product="SHAKTI PEYA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
 
@@ -3819,9 +3842,9 @@ body.no-hero>main {
                     <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                         <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa - Sleep Potion" style="max-height: 100%; width: auto; object-fit: contain;">
                     </div>
-                    <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
-                    <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Sleep Potion</p>
-                    <p style="color: #333; font-weight: 500;">$33</p>
+                    <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">CHANDRA RASA</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Sleep Potion</p>
+                    <p style="color: #333; font-weight: 600;">$33</p>
                     <button class="btn btn-primary buy-now-btn" data-product="CHANDRA RASA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
 
@@ -3830,9 +3853,9 @@ body.no-hero>main {
                     <div class="product-grid-image" style="width: 100%; height: 450px; overflow: hidden; margin-bottom: 15px; display: flex; justify-content: center; align-items: center; background-color: #f9f9f7;">
                         <img src="https://sampritibotanicals.com/assets/images/shotharaha.avif" alt="Shotharaha - Dual Black Recovery" style="max-height: 100%; width: auto; object-fit: contain;">
                     </div>
-                    <h3 style="font-size: 0.875rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHOTHARAHA</h3>
-                    <p style="color: #666; font-size: 0.625rem; margin-bottom: 5px;">Dual Black Recovery</p>
-                    <p style="color: #333; font-weight: 500;">$33</p>
+                    <h3 style="font-size: 1.2rem; font-family: var(--font-heading); color: #333; margin-bottom: 5px;">SHOTHARAHA</h3>
+                    <p style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Dual Black Recovery</p>
+                    <p style="color: #333; font-weight: 600;">$33</p>
                     <button class="btn btn-primary buy-now-btn" data-product="SHOTHARAHA" style="margin-top: 15px;" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
             </div>
@@ -3897,12 +3920,12 @@ body.no-hero>main {
     <div id="cart-modal" class="modal" style="display: none; justify-content: flex-end; align-items: flex-start; padding: 0;">
         <div class="cart-drawer-content" onclick="event.stopPropagation()">
             <div class="cart-drawer-header">
-                <h2 style="font-size: 0.875rem; margin: 0; font-weight: 400; font-family: var(--font-heading); color: #333;">Cart</h2>
-                <span class="close-cart" style="font-size: 20px; cursor: pointer; color: #333; line-height: 1; font-weight: 300;">×</span>
+                <h2 style="font-size: 1.2rem; margin: 0; font-weight: 400; font-family: var(--font-heading); color: #333;">Cart</h2>
+                <span class="close-cart" style="font-size: 28px; cursor: pointer; color: #333; line-height: 1; font-weight: 300;">×</span>
             </div>
             
             <div class="cart-drawer-body">
-                <div id="cart-free-shipping-msg" style="margin-bottom: 25px; font-size: 0.625rem; color: #333; border-bottom: 1px solid #eae8e0; padding-bottom: 15px; display: none;">
+                <div id="cart-free-shipping-msg" style="margin-bottom: 25px; font-size: 0.9rem; color: #333; border-bottom: 1px solid #eae8e0; padding-bottom: 15px; display: none;">
                     <!-- Dynamic free shipping message -->
                 </div>
 
@@ -3910,14 +3933,14 @@ body.no-hero>main {
                     <p style="text-align: center; margin-top: 40px; color: #666;">Your cart is currently empty.</p>
                 </div>
                 
-                <h3 id="cart-cross-sell-header" style="font-size: 0.875rem; margin-bottom: 15px; margin-top: 40px; font-weight: 400; border-top: 1px solid #eae8e0; padding-top: 20px; color: #333;">You may also like</h3>
+                <h3 id="cart-cross-sell-header" style="font-size: 1rem; margin-bottom: 15px; margin-top: 40px; font-weight: 400; border-top: 1px solid #eae8e0; padding-top: 20px; color: #333;">You may also like</h3>
                 <div id="cart-cross-sell-products" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px;">
                     <!-- Cross-sell items -->
                 </div>
             </div>
 
             <div class="cart-drawer-footer" id="cart-drawer-footer" style="display: none;">
-                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 0.875rem; font-family: var(--font-heading); color: #333;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 1.1rem; font-family: var(--font-heading); color: #333;">
                     <span>Subtotal</span>
                     <span id="cart-subtotal">$0.00</span>
                 </div>
@@ -3929,10 +3952,10 @@ body.no-hero>main {
     <!-- Search Modal -->
     <div id="search-modal" class="modal">
         <div class="modal-content" style="max-width: 600px;">
-            <span class="close-search" style="position: absolute; right: 20px; top: 15px; font-size: 20px; font-weight: bold; cursor: pointer; color: var(--text-light);">×</span>
+            <span class="close-search" style="position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; cursor: pointer; color: var(--text-light);">×</span>
             <h2>Search</h2>
             <div style="margin: 20px 0; display: flex; gap: 10px;">
-                <input type="text" id="search-input" placeholder="Search products, ingredients, journal..." style="flex: 1; padding: 12px 15px; border: 1px solid #ccc; font-family: var(--font-body); font-size: 0.875rem;">
+                <input type="text" id="search-input" placeholder="Search products, ingredients, journal..." style="flex: 1; padding: 12px 15px; border: 1px solid #ccc; font-family: var(--font-body); font-size: 1rem;">
                 <button class="btn btn-primary" onclick="performSearch()">Search</button>
             </div>
             <div id="search-results" style="margin-top: 20px; text-align: left; max-height: 300px; overflow-y: auto;">
@@ -3944,10 +3967,10 @@ body.no-hero>main {
     <!-- Added to Cart Modal -->
     <div id="added-modal" class="modal">
         <div class="modal-content" style="max-width: 500px; padding: 30px;">
-            <span class="close-added" style="position: absolute; right: 20px; top: 15px; font-size: 20px; font-weight: bold; cursor: pointer; color: var(--text-light);">×</span>
-            <h2 style="font-size: 1.125rem; margin-bottom: 15px; text-align: center;">Added product(s)</h2>
+            <span class="close-added" style="position: absolute; right: 20px; top: 15px; font-size: 28px; font-weight: bold; cursor: pointer; color: var(--text-light);">×</span>
+            <h2 style="font-size: 1.5rem; margin-bottom: 15px; text-align: center;">Added product(s)</h2>
             
-            <div id="free-shipping-msg" style="background: #f8f8f8; padding: 12px; text-align: center; margin-bottom: 25px; font-weight: 400; font-size: 0.625rem;">
+            <div id="free-shipping-msg" style="background: #f8f8f8; padding: 12px; text-align: center; margin-bottom: 25px; font-weight: 500; font-size: 0.95rem;">
                 <!-- Dynamic free shipping message -->
             </div>
 
@@ -3960,7 +3983,7 @@ body.no-hero>main {
                 <button class="btn btn-secondary full-width" style="background: transparent; color: var(--text-color); border: 1px solid var(--text-color);" onclick="closeAddedModal()">Continue shopping</button>
             </div>
 
-            <h3 style="font-size: 0.875rem; margin-bottom: 15px; text-align: center;">Others also considered</h3>
+            <h3 style="font-size: 1.1rem; margin-bottom: 15px; text-align: center;">Others also considered</h3>
             <div id="cross-sell-products" style="display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px;">
                 <!-- Cross-sell items -->
             </div>
@@ -4149,7 +4172,7 @@ body.no-hero>main {
             let html = '<ul style="list-style: none; padding: 0;">';
             results.forEach(res => {
                 html += `<li style="padding: 10px 0; border-bottom: 1px solid #eee;">
-                    <a href="#" onclick="closeSearchModal(); showProduct('${res.id}'); return false;" style="color: var(--primary-color-2); text-decoration: none; font-weight: 400;">${res.name}</a>
+                    <a href="#" onclick="closeSearchModal(); showProduct('${res.id}'); return false;" style="color: var(--primary-color-2); text-decoration: none; font-weight: 500;">${res.name}</a>
                 </li>`;
             });
             html += '</ul>';
@@ -4178,7 +4201,9 @@ body.no-hero>main {
         document.getElementById('shop-view').style.display = 'none';
         document.getElementById('materia-view').style.display = 'none';
         document.getElementById('provenance-view').style.display = 'none';
+        document.getElementById('journal-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
+        document.getElementById('article-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'block';
         window.scrollTo(0, 0);
         document.querySelectorAll('.single-product-detail').forEach(el => el.style.display = 'none');
@@ -4209,6 +4234,9 @@ body.no-hero>main {
             window.showMateria();
         } else if (hash === '#provenance') {
             window.showProvenance();
+        } else if (hash.startsWith('#article-')) {
+            const articleId = hash.replace('#article-', '');
+            window.showArticle(articleId);
         } else if (hash === '#home' || hash === '') {
             window.showHome();
         }
@@ -4222,6 +4250,7 @@ body.no-hero>main {
         document.getElementById('journal-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
+        document.getElementById('article-view').style.display = 'none';
         window.location.hash = '#home';
         window.scrollTo(0, 0);
         if (typeof updateHeader === 'function') updateHeader();
@@ -4235,6 +4264,7 @@ body.no-hero>main {
         document.getElementById('journal-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
+        document.getElementById('article-view').style.display = 'none';
         window.location.hash = '#materia';
         window.scrollTo(0, 0);
         if (typeof updateHeader === 'function') updateHeader();
@@ -4248,6 +4278,7 @@ body.no-hero>main {
         document.getElementById('journal-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
+        document.getElementById('article-view').style.display = 'none';
         window.location.hash = '#provenance';
         window.scrollTo(0, 0);
         if (typeof updateHeader === 'function') updateHeader();
@@ -4261,6 +4292,7 @@ body.no-hero>main {
         document.getElementById('journal-view').style.display = 'block';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
+        document.getElementById('article-view').style.display = 'none';
         window.location.hash = '#journal';
         window.scrollTo(0, 0);
         if (typeof updateHeader === 'function') updateHeader();
@@ -4274,6 +4306,7 @@ body.no-hero>main {
         document.getElementById('journal-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'none';
+        document.getElementById('article-view').style.display = 'none';
         window.location.hash = '#shop';
         window.scrollTo(0, 0);
         if (typeof updateHeader === 'function') updateHeader();
@@ -4296,6 +4329,7 @@ body.no-hero>main {
         document.getElementById('journal-view').style.display = 'none';
         document.getElementById('product-view').style.display = 'none';
         document.getElementById('checkout-view').style.display = 'block';
+        document.getElementById('article-view').style.display = 'none';
         window.scrollTo(0, 0);
         if (typeof updateHeader === 'function') updateHeader();
 
@@ -4371,6 +4405,106 @@ body.no-hero>main {
             }
         });
     });
+
+    // --- Article Logic ---
+    const articlesData = {
+        'hibiscus': {
+            title: 'The Crimson Catalyst: Hibiscus in Practice',
+            category: 'Botanical Profile',
+            image: 'https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg',
+            content: `
+                <p>Hibiscus (Japa) is a high-functioning botanical characterized by its dense concentration of anthocyanins and organic acids. Discover how these compounds provide remarkable resilience.</p>
+                <p>In traditional practices, Hibiscus has been revered not just for its striking beauty, but for its profound physiological effects. The deep crimson hue is a direct indicator of its potent antioxidant profile, particularly its anthocyanin content, which helps combat oxidative stress and supports cardiovascular health.</p>
+                <p>When prepared as an infusion, the organic acids within the petals—such as citric, malic, and tartaric acids—impart a tart, refreshing flavor while aiding in digestion and metabolic balance. Regular consumption is often associated with a cooling effect on the body, making it an ideal botanical for maintaining equilibrium during warmer seasons or periods of high stress.</p>
+                <p>Beyond its internal benefits, Hibiscus is also a staple in topical applications, particularly in hair and skin care, where its mucilage content provides natural hydration and its mild exfoliating properties promote a clear, radiant complexion.</p>
+            `
+        },
+        'black-turmeric': {
+            title: 'The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery',
+            category: 'Siddha Wisdom',
+            image: 'https://sampritibotanicals.com/assets/images/black-turmeric.png',
+            content: `
+                <p>In the ancient Siddha tradition—the oldest medical lineage of South India—certain botanicals are classified as Kaya Kalpa (agents of longevity). Among these, Black Turmeric is the rarest.</p>
+                <p>Unlike its ubiquitous golden counterpart, Black Turmeric (Curcuma caesia) possesses a striking bluish-black rhizome and a distinct, camphoraceous aroma. This rare botanical is highly prized in esoteric practices for its potent anti-inflammatory and analgesic properties.</p>
+                <p>The Siddha masters understood that true recovery requires addressing both the physical and the subtle bodies. Black Turmeric is believed to act as a 'shadow catalyst,' working deep within the tissues to resolve deep-seated stagnation and promote cellular renewal.</p>
+                <p>Modern analysis reveals a unique phytochemical profile, rich in rare essential oils and curcuminoids, supporting its traditional use in managing joint discomfort, respiratory conditions, and deep tissue recovery. Its scarcity and specific cultivation requirements make it a true treasure of the botanical world.</p>
+            `
+        },
+        'lunar-pulse': {
+            title: 'The Lunar Pulse: Moon Rhythms and the Vitality of Herbs',
+            category: 'Moon Rhythms',
+            image: 'https://sampritibotanicals.com/assets/images/blog/chandra.jpg',
+            content: `
+                <p>The Moon is far more than a celestial body; it is the universal "Mother of the World," the moistening principle that governs the flow of all liquids.</p>
+                <p>Throughout history, agricultural and herbal practices have been deeply intertwined with the lunar cycle. The gravitational pull of the moon, which dictates the ocean's tides, is also believed to influence the flow of sap within plants.</p>
+                <p>During the waxing moon, energy and moisture are drawn upward, making it the optimal time for harvesting leaves, flowers, and aerial parts. Conversely, during the waning moon, energy recedes into the earth, making it the ideal period for harvesting roots and rhizomes.</p>
+                <p>By aligning our harvesting and preparation methods with these lunar rhythms, we capture the botanicals at their peak vitality, ensuring that the resulting preparations are imbued with the maximum life force and therapeutic potential.</p>
+            `
+        },
+        'art-of-infusion': {
+            title: 'The Art of Infusion',
+            category: 'Placeholder',
+            image: 'https://picsum.photos/seed/herb1/600/400',
+            content: `
+                <p>Explore the delicate balance of time, temperature, and botanical integrity in crafting the perfect herbal infusion.</p>
+                <p>Water is the universal solvent, and when applied with care, it extracts the most subtle and profound qualities of a plant. The temperature of the water and the duration of the steep are critical variables that determine whether an infusion will be therapeutic or merely palatable.</p>
+                <p>For delicate flowers and leaves, a gentle steep in water just off the boil preserves volatile oils and prevents the extraction of bitter tannins. For dense roots and barks, a longer decoction at a rolling boil is necessary to draw out the deep-seated minerals and alkaloids.</p>
+                <p>Mastering the art of infusion is a practice of patience and observation, a daily ritual that connects us to the elemental forces of nature.</p>
+            `
+        },
+        'seasonal-rhythms': {
+            title: 'Seasonal Rhythms',
+            category: 'Placeholder',
+            image: 'https://picsum.photos/seed/herb2/600/400',
+            content: `
+                <p>Aligning your daily rituals with the changing seasons to optimize vitality and well-being.</p>
+                <p>As the earth moves through its annual cycle, our bodies undergo subtle shifts in metabolism, immunity, and energy levels. Traditional systems of medicine recognize that health is not a static state, but a dynamic equilibrium that must be constantly adjusted in response to the environment.</p>
+                <p>In the spring, we focus on cleansing and renewal, utilizing bitter greens and liver-supportive herbs. In the summer, we seek cooling and hydrating botanicals to mitigate the heat. Autumn calls for grounding and immune-building practices, while winter is a time for deep nourishment and rest.</p>
+                <p>By observing and adapting to these seasonal rhythms, we cultivate a profound sense of harmony and resilience.</p>
+            `
+        },
+        'science-of-scent': {
+            title: 'The Science of Scent',
+            category: 'Placeholder',
+            image: 'https://picsum.photos/seed/herb3/600/400',
+            content: `
+                <p>Understanding how aromatic compounds interact with our nervous system to induce calm and clarity.</p>
+                <p>The olfactory system provides a direct pathway to the limbic system, the emotional center of the brain. When we inhale the volatile oils of a plant, we are not merely experiencing a pleasant fragrance; we are initiating a cascade of neurochemical responses.</p>
+                <p>Certain aromas, such as lavender and chamomile, have been shown to increase alpha wave activity in the brain, promoting a state of relaxed alertness. Others, like rosemary and peppermint, stimulate the nervous system, enhancing focus and cognitive function.</p>
+                <p>By consciously incorporating aromatic botanicals into our environment, we can actively modulate our mood, reduce stress, and enhance our overall sense of well-being.</p>
+            `
+        }
+    };
+
+    window.showArticle = function(articleId) {
+        const article = articlesData[articleId];
+        if (!article) return;
+
+        const contentDiv = document.getElementById('article-content');
+        contentDiv.innerHTML = `
+            <div style="text-align: center; margin-bottom: 40px;">
+                <span style="font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-light);">${article.category}</span>
+                <h1 style="margin: 15px 0 30px 0; font-size: 2.5rem;">${article.title}</h1>
+                <img src="${article.image}" alt="${article.title}" style="width: 100%; max-height: 500px; object-fit: cover; border-radius: 4px;">
+            </div>
+            <div class="article-body" style="font-size: 1.1rem; line-height: 1.8; color: var(--text-color);">
+                ${article.content}
+            </div>
+        `;
+
+        document.getElementById('home-view').style.display = 'none';
+        document.getElementById('shop-view').style.display = 'none';
+        document.getElementById('materia-view').style.display = 'none';
+        document.getElementById('provenance-view').style.display = 'none';
+        document.getElementById('journal-view').style.display = 'none';
+        document.getElementById('product-view').style.display = 'none';
+        document.getElementById('checkout-view').style.display = 'none';
+        document.getElementById('article-view').style.display = 'block';
+        
+        window.location.hash = '#article-' + articleId;
+        window.scrollTo(0, 0);
+        if (typeof updateHeader === 'function') updateHeader();
+    };
 
     // --- Cart Logic ---
     const productsData = {
@@ -4464,11 +4598,11 @@ body.no-hero>main {
                         <div style="display: flex; align-items: center; gap: 15px;">
                             <img src="${item.image}" alt="${item.name}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px; border: 1px solid #eee;">
                             <div>
-                                <div style="font-size: 0.625rem; color: #333;">${item.name}</div>
-                                <div style="font-size: 0.625rem; color: #666;">Qty: ${item.quantity}</div>
+                                <div style="font-size: 0.9rem; color: #333;">${item.name}</div>
+                                <div style="font-size: 0.8rem; color: #666;">Qty: ${item.quantity}</div>
                             </div>
                         </div>
-                        <div style="font-size: 0.625rem; color: #333;">$${itemTotal.toFixed(2)}</div>
+                        <div style="font-size: 0.95rem; color: #333;">$${itemTotal.toFixed(2)}</div>
                     </div>
                 `;
             });
@@ -4524,8 +4658,8 @@ body.no-hero>main {
                     cartCrossSellContainer.innerHTML += `
                         <div style="min-width: 120px; text-align: left; cursor: pointer;" onclick="closeCartModal(); showProduct('${crossProduct.id}')">
                             <img src="${crossProduct.image}" style="width: 100%; height: 120px; object-fit: contain; margin-bottom: 10px; background: #f9f9f9;">
-                            <div style="font-size: 0.625rem; font-weight: 400; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #333;">${crossProduct.name}</div>
-                            <div style="font-size: 0.625rem; color: #666;">$${crossProduct.price.toFixed(2)}</div>
+                            <div style="font-size: 0.85rem; font-weight: 500; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: #333;">${crossProduct.name}</div>
+                            <div style="font-size: 0.85rem; color: #666;">$${crossProduct.price.toFixed(2)}</div>
                         </div>
                     `;
                 }
@@ -4561,17 +4695,17 @@ body.no-hero>main {
                         <img src="${item.image}" alt="${item.name}" style="width: 80px; height: 100px; object-fit: contain; background: #f9f9f9;">
                         <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
                             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-                                <div style="font-family: var(--font-heading); font-size: 0.875rem; color: #333; max-width: 70%;">${item.name}</div>
-                                <div style="font-size: 0.875rem; color: #333;">$${(item.price * item.quantity).toFixed(2)}</div>
+                                <div style="font-family: var(--font-heading); font-size: 1rem; color: #333; max-width: 70%;">${item.name}</div>
+                                <div style="font-size: 1rem; color: #333;">$${(item.price * item.quantity).toFixed(2)}</div>
                             </div>
-                            <div style="color: #666; font-size: 0.625rem; margin-top: 5px;">9 Test Tube Kit</div>
+                            <div style="color: #666; font-size: 0.85rem; margin-top: 5px;">9 Test Tube Kit</div>
                             <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 15px;">
                                 <div style="display: flex; align-items: center; border: 1px solid #ccc; padding: 5px 10px;">
                                     <button onclick="updateCartItemQuantity(${index}, -1)" style="background:none; border:none; cursor: pointer; color: #333;">-</button>
-                                    <span style="margin: 0 15px; font-size: 0.625rem; color: #333;">${item.quantity}</span>
+                                    <span style="margin: 0 15px; font-size: 0.9rem; color: #333;">${item.quantity}</span>
                                     <button onclick="updateCartItemQuantity(${index}, 1)" style="background:none; border:none; cursor: pointer; color: #333;">+</button>
                                 </div>
-                                <button onclick="removeFromCart(${index})" style="background:none; border:none; text-decoration: underline; font-size: 0.625rem; cursor: pointer; color: #666;">Remove</button>
+                                <button onclick="removeFromCart(${index})" style="background:none; border:none; text-decoration: underline; font-size: 0.85rem; cursor: pointer; color: #666;">Remove</button>
                             </div>
                         </div>
                     `;
@@ -4612,15 +4746,15 @@ body.no-hero>main {
         detailsContainer.innerHTML = `
             <img src="${product.image}" alt="${product.name}" style="width: 80px; height: 80px; object-fit: contain; background: #f9f9f9; padding: 5px;">
             <div style="flex: 1;">
-                <h4 style="margin: 0 0 5px 0; font-size: 0.875rem;">${product.name}</h4>
-                <p style="margin: 0 0 10px 0; color: var(--text-light); font-size: 0.625rem;">$${product.price.toFixed(2)}</p>
+                <h4 style="margin: 0 0 5px 0; font-size: 1rem;">${product.name}</h4>
+                <p style="margin: 0 0 10px 0; color: var(--text-light); font-size: 0.9rem;">$${product.price.toFixed(2)}</p>
                 <div style="display: flex; align-items: center; border: 1px solid #ddd; border-radius: 4px; width: fit-content;">
-                    <button onclick="updateCartItemQuantity(${cartItemIndex}, -1); showAddedToCartModal('${productKey}');" style="background:none; border:none; padding: 5px 12px; cursor: pointer; font-size: 0.875rem;">-</button>
-                    <span style="padding: 0 15px; font-size: 0.625rem;">${cartItem.quantity}</span>
-                    <button onclick="updateCartItemQuantity(${cartItemIndex}, 1); showAddedToCartModal('${productKey}');" style="background:none; border:none; padding: 5px 12px; cursor: pointer; font-size: 0.875rem;">+</button>
+                    <button onclick="updateCartItemQuantity(${cartItemIndex}, -1); showAddedToCartModal('${productKey}');" style="background:none; border:none; padding: 5px 12px; cursor: pointer; font-size: 1.1rem;">-</button>
+                    <span style="padding: 0 15px; font-size: 0.95rem;">${cartItem.quantity}</span>
+                    <button onclick="updateCartItemQuantity(${cartItemIndex}, 1); showAddedToCartModal('${productKey}');" style="background:none; border:none; padding: 5px 12px; cursor: pointer; font-size: 1.1rem;">+</button>
                 </div>
             </div>
-            <div style="text-align: right; font-weight: bold; font-size: 0.875rem;">
+            <div style="text-align: right; font-weight: bold; font-size: 1.1rem;">
                 $${(product.price * cartItem.quantity).toFixed(2)}
             </div>
         `;
@@ -4634,8 +4768,8 @@ body.no-hero>main {
                 crossSellContainer.innerHTML += `
                     <div style="min-width: 120px; text-align: center; border: 1px solid #eee; padding: 10px; border-radius: 8px; cursor: pointer;" onclick="closeAddedModal(); showProduct('${crossProduct.id}')">
                         <img src="${crossProduct.image}" style="width: 100%; height: 80px; object-fit: contain; margin-bottom: 10px;">
-                        <div style="font-size: 0.625rem; font-weight: 400; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${crossProduct.name}</div>
-                        <div style="font-size: 0.625rem; color: var(--text-light);">$${crossProduct.price.toFixed(2)}</div>
+                        <div style="font-size: 0.75rem; font-weight: 500; margin-bottom: 5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${crossProduct.name}</div>
+                        <div style="font-size: 0.8rem; color: var(--text-light);">$${crossProduct.price.toFixed(2)}</div>
                     </div>
                 `;
             }
@@ -4715,14 +4849,14 @@ body.no-hero>main {
                     <input type="radio" name="payment_method" value="card" checked onclick="togglePaymentDetails('card')">
                     <div style="display: flex; flex-direction: column;">
                         <span>Credit / Debit Card</span>
-                        <span style="font-size: 0.625rem; color: #666; font-weight: normal;">Visa, Mastercard, AMEX, RuPay</span>
+                        <span style="font-size: 0.8rem; color: #666; font-weight: normal;">Visa, Mastercard, AMEX, RuPay</span>
                     </div>
                 </label>
                 <label class="payment-method-option">
                     <input type="radio" name="payment_method" value="upi" onclick="togglePaymentDetails('upi')">
                     <div style="display: flex; flex-direction: column;">
                         <span>UPI</span>
-                        <span style="font-size: 0.625rem; color: #666; font-weight: normal;">Google Pay, PhonePe, Paytm</span>
+                        <span style="font-size: 0.8rem; color: #666; font-weight: normal;">Google Pay, PhonePe, Paytm</span>
                     </div>
                 </label>
             `;
@@ -4733,7 +4867,7 @@ body.no-hero>main {
                     <input type="radio" name="payment_method" value="card" checked onclick="togglePaymentDetails('card')">
                     <div style="display: flex; flex-direction: column;">
                         <span>Credit / Debit Card</span>
-                        <span style="font-size: 0.625rem; color: #666; font-weight: normal;">Visa, Mastercard, AMEX, Discover</span>
+                        <span style="font-size: 0.8rem; color: #666; font-weight: normal;">Visa, Mastercard, AMEX, Discover</span>
                     </div>
                 </label>
             `;
@@ -4782,7 +4916,7 @@ body.no-hero>main {
                     <div class="form-group">
                         <label style="color: #666;">UPI ID *</label>
                         <input type="text" name="upi_id" placeholder="username@bank" required style="border: 1px solid #ccc; padding: 12px; border-radius: 4px; width: 100%;">
-                        <p style="font-size: 0.625rem; color: #999; margin-top: 5px;">Enter your VPA (e.g., mobile@upi)</p>
+                        <p style="font-size: 0.8rem; color: #999; margin-top: 5px;">Enter your VPA (e.g., mobile@upi)</p>
                     </div>
                 </div>
             `;

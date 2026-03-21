@@ -168,149 +168,241 @@
         color: #666;
       }
 
-      .provenance-hero img {
-        position: absolute;
-        top: 0;
-        left: 0;
+      /* ===== PROVENANCE PAGE — Aman-inspired ===== */
+      .prov-page { background: #f5f0ea; }
+
+      /* Hero: centered title on cream bg */
+      .prov-hero {
+        padding: 140px 40px 100px;
+        text-align: center;
+        background: #f5f0ea;
+      }
+      .prov-hero h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(2.4rem, 5vw, 3.6rem);
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        color: #2a2a2a;
+        margin-bottom: 16px;
+      }
+      .prov-hero .prov-subtitle {
+        font-size: 1.15rem;
+        font-weight: 400;
+        color: #5a5a5a;
+        font-style: italic;
+        margin-bottom: 30px;
+      }
+      .prov-hero .prov-desc {
+        max-width: 680px;
+        margin: 0 auto;
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: #666;
+      }
+
+      /* Two asymmetric images section */
+      .prov-duo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px 120px;
+        align-items: end;
+      }
+      .prov-duo-small {
+        padding-top: 80px;
+      }
+      .prov-duo-small img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+      }
+      .prov-duo-large img {
+        width: 100%;
+        aspect-ratio: 2/3;
+        object-fit: cover;
+      }
+
+      /* Carousel section: text left, cards right */
+      .prov-carousel-section {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px 120px;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 60px;
+        align-items: start;
+      }
+      .prov-carousel-text h2 {
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        font-weight: 300;
+        color: #2a2a2a;
+        margin-bottom: 20px;
+      }
+      .prov-carousel-text p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: #666;
+      }
+      .prov-carousel-track {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+      }
+      .prov-carousel-track::-webkit-scrollbar { height: 3px; }
+      .prov-carousel-track::-webkit-scrollbar-thumb { background: #c4b99a; border-radius: 2px; }
+      .prov-carousel-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        text-decoration: none;
+        color: inherit;
+      }
+      .prov-carousel-card img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        margin-bottom: 16px;
+        transition: transform 0.5s ease;
+      }
+      .prov-carousel-card:hover img { transform: scale(1.03); }
+      .prov-carousel-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.15rem;
+        font-weight: 400;
+        margin-bottom: 8px;
+        color: #2a2a2a;
+      }
+      .prov-carousel-card p {
+        font-size: 0.85rem;
+        line-height: 1.7;
+        color: #777;
+        margin-bottom: 12px;
+      }
+      .prov-carousel-card .prov-cta {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #2a2a2a;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      /* Side-by-side media+text — alternating */
+      .prov-media-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 1400px;
+        margin: 0 auto 0;
+        min-height: 500px;
+      }
+      .prov-media-row.reverse { direction: rtl; }
+      .prov-media-row.reverse > * { direction: ltr; }
+      .prov-media-img img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        opacity: 0.7;
+        min-height: 500px;
       }
-
-      .provenance-hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-        color: #fff;
-        max-width: 800px;
-        padding: 0 20px;
+      .prov-media-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px 80px;
+        background: #f5f0ea;
       }
-
-      .provenance-hero-content h1 {
-        font-size: clamp(3rem, 8vw, 5rem);
+      .prov-media-text h2 {
+        font-family: var(--font-heading);
+        font-size: 2rem;
         font-weight: 300;
-        letter-spacing: -0.02em;
+        color: #2a2a2a;
         margin-bottom: 20px;
       }
-
-      .provenance-hero-content p {
-        font-size: 1.2rem;
-        font-weight: 300;
-        letter-spacing: 0.05em;
+      .prov-media-text p {
+        font-size: 0.95rem;
+        line-height: 1.85;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .prov-media-text .prov-cta {
+        font-size: 0.75rem;
         text-transform: uppercase;
-        opacity: 0.9;
+        letter-spacing: 0.12em;
+        color: #2a2a2a;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        align-self: flex-start;
       }
 
-      .aman-section {
-        padding: 120px 0;
-        background-color: var(--aman-bg);
+      /* Full-width image break */
+      .prov-fullwidth {
+        max-width: 1400px;
+        margin: 80px auto;
+        padding: 0 40px;
+      }
+      .prov-fullwidth img {
+        width: 100%;
+        aspect-ratio: 16/7;
+        object-fit: cover;
       }
 
-      .aman-container {
+      /* Bottom concierge / CTA strip */
+      .prov-concierge {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 80px 40px 120px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+        border-top: 1px solid #d5cfc5;
+      }
+      .prov-concierge h2 {
+        font-family: var(--font-heading);
+        font-size: 2rem;
+        font-weight: 300;
+        color: #2a2a2a;
+      }
+      .prov-concierge p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #666;
+      }
+      .prov-concierge a {
+        display: inline-block;
+        margin-top: 16px;
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: #2a2a2a;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+
+      /* Divider line */
+      .prov-divider {
         max-width: 1400px;
         margin: 0 auto;
         padding: 0 40px;
       }
-
-      .aman-intro {
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 100px;
+      .prov-divider hr {
+        border: none;
+        border-top: 1px solid #d5cfc5;
       }
 
-      .aman-intro h2 {
-        font-size: 2.5rem;
-        margin-bottom: 30px;
-        font-weight: 300;
-      }
-
-      .aman-intro p {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: #444;
-      }
-
-      .aman-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 80px;
-      }
-
-      .aman-card {
-        display: flex;
-        flex-direction: column;
-        text-decoration: none;
-        color: inherit;
-        transition: transform 0.4s ease;
-      }
-
-      .aman-card:hover {
-        transform: translateY(-10px);
-      }
-
-      .aman-card-image {
-        aspect-ratio: 4/5;
-        overflow: hidden;
-        margin-bottom: 30px;
-      }
-
-      .aman-card-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.8s ease;
-      }
-
-      .aman-card:hover .aman-card-image img {
-        transform: scale(1.05);
-      }
-
-      .aman-card-content h3 {
-        font-size: 1.6rem;
-        margin-bottom: 15px;
-        font-weight: 300;
-      }
-
-      .aman-card-content p {
-        font-size: 1rem;
-        line-height: 1.7;
-        color: #555;
-        margin-bottom: 20px;
-      }
-
-      .aman-card-link {
-        font-size: 0.8rem;
-        text-transform: uppercase;
-        letter-spacing: 0.15em;
-        font-weight: 600;
-        color: var(--aman-gold);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .aman-card-link::after {
-        content: "";
-        width: 30px;
-        height: 1px;
-        background-color: var(--aman-gold);
-        transition: width 0.3s ease;
-      }
-
-      .aman-card:hover .aman-card-link::after {
-        width: 50px;
-      }
-
-      @media (width <= 991px) {
-        .aman-grid {
-          grid-template-columns: 1fr;
-          gap: 60px;
-        }
-
-        .aman-section {
-          padding: 80px 0;
-        }
+      @media (max-width: 991px) {
+        .prov-duo { grid-template-columns: 1fr; gap: 20px; }
+        .prov-duo-small { padding-top: 0; }
+        .prov-carousel-section { grid-template-columns: 1fr; gap: 30px; }
+        .prov-media-row { grid-template-columns: 1fr; }
+        .prov-media-row.reverse { direction: ltr; }
+        .prov-media-text { padding: 40px 30px; }
+        .prov-concierge { grid-template-columns: 1fr; }
+        .prov-hero { padding: 100px 20px 60px; }
       }
 
       /* Reset & Base Styles */
@@ -1777,6 +1869,7 @@
         }
 
         .product-grid-item {
+        cursor: pointer;
           display: flex !important;
           flex-direction: column !important;
           align-items: flex-start !important;
@@ -1822,6 +1915,7 @@
 
       /* ===== AESOP-STYLE PRODUCT GRID CARDS ===== */
       .product-grid-item {
+        cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -1843,7 +1937,7 @@
 
       .product-grid-image {
         width: 100%;
-        aspect-ratio: 1 / 1;
+        aspect-ratio: 4 / 5;
         height: auto;
         overflow: hidden;
         margin-bottom: 18px;
@@ -3043,6 +3137,271 @@
         font-size: 1rem;
         margin-bottom: 30px;
         font-weight: 400;
+        color: var(--text-color);
+      }
+
+      /* === Aesop-Inspired Product Detail Page === */
+      .pdp-wrapper {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 80px;
+        align-items: start;
+        padding: 40px 0 80px;
+      }
+      @media (max-width: 992px) {
+        .pdp-wrapper {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          padding: 20px 0 60px;
+        }
+      }
+      .pdp-gallery {
+        position: sticky;
+        top: 100px;
+      }
+      @media (max-width: 992px) {
+        .pdp-gallery { position: static; }
+      }
+      .pdp-main-image {
+        background-color: #f6f5f0;
+        aspect-ratio: 1/1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .pdp-main-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+      }
+      .pdp-main-image:hover img {
+        transform: scale(1.03);
+      }
+      .pdp-info {
+        padding-right: 20px;
+      }
+      @media (max-width: 992px) {
+        .pdp-info { padding-right: 0; }
+      }
+      .pdp-category {
+        display: block;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: var(--text-muted);
+        margin-bottom: 16px;
+        font-family: var(--font-body);
+        font-weight: 400;
+      }
+      .pdp-title {
+        font-family: var(--font-heading);
+        font-size: 2.2rem;
+        font-weight: 400;
+        line-height: 1.15;
+        margin-bottom: 12px;
+        color: var(--text-color);
+        letter-spacing: -0.01em;
+      }
+      .pdp-price {
+        font-size: 1.05rem;
+        font-weight: 400;
+        color: var(--text-color);
+        margin-bottom: 24px;
+        font-family: var(--font-body);
+      }
+      .pdp-description {
+        font-size: 0.92rem;
+        line-height: 1.7;
+        color: var(--text-light);
+        margin-bottom: 28px;
+      }
+      .pdp-key-details {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 30px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .pdp-detail-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-color);
+        font-weight: 500;
+      }
+      .pdp-detail-value {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+      .pdp-size-selector {
+        margin-bottom: 20px;
+      }
+      .pdp-size-option {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px 18px;
+        border: 1px solid var(--text-color);
+        font-size: 0.82rem;
+        font-family: var(--font-body);
+        letter-spacing: 0.02em;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .pdp-size-option.selected {
+        border-width: 2px;
+      }
+      .pdp-actions {
+        margin-bottom: 40px;
+      }
+      .pdp-add-to-cart {
+        width: 100%;
+        padding: 16px 24px;
+        background: var(--text-color);
+        color: var(--bg-color);
+        border: 1px solid var(--text-color);
+        font-family: var(--font-body);
+        font-size: 0.75rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .pdp-add-to-cart:hover {
+        background: var(--text-light);
+        border-color: var(--text-light);
+      }
+
+      /* PDP Tabs */
+      .pdp-tabs {
+        border-top: 1px solid var(--border-color);
+        padding-top: 0;
+      }
+      .pdp-tab-headers {
+        display: flex;
+        gap: 0;
+        border-bottom: 1px solid var(--border-color);
+      }
+      .pdp-tab-btn {
+        flex: 1;
+        padding: 16px 8px;
+        background: none;
+        border: none;
+        border-bottom: 2px solid transparent;
+        font-family: var(--font-body);
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-muted);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+      }
+      .pdp-tab-btn:hover {
+        color: var(--text-color);
+      }
+      .pdp-tab-btn.active {
+        color: var(--text-color);
+        border-bottom-color: var(--text-color);
+      }
+      .pdp-tab-content {
+        display: none;
+        padding: 28px 0;
+        font-size: 0.88rem;
+        line-height: 1.7;
+        color: var(--text-light);
+      }
+      .pdp-tab-content.active {
+        display: block;
+      }
+      .pdp-meta-row {
+        display: flex;
+        gap: 16px;
+        padding: 10px 0;
+        border-top: 1px solid #f0efeb;
+      }
+      .pdp-meta-row:first-of-type {
+        margin-top: 16px;
+      }
+      .pdp-meta-key {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-color);
+        font-weight: 500;
+        min-width: 120px;
+        flex-shrink: 0;
+      }
+      .pdp-meta-val {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+
+      /* Related Products */
+      .pdp-related-section {
+        padding: 60px 0 40px;
+        border-top: 1px solid var(--border-color);
+        margin-top: 20px;
+      }
+      .pdp-related-heading {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        font-weight: 400;
+        margin-bottom: 36px;
+        color: var(--text-color);
+      }
+      .pdp-related-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+      @media (max-width: 768px) {
+        .pdp-related-grid {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
+        }
+      }
+      .pdp-related-card {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .pdp-related-card:hover {
+        transform: translateY(-5px);
+      }
+      .pdp-related-img {
+        aspect-ratio: 1/1;
+        overflow: hidden;
+        background: #f6f5f0;
+        margin-bottom: 14px;
+      }
+      .pdp-related-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .pdp-related-card:hover .pdp-related-img img {
+        transform: scale(1.04);
+      }
+      .pdp-related-card h4 {
+        font-family: var(--font-heading);
+        font-size: 1rem;
+        font-weight: 400;
+        margin-bottom: 4px;
+        color: var(--text-color);
+      }
+      .pdp-related-subtitle {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        margin-bottom: 6px;
+      }
+      .pdp-related-price {
+        font-size: 0.85rem;
         color: var(--text-color);
       }
     </style>
@@ -4515,7 +4874,6 @@
                 <!-- Product 1: Shakti Peya -->
                 <div
                   class="product-grid-item swiper-slide"
-                  onclick="showProduct('shakti')"
                 >
                   <div class="product-grid-image">
                     <img
@@ -4542,7 +4900,6 @@
                 <!-- Product 2: Chandra Rasa -->
                 <div
                   class="product-grid-item swiper-slide"
-                  onclick="showProduct('chandra')"
                 >
                   <div class="product-grid-image">
                     <img
@@ -4569,7 +4926,6 @@
                 <!-- Product 3: Shotharaha -->
                 <div
                   class="product-grid-item swiper-slide"
-                  onclick="showProduct('shotharaha')"
                 >
                   <div class="product-grid-image">
                     <img
@@ -4630,746 +4986,750 @@
       </div>
 
       <!-- Product Detail View -->
-      <div
-        id="product-view"
-        style="display: none; padding-top: 20px; padding-bottom: 80px"
-      >
+      <div id="product-view" style="display: none; padding-top: 20px; padding-bottom: 80px">
         <div class="container">
-          <a
-            href="#"
-            onclick="
-              showHome();
-              return false;
-            "
-            class="back-link"
-            >← Back to Collection</a
-          >
+          <a href="#" onclick="showHome(); return false;" class="back-link" style="display:inline-block;margin-bottom:20px;font-size:0.82rem;letter-spacing:0.05em;color:var(--text-muted);text-transform:uppercase;">← Back to Collection</a>
 
-          <!-- Shakti Peya -->
-          <div
-            id="detail-shakti"
-            class="single-product-detail aesop-product"
-            style="display: none"
-          >
-            <div class="aesop-grid">
-              <div class="aesop-image-col">
-                <img
-                  src="https://picsum.photos/seed/shakti1/600/600"
-                  alt="Shakti Peya Main"
-                  referrerpolicy="no-referrer"
-                />
-              </div>
-              <div class="aesop-info-col">
-                <span class="aesop-category">Botanical Archive</span>
-                <h1 class="aesop-title">Shakti Peya</h1>
-                <p class="aesop-price">$33</p>
-                <p class="aesop-description">
-                  Invigorating elixir for vitality. Shakti Peya is an invigorating elixir meticulously formulated to awaken the body's dormant vitality.
-                </p>
-
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="SHAKTI PEYA"
-                    onclick="event.stopPropagation()"
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">Ingredients</span>
-                  <p class="aesop-meta-value">
-                    Ashwagandha, Shatavari, Brahmi, Tulsi, Rose Petals, Cardamom.
-                  </p>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">How to Use</span>
-                  <p class="aesop-meta-value">
-                    Mix one test tube with hot water or milk of choice. Stir well and enjoy.
-                  </p>
+          <!-- Shakti Peya Detail -->
+          <div id="detail-shakti" class="single-product-detail" style="display:none">
+            <div class="pdp-wrapper">
+              <!-- Left: Image Gallery -->
+              <div class="pdp-gallery">
+                <div class="pdp-main-image">
+                  <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
                 </div>
               </div>
-            </div>
-          </div>
-                  "
-                >
 
+              <!-- Right: Product Info -->
+              <div class="pdp-info">
+                <span class="pdp-category">Sampriti Botanicals</span>
+                <h1 class="pdp-title">Shakti Peya</h1>
+                <p class="pdp-price">$33</p>
+                <p class="pdp-description">An invigorating elixir meticulously formulated to awaken the body's dormant vitality. Rooted in ancient Ayurvedic wisdom, Shakti Peya harmonises metabolic energy with mental clarity.</p>
+
+                <div class="pdp-key-details">
+                  <span class="pdp-detail-label">Key ingredients</span>
+                  <span class="pdp-detail-value">Ashwagandha, Shatavari, Brahmi, Tulsi, Rose Petals, Cardamom</span>
                 </div>
 
-                <!-- Editorial Section -->
-                <div class="editorial-section">
-                  <img
-                    src="https://sampritibotanicals.com/assets/images/shakthi.avif"
-                    alt="Shakti Peya Editorial"
-                    style="width: 100%; height: auto"
-                  />
-                  <p>
-                    Discover the ancient wisdom of Ayurveda with our carefully
-                    crafted blends, designed to restore balance and vitality to
-                    your daily life.
-                  </p>
-                </div>
-
-                <!-- Related Products -->
-                <div class="related-products">
-                  <h3>Related Products</h3>
-                  <div class="horizontal-scroll">
-                    <div
-                      class="mini-product-card"
-                      onclick="showProduct('chandra')"
-                    >
-                      <img
-                        src="https://sampritibotanicals.com/assets/images/chandra.avif"
-                        alt="Chandra Rasa"
-                      />
-                      <h4>CHANDRA RASA | Sleep Potion</h4>
-                      <p>$33</p>
-                    </div>
-                    <div
-                      class="mini-product-card"
-                      onclick="showProduct('shotharaha')"
-                    >
-                      <img
-                        src="https://picsum.photos/seed/shotharaha1/600/600"
-                        alt="Shotharaha"
-                      />
-                      <h4>SHOTHARAHA | Dual Black Recovery</h4>
-                      <p>$33</p>
-                    </div>
+                <div class="pdp-size-selector">
+                  <div class="pdp-size-option selected">
+                    <span>Kit of 9 Test Tubes</span>
+                    <span>$33</span>
                   </div>
                 </div>
 
-                <!-- Footer -->
-                <footer class="footer-simple">
-                  <p>&copy; 2026 Shakti Peya</p>
-                </footer>
-              </div>
-            </div>
-          </div>
-
-          <div
-            id="detail-chandra"
-            class="single-product-detail aesop-product"
-            style="display: none"
-          >
-            <div class="aesop-grid">
-              <div class="aesop-image-col">
-                <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" />
-              </div>
-              <div class="aesop-info-col">
-                <span class="aesop-category">Botanical Archive</span>
-                <h1 class="aesop-title">CHANDRA RASA | Sleep Potion</h1>
-                <p class="aesop-price">$33</p>
-                <p class="aesop-description">
-                  A soothing sleep potion designed to promote deep restoration and lunar balance.
-                </p>
-
-                <div class="aesop-actions">
-                  <button class="aesop-btn aesop-btn-black buy-now-btn" data-product="CHANDRA RASA">Add to Cart</button>
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
 
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">Ingredients</span>
-                  <p class="aesop-meta-value">
-                    Chamomile, Lavender, Valerian Root, Passionflower, Nutmeg.
-                  </p>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">How to Use</span>
-                  <p class="aesop-meta-value">
-                    Mix one test tube with warm milk or water 30 minutes before bed.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-            <div class="related-products">
-              <h3>Related Products</h3>
-              <div class="horizontal-scroll">
-                <div class="mini-product-card" onclick="showProduct('shakti')">
-                  <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" />
-                  <h4>SHAKTI PEYA | Energy Elixir</h4>
-                  <p>$33</p>
-                </div>
-                <div class="mini-product-card" onclick="showProduct('shotharaha')">
-                  <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" />
-                  <h4>SHOTHARAHA | Dual Black Recovery</h4>
-                  <p>$33</p>
+                <!-- Tabs -->
+                <div class="pdp-tabs">
+                  <div class="pdp-tab-headers">
+                    <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-shakti')">Description</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-shakti')">Ingredients</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'use-shakti')">How to Use</button>
+                  </div>
+                  <div id="desc-shakti" class="pdp-tab-content active">
+                    <p>An invigorating elixir meticulously formulated to awaken the body's dormant vitality. Rooted in ancient Ayurvedic wisdom, Shakti Peya harmonises metabolic energy with mental clarity.</p>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Warming, herbaceous, grounding</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking sustained energy, mental clarity, and metabolic balance</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Ashwagandha, Shatavari, Brahmi, Tulsi, Rose Petals, Cardamom</span></div>
+                  </div>
+                  <div id="ingr-shakti" class="pdp-tab-content">
+                    <p>Ashwagandha Root Extract, Shatavari Root, Brahmi Leaf, Holy Basil (Tulsi), Organic Rose Petals, Green Cardamom, Black Pepper Extract, Raw Honey Crystals.</p>
+                    <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
+                  </div>
+                  <div id="use-shakti" class="pdp-tab-content">
+                    <p>Dissolve one test tube in 200ml of hot water or warm milk of choice. Stir gently and allow to steep for 2-3 minutes. Best enjoyed in the morning or early afternoon.</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <!-- Footer -->
-            <footer class="footer-simple">
-              <p>&copy; 2026 Shakti Peya</p>
-            </footer>
-          </div>
-
-          <div
-            id="detail-shotharaha"
-            class="single-product-detail aesop-product"
-            style="display: none"
-          >
-            <div class="aesop-grid">
-              <div class="aesop-image-col">
-                <img
-                  src="https://picsum.photos/seed/shotharaha/600/600"
-                  alt="Shotharaha Main"
-                  referrerpolicy="no-referrer"
-                />
-              </div>
-              <div class="aesop-info-col">
-                <span class="aesop-category">Botanical Archive</span>
-                <h1 class="aesop-title">SHOTHARAHA | Dual Black Recovery</h1>
-                <p class="aesop-price">$33</p>
-                <p class="aesop-description">
-                  Dual Black Recovery. A specialized blend to support healthy inflammatory response and fluid balance.
-                </p>
-
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="SHOTHARAHA"
-                    onclick="event.stopPropagation()"
-                  >
-                    Add to Cart
-                  </button>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">Ingredients</span>
-                  <p class="aesop-meta-value">
-                    Turmeric, Ginger, Guggulu, Boswellia, Black Pepper.
-                  </p>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">How to Use</span>
-                  <p class="aesop-meta-value">
-                    Mix one test tube with warm water or milk.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-
-                <div class="product-accordion">
-                  <div class="accordion-item active">
-                    <button
-                      class="accordion-header"
-                      onclick="toggleAccordion(this)"
-                    >
-                      <span>Ingredients</span>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                      <p>Turmeric, Ginger, Black Pepper, Guggulu, Boswellia.</p>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <button
-                      class="accordion-header"
-                      onclick="toggleAccordion(this)"
-                    >
-                      <span>How to Use</span>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                      <p>
-                        Mix one test tube with warm water or juice. Best taken
-                        after meals.
-                      </p>
-                    </div>
-                  </div>
-                  <div class="accordion-item">
-                    <button
-                      class="accordion-header"
-                      onclick="toggleAccordion(this)"
-                    >
-                      <span>Specifications</span>
-                      <span class="accordion-icon">+</span>
-                    </button>
-                    <div class="accordion-content">
-                      <p><strong>Kit Includes:</strong> 9 Test Tubes</p>
-                      <p><strong>Net Weight:</strong> 45g</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="recommendations-section">
-                  <div class="product-tabs">
-                    <button
-                      class="product-tab active"
-                      onclick="switchTab(this, 'others-liked-shotharaha')"
-                    >
-                      Others also liked
-                    </button>
-                    <button
-                      class="product-tab"
-                      onclick="switchTab(this, 'recently-viewed-shotharaha')"
-                    >
-                      Recently viewed
-                    </button>
-                  </div>
-                  <div
-                    id="others-liked-shotharaha"
-                    class="product-tab-content active"
-                  >
-                    <div class="horizontal-scroll">
-                      <div
-                        class="mini-product-card"
-                        onclick="showProduct('shakti')"
-                      >
-                        <img
-                          src="https://sampritibotanicals.com/assets/images/shakthi.avif"
-                          alt="Shakti Peya"
-                        />
-                        <h4>SHAKTI PEYA | Energy Elixir</h4>
-                        <p>$33</p>
+            <!-- Related Products -->
+            <div class="pdp-related-section">
+              <h3 class="pdp-related-heading">You may also like</h3>
+              <div class="pdp-related-grid">
+                    <div class="pdp-related-card" onclick="showProduct('chandra')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
                       </div>
-                      <div
-                        class="mini-product-card"
-                        onclick="showProduct('chandra')"
-                      >
-                        <img
-                          src="https://sampritibotanicals.com/assets/images/chandra.avif"
-                          alt="Chandra Rasa"
-                        />
-                        <h4>CHANDRA RASA | Sleep Potion</h4>
-                        <p>$33</p>
-                      </div>
-                      <div
-                        class="mini-product-card"
-                        onclick="showProduct('shotharaha')"
-                      >
-                        <img
-                          src="https://picsum.photos/seed/shotharaha1/600/600"
-                          alt="Shotharaha"
-                        />
-                        <h4>SHOTHARAHA | Dual Black Recovery</h4>
-                        <p>$33</p>
-                      </div>
+                      <h4>Chandra Rasa</h4>
+                      <p class="pdp-related-subtitle">Sleep Potion</p>
+                      <p class="pdp-related-price">$33</p>
                     </div>
-                  </div>
-                  <div
-                    id="recently-viewed-shotharaha"
-                    class="product-tab-content"
-                  >
-                    <div class="horizontal-scroll">
-                      <div
-                        class="mini-product-card"
-                        onclick="showProduct('shakti')"
-                      >
-                        <img
-                          src="https://sampritibotanicals.com/assets/images/shakthi.avif"
-                          alt="Shakti Peya"
-                        />
-                        <h4>SHAKTI PEYA | Energy Elixir</h4>
-                        <p>$33</p>
+                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
                       </div>
+                      <h4>Shotharaha</h4>
+                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
+                      <p class="pdp-related-price">$33</p>
                     </div>
+                    <div class="pdp-related-card" onclick="showProduct('hibiscus')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Hibiscus Rosa-Sinensis</h4>
+                      <p class="pdp-related-subtitle">Antioxidant Infusion</p>
+                      <p class="pdp-related-price">$42</p>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <!-- Chandra Rasa Detail -->
+          <div id="detail-chandra" class="single-product-detail" style="display:none">
+            <div class="pdp-wrapper">
+              <!-- Left: Image Gallery -->
+              <div class="pdp-gallery">
+                <div class="pdp-main-image">
+                  <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
+                </div>
+              </div>
+
+              <!-- Right: Product Info -->
+              <div class="pdp-info">
+                <span class="pdp-category">Sampriti Botanicals</span>
+                <h1 class="pdp-title">Chandra Rasa</h1>
+                <p class="pdp-price">$33</p>
+                <p class="pdp-description">A soothing lunar potion designed to guide the body into deep, restorative sleep. Chandra Rasa draws upon time-honoured sedative botanicals to calm the nervous system and promote peaceful rest.</p>
+
+                <div class="pdp-key-details">
+                  <span class="pdp-detail-label">Key ingredients</span>
+                  <span class="pdp-detail-value">Chamomile, Lavender, Valerian Root, Passionflower, Nutmeg</span>
+                </div>
+
+                <div class="pdp-size-selector">
+                  <div class="pdp-size-option selected">
+                    <span>Kit of 9 Test Tubes</span>
+                    <span>$33</span>
                   </div>
                 </div>
 
-                <div class="reviews-section">
-                  <h3>Customer Reviews</h3>
-                  <div class="review">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">
-                      "Perfect for after my yoga practice. I feel much less
-                      stiff the next day."
-                    </p>
-                    <p class="review-author">- Robert K.</p>
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation()">Add to cart</button>
+                </div>
+
+                <!-- Tabs -->
+                <div class="pdp-tabs">
+                  <div class="pdp-tab-headers">
+                    <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-chandra')">Description</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-chandra')">Ingredients</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'use-chandra')">How to Use</button>
                   </div>
-                  <div class="review">
-                    <div class="stars">★★★★★</div>
-                    <p class="review-text">
-                      "A very powerful blend. You can really taste the quality
-                      of the ingredients."
-                    </p>
-                    <p class="review-author">- Linda S.</p>
+                  <div id="desc-chandra" class="pdp-tab-content active">
+                    <p>A soothing lunar potion designed to guide the body into deep, restorative sleep. Chandra Rasa draws upon time-honoured sedative botanicals to calm the nervous system and promote peaceful rest.</p>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Floral, calming, subtly sweet</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking deep sleep, nervous system restoration, and evening ritual</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Chamomile, Lavender, Valerian Root, Passionflower, Nutmeg</span></div>
+                  </div>
+                  <div id="ingr-chandra" class="pdp-tab-content">
+                    <p>Chamomile Flower Extract, Lavender Buds, Valerian Root, Passionflower Extract, Nutmeg Powder, Ashwagandha Root, Jatamansi, Warm Spice Blend.</p>
+                    <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
+                  </div>
+                  <div id="use-chandra" class="pdp-tab-content">
+                    <p>Dissolve one test tube in warm milk or water, 30 minutes before bed. Stir well and sip slowly as part of your evening wind-down ritual.</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Hibiscus (Aesop Style) -->
-          <div
-            id="detail-hibiscus"
-            class="single-product-detail aesop-product"
-            style="display: none"
-          >
-            <div class="aesop-grid">
-              <div class="aesop-image-col">
-                <img
-                  src="https://picsum.photos/seed/hibiscus/800/1000"
-                  alt="Hibiscus Rosa-Sinensis"
-                  referrerpolicy="no-referrer"
-                />
-              </div>
-              <div class="aesop-info-col">
-                <span class="aesop-category">Botanical Archive</span>
-                <h1 class="aesop-title">Hibiscus Rosa-Sinensis</h1>
-                <p class="aesop-price">$42</p>
-                <p class="aesop-description">
-                  A vibrant infusion of sun-drenched petals, known for its high
-                  antioxidant content and ability to support natural collagen
-                  production. This botanical essence revitalizes the skin's
-                  appearance, lending a youthful radiance and firming touch.
-                </p>
-
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="HIBISCUS"
-                  >
-                    Add to cart — $42
-                  </button>
-                  <button
-                    class="aesop-btn aesop-btn-outline direct-buy-btn"
-                    data-product="HIBISCUS"
-                  >
-                    Buy Now
-                  </button>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">The Experience</span>
-                  <p class="aesop-meta-value">
-                    A refreshing, slightly tart floral aroma with a deep ruby
-                    hue. Feels cooling and tightening on the skin.
-                  </p>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">Key Ingredients</span>
-                  <p class="aesop-meta-value">
-                    Organic Hibiscus Petals, Vitamin C, Anthocyanins.
-                  </p>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">How to Use</span>
-                  <p class="aesop-meta-value">
-                    Apply to cleansed skin using a cotton pad or mist directly
-                    onto the face. Use morning and evening for optimal results.
-                  </p>
-                </div>
+            <!-- Related Products -->
+            <div class="pdp-related-section">
+              <h3 class="pdp-related-heading">You may also like</h3>
+              <div class="pdp-related-grid">
+                    <div class="pdp-related-card" onclick="showProduct('shakti')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shakti Peya</h4>
+                      <p class="pdp-related-subtitle">Energy Elixir</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shotharaha</h4>
+                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('hibiscus')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Hibiscus Rosa-Sinensis</h4>
+                      <p class="pdp-related-subtitle">Antioxidant Infusion</p>
+                      <p class="pdp-related-price">$42</p>
+                    </div>
               </div>
             </div>
           </div>
-
-          <!-- Rose (Aesop Style) -->
-          <div
-            id="detail-rose"
-            class="single-product-detail aesop-product"
-            style="display: none"
-          >
-            <div class="aesop-grid">
-              <div class="aesop-image-col">
-                <img
-                  src="https://picsum.photos/seed/rose/800/1000"
-                  alt="Rosa Damascena"
-                  referrerpolicy="no-referrer"
-                />
+          <!-- Shotharaha Detail -->
+          <div id="detail-shotharaha" class="single-product-detail" style="display:none">
+            <div class="pdp-wrapper">
+              <!-- Left: Image Gallery -->
+              <div class="pdp-gallery">
+                <div class="pdp-main-image">
+                  <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
+                </div>
               </div>
-              <div class="aesop-info-col">
-                <span class="aesop-category">Botanical Archive</span>
-                <h1 class="aesop-title">Rosa Damascena</h1>
-                <p class="aesop-price">$56</p>
-                <p class="aesop-description">
-                  Steam-distilled from hand-picked petals at dawn. A deeply
-                  hydrating and soothing essence that balances the skin's pH and
-                  calms the senses. This timeless botanical provides an
-                  immediate sense of comfort and long-lasting moisture.
-                </p>
 
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="ROSE"
-                  >
-                    Add to cart — $56
-                  </button>
-                  <button
-                    class="aesop-btn aesop-btn-outline direct-buy-btn"
-                    data-product="ROSE"
-                  >
-                    Buy Now
-                  </button>
+              <!-- Right: Product Info -->
+              <div class="pdp-info">
+                <span class="pdp-category">Sampriti Botanicals</span>
+                <h1 class="pdp-title">Shotharaha</h1>
+                <p class="pdp-price">$33</p>
+                <p class="pdp-description">A specialised dual-black recovery blend formulated to support the body's natural inflammatory response and fluid balance. Shotharaha combines potent anti-inflammatory botanicals with bioavailability enhancers.</p>
+
+                <div class="pdp-key-details">
+                  <span class="pdp-detail-label">Key ingredients</span>
+                  <span class="pdp-detail-value">Turmeric, Ginger, Guggulu, Boswellia, Black Pepper</span>
                 </div>
 
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">The Experience</span>
-                  <p class="aesop-meta-value">
-                    A delicate, true rose fragrance that lingers softly.
-                    Intensely hydrating and velvety to the touch.
-                  </p>
+                <div class="pdp-size-selector">
+                  <div class="pdp-size-option selected">
+                    <span>Kit of 9 Test Tubes</span>
+                    <span>$33</span>
+                  </div>
                 </div>
 
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">Key Ingredients</span>
-                  <p class="aesop-meta-value">
-                    Pure Rose Hydrosol, Damask Rose Essential Oil.
-                  </p>
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart buy-now-btn" data-product="SHOTHARAHA" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
 
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">How to Use</span>
-                  <p class="aesop-meta-value">
-                    Mist over face and neck after cleansing, or throughout the
-                    day to refresh and hydrate. Ideal for all skin types,
-                    especially sensitive.
-                  </p>
+                <!-- Tabs -->
+                <div class="pdp-tabs">
+                  <div class="pdp-tab-headers">
+                    <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-shotharaha')">Description</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-shotharaha')">Ingredients</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'use-shotharaha')">How to Use</button>
+                  </div>
+                  <div id="desc-shotharaha" class="pdp-tab-content active">
+                    <p>A specialised dual-black recovery blend formulated to support the body's natural inflammatory response and fluid balance. Shotharaha combines potent anti-inflammatory botanicals with bioavailability enhancers.</p>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Earthy, warm, peppery</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking recovery support, joint comfort, and inflammatory balance</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Turmeric, Ginger, Guggulu, Boswellia, Black Pepper</span></div>
+                  </div>
+                  <div id="ingr-shotharaha" class="pdp-tab-content">
+                    <p>Curcuma Longa (Turmeric) Extract, Zingiber Officinale (Ginger) Root, Commiphora Mukul (Guggulu) Resin, Boswellia Serrata Extract, Piper Nigrum (Black Pepper) Extract, Haridra, Musta.</p>
+                    <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
+                  </div>
+                  <div id="use-shotharaha" class="pdp-tab-content">
+                    <p>Dissolve one test tube in warm water or juice. Best taken after meals for optimal absorption. Can be consumed once or twice daily.</p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Black Turmeric (Aesop Style) -->
-          <div
-            id="detail-turmeric"
-            class="single-product-detail aesop-product"
-            style="display: none"
-          >
-            <div class="aesop-grid">
-              <div class="aesop-image-col">
-                <img
-                  src="https://picsum.photos/seed/turmeric/800/1000"
-                  alt="Curcuma Caesia"
-                  referrerpolicy="no-referrer"
-                />
-              </div>
-              <div class="aesop-info-col">
-                <span class="aesop-category">Botanical Archive</span>
-                <h1 class="aesop-title">Curcuma Caesia</h1>
-                <p class="aesop-price">$48</p>
-                <p class="aesop-description">
-                  A rare and potent rhizome with exceptional anti-inflammatory
-                  properties. Known in traditional lineages for its deep healing
-                  and purifying capabilities. This concentrated extract helps to
-                  clear the complexion and soothe irritated skin.
-                </p>
-
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="BLACK TURMERIC"
-                  >
-                    Add to cart — $48
-                  </button>
-                  <button
-                    class="aesop-btn aesop-btn-outline direct-buy-btn"
-                    data-product="BLACK TURMERIC"
-                  >
-                    Buy Now
-                  </button>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">The Experience</span>
-                  <p class="aesop-meta-value">
-                    Earthy, spicy, and grounding aroma. A rich, dark essence
-                    that absorbs quickly without staining.
-                  </p>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">Key Ingredients</span>
-                  <p class="aesop-meta-value">
-                    Black Turmeric Extract, Curcuminoids, Ginger Root.
-                  </p>
-                </div>
-
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">How to Use</span>
-                  <p class="aesop-meta-value">
-                    Apply a few drops to targeted areas or mix with your
-                    favorite moisturizer. Use daily to promote skin clarity and
-                    resilience.
-                  </p>
-                </div>
+            <!-- Related Products -->
+            <div class="pdp-related-section">
+              <h3 class="pdp-related-heading">You may also like</h3>
+              <div class="pdp-related-grid">
+                    <div class="pdp-related-card" onclick="showProduct('shakti')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shakti Peya</h4>
+                      <p class="pdp-related-subtitle">Energy Elixir</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('chandra')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Chandra Rasa</h4>
+                      <p class="pdp-related-subtitle">Sleep Potion</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('hibiscus')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Hibiscus Rosa-Sinensis</h4>
+                      <p class="pdp-related-subtitle">Antioxidant Infusion</p>
+                      <p class="pdp-related-price">$42</p>
+                    </div>
               </div>
             </div>
           </div>
-
-          <!-- Blue Butterfly Pea (Aesop Style) -->
-          <div
-            id="detail-butterflypea"
-            class="single-product-detail aesop-product"
-            style="display: none"
-          >
-            <div class="aesop-grid">
-              <div class="aesop-image-col">
-                <img
-                  src="https://picsum.photos/seed/butterflypea/800/1000"
-                  alt="Clitoria Ternatea"
-                  referrerpolicy="no-referrer"
-                />
+          <!-- Hibiscus Rosa-Sinensis Detail -->
+          <div id="detail-hibiscus" class="single-product-detail" style="display:none">
+            <div class="pdp-wrapper">
+              <!-- Left: Image Gallery -->
+              <div class="pdp-gallery">
+                <div class="pdp-main-image">
+                  <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                </div>
               </div>
-              <div class="aesop-info-col">
-                <span class="aesop-category">Botanical Archive</span>
-                <h1 class="aesop-title">Clitoria Ternatea</h1>
-                <p class="aesop-price">$38</p>
-                <p class="aesop-description">
-                  A brilliant azure infusion rich in anthocyanins. Supports
-                  cognitive function and provides a powerful shield against
-                  environmental stressors. This antioxidant powerhouse protects
-                  the skin from oxidative damage while promoting a calm, even
-                  tone.
-                </p>
 
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="BLUE BUTTERFLY PEA"
-                  >
-                    Add to cart — $38
-                  </button>
-                  <button
-                    class="aesop-btn aesop-btn-outline direct-buy-btn"
-                    data-product="BLUE BUTTERFLY PEA"
-                  >
-                    Buy Now
-                  </button>
+              <!-- Right: Product Info -->
+              <div class="pdp-info">
+                <span class="pdp-category">Sampriti Botanicals</span>
+                <h1 class="pdp-title">Hibiscus Rosa-Sinensis</h1>
+                <p class="pdp-price">$42</p>
+                <p class="pdp-description">A vibrant infusion of sun-drenched petals, known for its high antioxidant content and ability to support natural collagen production. This botanical essence revitalises the skin's appearance, lending a youthful radiance.</p>
+
+                <div class="pdp-key-details">
+                  <span class="pdp-detail-label">Key ingredients</span>
+                  <span class="pdp-detail-value">Organic Hibiscus Petals, Vitamin C, Anthocyanins</span>
                 </div>
 
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">The Experience</span>
-                  <p class="aesop-meta-value">
-                    Subtle, pea-like scent with a stunning natural blue color.
-                    Feels lightweight and incredibly smooth.
-                  </p>
+                <div class="pdp-size-selector">
+                  <div class="pdp-size-option selected">
+                    <span>Kit of 9 Test Tubes</span>
+                    <span>$42</span>
+                  </div>
                 </div>
 
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">Key Ingredients</span>
-                  <p class="aesop-meta-value">
-                    Butterfly Pea Flower Extract, Proanthocyanidins.
-                  </p>
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart buy-now-btn" data-product="HIBISCUS" onclick="event.stopPropagation()">Add to cart</button>
                 </div>
 
-                <div class="aesop-meta-item">
-                  <span class="aesop-meta-label">How to Use</span>
-                  <p class="aesop-meta-value">
-                    Apply to clean skin as a serum or add to your bath for a
-                    luxurious, antioxidant-rich soak. Suitable for all skin
-                    types.
-                  </p>
+                <!-- Tabs -->
+                <div class="pdp-tabs">
+                  <div class="pdp-tab-headers">
+                    <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-hibiscus')">Description</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-hibiscus')">Ingredients</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'use-hibiscus')">How to Use</button>
+                  </div>
+                  <div id="desc-hibiscus" class="pdp-tab-content active">
+                    <p>A vibrant infusion of sun-drenched petals, known for its high antioxidant content and ability to support natural collagen production. This botanical essence revitalises the skin's appearance, lending a youthful radiance.</p>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Tart, floral, refreshing</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking cardiovascular support, radiant skin, and antioxidant protection</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Organic Hibiscus Petals, Vitamin C, Anthocyanins</span></div>
+                  </div>
+                  <div id="ingr-hibiscus" class="pdp-tab-content">
+                    <p>Organic Hibiscus Sabdariffa Petals, Natural Vitamin C Complex, Anthocyanin Concentrate, Rose Hip Extract, Amla (Indian Gooseberry), Pomegranate Seed Extract.</p>
+                    <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
+                  </div>
+                  <div id="use-hibiscus" class="pdp-tab-content">
+                    <p>Steep one test tube in hot water for 4-5 minutes. May be enjoyed hot or chilled over ice. Add honey to taste if desired.</p>
+                  </div>
                 </div>
+              </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="pdp-related-section">
+              <h3 class="pdp-related-heading">You may also like</h3>
+              <div class="pdp-related-grid">
+                    <div class="pdp-related-card" onclick="showProduct('shakti')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shakti Peya</h4>
+                      <p class="pdp-related-subtitle">Energy Elixir</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('chandra')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Chandra Rasa</h4>
+                      <p class="pdp-related-subtitle">Sleep Potion</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shotharaha</h4>
+                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <!-- Rosa Damascena Detail -->
+          <div id="detail-rose" class="single-product-detail" style="display:none">
+            <div class="pdp-wrapper">
+              <!-- Left: Image Gallery -->
+              <div class="pdp-gallery">
+                <div class="pdp-main-image">
+                  <img src="https://picsum.photos/seed/rose/800/1000" alt="Rosa Damascena" referrerpolicy="no-referrer" />
+                </div>
+              </div>
+
+              <!-- Right: Product Info -->
+              <div class="pdp-info">
+                <span class="pdp-category">Sampriti Botanicals</span>
+                <h1 class="pdp-title">Rosa Damascena</h1>
+                <p class="pdp-price">$56</p>
+                <p class="pdp-description">Steam-distilled from hand-picked petals at dawn. A deeply hydrating and soothing essence that balances the skin's pH and calms the senses. This timeless botanical provides comfort and long-lasting moisture.</p>
+
+                <div class="pdp-key-details">
+                  <span class="pdp-detail-label">Key ingredients</span>
+                  <span class="pdp-detail-value">Rosa Damascena Petals, Rosewater, Natural Essential Oils</span>
+                </div>
+
+                <div class="pdp-size-selector">
+                  <div class="pdp-size-option selected">
+                    <span>Kit of 9 Test Tubes</span>
+                    <span>$56</span>
+                  </div>
+                </div>
+
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart buy-now-btn" data-product="ROSE" onclick="event.stopPropagation()">Add to cart</button>
+                </div>
+
+                <!-- Tabs -->
+                <div class="pdp-tabs">
+                  <div class="pdp-tab-headers">
+                    <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-rose')">Description</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-rose')">Ingredients</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'use-rose')">How to Use</button>
+                  </div>
+                  <div id="desc-rose" class="pdp-tab-content active">
+                    <p>Steam-distilled from hand-picked petals at dawn. A deeply hydrating and soothing essence that balances the skin's pH and calms the senses. This timeless botanical provides comfort and long-lasting moisture.</p>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Rich, floral, deeply comforting</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking hydration, emotional balance, and sensory refinement</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Rosa Damascena Petals, Rosewater, Natural Essential Oils</span></div>
+                  </div>
+                  <div id="ingr-rose" class="pdp-tab-content">
+                    <p>Rosa Damascena Petal Extract, Steam-Distilled Rosewater, Saffron Stigma, Cardamom Seed, Fennel Seed Extract, Raw Honey Crystals, Rose Hip Oil.</p>
+                    <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
+                  </div>
+                  <div id="use-rose" class="pdp-tab-content">
+                    <p>Dissolve one test tube in warm water or milk. Sip slowly and mindfully. Ideal as an afternoon ritual or evening wind-down.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="pdp-related-section">
+              <h3 class="pdp-related-heading">You may also like</h3>
+              <div class="pdp-related-grid">
+                    <div class="pdp-related-card" onclick="showProduct('shakti')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shakti Peya</h4>
+                      <p class="pdp-related-subtitle">Energy Elixir</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('chandra')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Chandra Rasa</h4>
+                      <p class="pdp-related-subtitle">Sleep Potion</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shotharaha</h4>
+                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <!-- Curcuma Caesia Detail -->
+          <div id="detail-turmeric" class="single-product-detail" style="display:none">
+            <div class="pdp-wrapper">
+              <!-- Left: Image Gallery -->
+              <div class="pdp-gallery">
+                <div class="pdp-main-image">
+                  <img src="https://picsum.photos/seed/turmeric/800/1000" alt="Curcuma Caesia" referrerpolicy="no-referrer" />
+                </div>
+              </div>
+
+              <!-- Right: Product Info -->
+              <div class="pdp-info">
+                <span class="pdp-category">Sampriti Botanicals</span>
+                <h1 class="pdp-title">Curcuma Caesia</h1>
+                <p class="pdp-price">$48</p>
+                <p class="pdp-description">A rare Kaya Kalpa agent for profound recovery and cellular longevity. Black Turmeric is revered in traditional medicine for its exceptional anti-inflammatory and rejuvenative properties.</p>
+
+                <div class="pdp-key-details">
+                  <span class="pdp-detail-label">Key ingredients</span>
+                  <span class="pdp-detail-value">Black Turmeric Rhizome, Curcuminoids, Essential Volatile Oils</span>
+                </div>
+
+                <div class="pdp-size-selector">
+                  <div class="pdp-size-option selected">
+                    <span>Kit of 9 Test Tubes</span>
+                    <span>$48</span>
+                  </div>
+                </div>
+
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart buy-now-btn" data-product="BLACK TURMERIC" onclick="event.stopPropagation()">Add to cart</button>
+                </div>
+
+                <!-- Tabs -->
+                <div class="pdp-tabs">
+                  <div class="pdp-tab-headers">
+                    <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-turmeric')">Description</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-turmeric')">Ingredients</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'use-turmeric')">How to Use</button>
+                  </div>
+                  <div id="desc-turmeric" class="pdp-tab-content active">
+                    <p>A rare Kaya Kalpa agent for profound recovery and cellular longevity. Black Turmeric is revered in traditional medicine for its exceptional anti-inflammatory and rejuvenative properties.</p>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Deep, earthy, camphoraceous</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking cellular renewal, deep recovery, and longevity support</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Black Turmeric Rhizome, Curcuminoids, Essential Volatile Oils</span></div>
+                  </div>
+                  <div id="ingr-turmeric" class="pdp-tab-content">
+                    <p>Curcuma Caesia (Black Turmeric) Rhizome Extract, Concentrated Curcuminoids, Volatile Essential Oil Complex, Piper Longum (Long Pepper), Haritaki Fruit, Amalaki.</p>
+                    <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
+                  </div>
+                  <div id="use-turmeric" class="pdp-tab-content">
+                    <p>Dissolve one test tube in warm water with a pinch of black pepper for enhanced absorption. Best taken in the morning on an empty stomach.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="pdp-related-section">
+              <h3 class="pdp-related-heading">You may also like</h3>
+              <div class="pdp-related-grid">
+                    <div class="pdp-related-card" onclick="showProduct('shakti')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shakti Peya</h4>
+                      <p class="pdp-related-subtitle">Energy Elixir</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('chandra')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Chandra Rasa</h4>
+                      <p class="pdp-related-subtitle">Sleep Potion</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shotharaha</h4>
+                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+              </div>
+            </div>
+          </div>
+          <!-- Clitoria Ternatea Detail -->
+          <div id="detail-butterflypea" class="single-product-detail" style="display:none">
+            <div class="pdp-wrapper">
+              <!-- Left: Image Gallery -->
+              <div class="pdp-gallery">
+                <div class="pdp-main-image">
+                  <img src="https://picsum.photos/seed/butterflypea/800/1000" alt="Clitoria Ternatea" referrerpolicy="no-referrer" />
+                </div>
+              </div>
+
+              <!-- Right: Product Info -->
+              <div class="pdp-info">
+                <span class="pdp-category">Sampriti Botanicals</span>
+                <h1 class="pdp-title">Clitoria Ternatea</h1>
+                <p class="pdp-price">$38</p>
+                <p class="pdp-description">A brilliant azure infusion rich in anthocyanins. Supports cognitive function and provides a powerful shield against environmental stressors. This antioxidant powerhouse promotes a calm, even tone.</p>
+
+                <div class="pdp-key-details">
+                  <span class="pdp-detail-label">Key ingredients</span>
+                  <span class="pdp-detail-value">Butterfly Pea Flower Extract, Proanthocyanidins</span>
+                </div>
+
+                <div class="pdp-size-selector">
+                  <div class="pdp-size-option selected">
+                    <span>Kit of 9 Test Tubes</span>
+                    <span>$38</span>
+                  </div>
+                </div>
+
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart buy-now-btn" data-product="BLUE BUTTERFLY PEA" onclick="event.stopPropagation()">Add to cart</button>
+                </div>
+
+                <!-- Tabs -->
+                <div class="pdp-tabs">
+                  <div class="pdp-tab-headers">
+                    <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-butterflypea')">Description</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-butterflypea')">Ingredients</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'use-butterflypea')">How to Use</button>
+                  </div>
+                  <div id="desc-butterflypea" class="pdp-tab-content active">
+                    <p>A brilliant azure infusion rich in anthocyanins. Supports cognitive function and provides a powerful shield against environmental stressors. This antioxidant powerhouse promotes a calm, even tone.</p>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Subtle, earthy, naturally sweet</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking cognitive support, stress relief, and antioxidant protection</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Butterfly Pea Flower Extract, Proanthocyanidins</span></div>
+                  </div>
+                  <div id="ingr-butterflypea" class="pdp-tab-content">
+                    <p>Clitoria Ternatea (Butterfly Pea) Flower Extract, Proanthocyanidin Complex, Brahmi Leaf, Shankhpushpi, Gotu Kola Extract, Lemon Balm.</p>
+                    <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
+                    <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
+                  </div>
+                  <div id="use-butterflypea" class="pdp-tab-content">
+                    <p>Steep one test tube in hot water for 3-4 minutes to reveal the signature blue hue. Add a squeeze of lemon to watch it transform to violet. Enjoy hot or iced.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Related Products -->
+            <div class="pdp-related-section">
+              <h3 class="pdp-related-heading">You may also like</h3>
+              <div class="pdp-related-grid">
+                    <div class="pdp-related-card" onclick="showProduct('shakti')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shakti Peya</h4>
+                      <p class="pdp-related-subtitle">Energy Elixir</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('chandra')">
+                      <div class="pdp-related-img">
+                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Chandra Rasa</h4>
+                      <p class="pdp-related-subtitle">Sleep Potion</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
+                      <div class="pdp-related-img">
+                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Shotharaha</h4>
+                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
+                      <p class="pdp-related-price">$33</p>
+                    </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div id="provenance-view" style="display: none">
-        <section class="provenance-hero">
-          <img
-            src="https://picsum.photos/seed/aman1/1920/1080"
-            alt="Provenance Hero"
-            referrerpolicy="no-referrer"
-          />
-          <div class="provenance-hero-content">
-            <p>The Essence of Origin</p>
-            <h1>Provenance</h1>
+      <div id="provenance-view" style="display: none" class="prov-page">
+
+        <!-- Hero -->
+        <section class="prov-hero">
+          <h1>Pathways of Origin</h1>
+          <p class="prov-subtitle">Multi-tradition journeys with Sampriti</p>
+          <p class="prov-desc">From India's ancient botanical gardens to its sacred harvest grounds, provenance with Sampriti spans traditions and terrains, weaving together multiple lineages into singular, seamless formulations. Thoughtfully curated and expertly guided, each ingredient is showcased through Sampriti's reverent lens.</p>
+        </section>
+
+        <!-- Two asymmetric images -->
+        <section class="prov-duo">
+          <div class="prov-duo-small">
+            <img src="https://picsum.photos/seed/prov-sm1/600/800" alt="Botanical garden archway" referrerpolicy="no-referrer">
+          </div>
+          <div class="prov-duo-large">
+            <img src="https://picsum.photos/seed/prov-lg1/800/1200" alt="Lush forest canopy" referrerpolicy="no-referrer">
           </div>
         </section>
 
-        <section class="aman-section">
-          <div class="aman-container">
-            <div class="aman-intro">
-              <h2>A Continuum of Heritage</h2>
-              <p>
-                Sampriti arises from a deep botanical understanding, rooted in
-                India's living herbal lineages. Our provenance is a journey
-                through sacred landscapes, ancient wisdom, and the meticulous
-                preservation of botanical integrity.
-              </p>
-            </div>
-
-            <div class="aman-grid">
-              <a href="#" class="aman-card" onclick="return false;">
-                <div class="aman-card-image">
-                  <img
-                    src="https://picsum.photos/seed/aman2/800/1000"
-                    alt="Sacred Harvest"
-                    referrerpolicy="no-referrer"
-                  />
-                </div>
-                <div class="aman-card-content">
-                  <h3>Sacred Harvest</h3>
-                  <p>
-                    Discover the rhythmic cycles of nature that guide our
-                    harvesting process, ensuring each botanical is gathered at
-                    its peak potency.
-                  </p>
-                  <span class="aman-card-link">Explore the Cycle</span>
-                </div>
-              </a>
-
-              <a href="#" class="aman-card" onclick="return false;">
-                <div class="aman-card-image">
-                  <img
-                    src="https://picsum.photos/seed/aman3/800/1000"
-                    alt="Ancient Lineage"
-                    referrerpolicy="no-referrer"
-                  />
-                </div>
-                <div class="aman-card-content">
-                  <h3>Ancient Lineage</h3>
-                  <p>
-                    Tracing the roots of our formulations back through
-                    generations of herbal practitioners and traditional wisdom.
-                  </p>
-                  <span class="aman-card-link">Trace the Roots</span>
-                </div>
-              </a>
-
-              <a href="#" class="aman-card" onclick="return false;">
-                <div class="aman-card-image">
-                  <img
-                    src="https://picsum.photos/seed/aman4/800/1000"
-                    alt="Botanical Integrity"
-                    referrerpolicy="no-referrer"
-                  />
-                </div>
-                <div class="aman-card-content">
-                  <h3>Botanical Integrity</h3>
-                  <p>
-                    Our commitment to purity and potency, from the soil to the
-                    final infusion, preserving the life-force of every plant.
-                  </p>
-                  <span class="aman-card-link">Our Commitment</span>
-                </div>
-              </a>
-
-              <a href="#" class="aman-card" onclick="return false;">
-                <div class="aman-card-image">
-                  <img
-                    src="https://picsum.photos/seed/aman5/800/1000"
-                    alt="The Alchemist's Touch"
-                    referrerpolicy="no-referrer"
-                  />
-                </div>
-                <div class="aman-card-content">
-                  <h3>The Alchemist's Touch</h3>
-                  <p>
-                    The delicate art of formulation, where science meets
-                    tradition to create elixirs of profound restorative power.
-                  </p>
-                  <span class="aman-card-link">View the Process</span>
-                </div>
-              </a>
-            </div>
+        <!-- Carousel: text left + scrolling cards right -->
+        <section class="prov-carousel-section">
+          <div class="prov-carousel-text">
+            <h2>Explore Our Botanical Lineages</h2>
+            <p>Each origin tells a story — of soil, season, and stewardship. Discover the living traditions behind every Sampriti formulation.</p>
+          </div>
+          <div class="prov-carousel-track">
+            <a href="#" class="prov-carousel-card" onclick="return false;">
+              <img src="https://picsum.photos/seed/prov-c1/500/500" alt="Rajasthan Harvest" referrerpolicy="no-referrer">
+              <h3>Rajasthan</h3>
+              <p>Sun-drenched landscapes where ancient harvesting rhythms still govern the gathering of rare botanicals.</p>
+              <span class="prov-cta">Discover more</span>
+            </a>
+            <a href="#" class="prov-carousel-card" onclick="return false;">
+              <img src="https://picsum.photos/seed/prov-c2/500/500" alt="Kerala Gardens" referrerpolicy="no-referrer">
+              <h3>Kerala</h3>
+              <p>Tropical abundance where Ayurvedic wisdom meets the verdant spice gardens of the Malabar coast.</p>
+              <span class="prov-cta">Discover more</span>
+            </a>
+            <a href="#" class="prov-carousel-card" onclick="return false;">
+              <img src="https://picsum.photos/seed/prov-c3/500/500" alt="Himalayan Foothills" referrerpolicy="no-referrer">
+              <h3>Himalayan Foothills</h3>
+              <p>High-altitude meadows yielding potent herbs refined through generations of mountain herbalism.</p>
+              <span class="prov-cta">Discover more</span>
+            </a>
+            <a href="#" class="prov-carousel-card" onclick="return false;">
+              <img src="https://picsum.photos/seed/prov-c4/500/500" alt="Assam Valleys" referrerpolicy="no-referrer">
+              <h3>Assam</h3>
+              <p>Mist-laden valleys producing singular botanical extracts prized for their depth and complexity.</p>
+              <span class="prov-cta">Discover more</span>
+            </a>
+            <a href="#" class="prov-carousel-card" onclick="return false;">
+              <img src="https://picsum.photos/seed/prov-c5/500/500" alt="Tamil Nadu" referrerpolicy="no-referrer">
+              <h3>Tamil Nadu</h3>
+              <p>Ancient Siddha traditions preserved in temple towns where botanicals are cultivated with sacred intent.</p>
+              <span class="prov-cta">Discover more</span>
+            </a>
           </div>
         </section>
+
+        <!-- Divider -->
+        <div class="prov-divider"><hr></div>
+
+        <!-- Side-by-side 1: image right -->
+        <section class="prov-media-row reverse">
+          <div class="prov-media-img">
+            <img src="https://picsum.photos/seed/prov-side1/1000/700" alt="Aerial view of botanical estate" referrerpolicy="no-referrer">
+          </div>
+          <div class="prov-media-text">
+            <h2>Sacred Harvest</h2>
+            <p>Discover the rhythmic cycles of nature that guide our harvesting process, ensuring each botanical is gathered at its peak potency. Our harvesters follow lunar calendars and seasonal markers passed down through centuries.</p>
+            <span class="prov-cta">Explore the cycle</span>
+          </div>
+        </section>
+
+        <!-- Side-by-side 2: image left -->
+        <section class="prov-media-row">
+          <div class="prov-media-img">
+            <img src="https://picsum.photos/seed/prov-side2/1000/700" alt="Traditional preparation" referrerpolicy="no-referrer">
+          </div>
+          <div class="prov-media-text">
+            <h2>Ancient Lineage</h2>
+            <p>Tracing the roots of our formulations back through generations of herbal practitioners and traditional wisdom. Each recipe carries the memory of hands that came before — a continuum of care inscribed in every blend.</p>
+            <span class="prov-cta">Trace the roots</span>
+          </div>
+        </section>
+
+        <!-- Full-width image -->
+        <div class="prov-fullwidth">
+          <img src="https://picsum.photos/seed/prov-full/1400/600" alt="Panoramic botanical landscape" referrerpolicy="no-referrer">
+        </div>
+
+        <!-- Side-by-side 3: image right -->
+        <section class="prov-media-row reverse">
+          <div class="prov-media-img">
+            <img src="https://picsum.photos/seed/prov-side3/1000/700" alt="Laboratory and nature" referrerpolicy="no-referrer">
+          </div>
+          <div class="prov-media-text">
+            <h2>Botanical Integrity</h2>
+            <p>Our commitment to purity and potency, from the soil to the final infusion, preserving the life-force of every plant. We test at every stage — never compromising the essence that makes each botanical singular.</p>
+            <span class="prov-cta">Our commitment</span>
+          </div>
+        </section>
+
+        <!-- Concierge / CTA -->
+        <section class="prov-concierge">
+          <div>
+            <h2>Sampriti Concierge</h2>
+          </div>
+          <div>
+            <p>No question is too small and no curiosity too great. To learn more about our sourcing, formulations, or botanical heritage, reach out to our team.</p>
+            <a href="#" onclick="showHome(); return false;">Return to Collection</a>
+          </div>
+        </section>
+
       </div>
 
       <div
@@ -6565,6 +6925,16 @@
           }
         });
 
+        
+        // PDP Tab Switching
+        window.switchPdpTab = function(btn, tabId) {
+          var parent = btn.closest('.pdp-tabs');
+          parent.querySelectorAll('.pdp-tab-btn').forEach(function(b) { b.classList.remove('active'); });
+          parent.querySelectorAll('.pdp-tab-content').forEach(function(c) { c.classList.remove('active'); });
+          btn.classList.add('active');
+          document.getElementById(tabId).classList.add('active');
+        };
+
         // --- Navigation & Product View ---
         let lastView = "home";
 
@@ -6839,7 +7209,7 @@
               } else if (text === "PROVENANCE") {
                 e.preventDefault();
                 showProvenance();
-              } else if (text === "RECOMMENDED READING") {
+              } else if (text === "RECOMMENDED READING" || text === "JOURNAL") {
                 e.preventDefault();
                 showRecommendedReading();
               } else if (href && href.startsWith("#") && href !== "#") {

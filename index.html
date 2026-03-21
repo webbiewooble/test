@@ -55,7 +55,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/" />
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Tenor+Sans&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -82,6 +82,10 @@
         --aman-gold: #b5a48b;
       }
 
+      .recommended-reading-card.hidden-article {
+        display: none;
+      }
+
       /* New Product Page Layout Styles */
       .sticky-header {
         position: sticky;
@@ -94,6 +98,7 @@
         align-items: center;
         border-bottom: 1px solid var(--aman-gold);
         color: var(--aman-ink);
+        font-family: "Tenor Sans", sans-serif;
       }
       .accordion-header {
         cursor: pointer;
@@ -102,6 +107,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-family: "Tenor Sans", sans-serif;
       }
       .accordion-content {
         display: none;
@@ -134,7 +140,7 @@
       }
       .accordion { padding: 20px; }
       .editorial-section { padding: 20px; }
-      .related-products { padding: 20px; }
+      .related-products { padding: 20px; overflow: hidden; }
       .footer-simple { padding: 20px; text-align: center; background: #eee; }
       .product-info {
         padding: 0 20px;
@@ -617,8 +623,13 @@
       }
 
       /* On pages without a hero, offset main content below the fixed header */
-      body.no-hero > main {
+      body.no-hero > main,
+      body.shop-active > main {
         padding-top: 130px;
+      }
+
+      body.shop-active.hero-active > main {
+        padding-top: 0;
       }
 
       .main-header .container {
@@ -675,6 +686,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        font-family: "Inter", sans-serif;
       }
 
       .logo {
@@ -702,13 +714,14 @@
       }
 
       .main-nav a {
-        font-family: var(--font-body);
+        font-family: "Tenor Sans", sans-serif;
         font-weight: 400;
         font-size: 0.75rem;
         letter-spacing: 0.05em;
         color: white;
         transition: color 0.3s ease;
         text-transform: uppercase;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
       }
 
       .main-nav a:hover {
@@ -737,6 +750,17 @@
         margin-top: 0;
       }
 
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4));
+        z-index: 1;
+      }
+
       .hero-video-bg {
         position: absolute;
         top: 0;
@@ -747,16 +771,20 @@
         z-index: 0;
       }
 
+      .hero-section.shop-hero-no-overlay::before {
+        display: none;
+      }
+
       .hero-section .container {
         position: absolute;
         top: 65%;
         transform: translateY(-50%);
-        z-index: 1;
+        z-index: 2;
       }
 
       #hero .container {
         top: auto;
-        bottom: 80px;
+        bottom: 60px;
         transform: none;
       }
 
@@ -802,7 +830,7 @@
       #hero a.btn.btn-primary {
         background-color: rgb(0 0 0 / 60%);
         border: 2px solid white;
-        margin-top: 20px;
+        margin-top: 0;
       }
 
       #hero a.btn.btn-primary:hover {
@@ -812,10 +840,11 @@
       .hero-title {
         font-size: 1.5rem;
         max-width: 900px;
-        margin: 10px auto 20px;
+        margin: 5px auto 10px;
         color: #fff;
         font-weight: 400;
         letter-spacing: 0.02em;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       }
 
       .section-header h2 {
@@ -835,9 +864,10 @@
         font-size: 1rem;
         line-height: 1.6;
         max-width: 600px;
-        margin: 0 auto 30px;
+        margin: 0 auto 15px;
         color: rgb(255 255 255 / 90%);
         font-weight: 400;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       }
 
       @media (width <= 768px) {
@@ -863,7 +893,7 @@
 
         .hero-description {
           font-size: 0.9rem;
-          margin-bottom: 20px;
+          margin-bottom: 10px;
         }
 
         .eyebrow {
@@ -1907,7 +1937,6 @@
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-        padding: 0 40px;
       }
 
       .product-detail-info {
@@ -1917,7 +1946,7 @@
 
       .product-detail-info h1 {
         font-size: 1.4rem;
-        white-space: nowrap;
+        white-space: normal;
       }
 
       .product-detail-image-gallery {
@@ -2085,6 +2114,7 @@
         #product-view {
           padding-top: 100px !important;
           padding-bottom: 40px !important;
+          overflow-x: hidden;
         }
 
         .product-detail-grid {
@@ -2214,6 +2244,7 @@
         margin-top: var(--spacing-xl);
         padding-top: var(--spacing-md);
         border-top: 1px solid #eee;
+        overflow: hidden;
       }
 
       .product-tabs {
@@ -2221,7 +2252,7 @@
         gap: 20px;
         margin-bottom: 20px;
         border-bottom: 1px solid #eee;
-        max-width: 100vw;
+        max-width: 100%;
       }
 
       .product-tab {
@@ -2260,7 +2291,7 @@
         overflow-x: auto;
         padding-bottom: 20px;
         scrollbar-width: thin;
-        max-width: 100vw;
+        max-width: 100%;
       }
 
       .horizontal-scroll::-webkit-scrollbar {
@@ -2337,51 +2368,51 @@
         font-style: normal;
       }
 
-      /* Recommended Reading Styles */
-      .recommended-reading-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
-        gap: var(--spacing-md);
-        margin-top: var(--spacing-md);
+      .recommended-reading-grid.swiper {
+        display: block;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .recommended-reading-grid .swiper-wrapper {
+        display: flex;
+        gap: 0;
+      }
+
+      .recommended-reading-card.swiper-slide {
+        height: auto;
+        flex-shrink: 0;
       }
 
       @media (width <= 768px) {
-        .recommended-reading-grid {
-          grid-template-columns: repeat(2, 1fr) !important;
-          gap: 15px !important;
-        }
-
-        .recommended-reading-card-image {
-          height: 150px !important;
-        }
-
-        .recommended-reading-card-content h3 {
-          font-size: 0.85rem !important;
-        }
-
-        .recommended-reading-card-content p {
-          font-size: 0.7rem !important;
+        .recommended-reading-grid.swiper {
+          padding-bottom: 30px;
         }
       }
 
       .recommended-reading-card {
         background-color: transparent;
         overflow: hidden;
-        transition: opacity 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        display: flex;
+        flex-direction: column;
       }
 
       .recommended-reading-card:hover {
-        opacity: 0.8;
+        transform: translateY(-5px);
       }
 
       .recommended-reading-card-link {
-        display: block;
+        display: flex;
+        flex-direction: column;
         height: 100%;
+        text-decoration: none;
       }
 
       .recommended-reading-card-image {
-        height: 200px;
+        height: 240px;
         overflow: hidden;
+        margin-bottom: 20px;
       }
 
       .recommended-reading-card-image img {
@@ -2702,11 +2733,11 @@
 
         .hero-title-small {
           font-size: 0.75rem !important;
-          margin-bottom: 10px !important;
+          margin-bottom: 5px !important;
         }
 
         #hero a.btn.btn-primary {
-          margin-top: 30px;
+          margin-top: 10px;
         }
 
         /* About Section */
@@ -2814,6 +2845,7 @@
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid var(--border-color);
+        font-family: "Tenor Sans", sans-serif;
       }
 
       .cart-drawer-body {
@@ -2910,7 +2942,7 @@
       }
 
       .aesop-info-col {
-        padding-right: 40px;
+        padding-right: 0;
       }
 
       .aesop-category {
@@ -3136,7 +3168,7 @@
                   showRecommendedReading();
                   return false;
                 "
-                >RECOMMENDED READING</a
+                >JOURNAL</a
               >
             </li>
             <li>
@@ -3801,206 +3833,208 @@
           </div>
         </section>
 
-        <!-- Recommended Reading Section -->
+        <!-- Journal Section -->
         <section
           id="recommended-reading-preview"
           class="section-padding bg-light"
         >
           <div class="container">
             <div class="section-header">
-              <span class="eyebrow">Recommended Reading</span>
+              <span class="eyebrow">Journal</span>
             </div>
 
-            <div class="recommended-reading-grid">
-              <!-- Recommended Reading Post 1 -->
-              <article class="recommended-reading-card">
-                <a
-                  class="recommended-reading-card-link"
-                  href="#article-hibiscus"
-                >
-                  <div class="recommended-reading-card-image">
-                    <img
-                      src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg"
-                      alt="The Crimson Catalyst: Hibiscus in Practice"
-                    />
-                  </div>
-                  <div class="recommended-reading-card-content">
-                    <span class="recommended-reading-category"
-                      >Botanical Profile</span
-                    >
-                    <h3>The Crimson Catalyst: Hibiscus in Practice</h3>
-                    <p>
-                      Hibiscus (Japa) is a high-functioning botanical
-                      characterized by its dense concentration of anthocyanins
-                      and organic acids. Discover how these compounds provide
-                      remarkable resilience.
-                    </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
-                  </div>
-                </a>
-              </article>
+            <div class="recommended-reading-grid swiper">
+              <div class="swiper-wrapper">
+                <!-- Recommended Reading Post 1 -->
+                <article class="recommended-reading-card swiper-slide">
+                  <a
+                    class="recommended-reading-card-link"
+                    href="#article-hibiscus"
+                  >
+                    <div class="recommended-reading-card-image">
+                      <img
+                        src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg"
+                        alt="The Crimson Catalyst: Hibiscus in Practice"
+                      />
+                    </div>
+                    <div class="recommended-reading-card-content">
+                      <span class="recommended-reading-category"
+                        >Botanical Profile</span
+                      >
+                      <h3>The Crimson Catalyst: Hibiscus in Practice</h3>
+                      <p>
+                        Hibiscus (Japa) is a high-functioning botanical
+                        characterized by its dense concentration of anthocyanins
+                        and organic acids. Discover how these compounds provide
+                        remarkable resilience.
+                      </p>
+                      <span class="recommended-reading-read-more"
+                        >Read Article →</span
+                      >
+                    </div>
+                  </a>
+                </article>
 
-              <!-- Recommended Reading Post 2 -->
-              <article class="recommended-reading-card">
-                <a
-                  class="recommended-reading-card-link"
-                  href="#article-black-turmeric"
-                >
-                  <div class="recommended-reading-card-image">
-                    <img
-                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
-                      alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery"
-                    />
-                  </div>
-                  <div class="recommended-reading-card-content">
-                    <span class="recommended-reading-category"
-                      >Siddha Wisdom</span
-                    >
-                    <h3>
-                      The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery
-                    </h3>
-                    <p>
-                      In the ancient Siddha tradition—the oldest medical lineage
-                      of South India—certain botanicals are classified as Kaya
-                      Kalpa (agents of longevity). Among these, Black Turmeric
-                      is the rarest.
-                    </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
-                  </div>
-                </a>
-              </article>
+                <!-- Recommended Reading Post 2 -->
+                <article class="recommended-reading-card swiper-slide">
+                  <a
+                    class="recommended-reading-card-link"
+                    href="#article-black-turmeric"
+                  >
+                    <div class="recommended-reading-card-image">
+                      <img
+                        src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
+                        alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery"
+                      />
+                    </div>
+                    <div class="recommended-reading-card-content">
+                      <span class="recommended-reading-category"
+                        >Siddha Wisdom</span
+                      >
+                      <h3>
+                        The Shadow Catalyst: Siddha Wisdom and Dual Black
+                        Recovery
+                      </h3>
+                      <p>
+                        In the ancient Siddha tradition—the oldest medical
+                        lineage of South India—certain botanicals are classified
+                        as Kaya Kalpa (agents of longevity). Among these, Black
+                        Turmeric is the rarest.
+                      </p>
+                      <span class="recommended-reading-read-more"
+                        >Read Article →</span
+                      >
+                    </div>
+                  </a>
+                </article>
 
-              <!-- Recommended Reading Post 3 -->
-              <article class="recommended-reading-card">
-                <a
-                  class="recommended-reading-card-link"
-                  href="#article-lunar-pulse"
-                >
-                  <div class="recommended-reading-card-image">
-                    <img
-                      src="https://sampritibotanicals.com/assets/images/blog/chandra.jpg"
-                      alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs"
-                    />
-                  </div>
-                  <div class="recommended-reading-card-content">
-                    <span class="recommended-reading-category"
-                      >Moon Rhythms</span
-                    >
-                    <h3>
-                      The Lunar Pulse: Moon Rhythms and the Vitality of Herbs
-                    </h3>
-                    <p>
-                      The Moon is far more than a celestial body; it is the
-                      universal "Mother of the World," the moistening principle
-                      that governs the flow of all liquids.
-                    </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
-                  </div>
-                </a>
-              </article>
+                <!-- Recommended Reading Post 3 -->
+                <article class="recommended-reading-card swiper-slide">
+                  <a
+                    class="recommended-reading-card-link"
+                    href="#article-lunar-pulse"
+                  >
+                    <div class="recommended-reading-card-image">
+                      <img
+                        src="https://sampritibotanicals.com/assets/images/blog/chandra.jpg"
+                        alt="The Lunar Pulse: Moon Rhythms and the Vitality of Herbs"
+                      />
+                    </div>
+                    <div class="recommended-reading-card-content">
+                      <span class="recommended-reading-category"
+                        >Moon Rhythms</span
+                      >
+                      <h3>
+                        The Lunar Pulse: Moon Rhythms and the Vitality of Herbs
+                      </h3>
+                      <p>
+                        The Moon is far more than a celestial body; it is the
+                        universal "Mother of the World," the moistening
+                        principle that governs the flow of all liquids.
+                      </p>
+                      <span class="recommended-reading-read-more"
+                        >Read Article →</span
+                      >
+                    </div>
+                  </a>
+                </article>
 
-              <!-- Recommended Reading Post 4 -->
-              <article class="recommended-reading-card">
-                <a
-                  class="recommended-reading-card-link"
-                  href="#article-art-of-infusion"
-                >
-                  <div class="recommended-reading-card-image">
-                    <img
-                      src="https://picsum.photos/seed/herb1/600/400"
-                      alt="Placeholder Article 4"
-                    />
-                  </div>
-                  <div class="recommended-reading-card-content">
-                    <span class="recommended-reading-category"
-                      >Placeholder</span
-                    >
-                    <h3>The Art of Infusion</h3>
-                    <p>
-                      Explore the delicate balance of time, temperature, and
-                      botanical integrity in crafting the perfect herbal
-                      infusion.
-                    </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
-                  </div>
-                </a>
-              </article>
+                <!-- Recommended Reading Post 4 -->
+                <article class="recommended-reading-card swiper-slide">
+                  <a
+                    class="recommended-reading-card-link"
+                    href="#article-art-of-infusion"
+                  >
+                    <div class="recommended-reading-card-image">
+                      <img
+                        src="https://picsum.photos/seed/herb1/600/400"
+                        alt="Placeholder Article 4"
+                      />
+                    </div>
+                    <div class="recommended-reading-card-content">
+                      <span class="recommended-reading-category"
+                        >Placeholder</span
+                      >
+                      <h3>The Art of Infusion</h3>
+                      <p>
+                        Explore the delicate balance of time, temperature, and
+                        botanical integrity in crafting the perfect herbal
+                        infusion.
+                      </p>
+                      <span class="recommended-reading-read-more"
+                        >Read Article →</span
+                      >
+                    </div>
+                  </a>
+                </article>
 
-              <!-- Recommended Reading Post 5 -->
-              <article class="recommended-reading-card">
-                <a
-                  class="recommended-reading-card-link"
-                  href="#article-seasonal-rhythms"
-                >
-                  <div class="recommended-reading-card-image">
-                    <img
-                      src="https://picsum.photos/seed/herb2/600/400"
-                      alt="Placeholder Article 5"
-                    />
-                  </div>
-                  <div class="recommended-reading-card-content">
-                    <span class="recommended-reading-category"
-                      >Placeholder</span
-                    >
-                    <h3>Seasonal Rhythms</h3>
-                    <p>
-                      Aligning your daily rituals with the changing seasons to
-                      optimize vitality and well-being.
-                    </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
-                  </div>
-                </a>
-              </article>
+                <!-- Recommended Reading Post 5 -->
+                <article class="recommended-reading-card swiper-slide">
+                  <a
+                    class="recommended-reading-card-link"
+                    href="#article-seasonal-rhythms"
+                  >
+                    <div class="recommended-reading-card-image">
+                      <img
+                        src="https://picsum.photos/seed/herb2/600/400"
+                        alt="Placeholder Article 5"
+                      />
+                    </div>
+                    <div class="recommended-reading-card-content">
+                      <span class="recommended-reading-category"
+                        >Placeholder</span
+                      >
+                      <h3>Seasonal Rhythms</h3>
+                      <p>
+                        Aligning your daily rituals with the changing seasons to
+                        optimize vitality and well-being.
+                      </p>
+                      <span class="recommended-reading-read-more"
+                        >Read Article →</span
+                      >
+                    </div>
+                  </a>
+                </article>
 
-              <!-- Recommended Reading Post 6 -->
-              <article class="recommended-reading-card">
-                <a
-                  class="recommended-reading-card-link"
-                  href="#article-science-of-scent"
-                >
-                  <div class="recommended-reading-card-image">
-                    <img
-                      src="https://picsum.photos/seed/herb3/600/400"
-                      alt="Placeholder Article 6"
-                    />
-                  </div>
-                  <div class="recommended-reading-card-content">
-                    <span class="recommended-reading-category"
-                      >Placeholder</span
-                    >
-                    <h3>The Science of Scent</h3>
-                    <p>
-                      Understanding how aromatic compounds interact with our
-                      nervous system to induce calm and clarity.
-                    </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
-                  </div>
-                </a>
-              </article>
+                <!-- Recommended Reading Post 6 -->
+                <article class="recommended-reading-card swiper-slide">
+                  <a
+                    class="recommended-reading-card-link"
+                    href="#article-science-of-scent"
+                  >
+                    <div class="recommended-reading-card-image">
+                      <img
+                        src="https://picsum.photos/seed/herb3/600/400"
+                        alt="Placeholder Article 6"
+                      />
+                    </div>
+                    <div class="recommended-reading-card-content">
+                      <span class="recommended-reading-category"
+                        >Placeholder</span
+                      >
+                      <h3>The Science of Scent</h3>
+                      <p>
+                        Understanding how aromatic compounds interact with our
+                        nervous system to induce calm and clarity.
+                      </p>
+                      <span class="recommended-reading-read-more"
+                        >Read Article →</span
+                      >
+                    </div>
+                  </a>
+                </article>
+              </div>
+              <div class="swiper-pagination"></div>
             </div>
 
             <div class="text-center" style="margin-top: 40px">
               <a
                 class="btn btn-view-more"
-                href="#"
-                onclick="
-                  showRecommendedReading();
-                  return false;
-                "
-                >View More</a
+                href="#recommended-reading"
+                onclick="showRecommendedReading(); return false;"
               >
+                View All Articles
+              </a>
             </div>
           </div>
         </section>
@@ -4008,28 +4042,62 @@
       <!-- End home-view -->
 
       <div id="recommended-reading-view" style="display: none">
-        <section class="section-padding" style="padding-top: 100px">
-          <div class="container">
-            <header
+        <section style="padding-top: 0">
+          <header
+            style="
+              margin-bottom: 60px;
+              position: relative;
+              width: 100%;
+              height: 450px;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              text-align: center;
+              color: white;
+            "
+          >
+            <img
+              src="https://picsum.photos/seed/botanical-library/1600/600"
+              alt="Botanical Library"
               style="
-                margin-bottom: 60px;
-                border-bottom: 1px solid #ddd;
-                padding-bottom: 20px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(0.6);
+                z-index: 1;
               "
-            >
+              referrerpolicy="no-referrer"
+            />
+            <div style="position: relative; z-index: 2; padding: 0 20px">
               <h1
                 style="
                   font-family: var(--font-heading);
-                  font-size: 3rem;
-                  color: #333;
+                  font-size: 4rem;
+                  margin-bottom: 15px;
+                  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
                 "
               >
-                Recommended Reading
+                Journal
               </h1>
-              <p style="font-size: 1.2rem; color: #666; margin-top: 10px">
+              <p
+                style="
+                  font-size: 1.4rem;
+                  opacity: 0.9;
+                  max-width: 600px;
+                  margin: 0 auto;
+                  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+                "
+              >
                 A collection of essays, stories, and botanical insights.
               </p>
-            </header>
+            </div>
+          </header>
+
+          <div class="container">
             <div
               class="recommended-reading-grid"
               style="
@@ -4223,7 +4291,7 @@
       <!-- Materia Botanica View -->
       <div id="materia-view" style="display: none">
         <!-- Materia Hero Section -->
-        <section id="materia-hero" class="hero-section">
+        <section id="materia-hero" class="hero-section shop-hero-no-overlay">
           <img
             class="hero-video-bg"
             src="https://picsum.photos/seed/botanica/1920/1080?blur=2"
@@ -4231,8 +4299,8 @@
             referrerpolicy="no-referrer"
           />
           <div class="container">
-            <h6 class="hero-title hero-title-small">THE BOTANICAL ARCHIVE</h6>
-            <h1 class="hero-title">MATERIA BOTANICA</h1>
+            <h6 class="hero-title hero-title-small" style="color: #333; text-shadow: none;">THE BOTANICAL ARCHIVE</h6>
+            <h1 class="hero-title" style="color: #333; text-shadow: none;">MATERIA BOTANICA</h1>
             <a href="#materia-products" class="btn btn-primary"
               >Explore the archive</a
             >
@@ -4378,25 +4446,29 @@
           </div>
         </section>
       </div>
-      <div id="shop-view" style="display: none">
+      <div id="shop-view" style="display: none; padding: 0; margin: 0">
         <!-- Shop Hero Section -->
-        <section id="shop-hero" class="hero-section">
+        <section
+          id="shop-hero"
+          class="hero-section shop-hero-no-overlay"
+          style="
+            border-radius: 0;
+            width: 100%;
+            margin: 0 0 60px 0;
+            height: 450px;
+            min-height: 450px;
+          "
+        >
           <img
             class="hero-video-bg"
             src="https://i.pinimg.com/736x/28/d4/08/28d4087ef99ca2adc2e07c8d959babfb.jpg"
             alt="Sacred Botanicals"
+            style="z-index: 1"
             referrerpolicy="no-referrer"
           />
-          <div class="container">
-            <h1 class="hero-title">SIGNATURE RITUALS</h1>
-            <p
-              style="
-                color: rgb(255 255 255 / 90%);
-                font-size: 1.1rem;
-                max-width: 600px;
-                margin: 0 auto 30px;
-              "
-            >
+          <div class="container" style="position: relative; top: auto; transform: none; z-index: 2">
+            <h1 class="hero-title" style="color: #333; text-shadow: none;">SIGNATURE RITUALS</h1>
+            <p class="hero-description" style="color: #555; text-shadow: none;">
               High-functioning botanical formulations rooted in ancient herbal
               lineages, designed to restore rhythm and vitality through daily
               ritual.
@@ -4530,7 +4602,7 @@
       <!-- Article View -->
       <div
         id="article-view"
-        style="display: none; padding-top: 120px; padding-bottom: 80px"
+        style="display: none; padding-top: 20px; padding-bottom: 80px"
       >
         <div class="container" style="max-width: 800px; margin: 0 auto">
           <a
@@ -4549,7 +4621,7 @@
               text-transform: uppercase;
               letter-spacing: 0.05em;
             "
-            >← Back to Recommended Reading</a
+            >← Back to Journal</a
           >
           <article id="article-content">
             <!-- Content will be injected here -->
@@ -4560,7 +4632,7 @@
       <!-- Product Detail View -->
       <div
         id="product-view"
-        style="display: none; padding-top: 120px; padding-bottom: 80px"
+        style="display: none; padding-top: 20px; padding-bottom: 80px"
       >
         <div class="container">
           <a
@@ -4576,113 +4648,93 @@
           <!-- Shakti Peya -->
           <div
             id="detail-shakti"
-            class="single-product-detail"
-            style="display: block"
+            class="single-product-detail aesop-product"
+            style="display: none"
           >
-            <!-- Sticky Header -->
-            <header class="sticky-header">
-              <div class="menu-icon">☰</div>
-              <div class="logo">SHAKTI PEYA</div>
-              <div class="cart-icon">🛒</div>
-            </header>
+            <div class="aesop-grid">
+              <div class="aesop-image-col">
+                <img
+                  src="https://picsum.photos/seed/shakti1/600/600"
+                  alt="Shakti Peya Main"
+                  referrerpolicy="no-referrer"
+                />
+              </div>
+              <div class="aesop-info-col">
+                <span class="aesop-category">Botanical Archive</span>
+                <h1 class="aesop-title">Shakti Peya</h1>
+                <p class="aesop-price">$33</p>
+                <p class="aesop-description">
+                  Invigorating elixir for vitality. Shakti Peya is an invigorating elixir meticulously formulated to awaken the body's dormant vitality.
+                </p>
 
-            <!-- Product Media Slider -->
-            <div class="product-media-slider">
-              <img src="https://picsum.photos/seed/shakti1/600/600" alt="Shakti Peya Main" style="width: 100%; height: auto;" />
-            </div>
-            <!-- Product Info -->
-            <div class="product-info">
-              <h1>Shakti Peya</h1>
-              <p>Invigorating elixir for vitality.</p>
-              <p class="price">$33</p>
-              <button class="full-width-btn">Add to Cart</button>
-            </div>
+                <div class="aesop-actions">
+                  <button
+                    class="aesop-btn aesop-btn-black buy-now-btn"
+                    data-product="SHAKTI PEYA"
+                    onclick="event.stopPropagation()"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
 
-            <!-- Accordion Sections -->
-            <div class="accordion">
-              <div class="accordion-item">
-                <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">Description</button>
-                <div class="accordion-content">
-                  <p>Shakti Peya is an invigorating elixir meticulously formulated to awaken the body's dormant vitality.</p>
+                <div class="aesop-meta-item">
+                  <span class="aesop-meta-label">Ingredients</span>
+                  <p class="aesop-meta-value">
+                    Ashwagandha, Shatavari, Brahmi, Tulsi, Rose Petals, Cardamom.
+                  </p>
+                </div>
+
+                <div class="aesop-meta-item">
+                  <span class="aesop-meta-label">How to Use</span>
+                  <p class="aesop-meta-value">
+                    Mix one test tube with hot water or milk of choice. Stir well and enjoy.
+                  </p>
                 </div>
               </div>
-              <div class="accordion-item">
-                <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">Ingredients</button>
-                <div class="accordion-content">
-                  <p>Ashwagandha, Shatavari, Brahmi, Tulsi, Rose Petals, Cardamom.</p>
-                </div>
-              </div>
-              <div class="accordion-item">
-                <button class="accordion-header" onclick="this.parentElement.classList.toggle('active')">How to Use</button>
-                <div class="accordion-content">
-                  <p>Mix one test tube with hot water or milk of choice. Stir well and enjoy.</p>
-                </div>
-              </div>
             </div>
-
-                <div
-                  class="suggested-partners"
-                  style="
-                    margin-top: 50px;
-                    border-top: 1px solid #ddd;
-                    padding-top: 30px;
+          </div>
                   "
                 >
-                  <h3 style="margin-bottom: 20px">Suggested Partners</h3>
-                  <div
-                    class="horizontal-scroll"
-                    style="display: flex; gap: 20px; overflow-x: auto"
-                  >
-                    <div
-                      class="mini-product-card"
-                      onclick="showProduct('chandra')"
-                      style="cursor: pointer; min-width: 200px"
-                    >
-                      <img
-                        src="https://sampritibotanicals.com/assets/images/chandra.avif"
-                        alt="Chandra Rasa"
-                      />
-                      <h4>CHANDRA RASA | Sleep Potion</h4>
-                      <p>$33</p>
-                    </div>
-                    <div
-                      class="mini-product-card"
-                      onclick="showProduct('shakti')"
-                      style="cursor: pointer; min-width: 200px"
-                    >
-                      <img
-                        src="https://sampritibotanicals.com/assets/images/shakthi.avif"
-                        alt="Shakti Peya"
-                      />
-                      <h4>SHAKTI PEYA | Energy Elixir</h4>
-                      <p>$33</p>
-                    </div>
-                    <div
-                      class="mini-product-card"
-                      onclick="showProduct('chandra')"
-                      style="cursor: pointer; min-width: 200px"
-                    >
-                      <img
-                        src="https://sampritibotanicals.com/assets/images/chandra.avif"
-                        alt="Chandra Rasa"
-                      />
-                    <!-- Editorial Section -->
+
+                </div>
+
+                <!-- Editorial Section -->
                 <div class="editorial-section">
-                  <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya Editorial" style="width: 100%; height: auto;" />
-                  <p>Discover the ancient wisdom of Ayurveda with our carefully crafted blends, designed to restore balance and vitality to your daily life.</p>
+                  <img
+                    src="https://sampritibotanicals.com/assets/images/shakthi.avif"
+                    alt="Shakti Peya Editorial"
+                    style="width: 100%; height: auto"
+                  />
+                  <p>
+                    Discover the ancient wisdom of Ayurveda with our carefully
+                    crafted blends, designed to restore balance and vitality to
+                    your daily life.
+                  </p>
                 </div>
 
                 <!-- Related Products -->
                 <div class="related-products">
                   <h3>Related Products</h3>
                   <div class="horizontal-scroll">
-                    <div class="mini-product-card" onclick="showProduct('chandra')">
-                      <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" />
+                    <div
+                      class="mini-product-card"
+                      onclick="showProduct('chandra')"
+                    >
+                      <img
+                        src="https://sampritibotanicals.com/assets/images/chandra.avif"
+                        alt="Chandra Rasa"
+                      />
                       <h4>CHANDRA RASA | Sleep Potion</h4>
                       <p>$33</p>
                     </div>
-                    <div class="mini-product-card" onclick="showProduct('shotharaha')">
-                      <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" />
+                    <div
+                      class="mini-product-card"
+                      onclick="showProduct('shotharaha')"
+                    >
+                      <img
+                        src="https://picsum.photos/seed/shotharaha1/600/600"
+                        alt="Shotharaha"
+                      />
                       <h4>SHOTHARAHA | Dual Black Recovery</h4>
                       <p>$33</p>
                     </div>
@@ -4697,70 +4749,43 @@
             </div>
           </div>
 
-          <!-- Chandra Rasa -->
           <div
             id="detail-chandra"
-            class="single-product-detail"
+            class="single-product-detail aesop-product"
             style="display: none"
           >
-            <!-- Sticky Header -->
-            <header class="sticky-header">
-              <div class="menu-icon" onclick="document.querySelector('.mobile-menu-toggle').click()">☰</div>
-              <div class="logo">CHANDRA RASA</div>
-              <div class="cart-icon" onclick="toggleCart()">🛒</div>
-            </header>
-
-            <!-- Product Media Slider -->
-            <div class="product-media-slider">
-              <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" />
-            </div>
-
-            <!-- Product Info -->
-            <div class="product-info">
-              <h1>CHANDRA RASA | Sleep Potion</h1>
-              <p>A soothing sleep potion designed to promote deep restoration and lunar balance.</p>
-              <div class="price">$33</div>
-              <button class="btn btn-primary full-width-btn buy-now-btn" data-product="CHANDRA RASA">Add to Cart</button>
-            </div>
-
-            <!-- Accordions -->
-            <div class="accordion-section">
-              <div class="accordion-item" onclick="this.classList.toggle('active')">
-                <div class="accordion-header">
-                  <span>Description</span>
-                  <span>+</span>
-                </div>
-                <div class="accordion-content">
-                  <p>Chandra Rasa is a serene nocturnal infusion, designed to gently guide the mind and body into a state of profound tranquility. This restorative blend features a curated selection of traditional nervine botanicals, including Valerian Root, Passionflower, and Chamomile, which act in harmony to soothe the nervous system, ease the accumulation of daily tension, and quiet the mind.</p>
-                </div>
+            <div class="aesop-grid">
+              <div class="aesop-image-col">
+                <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" />
               </div>
-              <div class="accordion-item" onclick="this.classList.toggle('active')">
-                <div class="accordion-header">
-                  <span>Ingredients & Details</span>
-                  <span>+</span>
+              <div class="aesop-info-col">
+                <span class="aesop-category">Botanical Archive</span>
+                <h1 class="aesop-title">CHANDRA RASA | Sleep Potion</h1>
+                <p class="aesop-price">$33</p>
+                <p class="aesop-description">
+                  A soothing sleep potion designed to promote deep restoration and lunar balance.
+                </p>
+
+                <div class="aesop-actions">
+                  <button class="aesop-btn aesop-btn-black buy-now-btn" data-product="CHANDRA RASA">Add to Cart</button>
                 </div>
-                <div class="accordion-content">
-                  <p>Chamomile, Lavender, Valerian Root, Passionflower, Nutmeg.</p>
+
+                <div class="aesop-meta-item">
+                  <span class="aesop-meta-label">Ingredients</span>
+                  <p class="aesop-meta-value">
+                    Chamomile, Lavender, Valerian Root, Passionflower, Nutmeg.
+                  </p>
                 </div>
-              </div>
-              <div class="accordion-item" onclick="this.classList.toggle('active')">
-                <div class="accordion-header">
-                  <span>How to Use</span>
-                  <span>+</span>
-                </div>
-                <div class="accordion-content">
-                  <p>Mix one test tube with warm milk or water 30 minutes before bed.</p>
+
+                <div class="aesop-meta-item">
+                  <span class="aesop-meta-label">How to Use</span>
+                  <p class="aesop-meta-value">
+                    Mix one test tube with warm milk or water 30 minutes before bed.
+                  </p>
                 </div>
               </div>
             </div>
-
-            <!-- Editorial Section -->
-            <div class="editorial-section">
-              <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa Editorial" style="width: 100%; height: auto;" />
-              <p>Embrace the tranquility of the night with Chandra Rasa, your natural companion for peaceful sleep.</p>
-            </div>
-
-            <!-- Related Products -->
+          </div>
             <div class="related-products">
               <h3>Related Products</h3>
               <div class="horizontal-scroll">
@@ -4783,136 +4808,55 @@
             </footer>
           </div>
 
-          <!-- Shotharaha -->
           <div
             id="detail-shotharaha"
-            class="single-product-detail"
+            class="single-product-detail aesop-product"
             style="display: none"
           >
-            <div class="product-detail-grid">
-              <div class="product-detail-image-gallery">
+            <div class="aesop-grid">
+              <div class="aesop-image-col">
                 <img
-                  id="main-image-shotharaha"
-                  src="https://picsum.photos/seed/shotharaha1/600/600"
+                  src="https://picsum.photos/seed/shotharaha/600/600"
                   alt="Shotharaha Main"
-                  style="width: 100%; height: auto; margin-bottom: 15px"
+                  referrerpolicy="no-referrer"
                 />
-                <div
-                  style="
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    gap: 15px;
-                  "
-                >
-                  <img
-                    src="https://picsum.photos/seed/shotharaha1/600/600"
-                    alt="Shotharaha 1"
-                    style="width: 100%; height: auto; cursor: pointer"
-                    onclick="
-                      document.getElementById('main-image-shotharaha').src =
-                        this.src
-                    "
-                  />
-                  <img
-                    src="https://picsum.photos/seed/shotharaha2/600/600"
-                    alt="Shotharaha 2"
-                    style="width: 100%; height: auto; cursor: pointer"
-                    onclick="
-                      document.getElementById('main-image-shotharaha').src =
-                        this.src
-                    "
-                  />
-                  <img
-                    src="https://picsum.photos/seed/shotharaha3/600/600"
-                    alt="Shotharaha 3"
-                    style="width: 100%; height: auto; cursor: pointer"
-                    onclick="
-                      document.getElementById('main-image-shotharaha').src =
-                        this.src
-                    "
-                  />
-                  <img
-                    src="https://picsum.photos/seed/shotharaha4/600/600"
-                    alt="Shotharaha 4"
-                    style="width: 100%; height: auto; cursor: pointer"
-                    onclick="
-                      document.getElementById('main-image-shotharaha').src =
-                        this.src
-                    "
-                  />
-                </div>
               </div>
-              <div class="product-detail-info">
-                <h1>SHOTHARAHA | Dual Black Recovery</h1>
-                <p class="product-subtitle-large">
-                  Recovery ⋅ Balance ⋅ Renewal
+              <div class="aesop-info-col">
+                <span class="aesop-category">Botanical Archive</span>
+                <h1 class="aesop-title">SHOTHARAHA | Dual Black Recovery</h1>
+                <p class="aesop-price">$33</p>
+                <p class="aesop-description">
+                  Dual Black Recovery. A specialized blend to support healthy inflammatory response and fluid balance.
                 </p>
-                <p class="price">$33</p>
-                <div class="product-description-full">
-                  <p>
-                    Shotharaha is a deeply restorative formulation, engineered
-                    to support the body's natural recovery and renewal
-                    processes. This dual-action recovery blend harnesses the
-                    potent, synergistic properties of Turmeric, Ginger, Guggulu,
-                    and Boswellia—botanicals revered for their ability to
-                    maintain structural balance and vitality. By addressing the
-                    physical manifestations of stress and exertion, Shotharaha
-                    helps soothe the body, reduce discomfort, and promote a
-                    sense of ease. Enhanced with Black Pepper to optimize
-                    bioavailability, it is ideal for those seeking to recover
-                    after physical exertion or the rigors of daily life,
-                    promoting long-term resilience and a harmonious state of
-                    physical well-being. This blend is a testament to the power
-                    of traditional wisdom in supporting the body's inherent
-                    capacity for healing.
-                  </p>
-                </div>
-                <div style="display: flex; gap: 15px; margin-bottom: 30px">
+
+                <div class="aesop-actions">
                   <button
-                    class="btn btn-primary buy-now-btn"
+                    class="aesop-btn aesop-btn-black buy-now-btn"
                     data-product="SHOTHARAHA"
-                    style="
-                      flex: 1;
-                      height: 55px;
-                      padding: 0;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                    "
+                    onclick="event.stopPropagation()"
                   >
-                    Add to cart
-                  </button>
-                  <button
-                    class="btn btn-secondary direct-buy-btn"
-                    data-product="SHOTHARAHA"
-                    style="
-                      flex: 1;
-                      height: 55px;
-                      padding: 0;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      background: transparent;
-                      color: #333;
-                      border: 1px solid #333;
-                    "
-                  >
-                    Buy Now
+                    Add to Cart
                   </button>
                 </div>
 
-                <!-- Suggested Partners -->
-                <div class="suggested-partners" style="margin-top: 60px;">
-                  <h2 style="font-size: 1.5rem; margin-bottom: 20px; font-family: var(--font-heading);">Suggested partners</h2>
-                  <div class="suggested-partner-item" style="display: flex; gap: 20px; align-items: center; margin-bottom: 20px;">
-                    <img src="https://picsum.photos/seed/shakti1/100/100" alt="Shakti Peya" style="width: 80px; height: 80px; object-fit: cover; border-radius: 4px;">
-                    <div>
-                      <h3 style="font-size: 1.1rem; margin: 0; font-family: var(--font-heading);">Shakti Peya</h3>
-                      <p style="margin: 0; color: #666; font-family: var(--font-body);">Energy Elixir</p>
-                      <p style="margin: 0; font-weight: 500; font-family: var(--font-body);">$33</p>
-                    </div>
-                  </div>
+                <div class="aesop-meta-item">
+                  <span class="aesop-meta-label">Ingredients</span>
+                  <p class="aesop-meta-value">
+                    Turmeric, Ginger, Guggulu, Boswellia, Black Pepper.
+                  </p>
                 </div>
+
+                <div class="aesop-meta-item">
+                  <span class="aesop-meta-label">How to Use</span>
+                  <p class="aesop-meta-value">
+                    Mix one test tube with warm water or milk.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
 
                 <div class="product-accordion">
                   <div class="accordion-item active">
@@ -5080,6 +5024,21 @@
                   appearance, lending a youthful radiance and firming touch.
                 </p>
 
+                <div class="aesop-actions">
+                  <button
+                    class="aesop-btn aesop-btn-black buy-now-btn"
+                    data-product="HIBISCUS"
+                  >
+                    Add to cart — $42
+                  </button>
+                  <button
+                    class="aesop-btn aesop-btn-outline direct-buy-btn"
+                    data-product="HIBISCUS"
+                  >
+                    Buy Now
+                  </button>
+                </div>
+
                 <div class="aesop-meta-item">
                   <span class="aesop-meta-label">The Experience</span>
                   <p class="aesop-meta-value">
@@ -5101,21 +5060,6 @@
                     Apply to cleansed skin using a cotton pad or mist directly
                     onto the face. Use morning and evening for optimal results.
                   </p>
-                </div>
-
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="HIBISCUS"
-                  >
-                    Add to cart — $42
-                  </button>
-                  <button
-                    class="aesop-btn aesop-btn-outline direct-buy-btn"
-                    data-product="HIBISCUS"
-                  >
-                    Buy Now
-                  </button>
                 </div>
               </div>
             </div>
@@ -5146,6 +5090,21 @@
                   immediate sense of comfort and long-lasting moisture.
                 </p>
 
+                <div class="aesop-actions">
+                  <button
+                    class="aesop-btn aesop-btn-black buy-now-btn"
+                    data-product="ROSE"
+                  >
+                    Add to cart — $56
+                  </button>
+                  <button
+                    class="aesop-btn aesop-btn-outline direct-buy-btn"
+                    data-product="ROSE"
+                  >
+                    Buy Now
+                  </button>
+                </div>
+
                 <div class="aesop-meta-item">
                   <span class="aesop-meta-label">The Experience</span>
                   <p class="aesop-meta-value">
@@ -5168,21 +5127,6 @@
                     day to refresh and hydrate. Ideal for all skin types,
                     especially sensitive.
                   </p>
-                </div>
-
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="ROSE"
-                  >
-                    Add to cart — $56
-                  </button>
-                  <button
-                    class="aesop-btn aesop-btn-outline direct-buy-btn"
-                    data-product="ROSE"
-                  >
-                    Buy Now
-                  </button>
                 </div>
               </div>
             </div>
@@ -5213,6 +5157,21 @@
                   clear the complexion and soothe irritated skin.
                 </p>
 
+                <div class="aesop-actions">
+                  <button
+                    class="aesop-btn aesop-btn-black buy-now-btn"
+                    data-product="BLACK TURMERIC"
+                  >
+                    Add to cart — $48
+                  </button>
+                  <button
+                    class="aesop-btn aesop-btn-outline direct-buy-btn"
+                    data-product="BLACK TURMERIC"
+                  >
+                    Buy Now
+                  </button>
+                </div>
+
                 <div class="aesop-meta-item">
                   <span class="aesop-meta-label">The Experience</span>
                   <p class="aesop-meta-value">
@@ -5235,21 +5194,6 @@
                     favorite moisturizer. Use daily to promote skin clarity and
                     resilience.
                   </p>
-                </div>
-
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="BLACK TURMERIC"
-                  >
-                    Add to cart — $48
-                  </button>
-                  <button
-                    class="aesop-btn aesop-btn-outline direct-buy-btn"
-                    data-product="BLACK TURMERIC"
-                  >
-                    Buy Now
-                  </button>
                 </div>
               </div>
             </div>
@@ -5281,6 +5225,21 @@
                   tone.
                 </p>
 
+                <div class="aesop-actions">
+                  <button
+                    class="aesop-btn aesop-btn-black buy-now-btn"
+                    data-product="BLUE BUTTERFLY PEA"
+                  >
+                    Add to cart — $38
+                  </button>
+                  <button
+                    class="aesop-btn aesop-btn-outline direct-buy-btn"
+                    data-product="BLUE BUTTERFLY PEA"
+                  >
+                    Buy Now
+                  </button>
+                </div>
+
                 <div class="aesop-meta-item">
                   <span class="aesop-meta-label">The Experience</span>
                   <p class="aesop-meta-value">
@@ -5303,21 +5262,6 @@
                     luxurious, antioxidant-rich soak. Suitable for all skin
                     types.
                   </p>
-                </div>
-
-                <div class="aesop-actions">
-                  <button
-                    class="aesop-btn aesop-btn-black buy-now-btn"
-                    data-product="BLUE BUTTERFLY PEA"
-                  >
-                    Add to cart — $38
-                  </button>
-                  <button
-                    class="aesop-btn aesop-btn-outline direct-buy-btn"
-                    data-product="BLUE BUTTERFLY PEA"
-                  >
-                    Buy Now
-                  </button>
                 </div>
               </div>
             </div>
@@ -5432,7 +5376,7 @@
         id="checkout-view"
         style="
           display: none;
-          padding-top: 120px;
+          padding-top: 20px;
           padding-bottom: 80px;
           background-color: var(--bg-color);
           min-height: 100vh;
@@ -6035,7 +5979,7 @@
                     showRecommendedReading();
                     return false;
                   "
-                  >Recommended Reading</a
+                  >Journal</a
                 >
               </li>
               <li><a href="#">Customer Review</a></li>
@@ -6069,6 +6013,7 @@
               text-transform: uppercase;
               letter-spacing: 0.05em;
               color: var(--text-color);
+              font-family: 'Tenor Sans', sans-serif;
             "
           >
             Your Cart
@@ -6368,22 +6313,24 @@
       document.addEventListener("DOMContentLoaded", () => {
         // Initialize Swiper
         const swiperInstances = document.querySelectorAll(
-          ".products-grid.swiper",
+          ".products-grid.swiper, .recommended-reading-grid.swiper",
         );
         swiperInstances.forEach((el) => {
+          const slideCount = el.querySelectorAll(".swiper-slide").length;
           new Swiper(el, {
-            slidesPerView: 1.8,
+            slidesPerView: 1.2,
             spaceBetween: 15,
+            centerInsufficientSlides: true,
             pagination: {
               el: el.querySelector(".swiper-pagination"),
               clickable: true,
             },
             breakpoints: {
               640: {
-                slidesPerView: 3.2,
+                slidesPerView: 2.2,
               },
               992: {
-                slidesPerView: 5,
+                slidesPerView: 3,
               },
             },
           });
@@ -6406,17 +6353,15 @@
 
           const currentHero = isHome
             ? heroSection
-            : isShop
-              ? document.getElementById("shop-hero")
-              : isMateria
-                ? document.getElementById("materia-hero")
-                : isProvenance
-                  ? document.querySelector(".provenance-hero")
-                  : null;
+            : isProvenance
+              ? document.querySelector(".provenance-hero")
+              : null;
 
           if (
             !currentHero ||
-            (!isHome && !isShop && !isMateria && !isProvenance)
+            (!isHome && !isProvenance) ||
+            isShop ||
+            isMateria
           ) {
             mainHeader.classList.add("scrolled");
             return;
@@ -6448,15 +6393,11 @@
             // Only remove the class if scrolling hasn't already triggered it
             const isHome =
               document.getElementById("home-view").style.display !== "none";
-            const isShop =
-              document.getElementById("shop-view").style.display !== "none";
             const currentHero = isHome
               ? heroSection
-              : isShop
-                ? document.getElementById("shop-hero")
-                : null;
+              : null;
 
-            if (currentHero && (isHome || isShop)) {
+            if (currentHero && isHome) {
               const heroBottom = currentHero.getBoundingClientRect().bottom;
               if (heroBottom > 0) {
                 mainHeader.classList.remove("scrolled");
@@ -6628,6 +6569,7 @@
         let lastView = "home";
 
         window.showProduct = function (productId) {
+          document.body.classList.add("no-hero");
           if (document.getElementById("home-view").style.display !== "none")
             lastView = "home";
           else if (
@@ -6699,7 +6641,26 @@
           }
         });
 
+        window.toggleArticles = function () {
+          const hiddenArticles = document.querySelectorAll(".hidden-article");
+          const btn = document.getElementById("show-more-articles");
+
+          if (
+            hiddenArticles.length > 0 &&
+            hiddenArticles[0].style.display !== "block"
+          ) {
+            hiddenArticles.forEach((article) => {
+              article.style.display = "block";
+            });
+            btn.textContent = "View All Articles";
+            btn.onclick = function () {
+              showRecommendedReading();
+            };
+          }
+        };
+
         window.showHome = function () {
+          document.body.classList.remove("no-hero");
           document.getElementById("home-view").style.display = "block";
           document.getElementById("shop-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
@@ -6715,6 +6676,7 @@
         };
 
         window.showMateria = function () {
+          document.body.classList.remove("no-hero");
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
           document.getElementById("materia-view").style.display = "block";
@@ -6730,6 +6692,7 @@
         };
 
         window.showProvenance = function () {
+          document.body.classList.remove("no-hero");
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
@@ -6745,6 +6708,7 @@
         };
 
         window.showRecommendedReading = function () {
+          document.body.classList.add("no-hero");
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
@@ -6760,6 +6724,7 @@
         };
 
         window.showShop = function () {
+          document.body.classList.add("no-hero");
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "block";
           document.getElementById("materia-view").style.display = "none";
@@ -6775,6 +6740,7 @@
         };
 
         window.showCheckout = function () {
+          document.body.classList.add("no-hero");
           if (document.getElementById("home-view").style.display !== "none")
             lastView = "home";
           else if (
@@ -6976,6 +6942,7 @@
         };
 
         window.showArticle = function (articleId) {
+          document.body.classList.add("no-hero");
           const article = articlesData[articleId];
           if (!article) return;
 

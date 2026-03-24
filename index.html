@@ -15,7 +15,7 @@
     <!-- SEO Meta Tags -->
     <meta
       name="description"
-      content="Sampriti - Rooted in India's living herbal lineages. Discover our botanical formulations: Shakti Peya, Chandra Rasa, and Shotharaha."
+      content="Sampriti - Rooted in India's living herbal lineages. Discover our botanical formulations: Shakti Peya and Chandra Rasa."
     />
     <meta
       name="keywords"
@@ -236,7 +236,7 @@
       }
       .prov-carousel-text h2 {
         font-family: var(--font-heading);
-        font-size: 2rem;
+        font-size: 3rem;
         font-weight: 300;
         color: #2a2a2a;
         margin-bottom: 20px;
@@ -336,6 +336,622 @@
         text-decoration: underline;
         text-underline-offset: 4px;
         align-self: flex-start;
+      }
+
+      /* Reimagined Editorial Layout for The House */
+      .editorial-layout {
+        background: #fbfaf8;
+        color: #1a1a1a;
+        padding-bottom: 0;
+        font-family: var(--font-body);
+        overflow-x: hidden;
+      }
+      .editorial-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+      .chapter-num {
+        font-family: var(--font-body);
+        font-size: 0.65rem;
+        font-weight: 500;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        color: #a0a0a0;
+        display: block;
+        margin-bottom: 30px;
+      }
+      .editorial-hero {
+        padding: 240px 0 140px;
+        background: #fbfaf8;
+      }
+      .editorial-hero h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 8vw, 7.5rem);
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+        margin-bottom: 60px;
+        font-weight: 400;
+      }
+      .hero-intro-grid {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        gap: 100px;
+        align-items: start;
+      }
+      .hero-lead {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        line-height: 1.4;
+        font-style: italic;
+        color: #222;
+      }
+      .hero-desc {
+        font-size: 1.05rem;
+        line-height: 1.9;
+        color: #666;
+        max-width: 540px;
+      }
+
+      /* Split Section: Founder */
+      .founder-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: #fff;
+        align-items: stretch;
+      }
+      .founder-img {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+        min-height: 800px;
+      }
+      .founder-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .founder-content {
+        padding: 140px 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .founder-content h2 {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 50px;
+        font-weight: 400;
+      }
+      .founder-content p {
+        font-size: 1.1rem;
+        line-height: 2;
+        color: #444;
+        margin-bottom: 35px;
+        font-weight: 300;
+      }
+      .signature-block {
+        margin-top: 40px;
+      }
+      .signature-name {
+        font-family: 'Cormorant Garamond', serif;
+        font-style: italic;
+        font-size: 2.8rem;
+        display: block;
+        margin-bottom: 10px;
+      }
+      .signature-title {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.25em;
+        color: #999;
+      }
+
+      /* Sanctuary Section - Bento Grid */
+      .sanctuary-section {
+        padding: 180px 0;
+        background: #fbfaf8;
+      }
+      .sanctuary-header {
+        margin-bottom: 100px;
+        max-width: 900px;
+      }
+      .sanctuary-header h2 {
+        font-family: var(--font-heading);
+        font-size: 4.5rem;
+        line-height: 1.1;
+        margin-bottom: 30px;
+      }
+      .sanctuary-bento {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 400px);
+        gap: 30px;
+      }
+      .bento-card {
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        border: 1px solid rgba(0,0,0,0.05);
+      }
+      .bento-card.large {
+        grid-column: span 8;
+        grid-row: span 1;
+      }
+      .bento-card.medium {
+        grid-column: span 4;
+        grid-row: span 1;
+      }
+      .bento-card.tall {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
+      .bento-card.wide {
+        grid-column: span 8;
+        grid-row: span 1;
+      }
+      .bento-card img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 0;
+        opacity: 0.8;
+        transition: transform 1s ease, opacity 0.5s ease;
+      }
+      .bento-card:hover img {
+        transform: scale(1.05);
+        opacity: 1;
+      }
+      .bento-card-content {
+        position: relative;
+        z-index: 1;
+        background: rgba(255,255,255,0.9);
+        padding: 30px;
+        max-width: 80%;
+        backdrop-filter: blur(10px);
+      }
+      .bento-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+        font-weight: 400;
+      }
+      .bento-card p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        color: #444;
+      }
+
+      /* Dark Section: Pillars - Immersive */
+      .pillars-section {
+        background: #111;
+        color: #fff;
+        padding: 200px 0;
+        position: relative;
+        overflow: hidden;
+      }
+      .pillars-bg-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-family: var(--font-heading);
+        font-size: 30vw;
+        line-height: 1;
+        color: rgba(255,255,255,0.03);
+        white-space: nowrap;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .pillars-section .editorial-container {
+        position: relative;
+        z-index: 1;
+      }
+      .pillars-section .chapter-num { color: #444; }
+      .pillars-section h2 {
+        font-family: var(--font-heading);
+        font-size: 6rem;
+        line-height: 1;
+        margin-bottom: 120px;
+        text-align: center;
+        letter-spacing: -0.02em;
+      }
+      .pillars-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 80px;
+      }
+      .pillar-item {
+        text-align: left;
+        border-left: 1px solid rgba(255,255,255,0.1);
+        padding-left: 40px;
+      }
+      .pillar-item h3 {
+        font-family: var(--font-heading);
+        font-size: 2.2rem;
+        margin-bottom: 30px;
+        font-weight: 400;
+        color: #f27d26; /* Accent color from Recipe 2 */
+      }
+      .pillar-item p {
+        font-size: 1.1rem;
+        line-height: 1.9;
+        color: #ccc;
+      }
+
+      /* Craft Section */
+      .craft-section {
+        padding: 180px 0;
+        background: #fff;
+      }
+      .craft-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 120px;
+        align-items: center;
+      }
+      .craft-steps {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+      }
+      .step-item {
+        display: flex;
+        gap: 40px;
+      }
+      .step-num {
+        font-family: var(--font-heading);
+        font-size: 1.5rem;
+        opacity: 0.3;
+        margin-top: 5px;
+      }
+      .step-content h3 {
+        font-family: var(--font-heading);
+        font-size: 1.8rem;
+        margin-bottom: 15px;
+      }
+      .step-content p {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #555;
+      }
+      .craft-visual {
+        position: relative;
+      }
+      .craft-visual img {
+        width: 100%;
+        aspect-ratio: 4/5;
+        object-fit: cover;
+      }
+
+      /* Pharmacopoeias Section - Dynamic Grid */
+      .archive-section {
+        padding: 180px 0;
+        background: #fbfaf8;
+      }
+      .archive-header {
+        text-align: center;
+        margin-bottom: 120px;
+      }
+      .archive-header h2 {
+        font-family: var(--font-heading);
+        font-size: 4rem;
+        margin-bottom: 20px;
+      }
+      .archive-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        align-items: start;
+      }
+      .archive-card {
+        text-align: left;
+      }
+      .archive-card:nth-child(even) {
+        margin-top: 80px;
+      }
+      .archive-card .img-wrap {
+        overflow: hidden;
+        margin-bottom: 30px;
+        aspect-ratio: 3/4;
+        background: #eee;
+      }
+      .archive-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .archive-card:hover img {
+        transform: scale(1.1);
+      }
+      .archive-card h3 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+        font-weight: 400;
+      }
+      .archive-card p {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        color: #888;
+        line-height: 1.4;
+      }
+
+      /* Intentions */
+      .intentions-section {
+        padding: 180px 0;
+        background: #fff;
+      }
+      .intentions-layout {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 100px;
+      }
+      .intentions-intro h2 {
+        font-family: var(--font-heading);
+        font-size: 4rem;
+        line-height: 1.1;
+        margin-bottom: 30px;
+      }
+      .intentions-list {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+      }
+      .intent-card h4 {
+        font-family: var(--font-heading);
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+      }
+      .intent-card p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      /* Provenance Style Row Integration */
+      .editorial-layout .prov-media-row {
+        margin-top: 0;
+        margin-bottom: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+      }
+      .editorial-layout .prov-media-text {
+        padding: 120px 100px;
+      }
+      .editorial-layout .prov-media-text h2 {
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 40px;
+        font-weight: 400;
+      }
+      
+      @media (max-width: 1024px) {
+        .editorial-layout .prov-media-row {
+          grid-template-columns: 1fr;
+        }
+        .editorial-layout .prov-media-row.reverse {
+          direction: ltr; /* Reset for mobile */
+        }
+        .editorial-layout .prov-media-text {
+          padding: 80px 40px;
+        }
+      }
+
+      /* ===== HOUSE PAGE SPECIFIC STYLES (Refined Editorial) ===== */
+      .house-hero {
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        color: #fff;
+        padding: 0 40px;
+      }
+      .house-hero::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.3);
+        z-index: 1;
+      }
+      .house-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 900px;
+      }
+      .house-hero h1 {
+        font-family: var(--font-heading);
+        font-size: clamp(3rem, 10vw, 8rem);
+        line-height: 0.9;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+        margin-bottom: 40px;
+      }
+      .house-hero p {
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.9;
+      }
+
+      .house-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: #fff;
+        min-height: 800px;
+      }
+      .house-split.reverse {
+        direction: rtl;
+      }
+      .house-split.reverse > * {
+        direction: ltr;
+      }
+      .house-split-img {
+        height: 100%;
+      }
+      .house-split-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .house-split-text {
+        padding: 120px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .house-split-text h2 {
+        font-family: var(--font-heading);
+        font-size: 3.5rem;
+        line-height: 1.1;
+        margin-bottom: 40px;
+      }
+      .house-split-text p {
+        font-size: 1.1rem;
+        line-height: 1.9;
+        color: #555;
+        margin-bottom: 30px;
+      }
+
+      .house-pillars-staggered {
+        display: flex;
+        flex-direction: column;
+        gap: 120px;
+        padding: 120px 0;
+      }
+      .house-pillar-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .house-pillar-row:nth-child(even) {
+        direction: rtl;
+      }
+      .house-pillar-row:nth-child(even) > * {
+        direction: ltr;
+      }
+      .house-pillar-info h3 {
+        font-family: var(--font-heading);
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      .house-pillar-info p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #666;
+      }
+      .house-pillar-visual {
+        aspect-ratio: 4/3;
+        background: #eee;
+        overflow: hidden;
+      }
+      .house-pillar-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .house-gallery {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        padding: 80px 0;
+      }
+      .house-gallery-item {
+        position: relative;
+      }
+      .house-gallery-item:nth-child(2) {
+        margin-top: 80px;
+      }
+      .house-gallery-item:nth-child(3) {
+        margin-top: 160px;
+      }
+      .house-gallery-item img {
+        width: 100%;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+      .house-gallery-item h3 {
+        font-family: var(--font-heading);
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+      }
+      .house-gallery-item p {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #888;
+      }
+
+      @media (max-width: 1024px) {
+        .house-split { grid-template-columns: 1fr; }
+        .house-split-text { padding: 80px 40px; }
+        .house-pillar-row { grid-template-columns: 1fr; gap: 40px; }
+        .house-gallery { grid-template-columns: 1fr; gap: 60px; }
+        .house-gallery-item:nth-child(n) { margin-top: 0; }
+      }
+
+      /* Parallax Break */
+      .parallax-break {
+        height: 80vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      @media (max-width: 768px) {
+        .parallax-break {
+          background-attachment: scroll;
+          height: 50vh;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .editorial-container { padding: 0 40px; }
+        .editorial-hero h1 { font-size: 5rem; }
+        .hero-intro-grid { grid-template-columns: 1fr; gap: 40px; }
+        .founder-section { grid-template-columns: 1fr; }
+        .founder-img { min-height: 500px; }
+        .founder-content { padding: 80px 40px; }
+        .sanctuary-bento { 
+          grid-template-columns: repeat(2, 1fr); 
+          grid-template-rows: auto;
+          display: flex;
+          flex-direction: column;
+        }
+        .bento-card { height: 400px; width: 100%; }
+        .pillars-section h2 { font-size: 4rem; }
+        .pillars-grid { grid-template-columns: 1fr; gap: 40px; }
+        .pillar-item { padding-left: 0; border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 40px; }
+        .craft-grid { grid-template-columns: 1fr; gap: 60px; }
+        .archive-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+        .archive-card:nth-child(even) { margin-top: 0; }
+        .intentions-layout { grid-template-columns: 1fr; gap: 60px; }
+      }
+      @media (max-width: 768px) {
+        .editorial-hero h1 { font-size: 3.5rem; }
+        .sanctuary-header h2 { font-size: 2.5rem; }
+        .pillars-section h2 { font-size: 3rem; }
+        .archive-grid { grid-template-columns: 1fr; }
       }
 
       /* Full-width image break */
@@ -947,6 +1563,14 @@
         display: none;
       }
 
+      @media (max-width: 768px) {
+        .hero-section.shop-hero-no-overlay {
+          height: 450px !important;
+          min-height: 450px !important;
+          margin-bottom: 40px !important;
+        }
+      }
+
       .hero-section .container {
         position: absolute;
         top: 65%;
@@ -1010,7 +1634,7 @@
       }
 
       .hero-title {
-        font-size: 1.5rem;
+        font-size: 3.5rem;
         max-width: 900px;
         margin: 5px auto 10px;
         color: #fff;
@@ -1020,8 +1644,14 @@
       }
 
       .section-header h2 {
-        font-size: 1.25rem !important;
-        letter-spacing: 0.06em;
+        font-size: 2rem !important;
+        letter-spacing: 0.04em;
+      }
+
+      @media (max-width: 768px) {
+        .section-header h2 {
+          font-size: 1.5rem !important;
+        }
       }
 
       .hero-title-small {
@@ -1033,7 +1663,7 @@
       }
 
       .hero-description {
-        font-size: 1rem;
+        font-size: 1.25rem;
         line-height: 1.6;
         max-width: 600px;
         margin: 0 auto 15px;
@@ -1055,17 +1685,17 @@
         }
 
         .hero-title {
-          font-size: 1.75rem !important;
+          font-size: 2.5rem !important;
         }
 
         .hero-title-small {
-          font-size: 0.75rem !important;
+          font-size: 0.875rem !important;
           margin-bottom: 0 !important;
         }
 
         .hero-description {
-          font-size: 0.9rem;
-          margin-bottom: 10px;
+          font-size: 1rem;
+          margin-bottom: 15px;
         }
 
         .eyebrow {
@@ -1561,10 +2191,6 @@
           margin-top: var(--spacing-md);
         }
 
-        .hero-title {
-          font-size: 1.35rem;
-        }
-
         .main-header .container {
           flex-direction: column;
         }
@@ -1925,6 +2551,40 @@
       }
 
       /* Product Grid Styles (Homepage) */
+      .featured-products-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+        max-width: 900px;
+        margin: 60px auto 0;
+      }
+
+      @media (max-width: 768px) {
+        .featured-products-grid {
+          grid-template-columns: 1fr;
+          gap: 40px;
+          margin-top: 40px;
+        }
+        .featured-products-grid .product-grid-item {
+          width: 100% !important;
+          flex: none !important;
+        }
+        .featured-products-grid .product-grid-item h3 {
+          font-size: 1.1rem !important;
+        }
+        .featured-products-grid .product-grid-subtitle {
+          font-size: 0.95rem !important;
+        }
+        .featured-products-grid .product-grid-description {
+          font-size: 0.85rem !important;
+          white-space: normal !important;
+          overflow: visible !important;
+        }
+        .featured-products-grid .product-grid-price {
+          font-size: 0.95rem !important;
+        }
+      }
+
       .products-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -2901,12 +3561,10 @@
 
         /* Hero Section */
         .hero-title {
-          font-size: 1.25rem !important;
-          line-height: 1.3;
+          line-height: 1.2;
         }
 
         .hero-title-small {
-          font-size: 0.75rem !important;
           margin-bottom: 5px !important;
         }
 
@@ -3401,6 +4059,11 @@
         cursor: pointer;
         transition: all 0.3s ease;
         text-align: center;
+      }
+      @media (max-width: 768px) {
+        .pdp-tab-btn {
+          padding: 16px 16px;
+        }
       }
       .pdp-tab-btn:hover {
         color: var(--text-color);
@@ -4062,17 +4725,7 @@
                 >SHOP</a
               >
             </li>
-            <li>
-              <a
-                href="#materia"
-                onclick="
-                  showMateria();
-                  return false;
-                "
-                >MATERIA BOTANICA</a
-              >
-            </li>
-            <li><a href="#about">THE HOUSE</a></li>
+            <li><a href="#house" onclick="showHouse(); return false;">THE HOUSE</a></li>
             <li>
               <a
                 href="#recommended-reading"
@@ -4080,7 +4733,7 @@
                   showRecommendedReading();
                   return false;
                 "
-                >JOURNAL</a
+                >THE ARCHIVE</a
               >
             </li>
             <li>
@@ -4121,7 +4774,7 @@
               A botanical house of ritual science and disciplined formulation,
               guided by the quiet intelligence of the earth.
             </p>
-            <a href="#products" class="btn btn-primary"
+            <a href="#shop" class="btn btn-primary" onclick="showShop(); return false;"
               >Discover the collection</a
             >
           </div>
@@ -4224,11 +4877,10 @@
               </p>
             </div>
 
-            <div class="products-grid swiper">
-              <div class="swiper-wrapper">
+            <div class="featured-products-grid">
                 <!-- Product 1: Shakti Peya -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('shakti')"
                   role="button"
                   tabindex="0"
@@ -4259,7 +4911,7 @@
 
                 <!-- Product 2: Chandra Rasa -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('chandra')"
                   role="button"
                   tabindex="0"
@@ -4275,8 +4927,7 @@
                   <h3>CHANDRA RASA</h3>
                   <p class="product-grid-subtitle">Sleep Potion</p>
                   <p class="product-grid-description">
-                    A soothing sleep potion designed to promote deep restoration
-                    and lunar balance.
+                    A lunar-aligned botanical infusion designed to facilitate a profound transition from the day’s cognitive demands into restorative stillness.
                   </p>
                   <p class="product-grid-price">$33</p>
                   <button
@@ -4288,38 +4939,37 @@
                   </button>
                 </div>
 
-                <!-- Product 3: Shotharaha -->
-                <div
-                  class="product-grid-item swiper-slide"
-                  onclick="showProduct('shotharaha')"
-                  role="button"
-                  tabindex="0"
-                  style="cursor: pointer;"
-                >
-                  <div class="product-grid-image">
-                    <img
-                      class="img-default"
-                      src="https://picsum.photos/seed/shotharaha1/600/600"
-                      alt="Shotharaha - Dual Black Recovery"
-                    />
-                  </div>
-                  <h3>SHOTHARAHA</h3>
-                  <p class="product-grid-subtitle">Dual Black Recovery</p>
-                  <p class="product-grid-description">
-                    A specialized blend to support healthy inflammatory response
-                    and fluid balance.
-                  </p>
-                  <p class="product-grid-price">$33</p>
-                  <button
-                    class="btn btn-primary buy-now-btn"
-                    data-product="SHOTHARAHA"
-                    onclick="event.stopPropagation()"
-                  >
-                    Add to cart
-                  </button>
-                </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Ritual Section -->
+        <section id="ritual" class="about-section">
+          <div class="about-split-layout">
+            <div class="about-image-side">
+              <img
+                src="https://sampritibotanicals.com/assets/images/ritual.avif"
+                alt="Rituals - The Discipline of Devotion"
+              />
+            </div>
+            <div class="about-content-side">
+              <div class="about-content-inner">
+                <span class="eyebrow"> The Discipline of Devotion</span>
+                <p>
+                  The efficacy of an elixir is amplified by the state of the one
+                  who consumes it. At Sampriti, we advocate for the ritual over
+                  the routine
+                </p>
+                <p>
+                  Longevity is a quiet, cumulative practice—a daily devotion to
+                  the self that recognizes the sacredness of the metabolic
+                  state. By taking a moment to engage with the aroma, the
+                  warmth, and the bitter-sweet complexity of the herbs, you are
+                  signaling to your nervous system that it is safe to return to
+                  center. This is where the nectar is found: in the deliberate,
+                  rhythmic return to one's own essence.
+                </p>
               </div>
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </section>
@@ -4366,7 +5016,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://picsum.photos/seed/hibiscus/800/1000"
+                      src="/Sampriti%20Hibiscus.png"
                       alt="Hibiscus Rosa-Sinensis"
                       referrerpolicy="no-referrer"
                     />
@@ -4394,7 +5044,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://picsum.photos/seed/rose/800/1000"
+                      src="/sampriti-rose.png"
                       alt="Rosa Damascena"
                       referrerpolicy="no-referrer"
                     />
@@ -4450,7 +5100,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://picsum.photos/seed/butterflypea/800/1000"
+                      src="/Sampriti%20butterfly%20pea.png"
                       alt="Clitoria Ternatea"
                       referrerpolicy="no-referrer"
                     />
@@ -4500,7 +5150,7 @@
                   sustained practice.
                 </p>
                 <div style="margin-top: 30px">
-                  <a href="#" class="btn btn-view-more">Discover The House</a>
+                  <a href="#house" onclick="showHouse(); return false;" class="btn btn-view-more">Discover The House</a>
                 </div>
               </div>
             </div>
@@ -4508,248 +5158,36 @@
         </section>
 
         <!-- Philosophy Section -->
-        <section id="philosophy" class="about-section">
-          <div class="about-split-layout reverse-mobile">
-            <div class="about-content-side">
-              <div class="about-content-inner content-left">
-                <span class="eyebrow">The Architecture <br />of Rhythm </span>
-                <p>
-                  Beauty is not just an aesthetic achievement; it is a
-                  mathematical consequence of Rhythm. In the ancient Vedic
-                  tradition, this is known as Ṛta—the cosmic order that governs
-                  the rising of the sun, the turning of the seasons, and the
-                  pulsing of our own cells. When we fall out of rhythm, we fall
-                  out of radiance.
-                </p>
-              </div>
-            </div>
-            <div class="about-image-side">
-              <img
-                src="https://sampritibotanicals.com/assets/images/phi.jpg"
-                alt="Philosophy - Plants in Rhythm"
-              />
-            </div>
-          </div>
-        </section>
-
-        <!-- Standards Section -->
-        <section
-          id="standards"
-          class="section-padding"
-          style="background-color: transparent"
-        >
+        <section id="philosophy" class="section-padding" style="background-color: #fbfaf8; padding: 100px 0;">
           <div class="container">
-            <div class="section-header text-center">
-              <span class="eyebrow">Our Standards</span>
+            <div class="section-header text-center" style="margin-bottom: 80px;">
+              <span class="eyebrow">The Sampriti Philosophy</span>
+              <h2 style="font-size: 3rem; font-family: var(--font-heading); color: #333; margin-top: 10px;">Rooted in the Bio-region</h2>
             </div>
-
-            <div class="standards-grid">
-              <div class="standard-item">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
-                    <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" />
-                    <path d="m18 15-2-2" />
-                    <path d="m15 18-2-2" />
-                  </svg>
-                </div>
-                <p>Ethically Sourced</p>
+            
+            <div class="philosophy-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px;">
+              <!-- The Sanctuary -->
+              <div class="philosophy-item">
+                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;">The Sanctuary</h3>
+                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>The Landscape:</strong> Located in the sun-drenched, red-earth forests of the Auroville bio-region.</p>
+                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>The Architecture:</strong> A Spanish-style courtyard designed for the play of light, shadow, and moving air.</p>
+                <p style="line-height: 1.6; color: #555;"><strong>The Living Lab:</strong> This is our brand’s heartbeat—a private residence and laboratory where ancient botanical formulas meet modern minimalist living.</p>
               </div>
-              <div class="standard-item">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5s-3 3.5-3 5.5a7 7 0 0 0 7 7z"
-                    />
-                  </svg>
-                </div>
-                <p>Clean Formulations</p>
+              
+              <!-- Our Foundations -->
+              <div class="philosophy-item">
+                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;">Our Foundations</h3>
+                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>Lineage (Parampara):</strong> We honour the 4,000-year-old Siddha and Ayurvedic traditions.</p>
+                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>Purity (Shuddhi):</strong> Wildcrafted botanicals. Vegan formulations. Zero synthetics.</p>
+                <p style="line-height: 1.6; color: #555;"><strong>Presence (Dhyana):</strong> Every infusion is a ritual, crafted in small batches to preserve the plant’s subtle intelligence.</p>
               </div>
-              <div class="standard-item">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M11 2a2 2 0 0 0-2 2v5H7a2 2 0 0 0-2 2v2h14v-2a2 2 0 0 0-2-2h-2V4a2 2 0 0 0-2-2h-2z"
-                    />
-                    <path d="M9 13v4a3 3 0 0 0 6 0v-4" />
-                  </svg>
-                </div>
-                <p>Dosage-Specific</p>
-              </div>
-              <div class="standard-item">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M12 3v18" />
-                    <path d="M5 10c0-3.87 3.13-7 7-7s7 3.13 7 7v10H5V10z" />
-                    <path d="M8 21v-4a4 4 0 0 1 8 0v4" />
-                  </svg>
-                </div>
-                <p>Small-Batch Crafted</p>
-              </div>
-              <div class="standard-item">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <circle cx="12" cy="12" r="10" />
-                    <path d="m9 12 2 2 4-4" />
-                  </svg>
-                </div>
-                <p>No Additives</p>
-              </div>
-              <div class="standard-item">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path
-                      d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.123.354-2.5 3-2.5 3"
-                    />
-                    <path
-                      d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.123.354 2.5 3 2.5 3"
-                    />
-                    <path d="M20 15a8 8 0 0 1-16 0" />
-                    <path
-                      d="M17.657 16.657 13.414 20.9a2 2 0 0 1-2.827 0l-4.244-4.243"
-                    />
-                  </svg>
-                </div>
-                <p>No Animal Testing</p>
-              </div>
-              <div class="standard-item">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M7 20h10" />
-                    <path d="M10 20c5.5-2.5.8-6.4 3-10" />
-                    <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z" />
-                    <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z" />
-                  </svg>
-                </div>
-                <p>Vegan</p>
-              </div>
-              <div class="standard-item">
-                <div class="icon">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="0.3"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="m2 2 20 20" />
-                    <path
-                      d="M10 10c-1.7 1.7-2.6 4-2.6 6.4 0 2.5.8 4.8 2.1 6.6"
-                    />
-                    <path
-                      d="M14 14c1.7-1.7 2.6-4 2.6-6.4 0-2.5-.8-4.8-2.1-6.6"
-                    />
-                  </svg>
-                </div>
-                <p>Gluten-Free</p>
-              </div>
-            </div>
-            <div class="text-center" style="margin-top: 40px">
-              <a href="#provenance" class="btn btn-view-more">Find Out More</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Ritual Section -->
-        <section id="ritual" class="about-section">
-          <div class="about-split-layout">
-            <div class="about-image-side">
-              <img
-                src="https://sampritibotanicals.com/assets/images/ritual.avif"
-                alt="Rituals - The Discipline of Devotion"
-              />
-            </div>
-            <div class="about-content-side">
-              <div class="about-content-inner">
-                <span class="eyebrow"> The Discipline of Devotion</span>
-                <p>
-                  The efficacy of an elixir is amplified by the state of the one
-                  who consumes it. At Sampriti, we advocate for the ritual over
-                  the routine
-                </p>
-                <p>
-                  Longevity is a quiet, cumulative practice—a daily devotion to
-                  the self that recognizes the sacredness of the metabolic
-                  state. By taking a moment to engage with the aroma, the
-                  warmth, and the bitter-sweet complexity of the herbs, you are
-                  signaling to your nervous system that it is safe to return to
-                  center. This is where the nectar is found: in the deliberate,
-                  rhythmic return to one's own essence.
-                </p>
+              
+              <!-- The Slow Botanical Movement -->
+              <div class="philosophy-item">
+                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;">The Slow Botanical Movement</h3>
+                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>Conscious Scaling:</strong> We prioritize the integrity of the soil over the speed of the market.</p>
+                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>The Vessel:</strong> We choose glass, cork, and paper. Our goal is to leave no footprint, only a legacy of wellness.</p>
+                <p style="line-height: 1.6; color: #555;"><strong>Super Health:</strong> Bridging the gap between traditional "Kayakalpa" (rejuvenation) and the global seeker of clarity and joy.</p>
               </div>
             </div>
           </div>
@@ -4762,7 +5200,7 @@
         >
           <div class="container">
             <div class="section-header">
-              <span class="eyebrow">Journal</span>
+              <span class="eyebrow">Curated works</span>
             </div>
 
             <div class="recommended-reading-grid swiper">
@@ -4961,7 +5399,365 @@
           </div>
         </section>
       </div>
-      <!-- End home-view -->
+       <div id="house-view" style="display: none" class="prov-page">
+        <style id="house-redesign-styles">
+          /* Base Styles for House Page */
+          .prov-page {
+            background-color: #f5f2ed;
+            color: #1a1a1a;
+            font-family: 'Inter', sans-serif;
+          }
+
+          /* Origin I: Hero */
+          .new-house-hero {
+            height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            padding: 0 5%;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+          }
+          .new-house-hero-content {
+            max-width: 600px;
+          }
+          .new-house-hero-subtitle {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 32px;
+            display: block;
+            color: #888;
+          }
+          .new-house-hero-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3.5rem, 6vw, 6rem);
+            line-height: 0.85;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+          }
+          .new-house-hero-text {
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.6;
+            opacity: 0.8;
+          }
+          .new-house-hero-visual {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-left: 1px solid rgba(26, 26, 26, 0.1);
+            position: relative;
+          }
+
+          /* Origin II: Pilgrimage */
+          .new-pilgrimage-section {
+            padding: 160px 5%;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+          }
+          .new-pilgrimage-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+          }
+          .new-pilgrimage-media {
+            position: sticky;
+            top: 100px;
+          }
+          .new-pilgrimage-img {
+            width: 100%;
+            aspect-ratio: 4/5;
+            object-fit: cover;
+            border-radius: 0;
+            filter: grayscale(0.2);
+          }
+          .new-pilgrimage-content {
+            padding-top: 40px;
+          }
+          .new-chapter-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #888;
+            margin-bottom: 40px;
+            display: block;
+          }
+          .new-pilgrimage-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            line-height: 1;
+            font-weight: 300;
+            margin-bottom: 60px;
+            letter-spacing: -0.02em;
+          }
+          .new-pilgrimage-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 32px;
+            font-weight: 300;
+            color: #333;
+          }
+          .new-signature {
+            margin-top: 80px;
+            padding-top: 40px;
+            border-top: 1px solid rgba(26, 26, 26, 0.1);
+          }
+          .new-signature-name {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-style: italic;
+            margin-bottom: 8px;
+            display: block;
+          }
+          .new-signature-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+          }
+
+          /* Origin III: Rooted */
+          .new-rooted-section {
+            padding: 160px 5%;
+            text-align: center;
+          }
+          .new-rooted-header {
+            max-width: 900px;
+            margin: 0 auto;
+          }
+          .new-rooted-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 5vw, 5rem);
+            line-height: 0.9;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+          }
+          .new-rooted-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #666;
+            letter-spacing: 0.05em;
+          }
+
+          /* Origin IV: Alchemist's Garden (Flipped Pilgrimage) */
+          .new-alchemist-section {
+            padding: 160px 5%;
+            border-bottom: 1px solid rgba(26, 26, 26, 0.1);
+          }
+          .new-alchemist-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            align-items: start;
+          }
+          .new-alchemist-media {
+            grid-column: 2;
+            position: sticky;
+            top: 100px;
+          }
+          .new-alchemist-content {
+            grid-column: 1;
+            grid-row: 1;
+            padding-top: 40px;
+          }
+
+          /* Origin V: Legacy */
+          .new-legacy-section {
+            padding: 160px 5%;
+            text-align: center;
+          }
+          .new-legacy-header {
+            max-width: 900px;
+            margin: 0 auto;
+          }
+          .new-legacy-title {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 5vw, 5rem);
+            line-height: 0.9;
+            font-weight: 300;
+            margin-bottom: 40px;
+            letter-spacing: -0.03em;
+          }
+          .new-legacy-subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: #666;
+            letter-spacing: 0.05em;
+          }
+
+          @media (max-width: 1024px) {
+            .new-alchemist-container {
+              grid-template-columns: 1fr;
+              gap: 60px;
+            }
+            .new-alchemist-media {
+              grid-column: 1;
+              position: static;
+            }
+            .new-alchemist-content {
+              grid-column: 1;
+              padding-top: 0;
+            }
+          }
+
+          @media (max-width: 1024px) {
+            .new-house-hero {
+              grid-template-columns: 1fr;
+              height: auto;
+              padding: 120px 5%;
+            }
+            .new-house-hero-visual {
+              display: flex;
+              height: 500px;
+              border-left: none;
+              border-top: 1px solid rgba(26, 26, 26, 0.1);
+              margin-top: 60px;
+            }
+            .new-pilgrimage-container {
+              grid-template-columns: 1fr;
+              gap: 60px;
+            }
+            .new-pilgrimage-media {
+              position: static;
+            }
+          }
+          @media (max-width: 768px) {
+            .new-house-hero-visual {
+              height: 350px;
+            }
+            .new-pilgrimage-section,
+            .new-rooted-section,
+            .new-alchemist-section,
+            .new-legacy-section {
+              padding: 80px 5%;
+            }
+          }
+          .new-house-hero-video {
+            width: 90%;
+            height: 95%;
+            object-fit: cover;
+          }
+          .unmute-btn {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            padding: 10px 15px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            z-index: 10;
+            transition: background 0.3s ease;
+          }
+          .unmute-btn:hover {
+            background: #fff;
+          }
+        </style>
+
+        <!-- Origin I: The Origin -->
+        <section class="new-house-hero">
+          <div class="new-house-hero-content">
+            <span class="new-house-hero-subtitle">Origin I</span>
+            <h1 class="new-house-hero-title">The House of Sampriti</h1>
+            <p class="new-house-hero-text">Total Harmony. Perfect Love. A sanctuary of botanical ritual and disciplined formulation.</p>
+          </div>
+          <div class="new-house-hero-visual">
+            <video id="house-hero-video" class="new-house-hero-video" autoplay muted loop playsinline>
+              <source src="/the-house-video-ver-2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <button id="unmute-house-video" class="unmute-btn">Unmute</button>
+          </div>
+        </section>
+
+        <!-- Origin II: The Founder -->
+        <section class="new-pilgrimage-section">
+          <div class="new-pilgrimage-container">
+            <div class="new-pilgrimage-media">
+              <img src="https://picsum.photos/seed/founder-pilgrimage/1200/1600" alt="Aishwarya" class="new-pilgrimage-img" referrerpolicy="no-referrer">
+            </div>
+            <div class="new-pilgrimage-content">
+              <span class="new-chapter-label">Origin II</span>
+              <h2 class="new-pilgrimage-title">A Pilgrimage of Wisdom</h2>
+              <p class="new-pilgrimage-text">Sampriti was born from a quiet pilgrimage across India’s living landscapes of plant wisdom—Himalayan ridges, coastal plains, temple gardens, and rain-soaked forests of the South.</p>
+              <p class="new-pilgrimage-text">I have spent years listening to herbs—not just through texts, but through elders, forests, and my own body. In Siddha philosophy, health is not the absence of illness, but the presence of luminous balance.</p>
+              <p class="new-pilgrimage-text">Super health is a state where the body becomes a vessel of clarity and joy. To love the body deeply is a spiritual act.</p>
+              <div class="new-signature">
+                <span class="new-signature-name">Aishwarya</span>
+                <span class="new-signature-title">Founder, Sampriti Botanicals</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Origin III: The Sanctuary -->
+        <section class="new-rooted-section">
+          <div class="new-rooted-header">
+            <span class="new-chapter-label">Origin III</span>
+            <h2 class="new-rooted-title">Rooted in the Bio-region</h2>
+            <div class="new-rooted-details" style="text-align: left; max-width: 800px; margin: 0 auto;">
+              <p class="new-rooted-subtitle" style="margin-bottom: 20px;"><strong>The Landscape:</strong> Located in the sun-drenched, red-earth forests of the Auroville bio-region.</p>
+              <p class="new-rooted-subtitle" style="margin-bottom: 20px;"><strong>The Architecture:</strong> A Spanish-style courtyard designed for the play of light, shadow, and moving air.</p>
+              <p class="new-rooted-subtitle"><strong>The Living Lab:</strong> This is our brand’s heartbeat—a private residence and laboratory where ancient botanical formulas meet modern minimalist living.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Origin IV: Our Foundations -->
+        <section class="new-alchemist-section">
+          <div class="new-alchemist-container">
+            <div class="new-alchemist-media">
+              <img src="https://picsum.photos/seed/pillars-foundations/1200/1600" alt="Our Foundations" class="new-pilgrimage-img" referrerpolicy="no-referrer">
+            </div>
+            <div class="new-alchemist-content">
+              <span class="new-chapter-label">Origin IV</span>
+              <h2 class="new-pilgrimage-title">Our Foundations</h2>
+              <div class="pillar-item-content" style="margin-bottom: 40px;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">Lineage (Parampara)</h3>
+                <p class="new-pilgrimage-text">We honour the 4,000-year-old Siddha and Ayurvedic traditions.</p>
+              </div>
+              <div class="pillar-item-content" style="margin-bottom: 40px;">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">Purity (Shuddhi)</h3>
+                <p class="new-pilgrimage-text">Wildcrafted botanicals. Vegan formulations. Zero synthetics.</p>
+              </div>
+              <div class="pillar-item-content">
+                <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">Presence (Dhyana)</h3>
+                <p class="new-pilgrimage-text">Every infusion is a ritual, crafted in small batches to preserve the plant’s subtle intelligence.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Origin V: The Slow Botanical Movement -->
+        <section class="new-legacy-section">
+          <div class="new-legacy-header">
+            <span class="new-chapter-label">Origin V</span>
+            <h2 class="new-legacy-title">The Slow Botanical Movement</h2>
+            <div class="intention-item-content" style="margin-bottom: 40px;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px;">Conscious Scaling</h3>
+              <p class="new-legacy-subtitle">We prioritize the integrity of the soil over the speed of the market.</p>
+            </div>
+            <div class="intention-item-content" style="margin-bottom: 40px;">
+              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px;">The Vessel</h3>
+              <p class="new-legacy-subtitle">We choose glass, cork, and paper. Our goal is to leave no footprint, only a legacy of wellness.</p>
+            </div>
+            <div class="intention-item-content">
+              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px;">Super Health</h3>
+              <p class="new-legacy-subtitle">Bridging the gap between traditional "Kayakalpa" (rejuvenation) and the global seeker of clarity and joy.</p>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <div id="recommended-reading-view" style="display: none">
         <section style="padding-top: 0">
@@ -5003,7 +5799,7 @@
                   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
                 "
               >
-                Journal
+                Curated works
               </h1>
               <p
                 style="
@@ -5024,7 +5820,7 @@
               class="recommended-reading-grid"
               style="
                 display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
                 gap: 40px;
               "
             >
@@ -5287,7 +6083,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://picsum.photos/seed/hibiscus/800/1000"
+                      src="/Sampriti%20Hibiscus.png"
                       alt="Hibiscus Rosa-Sinensis"
                       referrerpolicy="no-referrer"
                     />
@@ -5315,7 +6111,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://picsum.photos/seed/rose/800/1000"
+                      src="/sampriti-rose.png"
                       alt="Rosa Damascena"
                       referrerpolicy="no-referrer"
                     />
@@ -5371,7 +6167,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://picsum.photos/seed/butterflypea/800/1000"
+                      src="/Sampriti%20butterfly%20pea.png"
                       alt="Clitoria Ternatea"
                       referrerpolicy="no-referrer"
                     />
@@ -5461,11 +6257,10 @@
               </p>
             </div>
 
-            <div class="products-grid swiper">
-              <div class="swiper-wrapper">
+            <div class="featured-products-grid">
                 <!-- Product 1: Shakti Peya -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                 >
                   <div class="product-grid-image">
                     <img
@@ -5491,7 +6286,7 @@
 
                 <!-- Product 2: Chandra Rasa -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                 >
                   <div class="product-grid-image">
                     <img
@@ -5502,8 +6297,7 @@
                   <h3>CHANDRA RASA</h3>
                   <p class="product-grid-subtitle">Sleep Potion</p>
                   <p class="product-grid-description">
-                    A soothing sleep potion designed to promote deep restoration
-                    and lunar balance.
+                    A lunar-aligned botanical infusion designed to facilitate a profound transition from the day’s cognitive demands into restorative stillness.
                   </p>
                   <p class="product-grid-price">$33</p>
                   <button
@@ -5515,33 +6309,6 @@
                   </button>
                 </div>
 
-                <!-- Product 3: Shotharaha -->
-                <div
-                  class="product-grid-item swiper-slide"
-                >
-                  <div class="product-grid-image">
-                    <img
-                      src="https://picsum.photos/seed/shotharaha1/600/600"
-                      alt="Shotharaha - Dual Black Recovery"
-                    />
-                  </div>
-                  <h3>SHOTHARAHA</h3>
-                  <p class="product-grid-subtitle">Dual Black Recovery</p>
-                  <p class="product-grid-description">
-                    A specialized blend to support healthy inflammatory response
-                    and fluid balance.
-                  </p>
-                  <p class="product-grid-price">$33</p>
-                  <button
-                    class="btn btn-primary buy-now-btn"
-                    data-product="SHOTHARAHA"
-                    onclick="event.stopPropagation()"
-                  >
-                    Add to cart
-                  </button>
-                </div>
-              </div>
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </section>
@@ -5569,7 +6336,7 @@
               text-transform: uppercase;
               letter-spacing: 0.05em;
             "
-            >← Back to Journal</a
+            >← Back to Curated works</a
           >
           <article id="article-content">
             <!-- Content will be injected here -->
@@ -5597,11 +6364,11 @@
                 <span class="pdp-category">Sampriti Botanicals</span>
                 <h1 class="pdp-title">Shakti Peya</h1>
                 <p class="pdp-price">$33</p>
-                <p class="pdp-description">An invigorating elixir meticulously formulated to awaken the body's dormant vitality. Rooted in ancient Ayurvedic wisdom, Shakti Peya harmonises metabolic energy with mental clarity.</p>
+                <p class="pdp-description">Shakti Peya is designed to support sustained vitality, circulation, digestion, and metabolic balance. The formulation encourages steady energy, warmth, and resilience - without sharp stimulation or depletion.</p>
 
                 <div class="pdp-key-details">
                   <span class="pdp-detail-label">Key ingredients</span>
-                  <span class="pdp-detail-value">Ashwagandha, Shatavari, Brahmi, Tulsi, Rose Petals, Cardamom</span>
+                  <span class="pdp-detail-value">Cardamom, Coriander Seeds, Curry Leaves, Pomegranate Peel, Rose Damascus, Hibiscus, Bay Leaf, Cinnamon, Turmeric, Ginger, Lemon</span>
                 </div>
 
 
@@ -5619,21 +6386,21 @@
                   <div class="pdp-tab-headers">
                     <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-shakti')">Description</button>
                     <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-shakti')">Ingredients</button>
-                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-shakti')">Packaging and Recycling</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-shakti')">Servings</button>
                   </div>
                   <div id="desc-shakti" class="pdp-tab-content active">
-                    <p>An invigorating elixir meticulously formulated to awaken the body's dormant vitality. Rooted in ancient Ayurvedic wisdom, Shakti Peya harmonises metabolic energy with mental clarity.</p>
+                    <p>Shakti Peya is designed to support sustained vitality, circulation, digestion, and metabolic balance. The formulation encourages steady energy, warmth, and resilience - without sharp stimulation or depletion.</p>
                     <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Warming, herbaceous, grounding</span></div>
                     <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking sustained energy, mental clarity, and metabolic balance</span></div>
-                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Ashwagandha, Shatavari, Brahmi, Tulsi, Rose Petals, Cardamom</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Cardamom, Coriander Seeds, Curry Leaves, Pomegranate Peel, Rose Damascus, Hibiscus, Bay Leaf, Cinnamon, Turmeric, Ginger, Lemon</span></div>
                   </div>
                   <div id="ingr-shakti" class="pdp-tab-content">
-                    <p>Ashwagandha Root Extract, Shatavari Root, Brahmi Leaf, Holy Basil (Tulsi), Organic Rose Petals, Green Cardamom, Black Pepper Extract, Raw Honey Crystals.</p>
+                    <p>Cardamom (Elettaria cardamomum), Coriander Seeds (Coriandrum sativum), Curry Leaves (Murraya koenigii), Pomegranate Peel (Punica granatum), Rose Damascus (Rosa × damascena), Hibiscus (Hibiscus sabdariffa), Bay Leaf (Laurus nobilis), Cinnamon (Cinnamomum verum), Turmeric (Curcuma longa), Ginger (Zingiber officinale), and Lemon (Citrus limon).</p>
                     <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
                     <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
                   </div>
                   <div id="pack-shakti" class="pdp-tab-content">
-                    <p>Our commitment to the earth is as deep as our commitment to your wellness. All Sampriti products are housed in recyclable glass test tubes with biodegradable cork stoppers. Our outer packaging is made from 100% post-consumer recycled paper and printed with soy-based inks. Please reuse or recycle thoughtfully.</p>
+                    <p>9 servings per kit</p>
                   </div>
                 </div>
             </div>
@@ -5641,12 +6408,15 @@
             <div class="pdp-howto-split">
               <div class="pdp-howto-text">
                 <h3>How to Use</h3>
-                <p style="margin-bottom:8px;font-weight:500;color:var(--text-color);">Shakti Peya</p>
-                <ol>
-                  <li>Dissolve one serving in 200ml of hot water or warm milk of choice.</li>
-                  <li>Stir gently and allow to steep for 2–3 minutes.</li>
-                  <li>Best enjoyed in the morning or early afternoon for sustained energy.</li>
-                  </ol>
+                <p style="margin-bottom:8px;font-weight:500;color:var(--text-color);">The Ritual of Shakti Peya</p>
+                <p style="margin-bottom:12px;">To prepare this revitalizing infusion, begin by emptying the contents of a single test tube into two cups of fresh water. Bring to a rolling boil for two to three minutes, allowing the eleven botanical ingredients to release their essence, then turn off the heat and let the tea rest for three to four minutes to reach its full potency. Once brewed, strain the liquid into your cup to reveal its signature pink hue.</p>
+                <p style="margin-bottom:8px;font-weight:500;">Best Times to Enjoy</p>
+                <ul style="list-style:none;padding:0;margin-bottom:12px;">
+                  <li><strong>Morning:</strong> Consume before breakfast to awaken your senses and the digestive fire.</li>
+                  <li><strong>Afternoon:</strong> Enjoy during tea time for a natural, caffeine-free energy boost.</li>
+                </ul>
+                <p style="margin-bottom:8px;font-weight:500;">Dosage</p>
+                <p>One test tube per day</p>
               </div>
               <div class="pdp-howto-img">
                 <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya use" referrerpolicy="no-referrer" />
@@ -5658,8 +6428,8 @@
                 <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
               </div>
               <div class="pdp-howto-text">
-                <h3>The Ritual of Vitality</h3>
-                <p>Shakti Peya is more than a supplement — it is a daily act of reverence for the body's innate intelligence. Each ingredient has been selected for its synergistic capacity to restore metabolic harmony and sustain mental acuity throughout the day.</p>
+                <h3>Botanical Highlights</h3>
+                <p>A calibrated botanical sequence designed to support metabolic vitality and digestive harmony by aiding in natural de-bloating and nutrient assimilation. This potent infusion provides a rich source of antioxidants to balance the body’s inflammatory response, while assisting in hormonal equilibrium and the preservation of cellular longevity.</p>
               </div>
             </div>
 
@@ -5676,17 +6446,9 @@
                       <p class="pdp-related-subtitle">Sleep Potion</p>
                       <p class="pdp-related-price">$33</p>
                     </div>
-                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
-                      <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Shotharaha</h4>
-                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
-                      <p class="pdp-related-price">$33</p>
-                    </div>
                     <div class="pdp-related-card" onclick="showProduct('hibiscus')">
                       <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                        <img src="/Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
                       </div>
                       <h4>Hibiscus Rosa-Sinensis</h4>
                       <p class="pdp-related-subtitle">Antioxidant Infusion</p>
@@ -5718,7 +6480,7 @@
                 <span class="pdp-category">Sampriti Botanicals</span>
                 <h1 class="pdp-title">Chandra Rasa</h1>
                 <p class="pdp-price">$33</p>
-                <p class="pdp-description">A soothing lunar potion designed to guide the body into deep, restorative sleep. Chandra Rasa draws upon time-honoured sedative botanicals to calm the nervous system and promote peaceful rest.</p>
+                <p class="pdp-description">A lunar-aligned botanical infusion designed to facilitate a profound transition from the day’s cognitive demands into restorative stillness. This calibrated formulation encourages the nervous system to decelerate, quietening the intellect and supporting the natural circadian rhythms essential for emotional equilibrium.</p>
 
                 <div class="pdp-actions">
                   <button class="pdp-add-to-cart" data-product="CHANDRA RASA" onclick="event.stopPropagation()" style="background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
@@ -5727,7 +6489,7 @@
 
                 <div class="pdp-key-details">
                   <span class="pdp-detail-label">Key ingredients</span>
-                  <span class="pdp-detail-value">Chamomile, Lavender, Valerian Root, Passionflower, Nutmeg</span>
+                  <span class="pdp-detail-value">Sarpagandha, Blue Butterfly Pea, Cloves, Fennel, Licorice, Jatamansi, Brahmi, Ashwagandha, Peppermint</span>
                 </div>
 
 
@@ -5740,34 +6502,29 @@
                   <div class="pdp-tab-headers">
                     <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-chandra')">Description</button>
                     <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-chandra')">Ingredients</button>
-                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-chandra')">Packaging and Recycling</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-chandra')">Servings</button>
                   </div>
                   <div id="desc-chandra" class="pdp-tab-content active">
-                    <p>A soothing lunar potion designed to guide the body into deep, restorative sleep. Chandra Rasa draws upon time-honoured sedative botanicals to calm the nervous system and promote peaceful rest.</p>
-                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Floral, calming, subtly sweet</span></div>
-                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking deep sleep, nervous system restoration, and evening ritual</span></div>
-                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Chamomile, Lavender, Valerian Root, Passionflower, Nutmeg</span></div>
+                    <p>A lunar-aligned botanical infusion designed to facilitate a profound transition from the day’s cognitive demands into restorative stillness. This calibrated formulation encourages the nervous system to decelerate, quietening the intellect and supporting the natural circadian rhythms essential for emotional equilibrium.</p>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Benefits</span><span class="pdp-meta-val">This botanical sequence provides comprehensive support for the parasympathetic nervous system, aiding in the reduction of cognitive noise and the stabilization of the stress response through adaptogenic modulation. It assists the body in establishing a consistent nighttime recovery cycle, supporting deeper sleep quality and the natural cellular repair processes essential for long-term neurological health.</span></div>
+                    <div class="pdp-meta-row"><span class="pdp-meta-key">Dosage</span><span class="pdp-meta-val">One test tube per day.</span></div>
                   </div>
                   <div id="ingr-chandra" class="pdp-tab-content">
-                    <p>Chamomile Flower Extract, Lavender Buds, Valerian Root, Passionflower Extract, Nutmeg Powder, Ashwagandha Root, Jatamansi, Warm Spice Blend.</p>
+                    <p>Sarpagandha (Rauvolfia serpentina), Blue Butterfly Pea (Clitoria ternatea), Cloves (Syzygium aromaticum), Fennel (Foeniculum vulgare), Licorice (Glycyrrhiza glabra), Jatamansi (Nardostachys jatamansi), Brahmi (Bacopa monnieri), Ashwagandha (Withania somnifera), and Peppermint (Mentha piperita).</p>
                     <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
                     <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
                   </div>
                   <div id="pack-chandra" class="pdp-tab-content">
-                    <p>Our commitment to the earth is as deep as our commitment to your wellness. All Sampriti products are housed in recyclable glass test tubes with biodegradable cork stoppers. Our outer packaging is made from 100% post-consumer recycled paper and printed with soy-based inks. Please reuse or recycle thoughtfully.</p>
+                    <p>9 servings per kit.</p>
+                    <p style="margin-top:15px;">Our commitment to the earth is as deep as our commitment to your wellness. All Sampriti products are housed in recyclable glass test tubes with biodegradable cork stoppers. Our outer packaging is made from 100% post-consumer recycled paper and printed with soy-based inks. Please reuse or recycle thoughtfully.</p>
                   </div>
                 </div>
             </div>
 
             <div class="pdp-howto-split">
               <div class="pdp-howto-text">
-                <h3>How to Use</h3>
-                <p style="margin-bottom:8px;font-weight:500;color:var(--text-color);">Chandra Rasa</p>
-                <ol>
-                  <li>Dissolve one serving in warm milk or water, 30 minutes before bed.</li>
-                  <li>Stir well and sip slowly as part of your evening wind-down ritual.</li>
-                  <li>For best results, maintain a consistent nightly routine.</li>
-                  </ol>
+                <h3>The Ritual of Chandra Rasa</h3>
+                <p>To invite the restorative stillness of the evening, begin by emptying the contents of a single test tube into two cups of fresh water. Bring the blend to a rolling boil for two to three minutes, allowing the calming botanicals to fully release their essence, then turn off the heat and let the infusion rest for three to four minutes to reach its peak serenity. Once brewed, strain the liquid into your cup to reveal its deep, tranquil hue.</p>
               </div>
               <div class="pdp-howto-img">
                 <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa use" referrerpolicy="no-referrer" />
@@ -5779,8 +6536,9 @@
                 <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
               </div>
               <div class="pdp-howto-text">
-                <h3>The Art of Restful Sleep</h3>
-                <p>Chandra Rasa honours the ancient understanding that true rest is not merely the absence of wakefulness, but an active process of cellular repair and nervous system recalibration. Let the lunar botanicals guide you into deep, restorative slumber.</p>
+                <h3>Best Time to Enjoy</h3>
+                <p>This soothing sleep potion is best enjoyed in the evening before bed, serving as a gentle transition into a state of profound relaxation and high-quality, calm sleep.</p>
+                <p style="margin-top: 15px;">The carminative properties of Fennel and Peppermint ensure digestive ease and physical weightlessness, allowing the system to focus entirely on restorative rest and emotional recalibration without nocturnal interruption.</p>
               </div>
             </div>
 
@@ -5797,17 +6555,9 @@
                       <p class="pdp-related-subtitle">Energy Elixir</p>
                       <p class="pdp-related-price">$33</p>
                     </div>
-                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
-                      <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Shotharaha</h4>
-                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
-                      <p class="pdp-related-price">$33</p>
-                    </div>
                     <div class="pdp-related-card" onclick="showProduct('hibiscus')">
                       <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                        <img src="/Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
                       </div>
                       <h4>Hibiscus Rosa-Sinensis</h4>
                       <p class="pdp-related-subtitle">Antioxidant Infusion</p>
@@ -5824,134 +6574,14 @@
               </div>
             </div>
           </div>
-          <!-- Shotharaha Detail -->
-          <div id="detail-shotharaha" class="single-product-detail" style="display:none">
-            <div class="pdp-wrapper">
-              <!-- Left: Image Gallery -->
-              <div class="pdp-gallery">
-                <div class="pdp-main-image">
-                  <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
-                </div>
-              </div>
 
-              <!-- Right: Product Info -->
-              <div class="pdp-info">
-                <span class="pdp-category">Sampriti Botanicals</span>
-                <h1 class="pdp-title">Shotharaha</h1>
-                <p class="pdp-price">$33</p>
-                <p class="pdp-description">A specialised dual-black recovery blend formulated to support the body's natural inflammatory response and fluid balance. Shotharaha combines potent anti-inflammatory botanicals with bioavailability enhancers.</p>
-
-                <div class="pdp-actions">
-                  <button class="pdp-add-to-cart" data-product="SHOTHARAHA" onclick="event.stopPropagation()" style="background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
-                  <button class="pdp-add-to-cart buy-now-btn" data-product="SHOTHARAHA" onclick="event.stopPropagation()">Buy Now</button>
-                </div>
-
-                <div class="pdp-key-details">
-                  <span class="pdp-detail-label">Key ingredients</span>
-                  <span class="pdp-detail-value">Turmeric, Ginger, Guggulu, Boswellia, Black Pepper</span>
-                </div>
-
-
-              </div>
-            </div>
-
-            <div class="pdp-tabs-fullwidth">
-                <!-- Tabs -->
-                <div class="pdp-tabs">
-                  <div class="pdp-tab-headers">
-                    <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-shotharaha')">Description</button>
-                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-shotharaha')">Ingredients</button>
-                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-shotharaha')">Packaging and Recycling</button>
-                  </div>
-                  <div id="desc-shotharaha" class="pdp-tab-content active">
-                    <p>A specialised dual-black recovery blend formulated to support the body's natural inflammatory response and fluid balance. Shotharaha combines potent anti-inflammatory botanicals with bioavailability enhancers.</p>
-                    <div class="pdp-meta-row"><span class="pdp-meta-key">Aroma</span><span class="pdp-meta-val">Earthy, warm, peppery</span></div>
-                    <div class="pdp-meta-row"><span class="pdp-meta-key">Suited to</span><span class="pdp-meta-val">Those seeking recovery support, joint comfort, and inflammatory balance</span></div>
-                    <div class="pdp-meta-row"><span class="pdp-meta-key">Key ingredients</span><span class="pdp-meta-val">Turmeric, Ginger, Guggulu, Boswellia, Black Pepper</span></div>
-                  </div>
-                  <div id="ingr-shotharaha" class="pdp-tab-content">
-                    <p>Curcuma Longa (Turmeric) Extract, Zingiber Officinale (Ginger) Root, Commiphora Mukul (Guggulu) Resin, Boswellia Serrata Extract, Piper Nigrum (Black Pepper) Extract, Haridra, Musta.</p>
-                    <p style="margin-top:15px;font-size:0.8rem;color:var(--text-muted);">This ingredient list is subject to change. Prior to use, please refer to the product label for the most accurate information.</p>
-                    <p style="font-size:0.8rem;color:var(--text-muted);">All Sampriti products are plant-based. We only use ingredients with a proven record of safety, efficacy and sustainability.</p>
-                  </div>
-                  <div id="pack-shotharaha" class="pdp-tab-content">
-                    <p>Our commitment to the earth is as deep as our commitment to your wellness. All Sampriti products are housed in recyclable glass test tubes with biodegradable cork stoppers. Our outer packaging is made from 100% post-consumer recycled paper and printed with soy-based inks. Please reuse or recycle thoughtfully.</p>
-                  </div>
-                </div>
-            </div>
-
-            <div class="pdp-howto-split">
-              <div class="pdp-howto-text">
-                <h3>How to Use</h3>
-                <p style="margin-bottom:8px;font-weight:500;color:var(--text-color);">Shotharaha</p>
-                <ol>
-                  <li>Dissolve one serving in warm water or juice.</li>
-                  <li>Best taken after meals for optimal absorption.</li>
-                  <li>Can be consumed once or twice daily as needed.</li>
-                  </ol>
-              </div>
-              <div class="pdp-howto-img">
-                <img src="https://picsum.photos/seed/shotharaha1/800/800" alt="Shotharaha use" referrerpolicy="no-referrer" />
-              </div>
-            </div>
-
-            <div class="pdp-howto-split">
-              <div class="pdp-howto-img">
-                <img src="https://picsum.photos/seed/shotharaha2/800/800" alt="Shotharaha" referrerpolicy="no-referrer" />
-              </div>
-              <div class="pdp-howto-text">
-                <h3>The Science of Recovery</h3>
-                <p>Formulated with dual-action black botanicals, Shotharaha targets the body's inflammatory pathways with precision. Each serving delivers concentrated plant compounds that support tissue repair and systemic balance.</p>
-              </div>
-            </div>
-
-
-            <!-- Related Products -->
-            <div class="pdp-related-section">
-              <h3 class="pdp-related-heading">You may also like</h3>
-              <div class="pdp-related-grid">
-                    <div class="pdp-related-card" onclick="showProduct('shakti')">
-                      <div class="pdp-related-img">
-                        <img src="https://sampritibotanicals.com/assets/images/shakthi.avif" alt="Shakti Peya" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Shakti Peya</h4>
-                      <p class="pdp-related-subtitle">Energy Elixir</p>
-                      <p class="pdp-related-price">$33</p>
-                    </div>
-                    <div class="pdp-related-card" onclick="showProduct('chandra')">
-                      <div class="pdp-related-img">
-                        <img src="https://sampritibotanicals.com/assets/images/chandra.avif" alt="Chandra Rasa" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Chandra Rasa</h4>
-                      <p class="pdp-related-subtitle">Sleep Potion</p>
-                      <p class="pdp-related-price">$33</p>
-                    </div>
-                    <div class="pdp-related-card" onclick="showProduct('hibiscus')">
-                      <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Hibiscus Rosa-Sinensis</h4>
-                      <p class="pdp-related-subtitle">Antioxidant Infusion</p>
-                      <p class="pdp-related-price">$42</p>
-                    </div>
-              </div>
-            </div>
-
-            <!-- Customer Reviews -->
-            <div class="pdp-related-section">
-              <h3 class="pdp-related-heading">Customer Reviews</h3>
-              <div class="pdp-reviews-content">
-                <p style="font-style: italic; color: var(--text-muted); text-align: center;">No reflections have been submitted</p>
-              </div>
-            </div>
-          </div>
           <!-- Hibiscus Rosa-Sinensis Detail -->
           <div id="detail-hibiscus" class="single-product-detail" style="display:none">
             <div class="pdp-wrapper">
               <!-- Left: Image Gallery -->
               <div class="pdp-gallery">
                 <div class="pdp-main-image">
-                  <img src="https://picsum.photos/seed/hibiscus/800/1000" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                  <img src="/Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
                 </div>
               </div>
 
@@ -5982,7 +6612,7 @@
                   <div class="pdp-tab-headers">
                     <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-hibiscus')">Description</button>
                     <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-hibiscus')">Ingredients</button>
-                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-hibiscus')">Packaging and Recycling</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-hibiscus')">Servings</button>
                   </div>
                   <div id="desc-hibiscus" class="pdp-tab-content active">
                     <p>A vibrant infusion of sun-drenched petals, known for its high antioxidant content and ability to support natural collagen production. This botanical essence revitalises the skin's appearance, lending a youthful radiance.</p>
@@ -6047,14 +6677,6 @@
                       <p class="pdp-related-subtitle">Sleep Potion</p>
                       <p class="pdp-related-price">$33</p>
                     </div>
-                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
-                      <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Shotharaha</h4>
-                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
-                      <p class="pdp-related-price">$33</p>
-                    </div>
               </div>
             </div>
 
@@ -6072,7 +6694,7 @@
               <!-- Left: Image Gallery -->
               <div class="pdp-gallery">
                 <div class="pdp-main-image">
-                  <img src="https://picsum.photos/seed/rose/800/1000" alt="Rosa Damascena" referrerpolicy="no-referrer" />
+                  <img src="/sampriti-rose.png" alt="Rosa Damascena" referrerpolicy="no-referrer" />
                 </div>
               </div>
 
@@ -6103,7 +6725,7 @@
                   <div class="pdp-tab-headers">
                     <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-rose')">Description</button>
                     <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-rose')">Ingredients</button>
-                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-rose')">Packaging and Recycling</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-rose')">Servings</button>
                   </div>
                   <div id="desc-rose" class="pdp-tab-content active">
                     <p>Steam-distilled from hand-picked petals at dawn. A deeply hydrating and soothing essence that balances the skin's pH and calms the senses. This timeless botanical provides comfort and long-lasting moisture.</p>
@@ -6168,14 +6790,6 @@
                       <p class="pdp-related-subtitle">Sleep Potion</p>
                       <p class="pdp-related-price">$33</p>
                     </div>
-                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
-                      <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Shotharaha</h4>
-                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
-                      <p class="pdp-related-price">$33</p>
-                    </div>
               </div>
             </div>
 
@@ -6224,7 +6838,7 @@
                   <div class="pdp-tab-headers">
                     <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-turmeric')">Description</button>
                     <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-turmeric')">Ingredients</button>
-                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-turmeric')">Packaging and Recycling</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-turmeric')">Servings</button>
                   </div>
                   <div id="desc-turmeric" class="pdp-tab-content active">
                     <p>A rare Kaya Kalpa agent for profound recovery and cellular longevity. Black Turmeric is revered in traditional medicine for its exceptional anti-inflammatory and rejuvenative properties.</p>
@@ -6289,14 +6903,6 @@
                       <p class="pdp-related-subtitle">Sleep Potion</p>
                       <p class="pdp-related-price">$33</p>
                     </div>
-                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
-                      <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Shotharaha</h4>
-                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
-                      <p class="pdp-related-price">$33</p>
-                    </div>
               </div>
             </div>
 
@@ -6314,7 +6920,7 @@
               <!-- Left: Image Gallery -->
               <div class="pdp-gallery">
                 <div class="pdp-main-image">
-                  <img src="https://picsum.photos/seed/butterflypea/800/1000" alt="Clitoria Ternatea" referrerpolicy="no-referrer" />
+                  <img src="/Sampriti%20butterfly%20pea.png" alt="Clitoria Ternatea" referrerpolicy="no-referrer" />
                 </div>
               </div>
 
@@ -6345,7 +6951,7 @@
                   <div class="pdp-tab-headers">
                     <button class="pdp-tab-btn active" onclick="switchPdpTab(this, 'desc-butterflypea')">Description</button>
                     <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'ingr-butterflypea')">Ingredients</button>
-                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-butterflypea')">Packaging and Recycling</button>
+                    <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-butterflypea')">Servings</button>
                   </div>
                   <div id="desc-butterflypea" class="pdp-tab-content active">
                     <p>A brilliant azure infusion rich in anthocyanins. Supports cognitive function and provides a powerful shield against environmental stressors. This antioxidant powerhouse promotes a calm, even tone.</p>
@@ -6408,14 +7014,6 @@
                       </div>
                       <h4>Chandra Rasa</h4>
                       <p class="pdp-related-subtitle">Sleep Potion</p>
-                      <p class="pdp-related-price">$33</p>
-                    </div>
-                    <div class="pdp-related-card" onclick="showProduct('shotharaha')">
-                      <div class="pdp-related-img">
-                        <img src="https://picsum.photos/seed/shotharaha1/600/600" alt="Shotharaha" referrerpolicy="no-referrer" />
-                      </div>
-                      <h4>Shotharaha</h4>
-                      <p class="pdp-related-subtitle">Dual Black Recovery</p>
                       <p class="pdp-related-price">$33</p>
                     </div>
               </div>
@@ -7088,7 +7686,7 @@
                     showRecommendedReading();
                     return false;
                   "
-                  >Journal</a
+                  >Curated works</a
                 >
               </li>
               <li><a href="#">Customer Review</a></li>
@@ -7420,6 +8018,21 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
+        // House Hero Video Unmute Logic
+        const houseVideo = document.getElementById('house-hero-video');
+        const unmuteBtn = document.getElementById('unmute-house-video');
+
+        if (houseVideo && unmuteBtn) {
+          unmuteBtn.addEventListener('click', () => {
+            if (houseVideo.muted) {
+              houseVideo.muted = false;
+              unmuteBtn.textContent = 'Mute';
+            } else {
+              houseVideo.muted = true;
+              unmuteBtn.textContent = 'Unmute';
+            }
+          });
+        }
         // Initialize Swiper
         const swiperInstances = document.querySelectorAll(
           ".products-grid.swiper, .recommended-reading-grid.swiper",
@@ -7707,6 +8320,10 @@
           )
             lastView = "shop";
           else if (
+            document.getElementById("house-view").style.display !== "none"
+          )
+            lastView = "house";
+          else if (
             document.getElementById("materia-view").style.display !== "none"
           )
             lastView = "materia";
@@ -7717,6 +8334,7 @@
 
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
           document.getElementById("provenance-view").style.display = "none";
           document.getElementById("recommended-reading-view").style.display =
@@ -7737,6 +8355,7 @@
           if (backLink) {
             backLink.onclick = function () {
               if (lastView === "shop") showShop();
+              else if (lastView === "house") showHouse();
               else if (lastView === "materia") showMateria();
               else if (lastView === "provenance") showProvenance();
               else showHome();
@@ -7745,11 +8364,13 @@
             backLink.textContent =
               lastView === "shop"
                 ? "← Back to Shop"
-                : lastView === "materia"
-                  ? "← Back to Archive"
-                  : lastView === "provenance"
-                    ? "← Back to Provenance"
-                    : "← Back to Collection";
+                : lastView === "house"
+                  ? "← Back to The House"
+                  : lastView === "materia"
+                    ? "← Back to Archive"
+                    : lastView === "provenance"
+                      ? "← Back to Provenance"
+                      : "← Back to Collection";
           }
         };
 
@@ -7759,6 +8380,8 @@
             window.showRecommendedReading();
           } else if (hash === "#shop") {
             window.showShop();
+          } else if (hash === "#house") {
+            window.showHouse();
           } else if (hash === "#materia") {
             window.showMateria();
           } else if (hash === "#provenance") {
@@ -7793,6 +8416,7 @@
           document.body.classList.remove("no-hero");
           document.getElementById("home-view").style.display = "block";
           document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
           document.getElementById("provenance-view").style.display = "none";
           document.getElementById("recommended-reading-view").style.display =
@@ -7805,10 +8429,30 @@
           if (typeof updateHeader === "function") updateHeader();
         };
 
+        window.showHouse = function () {
+          document.body.classList.remove("no-hero");
+          document.getElementById("home-view").style.display = "none";
+          document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "block";
+          const houseHeroVideo = document.getElementById('house-hero-video');
+          if (houseHeroVideo) houseHeroVideo.play();
+          document.getElementById("materia-view").style.display = "none";
+          document.getElementById("provenance-view").style.display = "none";
+          document.getElementById("recommended-reading-view").style.display =
+            "none";
+          document.getElementById("product-view").style.display = "none";
+          document.getElementById("checkout-view").style.display = "none";
+          document.getElementById("article-view").style.display = "none";
+          window.location.hash = "#house";
+          window.scrollTo(0, 0);
+          if (typeof updateHeader === "function") updateHeader();
+        };
+
         window.showMateria = function () {
           document.body.classList.remove("no-hero");
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "none";
           document.getElementById("materia-view").style.display = "block";
           document.getElementById("provenance-view").style.display = "none";
           document.getElementById("recommended-reading-view").style.display =
@@ -7825,6 +8469,7 @@
           document.body.classList.remove("no-hero");
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
           document.getElementById("provenance-view").style.display = "block";
           document.getElementById("recommended-reading-view").style.display =
@@ -7841,6 +8486,7 @@
           document.body.classList.add("no-hero");
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
           document.getElementById("provenance-view").style.display = "none";
           document.getElementById("recommended-reading-view").style.display =
@@ -7857,6 +8503,7 @@
           document.body.classList.remove("no-hero");
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "block";
+          document.getElementById("house-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
           document.getElementById("provenance-view").style.display = "none";
           document.getElementById("recommended-reading-view").style.display =
@@ -7878,6 +8525,10 @@
           )
             lastView = "shop";
           else if (
+            document.getElementById("house-view").style.display !== "none"
+          )
+            lastView = "house";
+          else if (
             document.getElementById("materia-view").style.display !== "none"
           )
             lastView = "materia";
@@ -7894,6 +8545,7 @@
 
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
           document.getElementById("provenance-view").style.display = "none";
           document.getElementById("recommended-reading-view").style.display =
@@ -7909,6 +8561,7 @@
           if (backLink) {
             backLink.onclick = function () {
               if (lastView === "shop") showShop();
+              else if (lastView === "house") showHouse();
               else if (lastView === "materia") showMateria();
               else if (lastView === "provenance") showProvenance();
               else showHome();
@@ -7917,11 +8570,13 @@
             backLink.textContent =
               lastView === "shop"
                 ? "← Back to Shop"
-                : lastView === "materia"
-                  ? "← Back to Archive"
-                  : lastView === "provenance"
-                    ? "← Back to Provenance"
-                    : "← Back to Collection";
+                : lastView === "house"
+                  ? "← Back to The House"
+                  : lastView === "materia"
+                    ? "← Back to Archive"
+                    : lastView === "provenance"
+                      ? "← Back to Provenance"
+                      : "← Back to Collection";
           }
         };
 
@@ -7963,13 +8618,13 @@
               if (href === "#shop" || text === "SHOP") {
                 e.preventDefault();
                 showShop();
-              } else if (text === "MATERIA BOTANICA") {
+              } else if (text === "THE HOUSE") {
                 e.preventDefault();
-                showMateria();
+                showHouse();
               } else if (text === "PROVENANCE") {
                 e.preventDefault();
                 showProvenance();
-              } else if (text === "RECOMMENDED READING" || text === "JOURNAL") {
+              } else if (text === "RECOMMENDED READING" || text === "THE ARCHIVE") {
                 e.preventDefault();
                 showRecommendedReading();
               } else if (href && href.startsWith("#") && href !== "#") {
@@ -8090,6 +8745,7 @@
 
           document.getElementById("home-view").style.display = "none";
           document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "none";
           document.getElementById("materia-view").style.display = "none";
           document.getElementById("provenance-view").style.display = "none";
           document.getElementById("recommended-reading-view").style.display =
@@ -8117,24 +8773,17 @@
             price: 33,
             image: "https://sampritibotanicals.com/assets/images/chandra.avif",
           },
-          SHOTHARAHA: {
-            id: "shotharaha",
-            name: "SHOTHARAHA | Dual Black Recovery",
-            price: 33,
-            image:
-              "https://picsum.photos/seed/shotharaha1/600/600",
-          },
           HIBISCUS: {
             id: "hibiscus",
             name: "HIBISCUS | Rosa-Sinensis",
             price: 42,
-            image: "https://picsum.photos/seed/hibiscus/800/1000",
+            image: "/Sampriti%20Hibiscus.png",
           },
           ROSE: {
             id: "rose",
             name: "ROSE | Rosa Damascena",
             price: 56,
-            image: "https://picsum.photos/seed/rose/800/1000",
+            image: "/sampriti-rose.png",
           },
           "BLACK TURMERIC": {
             id: "turmeric",
@@ -8146,7 +8795,7 @@
             id: "butterflypea",
             name: "BLUE BUTTERFLY PEA | Clitoria Ternatea",
             price: 38,
-            image: "https://picsum.photos/seed/butterflypea/800/1000",
+            image: "/Sampriti%20butterfly%20pea.png",
           },
         };
 

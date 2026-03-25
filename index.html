@@ -2565,8 +2565,8 @@
 
       @media (max-width: 768px) {
         .featured-products-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
           margin-top: 40px;
         }
         .featured-products-grid .product-grid-item {
@@ -2618,8 +2618,8 @@
           flex-direction: column !important;
           align-items: flex-start !important;
           text-align: left !important;
-          flex: 0 0 calc(50% - 6px) !important;
-          width: calc(50% - 6px) !important;
+          flex: 0 0 calc(50% - 10px) !important;
+          width: calc(50% - 10px) !important;
           min-width: 0 !important;
           scroll-snap-align: start !important;
           height: auto !important;
@@ -5058,7 +5058,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="Sampriti%20Hibiscus.png"
+                      src="Sampriti%20Hibiscus%20(1).png"
                       alt="Hibiscus Rosa-Sinensis"
                       referrerpolicy="no-referrer"
                     />
@@ -5255,7 +5255,7 @@
                   >
                     <div class="recommended-reading-card-image">
                       <img
-                        src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg"
+                        src="Sampriti%20Hibiscus%20(1).png"
                         alt="The Crimson Catalyst: Hibiscus in Practice"
                       />
                     </div>
@@ -5874,7 +5874,7 @@
                 >
                   <div class="recommended-reading-card-image">
                     <img
-                      src="https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg"
+                      src="Sampriti%20Hibiscus%20(1).png"
                       alt="The Crimson Catalyst: Hibiscus in Practice"
                     />
                   </div>
@@ -6125,7 +6125,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="Sampriti%20Hibiscus.png"
+                      src="Sampriti%20Hibiscus%20(1).png"
                       alt="Hibiscus Rosa-Sinensis"
                       referrerpolicy="no-referrer"
                     />
@@ -6490,7 +6490,7 @@
                     </div>
                     <div class="pdp-related-card" onclick="showProduct('hibiscus')">
                       <div class="pdp-related-img">
-                        <img src="Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                        <img src="Sampriti%20Hibiscus%20(1).png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
                       </div>
                       <h4>Hibiscus Rosa-Sinensis</h4>
                       <p class="pdp-related-subtitle">Antioxidant Infusion</p>
@@ -6599,7 +6599,7 @@
                     </div>
                     <div class="pdp-related-card" onclick="showProduct('hibiscus')">
                       <div class="pdp-related-img">
-                        <img src="Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                        <img src="Sampriti%20Hibiscus%20(1).png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
                       </div>
                       <h4>Hibiscus Rosa-Sinensis</h4>
                       <p class="pdp-related-subtitle">Antioxidant Infusion</p>
@@ -6623,7 +6623,7 @@
               <!-- Left: Image Gallery -->
               <div class="pdp-gallery">
                 <div class="pdp-main-image">
-                  <img src="Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                  <img src="Sampriti%20Hibiscus%20(1).png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
                 </div>
               </div>
 
@@ -6684,13 +6684,13 @@
                   </ol>
               </div>
               <div class="pdp-howto-img">
-                <img src="Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis use" referrerpolicy="no-referrer" />
+                <img src="Sampriti%20Hibiscus%20(1).png" alt="Hibiscus Rosa-Sinensis use" referrerpolicy="no-referrer" />
               </div>
             </div>
 
             <div class="pdp-howto-split">
               <div class="pdp-howto-img">
-                <img src="Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                <img src="Sampriti%20Hibiscus%20(1).png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
               </div>
               <div class="pdp-howto-text">
                 <h3>A Botanical Antioxidant</h3>
@@ -8098,8 +8098,8 @@
           }
 
           new Swiper(el, {
-            slidesPerView: 1.2,
-            spaceBetween: 15,
+            slidesPerView: 2,
+            spaceBetween: 10,
             centerInsufficientSlides: true,
             preventClicks: false,
             preventClicksPropagation: false,
@@ -8115,11 +8115,13 @@
               clickable: true,
             },
             breakpoints: {
-              640: {
-                slidesPerView: 2.2,
-              },
-              992: {
+              768: {
                 slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 30,
               },
             },
           });
@@ -8724,7 +8726,7 @@
             title: "The Crimson Catalyst: Hibiscus in Practice",
             category: "Botanical Profile",
             image:
-              "https://sampritibotanicals.com/assets/images/blog/hibiscus.jpg",
+              "Sampriti%20Hibiscus%20(1).png",
             content: `
                 <p>Hibiscus (Japa) is a high-functioning botanical characterized by its dense concentration of anthocyanins and organic acids. Discover how these compounds provide remarkable resilience.</p>
                 <p>In traditional practices, Hibiscus has been revered not just for its striking beauty, but for its profound physiological effects. The deep crimson hue is a direct indicator of its potent antioxidant profile, particularly its anthocyanin content, which helps combat oxidative stress and supports cardiovascular health.</p>
@@ -8842,7 +8844,7 @@
             id: "hibiscus",
             name: "HIBISCUS | Rosa-Sinensis",
             price: 42,
-            image: "Sampriti%20Hibiscus.png",
+            image: "Sampriti%20Hibiscus%20(1).png",
           },
           ROSE: {
             id: "rose",

@@ -2603,8 +2603,8 @@
         cursor: pointer;
           display: flex !important;
           flex-direction: column !important;
-          align-items: flex-start !important;
-          text-align: left !important;
+          align-items: center !important;
+          text-align: center !important;
           flex: 0 0 calc(50% - 10px) !important;
           width: calc(50% - 10px) !important;
           min-width: 0 !important;
@@ -2649,8 +2649,8 @@
         cursor: pointer;
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
+        align-items: center;
+        text-align: center;
         transition: opacity 0.3s ease;
         text-decoration: none;
         color: inherit;
@@ -4983,21 +4983,35 @@
             </div>
             <div class="about-content-side">
               <div class="about-content-inner">
-                <span class="eyebrow"> The Discipline of Devotion</span>
-                <p>
-                  The efficacy of an elixir is amplified by the state of the one
-                  who consumes it. At Sampriti, we advocate for the ritual over
-                  the routine
-                </p>
-                <p>
-                  Longevity is a quiet, cumulative practice—a daily devotion to
-                  the self that recognizes the sacredness of the metabolic
-                  state. By taking a moment to engage with the aroma, the
-                  warmth, and the bitter-sweet complexity of the herbs, you are
-                  signaling to your nervous system that it is safe to return to
-                  center. This is where the nectar is found: in the deliberate,
-                  rhythmic return to one's own essence.
-                </p>
+                <!-- Curcuma Caesia Product Card -->
+                <div
+                  class="product-grid-item"
+                  onclick="showProduct('curcuma')"
+                  role="button"
+                  tabindex="0"
+                  style="cursor: pointer; max-width: 300px; margin: 0 auto; text-align: center;"
+                >
+                  <div class="product-grid-image">
+                    <img
+                      class="img-default"
+                      src="https://sampritibotanicals.com/assets/images/curcuma.avif"
+                      alt="Curcuma Caesia - Black Turmeric"
+                    />
+                  </div>
+                  <h3>CURCUMA CAESIA</h3>
+                  <p class="product-grid-subtitle">Black Turmeric</p>
+                  <p class="product-grid-description">
+                    A rare and potent botanical, revered for its restorative properties and deep, earthy essence.
+                  </p>
+                  <p class="product-grid-price">$45</p>
+                  <button
+                    class="btn btn-primary buy-now-btn"
+                    data-product="CURCUMA CAESIA"
+                    onclick="event.stopPropagation()"
+                  >
+                    Add to cart
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -5247,7 +5261,7 @@
         </section>
 
         <!-- Philosophy Section -->
-        <section id="philosophy" class="section-padding" style="background-color: #fbfaf8; padding: 100px 0;">
+        <section id="philosophy" class="section-padding" style="background-color: #fffef2; padding: 100px 0;">
           <div class="container">
             
             <div class="philosophy-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px;">

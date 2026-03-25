@@ -2565,8 +2565,8 @@
 
       @media (max-width: 768px) {
         .featured-products-grid {
-          grid-template-columns: 1fr;
-          gap: 40px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 20px;
           margin-top: 40px;
         }
         .featured-products-grid .product-grid-item {
@@ -2618,8 +2618,8 @@
           flex-direction: column !important;
           align-items: flex-start !important;
           text-align: left !important;
-          flex: 0 0 calc(50% - 6px) !important;
-          width: calc(50% - 6px) !important;
+          flex: 0 0 calc(50% - 10px) !important;
+          width: calc(50% - 10px) !important;
           min-width: 0 !important;
           scroll-snap-align: start !important;
           height: auto !important;
@@ -8098,8 +8098,8 @@
           }
 
           new Swiper(el, {
-            slidesPerView: 1.2,
-            spaceBetween: 15,
+            slidesPerView: 2,
+            spaceBetween: 10,
             centerInsufficientSlides: true,
             preventClicks: false,
             preventClicksPropagation: false,
@@ -8115,11 +8115,13 @@
               clickable: true,
             },
             breakpoints: {
-              640: {
-                slidesPerView: 2.2,
-              },
-              992: {
+              768: {
                 slidesPerView: 3,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 4,
+                spaceBetween: 30,
               },
             },
           });

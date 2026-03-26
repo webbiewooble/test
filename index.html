@@ -1252,8 +1252,8 @@
       }
 
       .btn-primary:hover {
-        background-color: var(--text-light);
-        border-color: var(--text-light);
+        background-color: #111;
+        border-color: #111;
       }
 
       .btn-secondary {
@@ -1666,7 +1666,7 @@
 
       .hero-description {
         font-family: "Tenor Sans", sans-serif;
-        font-size: 0.9rem;
+        font-size: 1.05rem;
         line-height: 1.6;
         max-width: 600px;
         margin: 0 auto 15px;
@@ -1697,7 +1697,7 @@
         }
 
         .hero-description {
-          font-size: 0.85rem;
+          font-size: 1rem;
           margin-bottom: 15px;
         }
 
@@ -3731,8 +3731,8 @@
       }
 
       .aesop-btn:hover {
-        background: var(--text-light);
-        border-color: var(--text-light);
+        background: #111;
+        border-color: #111;
       }
 
       .razorpay-btn {
@@ -3880,8 +3880,8 @@
       }
 
       .aesop-btn-black:hover {
-        background: var(--text-light);
-        border-color: var(--text-light);
+        background: #111;
+        border-color: #111;
       }
 
       .aesop-btn-outline {
@@ -5052,77 +5052,76 @@
                 />
                 Your browser does not support the video tag.
               </video>
-              <button
-                id="mute-toggle"
-                onclick="const v = document.getElementById('about-video'); v.muted = !v.muted; this.innerText = v.muted ? 'Unmute' : 'Mute';"
-                style="position: absolute; bottom: 20px; right: 20px; z-index: 10; padding: 8px 16px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 4px; cursor: pointer;"
-              >
-                Unmute
-              </button>
+              <div class="hero-video-controls">
+                <button
+                  id="about-play-pause"
+                  class="hero-ctrl-btn"
+                  aria-label="Pause video"
+                >
+                  <!-- Pause icon (shown when playing) -->
+                  <svg
+                    class="icon-pause"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <rect x="6" y="4" width="4" height="16"></rect>
+                    <rect x="14" y="4" width="4" height="16"></rect>
+                  </svg>
+                  <!-- Play icon (shown when paused) -->
+                  <svg
+                    class="icon-play"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    style="display: none"
+                  >
+                    <polygon points="5,3 19,12 5,21"></polygon>
+                  </svg>
+                </button>
+                <button
+                  id="about-mute-unmute"
+                  class="hero-ctrl-btn"
+                  aria-label="Unmute video"
+                >
+                  <!-- Mute icon (shown when muted) -->
+                  <svg
+                    class="icon-muted"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <line x1="23" y1="9" x2="17" y2="15"></line>
+                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                  </svg>
+                  <!-- Unmute icon (shown when unmuted) -->
+                  <svg
+                    class="icon-unmuted"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    style="display: none"
+                  >
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path
+                      d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </section>
 
-
-        <!-- Our Standards Section -->
-        <section id="standards" class="section-padding" style="background-color: #fffef2; padding: 80px 0;">
-          <div class="container">
-            <h2 style="text-align: center; font-family: var(--font-heading); font-size: 2.5rem; color: var(--aman-ink); margin-bottom: 60px;">Our Standards</h2>
-            <div style="display: flex; flex-wrap: nowrap; gap: 40px; justify-content: center; text-align: center; overflow-x: auto; padding-bottom: 20px;">
-              
-              <!-- Standard 1 -->
-              <div>
-                <i data-lucide="heart-handshake" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
-                <p style="font-size: 0.9rem; color: var(--text-light);">Ethically Sourced</p>
-              </div>
-
-              <!-- Standard 2 -->
-              <div>
-                <i data-lucide="droplet" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
-                <p style="font-size: 0.9rem; color: var(--text-light);">Clean Formulations</p>
-              </div>
-
-              <!-- Standard 3 -->
-              <div>
-                <i data-lucide="plus" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
-                <p style="font-size: 0.9rem; color: var(--text-light);">Dosage-Specific</p>
-              </div>
-
-              <!-- Standard 4 -->
-              <div>
-                <i data-lucide="box" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
-                <p style="font-size: 0.9rem; color: var(--text-light);">Small-Batch Crafted</p>
-              </div>
-
-              <!-- Standard 5 -->
-              <div>
-                <i data-lucide="check-circle" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
-                <p style="font-size: 0.9rem; color: var(--text-light);">No Additives</p>
-              </div>
-
-              <!-- Standard 6 -->
-              <div>
-                <i data-lucide="smile" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
-                <p style="font-size: 0.9rem; color: var(--text-light);">No Animal Testing</p>
-              </div>
-
-              <!-- Standard 7 -->
-              <div>
-                <i data-lucide="sprout" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
-                <p style="font-size: 0.9rem; color: var(--text-light);">Vegan</p>
-              </div>
-
-              <!-- Standard 8 -->
-              <div>
-                <i data-lucide="ban" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
-                <p style="font-size: 0.9rem; color: var(--text-light);">Gluten-Free</p>
-              </div>
-
-            </div>
-          </div>
-          <script src="https://unpkg.com/lucide@latest"></script>
-          <script>lucide.createIcons();</script>
-        </section>
 
         <!-- Materia Botanica Slider Section -->
         <section
@@ -5276,20 +5275,132 @@
           </div>
         </section>
 
+        <!-- Our Standards Section -->
+        <section id="standards" class="section-padding" style="background-color: #fffef2; padding: 80px 0;">
+          <div class="container">
+            <h2 style="text-align: center; font-family: var(--font-heading); font-size: 2.5rem; color: var(--aman-ink); margin-bottom: 60px;">Our Standards</h2>
+            <div style="display: flex; flex-wrap: nowrap; gap: 40px; justify-content: center; text-align: center; overflow-x: auto; padding-bottom: 20px;">
+              
+              <!-- Standard 1 -->
+              <div>
+                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
+                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
+                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+                  </svg>
+                  <i data-lucide="leaf" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                </div>
+                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Ethically Sourced</p>
+              </div>
+
+              <!-- Standard 2 -->
+              <div>
+                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
+                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
+                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+                  </svg>
+                  <i data-lucide="droplet" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                </div>
+                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Clean Formulations</p>
+              </div>
+
+              <!-- Standard 3 -->
+              <div>
+                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
+                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
+                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+                  </svg>
+                  <i data-lucide="pipette" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                </div>
+                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Dosage-Specific</p>
+              </div>
+
+              <!-- Standard 4 -->
+              <div>
+                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
+                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
+                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+                  </svg>
+                  <i data-lucide="flask-conical" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                </div>
+                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Small-Batch Crafted</p>
+              </div>
+
+              <!-- Standard 5 -->
+              <div>
+                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
+                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
+                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+                  </svg>
+                  <i data-lucide="shield-check" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                </div>
+                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">No Additives</p>
+              </div>
+
+              <!-- Standard 6 -->
+              <div>
+                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
+                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
+                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+                  </svg>
+                  <i data-lucide="rabbit" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                </div>
+                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">No Animal Testing</p>
+              </div>
+
+              <!-- Standard 7 -->
+              <div>
+                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
+                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
+                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+                  </svg>
+                  <i data-lucide="sprout" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                </div>
+                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Vegan</p>
+              </div>
+
+              <!-- Standard 8 -->
+              <div>
+                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
+                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
+                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
+                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+                  </svg>
+                  <i data-lucide="wheat-off" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                </div>
+                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Gluten-Free</p>
+              </div>
+
+            </div>
+          </div>
+          <script src="https://unpkg.com/lucide@latest"></script>
+          <script>lucide.createIcons();</script>
+        </section>
+
         <!-- Journal Section -->
         <section
           id="recommended-reading-preview"
           class="section-padding bg-light"
         >
           <div class="container">
-            <div class="section-header">
-              <span class="eyebrow">Curated works</span>
-            </div>
+            <h2 style="text-align: center; font-family: var(--font-heading); font-size: 2.5rem; color: var(--aman-ink); margin-bottom: 60px;">Curated Works</h2>
 
-            <div class="recommended-reading-grid swiper">
-              <div class="swiper-wrapper">
+            <div
+              class="recommended-reading-grid"
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 40px;
+              "
+            >
                 <!-- Recommended Reading Post 1 -->
-                <article class="recommended-reading-card swiper-slide">
+                <article class="recommended-reading-card">
                   <a
                     class="recommended-reading-card-link"
                     href="#article-hibiscus"
@@ -5316,7 +5427,7 @@
                 </article>
 
                 <!-- Recommended Reading Post 2 -->
-                <article class="recommended-reading-card swiper-slide">
+                <article class="recommended-reading-card">
                   <a
                     class="recommended-reading-card-link"
                     href="#article-black-turmeric"
@@ -5346,7 +5457,7 @@
                 </article>
 
                 <!-- Recommended Reading Post 3 -->
-                <article class="recommended-reading-card swiper-slide">
+                <article class="recommended-reading-card">
                   <a
                     class="recommended-reading-card-link"
                     href="#article-lunar-pulse"
@@ -5372,84 +5483,6 @@
                     </div>
                   </a>
                 </article>
-
-                <!-- Recommended Reading Post 4 -->
-                <article class="recommended-reading-card swiper-slide">
-                  <a
-                    class="recommended-reading-card-link"
-                    href="#article-art-of-infusion"
-                  >
-                    <div class="recommended-reading-card-image">
-                      <img
-                        src="https://picsum.photos/seed/herb1/600/400"
-                        alt="Placeholder Article 4"
-                      />
-                    </div>
-                    <div class="recommended-reading-card-content">
-                      <span class="recommended-reading-category"
-                        >Placeholder</span
-                      >
-                      <h3>The Art of Infusion</h3>
-                      <p>
-                        Explore the delicate balance of time, temperature, and
-                        botanical integrity in crafting the perfect herbal
-                        infusion.
-                      </p>
-                    </div>
-                  </a>
-                </article>
-
-                <!-- Recommended Reading Post 5 -->
-                <article class="recommended-reading-card swiper-slide">
-                  <a
-                    class="recommended-reading-card-link"
-                    href="#article-seasonal-rhythms"
-                  >
-                    <div class="recommended-reading-card-image">
-                      <img
-                        src="https://picsum.photos/seed/herb2/600/400"
-                        alt="Placeholder Article 5"
-                      />
-                    </div>
-                    <div class="recommended-reading-card-content">
-                      <span class="recommended-reading-category"
-                        >Placeholder</span
-                      >
-                      <h3>Seasonal Rhythms</h3>
-                      <p>
-                        Aligning your daily rituals with the changing seasons to
-                        optimize vitality and well-being.
-                      </p>
-                    </div>
-                  </a>
-                </article>
-
-                <!-- Recommended Reading Post 6 -->
-                <article class="recommended-reading-card swiper-slide">
-                  <a
-                    class="recommended-reading-card-link"
-                    href="#article-science-of-scent"
-                  >
-                    <div class="recommended-reading-card-image">
-                      <img
-                        src="https://picsum.photos/seed/herb3/600/400"
-                        alt="Placeholder Article 6"
-                      />
-                    </div>
-                    <div class="recommended-reading-card-content">
-                      <span class="recommended-reading-category"
-                        >Placeholder</span
-                      >
-                      <h3>The Science of Scent</h3>
-                      <p>
-                        Understanding how aromatic compounds interact with our
-                        nervous system to induce calm and clarity.
-                      </p>
-                    </div>
-                  </a>
-                </article>
-              </div>
-              <div class="swiper-pagination"></div>
             </div>
 
             <div class="text-center" style="margin-top: 40px">
@@ -5851,7 +5884,7 @@
                   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
                 "
               >
-                Curated works
+                Curated Works
               </h1>
               <p
                 style="
@@ -6370,7 +6403,7 @@
               text-transform: uppercase;
               letter-spacing: 0.05em;
             "
-            >← Back to Curated works</a
+            >← Back to Curated Works</a
           >
           <article id="article-content">
             <!-- Content will be injected here -->
@@ -7720,7 +7753,7 @@
                     showRecommendedReading();
                     return false;
                   "
-                  >Curated works</a
+                  >Curated Works</a
                 >
               </li>
               <li><a href="#">Customer Review</a></li>
@@ -8220,6 +8253,41 @@
             muteUnmuteBtn.setAttribute(
               "aria-label",
               heroVideo.muted ? "Unmute video" : "Mute video",
+            );
+          });
+        }
+
+        // --- About video controls ---
+        const aboutVideo = document.getElementById("about-video");
+        const aboutPlayPauseBtn = document.getElementById("about-play-pause");
+        const aboutMuteUnmuteBtn = document.getElementById("about-mute-unmute");
+
+        if (aboutVideo && aboutPlayPauseBtn) {
+          aboutPlayPauseBtn.addEventListener("click", () => {
+            if (aboutVideo.paused) {
+              aboutVideo.play();
+              aboutPlayPauseBtn.querySelector(".icon-pause").style.display = "";
+              aboutPlayPauseBtn.querySelector(".icon-play").style.display = "none";
+              aboutPlayPauseBtn.setAttribute("aria-label", "Pause video");
+            } else {
+              aboutVideo.pause();
+              aboutPlayPauseBtn.querySelector(".icon-pause").style.display = "none";
+              aboutPlayPauseBtn.querySelector(".icon-play").style.display = "";
+              aboutPlayPauseBtn.setAttribute("aria-label", "Play video");
+            }
+          });
+        }
+
+        if (aboutVideo && aboutMuteUnmuteBtn) {
+          aboutMuteUnmuteBtn.addEventListener("click", () => {
+            aboutVideo.muted = !aboutVideo.muted;
+            aboutMuteUnmuteBtn.querySelector(".icon-muted").style.display =
+              aboutVideo.muted ? "" : "none";
+            aboutMuteUnmuteBtn.querySelector(".icon-unmuted").style.display =
+              aboutVideo.muted ? "none" : "";
+            aboutMuteUnmuteBtn.setAttribute(
+              "aria-label",
+              aboutVideo.muted ? "Unmute video" : "Mute video",
             );
           });
         }

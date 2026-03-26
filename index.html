@@ -398,7 +398,7 @@
       .founder-section {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background: #fff;
+        background: var(--bg-color);
         align-items: stretch;
       }
       .founder-img {
@@ -453,7 +453,7 @@
       /* Sanctuary Section - Bento Grid */
       .sanctuary-section {
         padding: 180px 0;
-        background: #fbfaf8;
+        background: var(--bg-color);
       }
       .sanctuary-header {
         margin-bottom: 100px;
@@ -474,7 +474,7 @@
       .bento-card {
         position: relative;
         overflow: hidden;
-        background: #fff;
+        background: var(--bg-color);
         padding: 40px;
         display: flex;
         flex-direction: column;
@@ -592,7 +592,7 @@
       /* Craft Section */
       .craft-section {
         padding: 180px 0;
-        background: #fff;
+        background: var(--bg-color);
       }
       .craft-grid {
         display: grid;
@@ -637,7 +637,7 @@
       /* Pharmacopoeias Section - Dynamic Grid */
       .archive-section {
         padding: 180px 0;
-        background: #fbfaf8;
+        background: var(--bg-color);
       }
       .archive-header {
         text-align: center;
@@ -664,7 +664,7 @@
         overflow: hidden;
         margin-bottom: 30px;
         aspect-ratio: 3/4;
-        background: #eee;
+        background: var(--bg-color);
       }
       .archive-card img {
         width: 100%;
@@ -692,7 +692,7 @@
       /* Intentions */
       .intentions-section {
         padding: 180px 0;
-        background: #fff;
+        background: var(--bg-color);
       }
       .intentions-layout {
         display: grid;
@@ -793,7 +793,7 @@
       .house-split {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        background: #fff;
+        background: var(--bg-color);
         min-height: 800px;
       }
       .house-split.reverse {
@@ -1735,7 +1735,7 @@
         position: relative;
         padding: 0;
         margin-bottom: 0;
-        background-color: #f4f1ea;
+        background-color: #fffef2;
 
         /* Override previous margin */
       }
@@ -1892,7 +1892,7 @@
 
       .product-image {
         padding: 0;
-        background-color: white;
+        background-color: var(--bg-color);
         box-shadow: 0 10px 30px rgb(0 0 0 / 5%);
         display: flex;
         justify-content: center;
@@ -2673,7 +2673,7 @@
         overflow: hidden;
         margin-bottom: 18px;
         display: block;
-        background-color: #f6f5f3;
+        background-color: var(--bg-color);
         position: relative;
       }
 
@@ -3795,7 +3795,7 @@
         width: 100%;
         height: auto;
         object-fit: cover;
-        background-color: #f6f5f3;
+        background-color: var(--bg-color);
       }
 
       .aesop-info-col {
@@ -4986,27 +4986,26 @@
                 <!-- Curcuma Caesia Product Card -->
                 <div
                   class="product-grid-item"
-                  onclick="showProduct('curcuma')"
-                  role="button"
-                  tabindex="0"
-                  style="cursor: pointer; max-width: 300px; margin: 0 auto; text-align: center;"
+                  onclick="showProduct('turmeric')"
+                  style="max-width: 300px; margin: 0 auto;"
                 >
                   <div class="product-grid-image">
                     <img
-                      class="img-default"
-                      src="https://sampritibotanicals.com/assets/images/curcuma.avif"
-                      alt="Curcuma Caesia - Black Turmeric"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Sampriti%20Black%20Turmeric.png"
+                      alt="Curcuma Caesia"
+                      referrerpolicy="no-referrer"
                     />
                   </div>
-                  <h3>CURCUMA CAESIA</h3>
-                  <p class="product-grid-subtitle">Black Turmeric</p>
+                  <h3>BLACK TURMERIC</h3>
+                  <p class="product-grid-subtitle">Curcuma Caesia</p>
                   <p class="product-grid-description">
-                    A rare and potent botanical, revered for its restorative properties and deep, earthy essence.
+                    A rare Kaya Kalpa agent for profound recovery and cellular
+                    longevity.
                   </p>
-                  <p class="product-grid-price">$45</p>
+                  <p class="product-grid-price">$48</p>
                   <button
                     class="btn btn-primary buy-now-btn"
-                    data-product="CURCUMA CAESIA"
+                    data-product="BLACK TURMERIC"
                     onclick="event.stopPropagation()"
                   >
                     Add to cart
@@ -5017,6 +5016,55 @@
           </div>
         </section>
 
+        <!-- About Section -->
+        <section id="about" class="about-section">
+          <div class="about-split-layout">
+            <div class="about-content-side">
+              <div class="about-content-inner">
+                <span class="eyebrow"
+                  >The Intelligence of Ancient Botanicals</span
+                >
+
+                <p>
+                  Emerging from India's diverse herbal traditions and regional
+                  pharmacopoeias, our formulations draw from centuries of
+                  botanical wisdom practiced,and perfected across generations.
+                  Each blend honours the intelligence of classical herbal
+                  alchemy, cultivating vitality and balance through ritual and
+                  sustained practice.
+                </p>
+                <div style="margin-top: 30px">
+                  <a href="#house" onclick="showHouse(); return false;" class="btn btn-view-more">Discover The House</a>
+                </div>
+              </div>
+            </div>
+            <div class="about-image-side" style="position: relative;">
+              <video
+                id="about-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+              >
+                <source
+                  src="https://github.com/webbiewooble/test/raw/main/The%20house%20video%20Ver%202.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <button
+                id="mute-toggle"
+                onclick="const v = document.getElementById('about-video'); v.muted = !v.muted; this.innerText = v.muted ? 'Unmute' : 'Mute';"
+                style="position: absolute; bottom: 20px; right: 20px; z-index: 10; padding: 8px 16px; background: rgba(0,0,0,0.5); color: white; border: none; border-radius: 4px; cursor: pointer;"
+              >
+                Unmute
+              </button>
+            </div>
+          </div>
+        </section>
+
+
         <!-- Our Standards Section -->
         <section id="standards" class="section-padding" style="background-color: #fffef2; padding: 80px 0;">
           <div class="container">
@@ -5025,49 +5073,49 @@
               
               <!-- Standard 1 -->
               <div>
-                <i data-lucide="leaf" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
+                <i data-lucide="heart-handshake" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
                 <p style="font-size: 0.9rem; color: var(--text-light);">Ethically Sourced</p>
               </div>
 
               <!-- Standard 2 -->
               <div>
-                <i data-lucide="flask-conical" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
+                <i data-lucide="droplet" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
                 <p style="font-size: 0.9rem; color: var(--text-light);">Clean Formulations</p>
               </div>
 
               <!-- Standard 3 -->
               <div>
-                <i data-lucide="scale" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
+                <i data-lucide="plus" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
                 <p style="font-size: 0.9rem; color: var(--text-light);">Dosage-Specific</p>
               </div>
 
               <!-- Standard 4 -->
               <div>
-                <i data-lucide="package" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
+                <i data-lucide="box" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
                 <p style="font-size: 0.9rem; color: var(--text-light);">Small-Batch Crafted</p>
               </div>
 
               <!-- Standard 5 -->
               <div>
-                <i data-lucide="ban" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
+                <i data-lucide="check-circle" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
                 <p style="font-size: 0.9rem; color: var(--text-light);">No Additives</p>
               </div>
 
               <!-- Standard 6 -->
               <div>
-                <i data-lucide="rabbit" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
+                <i data-lucide="smile" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
                 <p style="font-size: 0.9rem; color: var(--text-light);">No Animal Testing</p>
               </div>
 
               <!-- Standard 7 -->
               <div>
-                <i data-lucide="sprout" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
+                <i data-lucide="sprout" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
                 <p style="font-size: 0.9rem; color: var(--text-light);">Vegan</p>
               </div>
 
               <!-- Standard 8 -->
               <div>
-                <i data-lucide="wheat-off" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
+                <i data-lucide="ban" stroke-width="1" style="width: 40px; height: 40px; margin-bottom: 15px; display: block; margin-left: auto; margin-right: auto; color: #888;"></i>
                 <p style="font-size: 0.9rem; color: var(--text-light);">Gluten-Free</p>
               </div>
 
@@ -5203,7 +5251,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://picsum.photos/seed/turmeric/800/1000"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Sampriti%20Black%20Turmeric.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -5225,69 +5273,6 @@
                 </div>
               </div>
               <div class="swiper-pagination"></div>
-            </div>
-          </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about-section">
-          <div class="about-split-layout">
-            <div class="about-image-side">
-              <img
-                src="https://sampritibotanicals.com/assets/images/about.avif"
-                alt="About Sampriti - Herbal Lineage"
-              />
-            </div>
-            <div class="about-content-side">
-              <div class="about-content-inner">
-                <span class="eyebrow"
-                  >The Intelligence of Ancient Botanicals</span
-                >
-
-                <p>
-                  Emerging from India's diverse herbal traditions and regional
-                  pharmacopoeias, our formulations draw from centuries of
-                  botanical wisdom practiced,and perfected across generations.
-                  Each blend honours the intelligence of classical herbal
-                  alchemy, cultivating vitality and balance through ritual and
-                  sustained practice.
-                </p>
-                <div style="margin-top: 30px">
-                  <a href="#house" onclick="showHouse(); return false;" class="btn btn-view-more">Discover The House</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Philosophy Section -->
-        <section id="philosophy" class="section-padding" style="background-color: #fffef2; padding: 100px 0;">
-          <div class="container">
-            
-            <div class="philosophy-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px;">
-              <!-- The Sanctuary -->
-              <div class="philosophy-item">
-                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;">The Sanctuary</h3>
-                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>The Landscape:</strong> Located in the sun-drenched, red-earth forests of the Auroville bio-region.</p>
-                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>The Architecture:</strong> A Spanish-style courtyard designed for the play of light, shadow, and moving air.</p>
-                <p style="line-height: 1.6; color: #555;"><strong>The Living Lab:</strong> This is our brand’s heartbeat—a private residence and laboratory where ancient botanical formulas meet modern minimalist living.</p>
-              </div>
-              
-              <!-- Our Foundations -->
-              <div class="philosophy-item">
-                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;">Our Foundations</h3>
-                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>Lineage (Parampara):</strong> We honour the 4,000-year-old Siddha and Ayurvedic traditions.</p>
-                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>Purity (Shuddhi):</strong> Wildcrafted botanicals. Vegan formulations. Zero synthetics.</p>
-                <p style="line-height: 1.6; color: #555;"><strong>Presence (Dhyana):</strong> Every infusion is a ritual, crafted in small batches to preserve the plant’s subtle intelligence.</p>
-              </div>
-              
-              <!-- The Slow Botanical Movement -->
-              <div class="philosophy-item">
-                <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 20px; border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;">The Slow Botanical Movement</h3>
-                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>Conscious Scaling:</strong> We prioritize the integrity of the soil over the speed of the market.</p>
-                <p style="margin-bottom: 15px; line-height: 1.6; color: #555;"><strong>The Vessel:</strong> We choose glass, cork, and paper. Our goal is to leave no footprint, only a legacy of wellness.</p>
-                <p style="line-height: 1.6; color: #555;"><strong>Super Health:</strong> Bridging the gap between traditional "Kayakalpa" (rejuvenation) and the global seeker of clarity and joy.</p>
-              </div>
             </div>
           </div>
         </section>
@@ -5327,9 +5312,6 @@
                         and organic acids. Discover how these compounds provide
                         remarkable resilience.
                       </p>
-                      <span class="recommended-reading-read-more"
-                        >Read Article →</span
-                      >
                     </div>
                   </a>
                 </article>
@@ -5360,9 +5342,6 @@
                         as Kaya Kalpa (agents of longevity). Among these, Black
                         Turmeric is the rarest.
                       </p>
-                      <span class="recommended-reading-read-more"
-                        >Read Article →</span
-                      >
                     </div>
                   </a>
                 </article>
@@ -5391,9 +5370,6 @@
                         universal "Mother of the World," the moistening
                         principle that governs the flow of all liquids.
                       </p>
-                      <span class="recommended-reading-read-more"
-                        >Read Article →</span
-                      >
                     </div>
                   </a>
                 </article>
@@ -5420,9 +5396,6 @@
                         botanical integrity in crafting the perfect herbal
                         infusion.
                       </p>
-                      <span class="recommended-reading-read-more"
-                        >Read Article →</span
-                      >
                     </div>
                   </a>
                 </article>
@@ -5448,9 +5421,6 @@
                         Aligning your daily rituals with the changing seasons to
                         optimize vitality and well-being.
                       </p>
-                      <span class="recommended-reading-read-more"
-                        >Read Article →</span
-                      >
                     </div>
                   </a>
                 </article>
@@ -5476,9 +5446,6 @@
                         Understanding how aromatic compounds interact with our
                         nervous system to induce calm and clarity.
                       </p>
-                      <span class="recommended-reading-read-more"
-                        >Read Article →</span
-                      >
                     </div>
                   </a>
                 </article>
@@ -5933,9 +5900,6 @@
                       and organic acids. Discover how these compounds provide
                       remarkable resilience.
                     </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
                   </div>
                 </a>
               </article>
@@ -5965,9 +5929,6 @@
                       Kalpa (agents of longevity). Among these, Black Turmeric
                       is the rarest.
                     </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
                   </div>
                 </a>
               </article>
@@ -5996,9 +5957,6 @@
                       universal "Mother of the World," the moistening principle
                       that governs the flow of all liquids.
                     </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
                   </div>
                 </a>
               </article>
@@ -6025,9 +5983,6 @@
                       botanical integrity in crafting the perfect herbal
                       infusion.
                     </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
                   </div>
                 </a>
               </article>
@@ -6053,9 +6008,6 @@
                       Aligning your daily rituals with the changing seasons to
                       optimize vitality and well-being.
                     </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
                   </div>
                 </a>
               </article>
@@ -6081,9 +6033,6 @@
                       Understanding how aromatic compounds interact with our
                       nervous system to induce calm and clarity.
                     </p>
-                    <span class="recommended-reading-read-more"
-                      >Read Article →</span
-                    >
                   </div>
                 </a>
               </article>
@@ -6900,13 +6849,13 @@
               <!-- Right: Product Info -->
               <div class="pdp-info">
                 <span class="pdp-category">Sampriti Botanicals</span>
-                <h1 class="pdp-title">Curcuma Caesia</h1>
+                <h1 class="pdp-title">Black Turmeric</h1>
                 <p class="pdp-price">$48</p>
                 <p class="pdp-description">A rare Kaya Kalpa agent for profound recovery and cellular longevity. Black Turmeric is revered in traditional medicine for its exceptional anti-inflammatory and rejuvenative properties.</p>
 
                 <div class="pdp-actions" style="display: flex; gap: 12px;">
-                  <button class="pdp-add-to-cart" data-product="BLACK TURMERIC" onclick="event.stopPropagation()" style="flex: 1; background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
-                  <button class="pdp-add-to-cart buy-now-btn" data-product="BLACK TURMERIC" onclick="event.stopPropagation()" style="flex: 1;">Buy Now</button>
+                  <button class="pdp-add-to-cart" data-product="Black Turmeric" onclick="event.stopPropagation()" style="flex: 1; background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
+                  <button class="pdp-add-to-cart buy-now-btn" data-product="Black Turmeric" onclick="event.stopPropagation()" style="flex: 1;">Buy Now</button>
                 </div>
 
                 <div class="pdp-key-details">
@@ -8020,7 +7969,7 @@
         <div
           id="free-shipping-msg"
           style="
-            background: #f6f5f3;
+            background: var(--bg-color);
             padding: 15px;
             text-align: center;
             margin-bottom: 30px;
@@ -8896,9 +8845,9 @@
             price: 56,
             image: "https://raw.githubusercontent.com/webbiewooble/test/main/sampriti%20rose.png",
           },
-          "BLACK TURMERIC": {
+          "Black Turmeric": {
             id: "turmeric",
-            name: "BLACK TURMERIC | Curcuma Caesia",
+            name: "Black Turmeric | Curcuma caesia",
             price: 48,
             image: "https://picsum.photos/seed/turmeric/800/1000",
           },

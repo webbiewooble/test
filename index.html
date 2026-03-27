@@ -78,8 +78,59 @@
         --spacing-lg: 80px;
         --spacing-xl: 120px;
         --aman-bg: #fffef2;
-        --aman-ink: #333;
+        --aman-ink: #000;
         --aman-gold: #b5a48b;
+      }
+
+      /* Standards Icons Styles - Redesigned for Minimalistic Elegance */
+      .standard-icon-container {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto 20px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        cursor: pointer;
+      }
+      .standard-icon-container:hover {
+        transform: translateY(-5px);
+      }
+      .standard-icon-container svg.icon-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        stroke: #000;
+        stroke-width: 0.2;
+        fill: none;
+        transition: stroke-width 0.3s ease;
+      }
+      .standard-icon-container:hover svg.icon-bg {
+        stroke-width: 0.5;
+      }
+      .standard-icon-container i {
+        width: 32px;
+        height: 32px;
+        color: #000 !important;
+        stroke: #000 !important;
+        z-index: 1;
+        stroke-width: 0.75 !important;
+        transition: transform 0.3s ease;
+      }
+      .standard-icon-container:hover i {
+        transform: scale(1.1);
+      }
+      .standard-label {
+        font-family: var(--font-body);
+        font-size: 0.7rem;
+        color: #000;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        font-weight: 400;
+        opacity: 0.8;
       }
 
       .recommended-reading-card.hidden-article {
@@ -1488,7 +1539,7 @@
       .logo img {
         height: auto;
         max-height: 60px;
-        filter: brightness(0) invert(1);
+        filter: brightness(0);
         transition: filter 0.4s ease;
       }
 
@@ -1730,10 +1781,11 @@
       }
 
       .about-image-side {
-        width: 57%;
+        width: 50%;
         position: relative;
         padding: 0;
-        margin-bottom: 0;
+        margin: 0;
+        display: flex;
         background-color: #fffef2;
 
         /* Override previous margin */
@@ -1741,7 +1793,8 @@
 
       .about-image-side img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
         display: block;
         border-radius: 0;
 
@@ -1749,9 +1802,10 @@
       }
 
       .about-content-side {
-        width: 43%;
+        width: 50%;
         display: flex;
         align-items: center;
+        justify-content: center;
         background-color: var(--bg-color);
 
         /* Soft organic background color */
@@ -1759,12 +1813,18 @@
 
       .about-content-inner {
         /* padding: var(--spacing-lg); */
-        padding: 35px 100px 15px 70px;
+        padding: 0;
+        margin: 0 auto;
         max-width: 850px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
       }
 
       .about-content-inner.content-left {
-        padding: 35px 50px 15px;
+        padding: 0;
       }
 
       /* Remove old About styles that interfere */
@@ -3913,7 +3973,7 @@
       /* === Aesop-Inspired Product Detail Page === */
       .pdp-wrapper {
         display: grid;
-        grid-template-columns: 1.2fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 80px;
         align-items: start;
         padding: 40px 0 80px;
@@ -4994,11 +5054,11 @@
                 <div
                   class="product-grid-item"
                   onclick="showProduct('turmeric')"
-                  style="max-width: 300px; margin: 0 auto;"
+                  style="max-width: 300px; margin: 0 auto; height: auto !important;"
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Sampriti%20Black%20Turmeric.png"
+                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -5097,31 +5157,31 @@
                     class="icon-muted"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    fill="currentColor"
                   >
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-                    <line x1="23" y1="9" x2="17" y2="15"></line>
-                    <line x1="17" y1="9" x2="23" y2="15"></line>
+                    <path
+                      d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z"
+                      opacity=".3"
+                    ></path>
+                    <line
+                      x1="1"
+                      y1="1"
+                      x2="23"
+                      y2="23"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    ></line>
                   </svg>
                   <!-- Unmute icon (shown when unmuted) -->
                   <svg
                     class="icon-unmuted"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    fill="currentColor"
                     style="display: none"
                   >
-                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
                     <path
-                      d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"
+                      d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z"
                     ></path>
                   </svg>
                 </button>
@@ -5257,7 +5317,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Sampriti%20Black%20Turmeric.png"
+                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -5284,105 +5344,97 @@
         </section>
 
         <!-- Our Standards Section -->
-        <section id="standards" class="section-padding" style="background-color: #fffef2; padding: 80px 0;">
+        <section id="standards" class="section-padding" style="background-color: #fffef2; padding: 100px 0;">
           <div class="container">
-            <h2 style="text-align: center; font-family: var(--font-heading); font-size: 2.5rem; color: var(--aman-ink); margin-bottom: 60px;">Our Standards</h2>
-            <div style="display: flex; flex-wrap: nowrap; gap: 40px; justify-content: center; text-align: center; overflow-x: auto; padding-bottom: 20px;">
+            <h2 style="text-align: center; font-family: var(--font-heading); font-size: 2.5rem; color: var(--aman-ink); margin-bottom: 80px; font-weight: 300; letter-spacing: 0.05em;">Our Standards</h2>
+            <div style="display: flex; flex-wrap: nowrap; gap: 60px; justify-content: center; text-align: center; overflow-x: auto; padding-bottom: 40px; -ms-overflow-style: none; scrollbar-width: none;">
               
               <!-- Standard 1 -->
-              <div>
-                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
-                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
-                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <div style="min-width: 120px;">
+                <div class="standard-icon-container">
+                  <svg class="icon-bg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" />
                   </svg>
-                  <i data-lucide="leaf" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                  <i data-lucide="heart-handshake"></i>
                 </div>
-                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Ethically Sourced</p>
+                <p class="standard-label">Ethically<br>Sourced</p>
               </div>
 
               <!-- Standard 2 -->
-              <div>
-                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
-                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
-                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <div style="min-width: 120px;">
+                <div class="standard-icon-container">
+                  <svg class="icon-bg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" />
                   </svg>
-                  <i data-lucide="droplet" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                  <i data-lucide="droplet"></i>
                 </div>
-                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Clean Formulations</p>
+                <p class="standard-label">Clean<br>Formulations</p>
               </div>
 
               <!-- Standard 3 -->
-              <div>
-                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
-                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
-                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <div style="min-width: 120px;">
+                <div class="standard-icon-container">
+                  <svg class="icon-bg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" />
                   </svg>
-                  <i data-lucide="pipette" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                  <i data-lucide="pill"></i>
                 </div>
-                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Dosage-Specific</p>
+                <p class="standard-label">Dosage<br>Specific</p>
               </div>
 
               <!-- Standard 4 -->
-              <div>
-                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
-                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
-                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <div style="min-width: 120px;">
+                <div class="standard-icon-container">
+                  <svg class="icon-bg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" />
                   </svg>
-                  <i data-lucide="flask-conical" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                  <i data-lucide="landmark"></i>
                 </div>
-                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Small-Batch Crafted</p>
+                <p class="standard-label">Small-Batch<br>Crafted</p>
               </div>
 
               <!-- Standard 5 -->
-              <div>
-                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
-                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
-                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <div style="min-width: 120px;">
+                <div class="standard-icon-container">
+                  <svg class="icon-bg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" />
                   </svg>
-                  <i data-lucide="shield-check" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                  <i data-lucide="circle-check"></i>
                 </div>
-                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">No Additives</p>
+                <p class="standard-label">No<br>Additives</p>
               </div>
 
               <!-- Standard 6 -->
-              <div>
-                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
-                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
-                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <div style="min-width: 120px;">
+                <div class="standard-icon-container">
+                  <svg class="icon-bg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" />
                   </svg>
-                  <i data-lucide="rabbit" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                  <i data-lucide="rabbit"></i>
                 </div>
-                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">No Animal Testing</p>
+                <p class="standard-label">No Animal<br>Testing</p>
               </div>
 
               <!-- Standard 7 -->
-              <div>
-                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
-                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
-                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <div style="min-width: 120px;">
+                <div class="standard-icon-container">
+                  <svg class="icon-bg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" />
                   </svg>
-                  <i data-lucide="sprout" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                  <i data-lucide="sprout"></i>
                 </div>
-                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Vegan</p>
+                <p class="standard-label">Vegan</p>
               </div>
 
               <!-- Standard 8 -->
-              <div>
-                <div style="width: 64px; height: 64px; margin: 0 auto 15px; position: relative; display: flex; align-items: center; justify-content: center;">
-                  <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0;">
-                    <circle cx="32" cy="32" r="31" stroke="#000" stroke-width="0.5"/>
-                    <circle cx="32" cy="32" r="27" stroke="#000" stroke-width="0.5" stroke-dasharray="2 2"/>
+              <div style="min-width: 120px;">
+                <div class="standard-icon-container">
+                  <svg class="icon-bg" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" />
                   </svg>
-                  <i data-lucide="wheat-off" stroke-width="1" style="width: 24px; height: 24px; color: #000; z-index: 1;"></i>
+                  <i data-lucide="wheat-off"></i>
                 </div>
-                <p style="font-size: 0.8rem; color: #000; letter-spacing: 0.05em; text-transform: uppercase;">Gluten-Free</p>
+                <p class="standard-label">Gluten-Free</p>
               </div>
 
             </div>
@@ -5493,9 +5545,12 @@
                 </article>
             </div>
 
-            <div class="text-center" style="margin-top: 40px">
+            <div class="text-center" style="margin-top: 50px; margin-bottom: 30px;">
               <a
-                class="btn btn-view-more"
+                class="btn"
+                style="background-color: #f6f5f0; border: 1px solid #dcdacb; color: #5a5a5a; padding: 14px 40px; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-decoration: none; display: inline-block;"
+                onmouseover="this.style.backgroundColor='#e8e6d9'; this.style.color='#111'; this.style.borderColor='#c8c6b9';"
+                onmouseout="this.style.backgroundColor='#f6f5f0'; this.style.color='#5a5a5a'; this.style.borderColor='#dcdacb';"
                 href="#recommended-reading"
                 onclick="showRecommendedReading(); return false;"
               >
@@ -5782,7 +5837,72 @@
               <source src="https://raw.githubusercontent.com/webbiewooble/test/main/The%20house%20video%20Ver%202.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <button id="unmute-house-video" class="unmute-btn">Unmute</button>
+            <div class="hero-video-controls">
+              <button
+                id="house-play-pause"
+                class="hero-ctrl-btn"
+                aria-label="Pause video"
+              >
+                <!-- Pause icon (shown when playing) -->
+                <svg
+                  class="icon-pause"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <rect x="6" y="4" width="4" height="16"></rect>
+                  <rect x="14" y="4" width="4" height="16"></rect>
+                </svg>
+                <!-- Play icon (shown when paused) -->
+                <svg
+                  class="icon-play"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style="display: none"
+                >
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </button>
+              <button
+                id="house-mute-unmute"
+                class="hero-ctrl-btn"
+                aria-label="Unmute video"
+              >
+                <!-- Mute icon (shown when muted) -->
+                <svg
+                  class="icon-muted"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z"
+                    opacity=".3"
+                  ></path>
+                  <line
+                    x1="1"
+                    y1="1"
+                    x2="23"
+                    y2="23"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  ></line>
+                </svg>
+                <!-- Unmute icon (shown when unmuted) -->
+                <svg
+                  class="icon-unmuted"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style="display: none"
+                >
+                  <path
+                    d="M11 5L6 9H2v6h4l5 4V5zm8.07 1.93a10 10 0 0 1 0 14.14l-1.41-1.41a8 8 0 0 0 0-11.31l1.41-1.42zM15.54 9.46a5 5 0 0 1 0 7.07l-1.41-1.41a3 3 0 0 0 0-4.24l1.41-1.42z"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
         </section>
 
@@ -6002,7 +6122,7 @@
               </article>
 
               <!-- Recommended Reading Post 4 -->
-              <article class="recommended-reading-card">
+              <article class="recommended-reading-card hidden-article" style="display: none;">
                 <a
                   class="recommended-reading-card-link"
                   href="#article-art-of-infusion"
@@ -6028,7 +6148,7 @@
               </article>
 
               <!-- Recommended Reading Post 5 -->
-              <article class="recommended-reading-card">
+              <article class="recommended-reading-card hidden-article" style="display: none;">
                 <a
                   class="recommended-reading-card-link"
                   href="#article-seasonal-rhythms"
@@ -6053,7 +6173,7 @@
               </article>
 
               <!-- Recommended Reading Post 6 -->
-              <article class="recommended-reading-card">
+              <article class="recommended-reading-card hidden-article" style="display: none;">
                 <a
                   class="recommended-reading-card-link"
                   href="#article-science-of-scent"
@@ -6076,6 +6196,10 @@
                   </div>
                 </a>
               </article>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px; margin-bottom: 30px;">
+              <button class="btn" style="background-color: #f6f5f0; border: 1px solid #dcdacb; color: #5a5a5a; padding: 14px 40px; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.05);" onmouseover="this.style.backgroundColor='#e8e6d9'; this.style.color='#111'; this.style.borderColor='#c8c6b9';" onmouseout="this.style.backgroundColor='#f6f5f0'; this.style.color='#5a5a5a'; this.style.borderColor='#dcdacb';" onclick="showMoreArticles(this)">View More</button>
             </div>
           </div>
         </section>
@@ -6242,7 +6366,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://picsum.photos/seed/turmeric/800/1000"
+                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -6402,7 +6526,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Sampriti%20Black%20Turmeric.png"
+                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -7073,7 +7197,7 @@
               <!-- Left: Image Gallery -->
               <div class="pdp-gallery">
                 <div class="pdp-main-image">
-                  <img src="https://picsum.photos/seed/turmeric/800/1000" alt="Curcuma Caesia" referrerpolicy="no-referrer" />
+                  <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="Curcuma Caesia" referrerpolicy="no-referrer" />
                 </div>
               </div>
 
@@ -7134,13 +7258,13 @@
                   </ol>
               </div>
               <div class="pdp-howto-img">
-                <img src="https://picsum.photos/seed/turmeric/800/800" alt="Black Turmeric use" referrerpolicy="no-referrer" />
+                <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="Black Turmeric use" referrerpolicy="no-referrer" />
               </div>
             </div>
 
             <div class="pdp-howto-split">
               <div class="pdp-howto-img">
-                <img src="https://picsum.photos/seed/turmeric2/800/800" alt="Black Turmeric" referrerpolicy="no-referrer" />
+                <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="Black Turmeric" referrerpolicy="no-referrer" />
               </div>
               <div class="pdp-howto-text">
                 <h3>Ancient Root, Modern Science</h3>
@@ -7908,7 +8032,7 @@
                 style="
                   max-width: 140px;
                   height: auto;
-                  filter: brightness(0) invert(1);
+                  filter: brightness(0);
                   opacity: 0.8;
                 "
               />
@@ -8286,17 +8410,36 @@
       document.addEventListener("DOMContentLoaded", () => {
         // House Hero Video Unmute Logic
         const houseVideo = document.getElementById('house-hero-video');
-        const unmuteBtn = document.getElementById('unmute-house-video');
+        const housePlayPauseBtn = document.getElementById('house-play-pause');
+        const houseMuteUnmuteBtn = document.getElementById('house-mute-unmute');
 
-        if (houseVideo && unmuteBtn) {
-          unmuteBtn.addEventListener('click', () => {
-            if (houseVideo.muted) {
-              houseVideo.muted = false;
-              unmuteBtn.textContent = 'Mute';
+        if (houseVideo && housePlayPauseBtn) {
+          housePlayPauseBtn.addEventListener('click', () => {
+            if (houseVideo.paused) {
+              houseVideo.play();
+              housePlayPauseBtn.querySelector(".icon-pause").style.display = "";
+              housePlayPauseBtn.querySelector(".icon-play").style.display = "none";
+              housePlayPauseBtn.setAttribute("aria-label", "Pause video");
             } else {
-              houseVideo.muted = true;
-              unmuteBtn.textContent = 'Unmute';
+              houseVideo.pause();
+              housePlayPauseBtn.querySelector(".icon-pause").style.display = "none";
+              housePlayPauseBtn.querySelector(".icon-play").style.display = "";
+              housePlayPauseBtn.setAttribute("aria-label", "Play video");
             }
+          });
+        }
+
+        if (houseVideo && houseMuteUnmuteBtn) {
+          houseMuteUnmuteBtn.addEventListener('click', () => {
+            houseVideo.muted = !houseVideo.muted;
+            houseMuteUnmuteBtn.querySelector(".icon-muted").style.display =
+              houseVideo.muted ? "" : "none";
+            houseMuteUnmuteBtn.querySelector(".icon-unmuted").style.display =
+              houseVideo.muted ? "none" : "";
+            houseMuteUnmuteBtn.setAttribute(
+              "aria-label",
+              houseVideo.muted ? "Unmute video" : "Mute video",
+            );
           });
         }
         // Initialize Swiper
@@ -8825,6 +8968,16 @@
           if (typeof updateHeader === "function") updateHeader();
         };
 
+        window.showMoreArticles = function(btn) {
+          const hiddenArticles = document.querySelectorAll('.hidden-article');
+          hiddenArticles.forEach(article => {
+            article.style.display = 'block';
+          });
+          if (btn) {
+            btn.style.display = 'none';
+          }
+        };
+
         window.showShop = function () {
           document.body.classList.remove("no-hero");
           document.getElementById("home-view").style.display = "none";
@@ -9115,7 +9268,7 @@
             id: "turmeric",
             name: "Black Turmeric | Curcuma caesia",
             price: 48,
-            image: "https://picsum.photos/seed/turmeric/800/1000",
+            image: "https://sampritibotanicals.com/assets/images/black-turmeric.png",
           },
           "BLUE BUTTERFLY PEA": {
             id: "butterflypea",

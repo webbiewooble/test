@@ -2747,8 +2747,10 @@
         aspect-ratio: 4 / 5;
         height: auto;
         overflow: hidden;
-        margin-bottom: 18px;
-        display: block;
+        margin-bottom: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: var(--bg-color);
         position: relative;
       }
@@ -2757,15 +2759,12 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        padding: 0;
+        padding: 0px;
         transition: transform 0.6s ease;
         display: block;
+        margin: 0 auto;
       }
 
-      /* Specific styling for Black Turmeric images to match Materia Botanica */
-      .product-grid-item img[alt="Curcuma Caesia"] {
-        padding: 5px;
-      }
       .pdp-main-image img[alt="Black Turmeric"] {
         padding: 0;
         object-fit: cover;
@@ -2774,7 +2773,8 @@
       .product-grid-item h3 {
         font-size: 0.875rem;
         font-weight: 500;
-        margin-bottom: 5px;
+        margin-top: 10px;
+        margin-bottom: 2px;
         font-family: var(--font-body);
         color: var(--primary-color-1);
         text-transform: uppercase;
@@ -3542,6 +3542,9 @@
       /* Shakti Peya hover image swap */
       .product-grid-image {
         position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .product-grid-image .img-default,
@@ -3706,13 +3709,16 @@
         .product-grid-image {
           aspect-ratio: 4 / 5 !important;
           height: auto !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
         }
 
         .product-grid-image img,
         .product-grid-image .img-default,
         .product-grid-image .img-hover {
           object-fit: cover !important;
-          padding: 0 !important;
+          padding: 0px !important;
         }
 
         .product-grid-item h3 {
@@ -5085,13 +5091,13 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
                   </div>
-                  <h3>BLACK TURMERIC</h3>
                   <p class="product-grid-subtitle">Curcuma Caesia</p>
+                  <h3>BLACK TURMERIC</h3>
                   <p class="product-grid-description">
                     A rare Kaya Kalpa agent for profound recovery and cellular
                     longevity.
@@ -5346,7 +5352,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -5551,7 +5557,7 @@
                   >
                     <div class="recommended-reading-card-image">
                       <img
-                        src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png"
+                        src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
                         alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery"
                       />
                     </div>
@@ -5698,7 +5704,7 @@
 
           /* Origin II: Pilgrimage */
           .new-pilgrimage-section {
-            padding: 160px 5%;
+            padding: 80px 5%;
             border-bottom: 1px solid rgba(26, 26, 26, 0.1);
           }
           .new-pilgrimage-container {
@@ -6065,7 +6071,7 @@
                 >
                   <div class="recommended-reading-card-image">
                     <img
-                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
                       alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery"
                     />
                   </div>
@@ -6361,7 +6367,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -6521,7 +6527,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -6674,7 +6680,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Sampriti%20Black%20Turmeric.png"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -7218,7 +7224,7 @@
               <!-- Left: Image Gallery -->
               <div class="pdp-gallery">
                 <div class="pdp-main-image">
-                  <img id="main-turmeric" src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="Curcuma Caesia" referrerpolicy="no-referrer" />
+                  <img id="main-turmeric" src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png" alt="Curcuma Caesia" referrerpolicy="no-referrer" />
                 </div>
                 <div class="pdp-additional-images" style="display: flex; flex-direction: row; gap: 10px; margin-top: 10px; overflow-x: auto;">
                   <img src="https://picsum.photos/seed/turmeric1/200/200" alt="Detail 1" referrerpolicy="no-referrer" style="width: 80px; height: 80px; object-fit: cover; flex-shrink: 0; cursor: pointer;" onclick="updateMainImage('main-turmeric', this.src)" />
@@ -7285,13 +7291,13 @@
                   </ol>
               </div>
               <div class="pdp-howto-img">
-                <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png" alt="Black Turmeric use" referrerpolicy="no-referrer" />
+                <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png" alt="Black Turmeric use" referrerpolicy="no-referrer" />
               </div>
             </div>
 
             <div class="pdp-howto-split">
               <div class="pdp-howto-img">
-                <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png" alt="Black Turmeric" referrerpolicy="no-referrer" />
+                <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png" alt="Black Turmeric" referrerpolicy="no-referrer" />
               </div>
               <div class="pdp-howto-text">
                 <h3>Ancient Root, Modern Science</h3>
@@ -9111,7 +9117,7 @@
             title: "The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery",
             category: "Siddha Wisdom",
             image:
-              "https://sampritibotanicals.com/assets/images/black-turmeric.png",
+              "https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png",
             content: `
                 <p>In the ancient Siddha tradition—the oldest medical lineage of South India—certain botanicals are classified as Kaya Kalpa (agents of longevity). Among these, Black Turmeric is the rarest.</p>
                 <p>Unlike its ubiquitous golden counterpart, Black Turmeric (Curcuma caesia) possesses a striking bluish-black rhizome and a distinct, camphoraceous aroma. This rare botanical is highly prized in esoteric practices for its potent anti-inflammatory and analgesic properties.</p>
@@ -9229,7 +9235,7 @@
             id: "turmeric",
             name: "Black Turmeric | Curcuma caesia",
             price: 48,
-            image: "https://sampritibotanicals.com/assets/images/black-turmeric.png",
+            image: "https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png",
           },
           "BLUE BUTTERFLY PEA": {
             id: "butterflypea",

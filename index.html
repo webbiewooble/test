@@ -220,19 +220,20 @@
       }
 
       /* ===== PROVENANCE PAGE — Aman-inspired ===== */
-      .prov-page { background: #f5f0ea; }
+      .prov-page { background: #fffef2; }
 
       /* Hero: centered title on cream bg */
       .prov-hero {
         padding: 140px 40px 100px;
         text-align: center;
-        background: #f5f0ea;
+        background: #fffef2;
       }
       .prov-hero h1 {
         font-family: var(--font-heading);
         font-size: clamp(2.4rem, 5vw, 3.6rem);
-        font-weight: 300;
-        letter-spacing: 0.02em;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
         color: #2a2a2a;
         margin-bottom: 16px;
       }
@@ -288,7 +289,9 @@
       .prov-carousel-text h2 {
         font-family: var(--font-heading);
         font-size: 3rem;
-        font-weight: 300;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
         color: #2a2a2a;
         margin-bottom: 20px;
       }
@@ -325,6 +328,8 @@
         font-family: var(--font-heading);
         font-size: 1.15rem;
         font-weight: 400;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
         margin-bottom: 8px;
         color: #2a2a2a;
       }
@@ -369,7 +374,9 @@
       .prov-media-text h2 {
         font-family: var(--font-heading);
         font-size: 2rem;
-        font-weight: 300;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
         color: #2a2a2a;
         margin-bottom: 20px;
       }
@@ -1031,7 +1038,9 @@
       .prov-concierge h2 {
         font-family: var(--font-heading);
         font-size: 2rem;
-        font-weight: 300;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
         color: #2a2a2a;
       }
       .prov-concierge p {
@@ -1690,7 +1699,7 @@
         margin: 5px auto 10px;
         color: #fff;
         font-weight: 400;
-        letter-spacing: 0.05em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
       }
@@ -1707,9 +1716,9 @@
       }
 
       .hero-title-small {
-        font-family: var(--font-body);
+        font-family: var(--font-heading);
         font-size: 0.75rem !important;
-        letter-spacing: 0.08em;
+        letter-spacing: 0.1em;
         text-transform: uppercase;
         margin-bottom: 0 !important;
         font-weight: 400;
@@ -2751,6 +2760,15 @@
         padding: 15px;
         transition: transform 0.6s ease;
         display: block;
+      }
+
+      /* Specific styling for Black Turmeric images to match Materia Botanica */
+      .product-grid-item img[alt="Curcuma Caesia"] {
+        padding: 5px;
+      }
+      .pdp-main-image img[alt="Black Turmeric"] {
+        padding: 0;
+        object-fit: cover;
       }
 
       .product-grid-item h3 {
@@ -4013,7 +4031,9 @@
       .pdp-main-image img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        padding: 40px;
+        background-color: #f6f5f0;
         transition: transform 0.6s ease;
       }
       .pdp-main-image:hover img {
@@ -4058,12 +4078,7 @@
         margin-bottom: 28px;
       }
       .pdp-key-details {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-        margin-bottom: 30px;
-        padding-bottom: 24px;
-        border-bottom: 1px solid var(--border-color);
+        display: none;
       }
       .pdp-detail-label {
         font-size: 0.7rem;
@@ -4264,7 +4279,9 @@
       .pdp-howto-img img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        padding: 40px;
+        background-color: #f6f5f0;
       }
       .pdp-howto-split.reversed {
         direction: rtl;
@@ -5068,7 +5085,7 @@
                 >
                   <div class="product-grid-image">
                     <img
-                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png"
                       alt="Curcuma Caesia"
                       referrerpolicy="no-referrer"
                     />
@@ -5216,6 +5233,8 @@
                   font-family: var(--font-heading);
                   color: #333;
                   margin-top: 10px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
                 "
               >
                 MATERIA BOTANICA
@@ -5363,6 +5382,8 @@
                   font-family: var(--font-heading);
                   color: #333;
                   margin-top: 10px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
                 "
               >
                 OUR STANDARDS
@@ -5530,7 +5551,7 @@
                   >
                     <div class="recommended-reading-card-image">
                       <img
-                        src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
+                        src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png"
                         alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery"
                       />
                     </div>
@@ -5656,11 +5677,11 @@
           }
           .new-house-hero-title {
             font-family: var(--font-heading);
-            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
             line-height: 1.1;
             font-weight: 400;
             margin-bottom: 32px;
-            letter-spacing: 0.05em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: #000;
           }
@@ -5712,11 +5733,12 @@
           }
           .new-pilgrimage-title {
             font-family: var(--font-heading);
-            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-size: clamp(2rem, 3vw, 3rem);
             line-height: 1;
             font-weight: 300;
             margin-bottom: 60px;
-            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
           }
           .new-pilgrimage-text {
             font-size: 1.15rem;
@@ -5803,11 +5825,12 @@
           }
           .new-legacy-title {
             font-family: var(--font-heading);
-            font-size: clamp(3rem, 5vw, 5rem);
+            font-size: clamp(2.5rem, 4vw, 4rem);
             line-height: 0.9;
             font-weight: 300;
             margin-bottom: 40px;
-            letter-spacing: -0.03em;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
           }
           .new-legacy-subtitle {
             font-size: 1.2rem;
@@ -5925,15 +5948,15 @@
             <span class="new-chapter-label">Origin V</span>
             <h2 class="new-legacy-title">The Slow Botanical Movement</h2>
             <div class="intention-item-content" style="margin-bottom: 40px;">
-              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px;">Conscious Scaling</h3>
+              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">Conscious Scaling</h3>
               <p class="new-legacy-subtitle">We prioritize the integrity of the soil over the speed of the market.</p>
             </div>
             <div class="intention-item-content" style="margin-bottom: 40px;">
-              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px;">The Vessel</h3>
+              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">The Vessel</h3>
               <p class="new-legacy-subtitle">We choose glass, cork, and paper. Our goal is to leave no footprint, only a legacy of wellness.</p>
             </div>
             <div class="intention-item-content">
-              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px;">Super Health</h3>
+              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">Super Health</h3>
               <p class="new-legacy-subtitle">Bridging the gap between traditional "Kayakalpa" (rejuvenation) and the global seeker of clarity and joy.</p>
             </div>
           </div>
@@ -5978,6 +6001,8 @@
                   font-size: 4rem;
                   margin-bottom: 15px;
                   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
                 "
               >
                 Curated Works
@@ -6040,7 +6065,7 @@
                 >
                   <div class="recommended-reading-card-image">
                     <img
-                      src="https://sampritibotanicals.com/assets/images/black-turmeric.png"
+                      src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png"
                       alt="The Shadow Catalyst: Siddha Wisdom and Dual Black Recovery"
                     />
                   </div>
@@ -6198,7 +6223,7 @@
             class="container"
             style="position: relative; top: auto; transform: none; z-index: 2"
           >
-            <h1 class="hero-title" style="color: #333; text-shadow: none;">MATERIA BOTANICA</h1>
+            <h1 class="hero-title" style="color: #333; text-shadow: none; text-transform: uppercase; letter-spacing: 0.1em;">MATERIA BOTANICA</h1>
             <p class="hero-description" style="color: #555; text-shadow: none;">
               A collection of high-functioning botanical infusions, each
               chosen for its unique therapeutic profile and ancestral
@@ -6223,6 +6248,8 @@
                   font-family: var(--font-heading);
                   color: #333;
                   margin-top: 10px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
                 "
               >
                 MATERIA BOTANICA
@@ -6534,6 +6561,8 @@
                   font-family: var(--font-heading);
                   color: #333;
                   margin-top: 10px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
                 "
               >
                 MATERIA BOTANICA
@@ -7226,13 +7255,13 @@
                   </ol>
               </div>
               <div class="pdp-howto-img">
-                <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="Black Turmeric use" referrerpolicy="no-referrer" />
+                <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png" alt="Black Turmeric use" referrerpolicy="no-referrer" />
               </div>
             </div>
 
             <div class="pdp-howto-split">
               <div class="pdp-howto-img">
-                <img src="https://sampritibotanicals.com/assets/images/black-turmeric.png" alt="Black Turmeric" referrerpolicy="no-referrer" />
+                <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Airbrush-IMAGE-ENHANCER-1774692483230-1774692483230.png" alt="Black Turmeric" referrerpolicy="no-referrer" />
               </div>
               <div class="pdp-howto-text">
                 <h3>Ancient Root, Modern Science</h3>
@@ -7392,114 +7421,96 @@
 
         <!-- Hero -->
         <section class="prov-hero">
-          <h1>Pathways of Origin</h1>
-          <p class="prov-subtitle">Multi-tradition journeys with Sampriti</p>
-          <p class="prov-desc">From India's ancient botanical gardens to its sacred harvest grounds, provenance with Sampriti spans traditions and terrains, weaving together multiple lineages into singular, seamless formulations. Thoughtfully curated and expertly guided, each ingredient is showcased through Sampriti's reverent lens.</p>
+          <span class="eyebrow">PROVENANCE</span>
+          <h1>PROVENANCE</h1>
+          <p class="prov-subtitle">India. From the snow-line to the red earth. A singular cartography of botanical intelligence.</p>
+          <p class="prov-desc">The Chapter of Sages: Palani Hill Range</p>
         </section>
 
-        <!-- Two asymmetric images -->
+        <!-- Duo Images -->
         <section class="prov-duo">
           <div class="prov-duo-small">
-            <img src="https://picsum.photos/seed/prov-sm1/600/800" alt="Botanical garden archway" referrerpolicy="no-referrer">
+            <img src="https://picsum.photos/seed/palani-hills-small/800/1000" alt="Palani Hills Detail" referrerpolicy="no-referrer">
           </div>
           <div class="prov-duo-large">
-            <img src="https://picsum.photos/seed/prov-lg1/800/1200" alt="Lush forest canopy" referrerpolicy="no-referrer">
+            <img src="https://picsum.photos/seed/palani-hills/1200/1600" alt="Misty Palani Hills" referrerpolicy="no-referrer">
           </div>
         </section>
 
-        <!-- Carousel: text left + scrolling cards right -->
-        <section class="prov-carousel-section">
-          <div class="prov-carousel-text">
-            <h2>Explore Our Botanical Lineages</h2>
-            <p>Each origin tells a story — of soil, season, and stewardship. Discover the living traditions behind every Sampriti formulation.</p>
-          </div>
-          <div class="prov-carousel-track">
-            <a href="#" class="prov-carousel-card" onclick="return false;">
-              <img src="https://picsum.photos/seed/prov-c1/500/500" alt="Rajasthan Harvest" referrerpolicy="no-referrer">
-              <h3>Rajasthan</h3>
-              <p>Sun-drenched landscapes where ancient harvesting rhythms still govern the gathering of rare botanicals.</p>
-              <span class="prov-cta">Discover more</span>
-            </a>
-            <a href="#" class="prov-carousel-card" onclick="return false;">
-              <img src="https://picsum.photos/seed/prov-c2/500/500" alt="Kerala Gardens" referrerpolicy="no-referrer">
-              <h3>Kerala</h3>
-              <p>Tropical abundance where Ayurvedic wisdom meets the verdant spice gardens of the Malabar coast.</p>
-              <span class="prov-cta">Discover more</span>
-            </a>
-            <a href="#" class="prov-carousel-card" onclick="return false;">
-              <img src="https://picsum.photos/seed/prov-c3/500/500" alt="Himalayan Foothills" referrerpolicy="no-referrer">
-              <h3>Himalayan Foothills</h3>
-              <p>High-altitude meadows yielding potent herbs refined through generations of mountain herbalism.</p>
-              <span class="prov-cta">Discover more</span>
-            </a>
-            <a href="#" class="prov-carousel-card" onclick="return false;">
-              <img src="https://picsum.photos/seed/prov-c4/500/500" alt="Assam Valleys" referrerpolicy="no-referrer">
-              <h3>Assam</h3>
-              <p>Mist-laden valleys producing singular botanical extracts prized for their depth and complexity.</p>
-              <span class="prov-cta">Discover more</span>
-            </a>
-            <a href="#" class="prov-carousel-card" onclick="return false;">
-              <img src="https://picsum.photos/seed/prov-c5/500/500" alt="Tamil Nadu" referrerpolicy="no-referrer">
-              <h3>Tamil Nadu</h3>
-              <p>Ancient Siddha traditions preserved in temple towns where botanicals are cultivated with sacred intent.</p>
-              <span class="prov-cta">Discover more</span>
-            </a>
-          </div>
-        </section>
-
-        <!-- Divider -->
-        <div class="prov-divider"><hr></div>
-
-        <!-- Side-by-side 1: image right -->
-        <section class="prov-media-row reverse">
-          <div class="prov-media-img">
-            <img src="https://picsum.photos/seed/prov-side1/1000/700" alt="Aerial view of botanical estate" referrerpolicy="no-referrer">
-          </div>
-          <div class="prov-media-text">
-            <h2>Sacred Harvest</h2>
-            <p>Discover the rhythmic cycles of nature that guide our harvesting process, ensuring each botanical is gathered at its peak potency. Our harvesters follow lunar calendars and seasonal markers passed down through centuries.</p>
-            <span class="prov-cta">Explore the cycle</span>
-          </div>
-        </section>
-
-        <!-- Side-by-side 2: image left -->
+        <!-- Text / Image Row (The Sacred Peaks) -->
         <section class="prov-media-row">
           <div class="prov-media-img">
-            <img src="https://picsum.photos/seed/prov-side2/1000/700" alt="Traditional preparation" referrerpolicy="no-referrer">
+            <img src="https://picsum.photos/seed/sacred-peaks/1000/1200" alt="The Sacred Peaks" referrerpolicy="no-referrer">
           </div>
           <div class="prov-media-text">
-            <h2>Ancient Lineage</h2>
-            <p>Tracing the roots of our formulations back through generations of herbal practitioners and traditional wisdom. Each recipe carries the memory of hands that came before — a continuum of care inscribed in every blend.</p>
-            <span class="prov-cta">Trace the roots</span>
+            <span class="eyebrow">> THE SACRED PEAKS</span>
+            <h2>The Chapter of Sages</h2>
+            <p>Where Siddha sages once meditated on the subtle intelligence of plants. Here, we source herbs that carry the vibration of ancient silence.</p>
           </div>
         </section>
 
-        <!-- Full-width image -->
-        <div class="prov-fullwidth">
-          <img src="https://picsum.photos/seed/prov-full/1400/600" alt="Panoramic botanical landscape" referrerpolicy="no-referrer">
-        </div>
+        <!-- Carousel Section (Boutique Provenance) -->
+        <section class="prov-carousel-section" style="margin-top: 120px;">
+          <div class="prov-carousel-text">
+            <h2>Boutique Provenance</h2>
+            <p>A curated selection of our most potent botanicals, sourced from specific terroirs across the Indian subcontinent.</p>
+          </div>
+          <div class="prov-carousel-track">
+            <!-- I. Hibiscus -->
+            <a href="#" class="prov-carousel-card">
+              <img src="https://picsum.photos/seed/hibiscus-palani/800/800" alt="Hibiscus from Palani Massif" referrerpolicy="no-referrer">
+              <span class="eyebrow" style="font-size: 0.65rem; margin-bottom: 8px;">I. The Palani Altitude: Hibiscus</span>
+              <h3>THE HIGH-ALTITUDE BLOOM</h3>
+              <p><strong>Terrain:</strong> The Palani Massif. 2,000 meters.<br><br>Our Hibiscus is defined by the thin air and intense solar radiation of the Western Ghats. Harvested from the same contours where Siddha lineages first codified the science of rejuvenation. This is a botanical of rare clarity—refined by altitude and the silence of the peaks.</p>
+              <span class="prov-cta">Discover</span>
+            </a>
+            <!-- II. Cardamom -->
+            <a href="#" class="prov-carousel-card">
+              <img src="https://picsum.photos/seed/cardamom-kolli/800/800" alt="Cardamom from Kolli Hills" referrerpolicy="no-referrer">
+              <span class="eyebrow" style="font-size: 0.65rem; margin-bottom: 8px;">II. The Eastern Ghats: Cardamom</span>
+              <h3>THE KOLLI ANOMALY</h3>
+              <p><strong>Terrain:</strong> The Kolli Hills. The Mountain of Seventy Forests.<br><br>Sourced from the mist-shrouded 'Mountain of Death' in the Eastern Ghats—a landscape of ancient biodiversity and vertical forests. Our Cardamom carries a singular aromatic profile, nurtured by a micro-climate that has remained undisturbed for centuries.</p>
+              <span class="prov-cta">Discover</span>
+            </a>
+            <!-- III. Rose -->
+            <a href="#" class="prov-carousel-card">
+              <img src="https://picsum.photos/seed/rose-aravalli/800/800" alt="Rose from Aravalli Range" referrerpolicy="no-referrer">
+              <span class="eyebrow" style="font-size: 0.65rem; margin-bottom: 8px;">III. The Arid Contours: Rose</span>
+              <h3>THE ARAVALLI BLOOM</h3>
+              <p><strong>Terrain:</strong> The Arid Contours. Rajasthan.<br><br>Sourced from the ancient, mineral-rich foothills of the Aravalli Range - the ancient granite barrier that guards the edge of the Thar Desert. Our Rose is defined by an atmospheric anomaly: the intense, desiccating heat of the desert meeting the hidden springs of the green hills. This 'Stress-Potency' creates a bloom of rare concentration.</p>
+              <span class="prov-cta">Discover</span>
+            </a>
+            <!-- IV. Coastal Plains -->
+            <a href="#" class="prov-carousel-card">
+              <img src="https://picsum.photos/seed/coastal-plains/800/800" alt="Coastal Plains" referrerpolicy="no-referrer">
+              <span class="eyebrow" style="font-size: 0.65rem; margin-bottom: 8px;">IV. The Southern Integrity: Coastal Plains</span>
+              <h3>THE BIODYNAMIC CORE</h3>
+              <p><strong>Terrain:</strong> Coastal plains. Regenerative soil.<br><br>Our Southern partners operate on a timeline of seasons, not markets. No synthetics. No interference. Only the raw integrity of the plant.</p>
+              <span class="prov-cta">Discover</span>
+            </a>
+          </div>
+        </section>
 
-        <!-- Side-by-side 3: image right -->
+        <!-- Media Row Reverse (The Vessel) -->
         <section class="prov-media-row reverse">
           <div class="prov-media-img">
-            <img src="https://picsum.photos/seed/prov-side3/1000/700" alt="Laboratory and nature" referrerpolicy="no-referrer">
+            <img src="https://picsum.photos/seed/vessel-glass/1000/1200" alt="The Vessel" referrerpolicy="no-referrer">
           </div>
           <div class="prov-media-text">
-            <h2>Botanical Integrity</h2>
-            <p>Our commitment to purity and potency, from the soil to the final infusion, preserving the life-force of every plant. We test at every stage — never compromising the essence that makes each botanical singular.</p>
-            <span class="prov-cta">Our commitment</span>
+            <span class="eyebrow">V. The Vessel</span>
+            <h2>THE CONSCIOUS ARTIFACT</h2>
+            <p>Protection, not just packaging. A precise calibration of light and material designed for botanical longevity.</p>
+            <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.95rem; line-height: 1.85; color: #666;">
+              <li style="margin-bottom: 12px;"><strong>The Glass:</strong> Architectural transparency for our whole botanicals. Ultraviolet-filtering amber for our potent powders.</li>
+              <li style="margin-bottom: 12px;"><strong>The Seal:</strong> Hand-fitted natural cork for our whole-leaf rituals. Airtight apothecary seals for our concentrated infusions.</li>
+              <li><strong>The Intent:</strong> Recycled fiber. A deliberate avoidance of unnecessary plastic. Because the integrity of the formula is only as strong as the vessel that holds it.</li>
+            </ul>
           </div>
         </section>
 
-        <!-- Concierge / CTA -->
-        <section class="prov-concierge">
-          <div>
-            <h2>Sampriti Concierge</h2>
-          </div>
-          <div>
-            <p>No question is too small and no curiosity too great. To learn more about our sourcing, formulations, or botanical heritage, reach out to our team.</p>
-            <a href="#" onclick="showHome(); return false;">Return to Collection</a>
-          </div>
+        <!-- Full width image at bottom -->
+        <section class="prov-fullwidth">
+          <img src="https://picsum.photos/seed/prov-landscape/1600/700" alt="Indian Landscape" referrerpolicy="no-referrer">
         </section>
 
       </div>

@@ -84,51 +84,35 @@
 
       /* Standards Icons Styles - Redesigned for Minimalistic Elegance */
       .standard-icon-container {
-        width: 100px;
-        height: 100px;
-        margin: 0 auto 20px;
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 15px;
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         cursor: pointer;
+        background-color: #f6f5f0;
+        border: 1px solid #eae8df;
       }
       .standard-icon-container:hover {
         transform: translateY(-5px);
+        background-color: #e8e6d9;
+        border-color: #dcdacb;
       }
-      .standard-icon-container svg.icon-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100px;
-        height: 100px;
-        stroke: #000;
-        stroke-width: 0.2;
-        fill: none;
-        transition: stroke-width 0.3s ease;
-      }
-      .standard-icon-container:hover svg.icon-bg {
-        stroke-width: 0.5;
-      }
-      .standard-icon-container i {
-        width: 32px;
-        height: 32px;
-        color: #000 !important;
-        stroke: #000 !important;
-        z-index: 1;
-        stroke-width: 0.75 !important;
+      .standard-icon-container svg {
         transition: transform 0.3s ease;
       }
-      .standard-icon-container:hover i {
+      .standard-icon-container:hover svg {
         transform: scale(1.1);
       }
       .standard-label {
         font-family: var(--font-body);
-        font-size: 0.875rem;
+        font-size: 0.65rem;
         font-weight: 500;
-        color: var(--primary-color-1);
-        letter-spacing: 0.1em;
+        color: #222;
+        letter-spacing: 0.15em;
         text-transform: uppercase;
         opacity: 1;
       }
@@ -3837,13 +3821,13 @@
         border-color: #111;
       }
 
-      .razorpay-btn {
-        background-color: #39c !important;
+      .paypal-btn {
+        background-color: #003087 !important;
         color: white !important;
       }
 
-      .razorpay-btn:hover {
-        background-color: #2b82af !important;
+      .paypal-btn:hover {
+        background-color: #002266 !important;
       }
 
       @keyframes slideInRight {
@@ -4759,6 +4743,31 @@
         width: 100%;
       }
     </style>
+    <style>
+      #about .about-content-side {
+        width: 40%;
+      }
+      #about .about-content-inner {
+        padding: 0 80px;
+      }
+      #about .about-image-side {
+        width: 60%;
+      }
+      @media (max-width: 1024px) {
+        #about .about-content-inner {
+          padding: 0 40px;
+        }
+      }
+      @media (max-width: 768px) {
+        #about .about-content-side,
+        #about .about-image-side {
+          width: 100%;
+        }
+        #about .about-content-inner {
+          padding: 60px 20px;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -5379,116 +5388,25 @@
         </section>
 
         <!-- Our Standards Section -->
-        <section id="standards" class="section-padding bg-light">
-          <div class="container">
-            <div class="section-header text-center" style="margin-bottom: 30px">
+        <section id="standards" class="section-padding bg-light" style="padding: 80px 0; overflow: hidden;">
+          <div class="container" style="max-width: 1400px;">
+            <div class="section-header text-center" style="margin-bottom: 50px">
               <h2
                 style="
-                  font-size: 2.5rem;
+                  font-size: 2.2rem;
                   font-family: var(--font-heading);
-                  color: #333;
-                  margin-top: 10px;
-                  text-transform: uppercase;
-                  letter-spacing: 0.1em;
+                  color: #222;
+                  font-weight: 400;
+                  letter-spacing: 0.05em;
                 "
               >
-                OUR STANDARDS
+                Our Standards
               </h2>
             </div>
-            <div style="display: flex; flex-wrap: nowrap; gap: 60px; justify-content: center; text-align: center; overflow-x: auto; padding-bottom: 40px; -ms-overflow-style: none; scrollbar-width: none;">
-              
-              <!-- Standard 1 -->
-              <div style="min-width: 120px;">
-                <div class="standard-icon-container">
-                  <svg class="icon-bg" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" />
-                  </svg>
-                  <i data-lucide="heart-handshake"></i>
-                </div>
-                <p class="standard-label">Ethically<br>Sourced</p>
-              </div>
-
-              <!-- Standard 2 -->
-              <div style="min-width: 120px;">
-                <div class="standard-icon-container">
-                  <svg class="icon-bg" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" />
-                  </svg>
-                  <i data-lucide="droplet"></i>
-                </div>
-                <p class="standard-label">Clean<br>Formulations</p>
-              </div>
-
-              <!-- Standard 3 -->
-              <div style="min-width: 120px;">
-                <div class="standard-icon-container">
-                  <svg class="icon-bg" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" />
-                  </svg>
-                  <i data-lucide="pill"></i>
-                </div>
-                <p class="standard-label">Dosage<br>Specific</p>
-              </div>
-
-              <!-- Standard 4 -->
-              <div style="min-width: 120px;">
-                <div class="standard-icon-container">
-                  <svg class="icon-bg" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" />
-                  </svg>
-                  <i data-lucide="landmark"></i>
-                </div>
-                <p class="standard-label">Small-Batch<br>Crafted</p>
-              </div>
-
-              <!-- Standard 5 -->
-              <div style="min-width: 120px;">
-                <div class="standard-icon-container">
-                  <svg class="icon-bg" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" />
-                  </svg>
-                  <i data-lucide="circle-check"></i>
-                </div>
-                <p class="standard-label">No<br>Additives</p>
-              </div>
-
-              <!-- Standard 6 -->
-              <div style="min-width: 120px;">
-                <div class="standard-icon-container">
-                  <svg class="icon-bg" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" />
-                  </svg>
-                  <i data-lucide="rabbit"></i>
-                </div>
-                <p class="standard-label">No Animal<br>Testing</p>
-              </div>
-
-              <!-- Standard 7 -->
-              <div style="min-width: 120px;">
-                <div class="standard-icon-container">
-                  <svg class="icon-bg" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" />
-                  </svg>
-                  <i data-lucide="sprout"></i>
-                </div>
-                <p class="standard-label">Vegan</p>
-              </div>
-
-              <!-- Standard 8 -->
-              <div style="min-width: 120px;">
-                <div class="standard-icon-container">
-                  <svg class="icon-bg" viewBox="0 0 100 100">
-                    <circle cx="50" cy="50" r="48" />
-                  </svg>
-                  <i data-lucide="wheat-off"></i>
-                </div>
-                <p class="standard-label">Gluten-Free</p>
-              </div>
-
+            <div style="display: flex; justify-content: center; text-align: center; width: 100%; padding: 60px 0;">
+              <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Screenshot%202026-03-26%20135105.png" alt="Our Standards" style="width: 100%; max-width: 1300px; transform: scale(1.35); height: auto;" referrerpolicy="no-referrer" />
             </div>
           </div>
-          <script src="https://unpkg.com/lucide@latest"></script>
-          <script>lucide.createIcons();</script>
         </section>
 
         <!-- Journal Section -->
@@ -5608,10 +5526,7 @@
 
             <div class="text-center" style="margin-top: 50px; margin-bottom: 30px;">
               <a
-                class="btn"
-                style="background-color: #f6f5f0; border: 1px solid #dcdacb; color: #5a5a5a; padding: 14px 40px; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.05); text-decoration: none; display: inline-block;"
-                onmouseover="this.style.backgroundColor='#e8e6d9'; this.style.color='#111'; this.style.borderColor='#c8c6b9';"
-                onmouseout="this.style.backgroundColor='#f6f5f0'; this.style.color='#5a5a5a'; this.style.borderColor='#dcdacb';"
+                class="btn btn-view-more"
                 href="#recommended-reading"
                 onclick="showRecommendedReading(); return false;"
               >
@@ -6196,7 +6111,7 @@
             </div>
             
             <div style="text-align: center; margin-top: 50px; margin-bottom: 30px;">
-              <button class="btn" style="background-color: #f6f5f0; border: 1px solid #dcdacb; color: #5a5a5a; padding: 14px 40px; font-size: 0.85rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.05);" onmouseover="this.style.backgroundColor='#e8e6d9'; this.style.color='#111'; this.style.borderColor='#c8c6b9';" onmouseout="this.style.backgroundColor='#f6f5f0'; this.style.color='#5a5a5a'; this.style.borderColor='#dcdacb';" onclick="showMoreArticles(this)">View More</button>
+              <button class="btn btn-view-more" onclick="showMoreArticles(this)">View More</button>
             </div>
           </div>
         </section>
@@ -6233,7 +6148,7 @@
               chosen for its unique therapeutic profile and ancestral
               significance.
             </p>
-            <a href="#materia-products" class="btn btn-primary"
+            <a href="#materia-products" class="btn btn-view-more"
               >Explore the archive</a
             >
           </div>
@@ -9640,6 +9555,13 @@
                         <span style="font-size: 0.8rem; color: #666; font-weight: normal;">Google Pay, PhonePe, Paytm</span>
                     </div>
                 </label>
+                <label class="payment-method-option">
+                    <input type="radio" name="payment_method" value="paypal" onclick="togglePaymentDetails('paypal')">
+                    <div style="display: flex; flex-direction: column;">
+                        <span>PayPal</span>
+                        <span style="font-size: 0.8rem; color: #666; font-weight: normal;">Pay securely with PayPal</span>
+                    </div>
+                </label>
             `;
           } else {
             // US and others
@@ -9649,6 +9571,13 @@
                     <div style="display: flex; flex-direction: column;">
                         <span>Credit / Debit Card</span>
                         <span style="font-size: 0.8rem; color: #666; font-weight: normal;">Visa, Mastercard, AMEX, Discover</span>
+                    </div>
+                </label>
+                <label class="payment-method-option">
+                    <input type="radio" name="payment_method" value="paypal" onclick="togglePaymentDetails('paypal')">
+                    <div style="display: flex; flex-direction: column;">
+                        <span>PayPal</span>
+                        <span style="font-size: 0.8rem; color: #666; font-weight: normal;">Pay securely with PayPal</span>
                     </div>
                 </label>
             `;
@@ -9698,6 +9627,21 @@
                         <label style="color: #666;">UPI ID *</label>
                         <input type="text" name="upi_id" placeholder="username@bank" required style="border: 1px solid #ccc; padding: 12px; border-radius: 0; width: 100%;">
                         <p style="font-size: 0.8rem; color: #999; margin-top: 5px;">Enter your VPA (e.g., mobile@upi)</p>
+                    </div>
+                </div>
+            `;
+          } else if (method === "paypal") {
+            paymentDetailsWrapper.innerHTML = `
+                <div class="payment-details-container active">
+                    <div style="text-align: center; padding: 30px 20px;">
+                        <svg viewBox="0 0 24 24" width="48" height="48" stroke="#003087" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 15px;">
+                            <rect x="2" y="5" width="20" height="14" rx="2" />
+                            <line x1="2" y1="10" x2="22" y2="10" />
+                            <path d="M7 15h.01" />
+                            <path d="M11 15h2" />
+                        </svg>
+                        <p style="color: #666; margin-bottom: 20px;">You will be redirected to PayPal to complete your purchase securely.</p>
+                        <button type="button" class="aesop-btn paypal-btn" style="padding: 12px 30px; border: none; font-weight: 500; letter-spacing: 0.05em;">Proceed to PayPal</button>
                     </div>
                 </div>
             `;

@@ -1632,14 +1632,14 @@
 
       #hero .container {
         top: auto;
-        bottom: 60px;
+        bottom: 40px;
         transform: none;
       }
 
       /* Hero Video Controls */
       .hero-video-controls {
         position: absolute;
-        bottom: 28px;
+        bottom: 40px;
         right: 28px;
         z-index: 2;
         display: flex;
@@ -2623,7 +2623,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 60px;
-        max-width: 900px;
+        max-width: 1200px;
         margin: 60px auto 0;
       }
 
@@ -4931,6 +4931,12 @@
           padding-right: 0 !important;
         }
       }
+
+      /* Make Shakti Peya and Chandra Rasa images wider */
+      .product-grid-item[onclick*="shakti"] .product-grid-image,
+      .product-grid-item[onclick*="chandra"] .product-grid-image {
+        aspect-ratio: 1 / 1 !important;
+      }
     </style>
   </head>
 
@@ -4941,6 +4947,7 @@
           <img
             src="https://sampritibotanicals.com/assets/original/logo/text_logo_color_big.png"
             alt="Sampriti Logo"
+            referrerPolicy="no-referrer"
           />
         </a>
         <div class="header-actions">
@@ -5194,15 +5201,15 @@
                       class="img-default"
                       src="https://sampritibotanicals.com/assets/images/shakthi.avif"
                       alt="Shakti Peya - Energy Elixir"
+                      referrerPolicy="no-referrer"
                     />
                   </div>
-                  <h3>SHAKTI PEYA</h3>
-                  <p class="product-grid-subtitle">Energy Elixir</p>
+                  <h3 style="font-weight: bold; text-transform: none;">Shakti Peya | Energy Elixir</h3>
                   <p class="product-grid-description">
-                    A potent energy elixir crafted to enhance metabolic vitality
-                    and mental clarity.
+                    Activation ⋅ Anti-Aging ⋅ Radiance
                   </p>
-                  <p class="product-grid-price">$33</p>
+                  <p>9 Test Tube Kit</p>
+                  <p class="product-grid-price">$54</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="SHAKTI PEYA"
@@ -5225,14 +5232,15 @@
                       class="img-default"
                       src="https://sampritibotanicals.com/assets/images/chandra.avif"
                       alt="Chandra Rasa - Sleep Potion"
+                      referrerPolicy="no-referrer"
                     />
                   </div>
-                  <h3>CHANDRA RASA</h3>
-                  <p class="product-grid-subtitle">Sleep Potion</p>
+                  <h3 style="font-weight: bold; text-transform: none;">Chandra Rasa | Sleep Potion</h3>
                   <p class="product-grid-description">
-                    A lunar-aligned botanical infusion designed to facilitate a profound transition from the day’s cognitive demands into restorative stillness.
+                    Calm ⋅ Settling ⋅ Restorative
                   </p>
-                  <p class="product-grid-price">$33</p>
+                  <p>9 Test Tube Kit</p>
+                  <p class="product-grid-price">$54</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="CHANDRA RASA"
@@ -5253,6 +5261,7 @@
               <img
                 src="https://sampritibotanicals.com/assets/images/ritual.avif"
                 alt="Rituals - The Discipline of Devotion"
+                referrerPolicy="no-referrer"
               />
             </div>
             <div class="about-content-side">
@@ -5263,6 +5272,10 @@
                   onclick="showProduct('turmeric')"
                   style="max-width: 300px; margin: 0 auto; height: auto !important;"
                 >
+                  <p class="product-grid-subtitle" style="margin-bottom: 5px;">Curcumin caseia</p>
+                  <p class="product-grid-description" style="margin-bottom: 15px;">
+                    A rare kayakalpa herb...
+                  </p>
                   <div class="product-grid-image">
                     <img
                       src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
@@ -5270,13 +5283,8 @@
                       referrerpolicy="no-referrer"
                     />
                   </div>
-                  <p class="product-grid-subtitle">Curcuma Caesia</p>
-                  <h3>BLACK TURMERIC</h3>
-                  <p class="product-grid-description">
-                    A rare Kaya Kalpa agent for profound recovery and cellular
-                    longevity.
-                  </p>
-                  <p class="product-grid-price">$48</p>
+                  <h3 style="margin-top: 15px;">BLACK TURMERIC</h3>
+                  <p class="product-grid-price">$42</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="BLACK TURMERIC"
@@ -5294,8 +5302,8 @@
         <section id="about" class="about-section">
           <div class="about-split-layout">
             <div class="about-content-side">
-              <div class="about-content-inner">
-                <span class="eyebrow"
+              <div class="about-content-inner" style="text-align: center;">
+                <span class="eyebrow" style="font-family: var(--font-heading);"
                   >The Intelligence of Ancient Botanicals</span
                 >
 
@@ -5307,7 +5315,7 @@
                   alchemy, cultivating vitality and balance through ritual and
                   sustained practice.
                 </p>
-                <div style="margin-top: 30px">
+                <div style="margin-top: 30px; display: flex; justify-content: center; width: 100%;">
                   <a href="#house" onclick="showHouse(); return false;" class="btn btn-view-more">Discover The House</a>
                 </div>
               </div>
@@ -5406,7 +5414,6 @@
         >
           <div class="container-fluid">
             <div class="section-header text-center" style="margin-bottom: 30px">
-              <span class="eyebrow">THE BOTANICAL ARCHIVE</span>
               <h2
                 style="
                   font-size: 2.5rem;
@@ -5423,7 +5430,7 @@
                 style="
                   color: #666;
                   font-size: 1rem;
-                  max-width: 600px;
+                  max-width: 800px;
                   margin: 0 auto 30px;
                 "
               >
@@ -5524,6 +5531,10 @@
                   class="product-grid-item swiper-slide"
                   onclick="showProduct('turmeric')"
                 >
+                  <p class="product-grid-subtitle" style="margin-bottom: 5px;">Curcumin caseia</p>
+                  <p class="product-grid-description" style="margin-bottom: 15px;">
+                    A rare kayakalpa herb...
+                  </p>
                   <div class="product-grid-image">
                     <img
                       src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
@@ -5531,13 +5542,8 @@
                       referrerpolicy="no-referrer"
                     />
                   </div>
-                  <h3>BLACK TURMERIC</h3>
-                  <p class="product-grid-subtitle">Curcuma Caesia</p>
-                  <p class="product-grid-description">
-                    A rare Kaya Kalpa agent for profound recovery and cellular
-                    longevity.
-                  </p>
-                  <p class="product-grid-price">$48</p>
+                  <h3 style="margin-top: 15px;">BLACK TURMERIC</h3>
+                  <p class="product-grid-price">$42</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="BLACK TURMERIC"
@@ -5553,7 +5559,7 @@
         </section>
 
         <!-- Our Standards Section -->
-        <section id="standards" class="section-padding bg-light" style="padding: 40px 0; overflow: hidden;">
+        <section id="standards" class="section-padding bg-light" style="padding: 60px 0 0; overflow: hidden;">
           <div class="container" style="max-width: 100%; padding: 0 20px;">
             <div class="section-header text-center" style="margin-bottom: 20px">
               <h2
@@ -5564,6 +5570,7 @@
                   font-weight: 400;
                   letter-spacing: 0.1em;
                   text-transform: uppercase;
+                  margin-top: 10px;
                 "
               >
                 Our Standards
@@ -5581,6 +5588,7 @@
         <section
           id="recommended-reading-preview"
           class="section-padding bg-light"
+          style="padding: 20px 0 60px"
         >
           <div class="container">
             <div class="section-header text-center" style="margin-bottom: 30px">
@@ -5606,7 +5614,7 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 40px;
-                padding-bottom: 40px;
+                padding-bottom: 0px;
               "
             >
                 <!-- Recommended Reading Post 1 -->
@@ -5695,7 +5703,7 @@
                 </article>
             </div>
 
-            <div class="text-center" style="margin-top: 50px; margin-bottom: 30px;">
+            <div class="text-center" style="margin-top: 20px; margin-bottom: 30px;">
               <a
                 class="btn btn-view-more"
                 href="#recommended-reading"
@@ -6357,7 +6365,7 @@
             style="position: relative; top: auto; transform: none; z-index: 2"
           >
             <h1 class="hero-title" style="color: #333; text-shadow: none; text-transform: uppercase; letter-spacing: 0.1em;">MATERIA BOTANICA</h1>
-            <p class="hero-description" style="color: #555; text-shadow: none;">
+            <p class="hero-description" style="color: #555; text-shadow: none; max-width: 800px;">
               A collection of high-functioning botanical infusions, each
               chosen for its unique therapeutic profile and ancestral
               significance.
@@ -6391,7 +6399,7 @@
                 style="
                   color: #666;
                   font-size: 1rem;
-                  max-width: 600px;
+                  max-width: 800px;
                   margin: 0 auto 30px;
                 "
               >
@@ -6495,6 +6503,10 @@
                   class="product-grid-item swiper-slide"
                   onclick="showProduct('turmeric')"
                 >
+                  <p class="product-grid-subtitle" style="margin-bottom: 5px;">Curcumin caseia</p>
+                  <p class="product-grid-description" style="margin-bottom: 15px;">
+                    A rare kayakalpa herb...
+                  </p>
                   <div class="product-grid-image" style="padding: 40px;">
                     <img
                       src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
@@ -6503,13 +6515,8 @@
                       style="object-fit: contain; width: 100%; height: 100%;"
                     />
                   </div>
-                  <h3>BLACK TURMERIC</h3>
-                  <p class="product-grid-subtitle">Curcuma Caesia</p>
-                  <p class="product-grid-description">
-                    A rare Kaya Kalpa agent for profound recovery and cellular
-                    longevity.
-                  </p>
-                  <p class="product-grid-price">$48</p>
+                  <h3 style="margin-top: 15px;">BLACK TURMERIC</h3>
+                  <p class="product-grid-price">$42</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="BLACK TURMERIC"
@@ -6574,21 +6581,9 @@
               >
                 SIGNATURE RITUALS
               </h2>
-              <p
-                style="
-                  color: #666;
-                  font-size: 1rem;
-                  max-width: 600px;
-                  margin: 0 auto 30px;
-                "
-              >
-                High-functioning botanical formulations rooted in ancient herbal
-                lineages, designed to restore rhythm and vitality through daily
-                ritual.
-              </p>
             </div>
 
-            <div class="featured-products-grid shop-featured-grid">
+            <div class="featured-products-grid">
                 <!-- Product 1: Shakti Peya -->
                 <div
                   class="product-grid-item"
@@ -6606,8 +6601,7 @@
                   <h3>SHAKTI PEYA</h3>
                   <p class="product-grid-subtitle">Energy Elixir</p>
                   <p class="product-grid-description">
-                    A potent energy elixir crafted to enhance metabolic vitality
-                    and mental clarity.
+                    Activation ⋅ Anti-Aging ⋅ Radiance
                   </p>
                   <p class="product-grid-price">$33</p>
                   <button
@@ -6636,7 +6630,7 @@
                   <h3>CHANDRA RASA</h3>
                   <p class="product-grid-subtitle">Sleep Potion</p>
                   <p class="product-grid-description">
-                    A lunar-aligned botanical infusion designed to facilitate a profound transition from the day’s cognitive demands into restorative stillness.
+                    Calm ⋅ Settling ⋅ Restorative
                   </p>
                   <p class="product-grid-price">$33</p>
                   <button
@@ -6656,6 +6650,10 @@
                   tabindex="0"
                   style="cursor: pointer;"
                 >
+                  <p class="product-grid-subtitle" style="margin-bottom: 5px;">Curcumin caseia</p>
+                  <p class="product-grid-description" style="margin-bottom: 15px;">
+                    A rare kayakalpa herb...
+                  </p>
                   <div class="product-grid-image">
                     <img
                       src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
@@ -6663,13 +6661,8 @@
                       referrerpolicy="no-referrer"
                     />
                   </div>
-                  <h3>BLACK TURMERIC</h3>
-                  <p class="product-grid-subtitle">Curcuma Caesia</p>
-                  <p class="product-grid-description">
-                    A rare Kaya Kalpa agent for profound recovery and cellular
-                    longevity.
-                  </p>
-                  <p class="product-grid-price">$48</p>
+                  <h3 style="margin-top: 15px;">BLACK TURMERIC</h3>
+                  <p class="product-grid-price">$42</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="BLACK TURMERIC"
@@ -6691,7 +6684,6 @@
         >
           <div class="container-fluid">
             <div class="section-header text-center" style="margin-bottom: 30px">
-              <span class="eyebrow">THE BOTANICAL ARCHIVE</span>
               <h2
                 style="
                   font-size: 2.5rem;
@@ -6704,25 +6696,12 @@
               >
                 MATERIA BOTANICA
               </h2>
-              <p
-                style="
-                  color: #666;
-                  font-size: 1rem;
-                  max-width: 600px;
-                  margin: 0 auto 30px;
-                "
-              >
-                A collection of high-functioning botanical infusions, each
-                chosen for its unique therapeutic profile and ancestral
-                significance.
-              </p>
             </div>
 
-            <div class="products-grid swiper">
-              <div class="swiper-wrapper">
+            <div class="products-grid">
                 <!-- Product 1: Hibiscus -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('hibiscus')"
                 >
                   <div class="product-grid-image">
@@ -6750,7 +6729,7 @@
 
                 <!-- Product 2: Rose -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('rose')"
                 >
                   <div class="product-grid-image">
@@ -6778,7 +6757,7 @@
 
                 <!-- Product 3: Blue Butterfly Pea -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('butterflypea')"
                 >
                   <div class="product-grid-image">
@@ -6806,9 +6785,13 @@
 
                 <!-- Product 4: Black Turmeric -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('turmeric')"
                 >
+                  <p class="product-grid-subtitle" style="margin-bottom: 5px;">Curcumin caseia</p>
+                  <p class="product-grid-description" style="margin-bottom: 15px;">
+                    A rare kayakalpa herb...
+                  </p>
                   <div class="product-grid-image">
                     <img
                       src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png"
@@ -6816,13 +6799,8 @@
                       referrerpolicy="no-referrer"
                     />
                   </div>
-                  <h3>BLACK TURMERIC</h3>
-                  <p class="product-grid-subtitle">Curcuma Caesia</p>
-                  <p class="product-grid-description">
-                    A rare Kaya Kalpa agent for profound recovery and cellular
-                    longevity.
-                  </p>
-                  <p class="product-grid-price">$48</p>
+                  <h3 style="margin-top: 15px;">BLACK TURMERIC</h3>
+                  <p class="product-grid-price">$42</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="BLACK TURMERIC"
@@ -6831,8 +6809,6 @@
                     Add to cart
                   </button>
                 </div>
-              </div>
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </section>
@@ -6892,9 +6868,10 @@
               <!-- Right: Product Info -->
               <div class="pdp-info">
                 <span class="pdp-category">Sampriti Botanicals</span>
-                <h1 class="pdp-title">Shakti Peya</h1>
-                <p class="pdp-price">$33</p>
+                <h1 class="pdp-title" style="font-weight: bold; text-transform: none;">Shakti Peya | Energy Elixir</h1>
                 <p class="pdp-description">Shakti Peya is designed to support sustained vitality, circulation, digestion, and metabolic balance. The formulation encourages steady energy, warmth, and resilience - without sharp stimulation or depletion.</p>
+                <p>9 Test Tube Kit</p>
+                <p class="pdp-price">$54</p>
 
                 <div class="pdp-key-details">
                   <span class="pdp-detail-label">Key ingredients</span>
@@ -7014,9 +6991,10 @@
               <!-- Right: Product Info -->
               <div class="pdp-info">
                 <span class="pdp-category">Sampriti Botanicals</span>
-                <h1 class="pdp-title">Chandra Rasa</h1>
-                <p class="pdp-price">$33</p>
-                <p class="pdp-description">A lunar-aligned botanical infusion designed to facilitate a profound transition from the day’s cognitive demands into restorative stillness. This calibrated formulation encourages the nervous system to decelerate, quietening the intellect and supporting the natural circadian rhythms essential for emotional equilibrium.</p>
+                <h1 class="pdp-title" style="font-weight: bold; text-transform: none;">Chandra Rasa | Sleep Potion</h1>
+                <p class="pdp-description">Calm ⋅ Settling ⋅ Restorative</p>
+                <p>9 Test Tube Kit</p>
+                <p class="pdp-price">$54</p>
 
                 <div class="pdp-actions">
                   <button class="pdp-add-to-cart" data-product="CHANDRA RASA" onclick="event.stopPropagation()" style="background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
@@ -7041,7 +7019,7 @@
                     <button class="pdp-tab-btn" onclick="switchPdpTab(this, 'pack-chandra')">Servings</button>
                   </div>
                   <div id="desc-chandra" class="pdp-tab-content active">
-                    <p>A lunar-aligned botanical infusion designed to facilitate a profound transition from the day’s cognitive demands into restorative stillness. This calibrated formulation encourages the nervous system to decelerate, quietening the intellect and supporting the natural circadian rhythms essential for emotional equilibrium.</p>
+                    <p>Calm ⋅ Settling ⋅ Restorative</p>
                     <div class="pdp-meta-row"><span class="pdp-meta-key">Benefits</span><span class="pdp-meta-val">This botanical sequence provides comprehensive support for the parasympathetic nervous system, aiding in the reduction of cognitive noise and the stabilization of the stress response through adaptogenic modulation. It assists the body in establishing a consistent nighttime recovery cycle, supporting deeper sleep quality and the natural cellular repair processes essential for long-term neurological health.</span></div>
                     <div class="pdp-meta-row"><span class="pdp-meta-key">Dosage</span><span class="pdp-meta-val">One test tube per day.</span></div>
                   </div>
@@ -7369,8 +7347,8 @@
               <div class="pdp-info">
                 <span class="pdp-category">Sampriti Botanicals</span>
                 <h1 class="pdp-title">Black Turmeric</h1>
-                <p class="pdp-price">$48</p>
-                <p class="pdp-description">A rare Kaya Kalpa agent for profound recovery and cellular longevity. Black Turmeric is revered in traditional medicine for its exceptional anti-inflammatory and rejuvenative properties.</p>
+                <p class="pdp-price">$42</p>
+                <p class="pdp-description">A rare kayakalpa herb...</p>
 
                 <div class="pdp-actions" style="display: flex; gap: 12px;">
                   <button class="pdp-add-to-cart" data-product="Black Turmeric" onclick="event.stopPropagation()" style="flex: 1; background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>

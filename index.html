@@ -4828,25 +4828,25 @@
           font-size: 1.5rem !important;
         }
         #provenance-view .prov-subtitle {
-          font-size: 0.65rem !important;
+          font-size: 0.55rem !important;
           margin-bottom: 16px !important;
         }
         #provenance-view .prov-desc {
-          font-size: 0.85rem !important;
+          font-size: 0.65rem !important;
         }
         #provenance-view h2 {
           font-size: 1.5rem !important;
           margin-bottom: 30px !important;
         }
         #provenance-view p {
-          font-size: 0.85rem !important;
+          font-size: 0.65rem !important;
           margin-bottom: 20px !important;
         }
         #provenance-view h3 {
-          font-size: 1.2rem !important;
+          font-size: 1.25rem !important;
         }
         #provenance-view .eyebrow {
-          font-size: 0.65rem !important;
+          font-size: 0.55rem !important;
           margin-bottom: 16px !important;
         }
 
@@ -4858,6 +4858,16 @@
 
         /* Fix flex and grid layouts that don't wrap */
         .prov-duo, 
+        .featured-products-grid {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 20px !important;
+        }
+
+        .product-grid-item {
+          width: 100% !important;
+          margin-bottom: 20px !important;
+        }
         .prov-media-row, 
         .prov-carousel-section, 
         .footer-grid, 
@@ -5767,7 +5777,7 @@
           }
           .new-house-hero-text {
             font-family: var(--font-body);
-            font-size: 0.75rem;
+            font-size: 0.55rem;
             font-weight: 300;
             line-height: 1.8;
             color: #333;
@@ -5823,7 +5833,7 @@
             letter-spacing: 0.1em;
           }
           .new-pilgrimage-text {
-            font-size: 0.9rem;
+            font-size: 0.7rem;
             line-height: 1.8;
             margin-bottom: 32px;
             font-weight: 300;
@@ -5866,7 +5876,7 @@
             letter-spacing: -0.03em;
           }
           .new-rooted-subtitle {
-            font-size: 1.2rem;
+            font-size: 0.85rem;
             font-weight: 300;
             color: #666;
             letter-spacing: 0.05em;
@@ -5916,7 +5926,7 @@
             letter-spacing: 0.1em;
           }
           .new-legacy-subtitle {
-            font-size: 1.2rem;
+            font-size: 0.85rem;
             font-weight: 300;
             color: #666;
             letter-spacing: 0.05em;
@@ -5977,14 +5987,14 @@
               margin-bottom: 16px;
             }
             .new-house-hero-text {
-              font-size: 0.85rem !important;
+              font-size: 0.65rem !important;
             }
             .new-pilgrimage-title {
               font-size: 1.5rem !important;
               margin-bottom: 30px;
             }
             .new-pilgrimage-text {
-              font-size: 0.85rem !important;
+              font-size: 0.65rem !important;
               margin-bottom: 20px;
             }
             .new-rooted-title {
@@ -5992,14 +6002,14 @@
               margin-bottom: 20px;
             }
             .new-rooted-subtitle {
-              font-size: 1rem !important;
+              font-size: 0.8rem !important;
             }
             .new-legacy-title {
               font-size: 1.75rem !important;
               margin-bottom: 20px;
             }
             .new-legacy-subtitle {
-              font-size: 1rem !important;
+              font-size: 0.8rem !important;
             }
             .new-chapter-label {
               margin-bottom: 20px;
@@ -9910,7 +9920,14 @@
         entries.forEach((entry) => {
           const video = entry.target;
           if (entry.isIntersecting) {
-            video.play();
+            const playPromise = video.play();
+            if (playPromise !== undefined) {
+              playPromise.catch(error => {
+                if (error.name !== 'AbortError') {
+                  console.error("Play error:", error);
+                }
+              });
+            }
           } else {
             video.pause();
           }

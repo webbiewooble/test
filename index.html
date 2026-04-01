@@ -214,7 +214,7 @@
       }
       .prov-hero h1 {
         font-family: var(--font-heading);
-        font-size: 2rem;
+        font-size: clamp(1.0rem, 2vw, 1.75rem);
         font-weight: 400;
         letter-spacing: 0.1em;
         text-transform: uppercase;
@@ -222,7 +222,7 @@
         margin-bottom: 16px;
       }
       .prov-hero .prov-subtitle {
-        font-size: 0.85rem;
+        font-size: 0.65rem;
         font-weight: 400;
         color: #5a5a5a;
         font-style: italic;
@@ -231,7 +231,7 @@
       .prov-hero .prov-desc {
         max-width: 680px;
         margin: 0 auto;
-        font-size: 0.75rem;
+        font-size: 0.85rem;
         line-height: 1.85;
         color: #666;
       }
@@ -357,7 +357,7 @@
       }
       .prov-media-text h2 {
         font-family: var(--font-heading);
-        font-size: 2rem;
+        font-size: clamp(1.2rem, 2vw, 2rem);
         font-weight: 400;
         letter-spacing: 0.05em;
         text-transform: uppercase;
@@ -365,7 +365,7 @@
         margin-bottom: 20px;
       }
       .prov-media-text p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.85;
         color: #666;
         margin-bottom: 20px;
@@ -1021,14 +1021,14 @@
       }
       .prov-concierge h2 {
         font-family: var(--font-heading);
-        font-size: 2rem;
+        font-size: clamp(1.2rem, 2vw, 2rem);
         font-weight: 400;
         letter-spacing: 0.05em;
         text-transform: uppercase;
         color: #2a2a2a;
       }
       .prov-concierge p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         line-height: 1.7;
         color: #666;
       }
@@ -1245,6 +1245,12 @@
         padding: 0 var(--spacing-md);
       }
 
+      .container-fluid {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;
+      }
+
       .section-padding {
         padding: var(--spacing-xl) 0;
       }
@@ -1382,7 +1388,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        max-width: var(--container-width);
+        max-width: 100%;
         margin: 0 auto;
       }
 
@@ -1771,7 +1777,7 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
-        max-width: var(--container-width);
+        max-width: 100%;
         margin: 0 auto;
         min-height: 300px;
 
@@ -4773,6 +4779,145 @@
         }
       }
     </style>
+    <!-- Global Mobile Responsiveness Overrides -->
+    <style>
+      @media (max-width: 768px) {
+        /* Prevent horizontal scrolling */
+        html, body {
+          overflow-x: hidden;
+          width: 100%;
+          margin: 0;
+          padding: 0;
+        }
+
+        /* Ensure containers don't overflow */
+        .container, .container-fluid {
+          padding-left: 15px !important;
+          padding-right: 15px !important;
+          max-width: 100vw !important;
+          box-sizing: border-box !important;
+        }
+
+        /* Scale down massive text */
+        h1:not(#house-view h1):not(#provenance-view h1), .hero-section h1, .editorial-hero h1, .house-hero h1 {
+          font-size: clamp(2rem, 8vw, 3.5rem) !important;
+          line-height: 1.1 !important;
+        }
+
+        h2:not(#house-view h2):not(#provenance-view h2), .section-header h2 {
+          font-size: clamp(1.75rem, 6vw, 2.5rem) !important;
+          line-height: 1.2 !important;
+        }
+
+        h3:not(#house-view h3):not(#provenance-view h3) {
+          font-size: clamp(1.25rem, 5vw, 1.75rem) !important;
+          line-height: 1.3 !important;
+        }
+
+        p:not(#house-view p):not(#provenance-view p) {
+          font-size: 1rem !important;
+          line-height: 1.6 !important;
+        }
+
+        /* Provenance Page Specific Mobile Typography (Matching The House Page) */
+        #provenance-view h1 {
+          font-size: 1.5rem !important;
+        }
+        #provenance-view .prov-subtitle {
+          font-size: 0.65rem !important;
+          margin-bottom: 16px !important;
+        }
+        #provenance-view .prov-desc {
+          font-size: 0.85rem !important;
+        }
+        #provenance-view h2 {
+          font-size: 1.5rem !important;
+          margin-bottom: 30px !important;
+        }
+        #provenance-view p {
+          font-size: 0.85rem !important;
+          margin-bottom: 20px !important;
+        }
+        #provenance-view h3 {
+          font-size: 1.2rem !important;
+        }
+        #provenance-view .eyebrow {
+          font-size: 0.65rem !important;
+          margin-bottom: 16px !important;
+        }
+
+        /* Fix spacing */
+        .section-padding {
+          padding-top: 40px !important;
+          padding-bottom: 40px !important;
+        }
+
+        /* Fix flex and grid layouts that don't wrap */
+        .prov-duo, 
+        .prov-media-row, 
+        .prov-carousel-section, 
+        .footer-grid, 
+        .hero-intro-grid,
+        .founder-section,
+        .archive-grid {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 30px !important;
+        }
+
+        .prov-media-row.reverse {
+          flex-direction: column !important;
+        }
+
+        /* 2 Products in a row for shop/featured grids */
+        .featured-products-grid,
+        .shop-featured-grid {
+          display: grid !important;
+          grid-template-columns: repeat(2, 1fr) !important;
+          gap: 15px !important;
+        }
+
+        /* Ensure images scale down, except for specific full-bleed sections */
+        img:not(#standards img):not(.prov-media-img img):not(.about-image-side img):not(.new-pilgrimage-img) {
+          max-width: 100% !important;
+          height: auto !important;
+        }
+
+        /* Specific section fixes */
+        .prov-hero {
+          padding: 60px 15px 40px !important;
+        }
+
+        .prov-media-text {
+          padding: 20px 15px !important;
+        }
+
+        /* Footer fixes */
+        .footer-content {
+          flex-direction: column !important;
+          gap: 30px !important;
+        }
+
+        .footer-col {
+          width: 100% !important;
+          margin-bottom: 20px !important;
+        }
+
+        /* Header fixes */
+        .main-header .container {
+          flex-direction: row !important;
+          justify-content: space-between !important;
+          align-items: center !important;
+          padding: 15px !important;
+        }
+        
+        /* Our Standards mobile fix */
+        #standards .container {
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+      }
+    </style>
   </head>
 
   <body>
@@ -4994,7 +5139,7 @@
           class="section-padding bg-light"
           style="padding: 60px 0"
         >
-          <div class="container">
+          <div class="container-fluid">
             <div class="section-header text-center" style="margin-bottom: 30px">
               <h2
                 style="
@@ -5244,7 +5389,7 @@
           class="section-padding"
           style="background-color: #fffef2; padding: 60px 0"
         >
-          <div class="container">
+          <div class="container-fluid">
             <div class="section-header text-center" style="margin-bottom: 30px">
               <span class="eyebrow">THE BOTANICAL ARCHIVE</span>
               <h2
@@ -5409,8 +5554,10 @@
                 Our Standards
               </h2>
             </div>
-            <div style="display: flex; justify-content: center; text-align: center; width: 100%; padding: 20px 0;">
-              <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Screenshot%202026-03-26%20135105.png" alt="Our Standards" style="width: 100%; max-width: 1600px; height: auto;" referrerpolicy="no-referrer" />
+            <div style="width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; -ms-overflow-style: none; padding-bottom: 10px;">
+              <div style="display: flex; justify-content: center; text-align: center; width: 100%; min-width: 1000px; transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Screenshot%202026-03-26%20135105.png" alt="Our Standards" style="width: 100%; height: auto; object-fit: contain;" referrerpolicy="no-referrer" />
+              </div>
             </div>
           </div>
         </section>
@@ -5626,17 +5773,18 @@
 
           /* Origin II: Pilgrimage */
           .new-pilgrimage-section {
-            padding: 0px 5% 80px 5%;
+            padding: 0px 0px 80px 0px;
             margin-top: -40px;
             border-bottom: 1px solid rgba(26, 26, 26, 0.1);
           }
           .new-pilgrimage-container {
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 100px;
             align-items: start;
+            padding: 0 5%;
           }
           .new-pilgrimage-media {
             position: sticky;
@@ -5721,16 +5869,17 @@
 
           /* Origin IV: Alchemist's Garden (Flipped Pilgrimage) */
           .new-alchemist-section {
-            padding: 160px 5%;
+            padding: 160px 0px;
             border-bottom: 1px solid rgba(26, 26, 26, 0.1);
           }
           .new-alchemist-container {
-            max-width: 1400px;
+            max-width: 100%;
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 100px;
             align-items: start;
+            padding: 0 5%;
           }
           .new-alchemist-media {
             grid-column: 2;
@@ -5814,6 +5963,45 @@
             .new-legacy-section {
               padding: 80px 5%;
             }
+            /* Make fonts smaller on mobile for the House page */
+            .new-house-hero-title {
+              font-size: 1.5rem !important;
+            }
+            .new-house-hero-subtitle {
+              font-size: 0.65rem !important;
+              margin-bottom: 16px;
+            }
+            .new-house-hero-text {
+              font-size: 0.85rem !important;
+            }
+            .new-pilgrimage-title {
+              font-size: 1.5rem !important;
+              margin-bottom: 30px;
+            }
+            .new-pilgrimage-text {
+              font-size: 0.85rem !important;
+              margin-bottom: 20px;
+            }
+            .new-rooted-title {
+              font-size: 2rem !important;
+              margin-bottom: 20px;
+            }
+            .new-rooted-subtitle {
+              font-size: 1rem !important;
+            }
+            .new-legacy-title {
+              font-size: 1.75rem !important;
+              margin-bottom: 20px;
+            }
+            .new-legacy-subtitle {
+              font-size: 1rem !important;
+            }
+            .new-chapter-label {
+              margin-bottom: 20px;
+            }
+            .pillar-item-content h3 {
+              font-size: 1.25rem !important;
+            }
           }
         </style>
 
@@ -5875,18 +6063,18 @@
         <section class="new-legacy-section">
           <div class="new-legacy-header">
             <span class="new-chapter-label">Origin V</span>
-            <h2 class="new-legacy-title">The Slow Botanical Movement</h2>
+            <h2 class="new-pilgrimage-title">The Slow Botanical Movement</h2>
             <div class="intention-item-content" style="margin-bottom: 40px;">
-              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">Conscious Scaling</h3>
-              <p class="new-legacy-subtitle">We prioritize the integrity of the soil over the speed of the market.</p>
+              <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">Conscious Scaling</h3>
+              <p class="new-pilgrimage-text">We prioritize the integrity of the soil over the speed of the market.</p>
             </div>
             <div class="intention-item-content" style="margin-bottom: 40px;">
-              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">The Vessel</h3>
-              <p class="new-legacy-subtitle">We choose glass, cork, and paper. Our goal is to leave no footprint, only a legacy of wellness.</p>
+              <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">The Vessel</h3>
+              <p class="new-pilgrimage-text">We choose glass, cork, and paper. Our goal is to leave no footprint, only a legacy of wellness.</p>
             </div>
             <div class="intention-item-content">
-              <h3 style="font-family: var(--font-heading); font-size: 1.8rem; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.1em;">Super Health</h3>
-              <p class="new-legacy-subtitle">Bridging the gap between traditional "Kayakalpa" (rejuvenation) and the global seeker of clarity and joy.</p>
+              <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">Super Health</h3>
+              <p class="new-pilgrimage-text">Bridging the gap between traditional "Kayakalpa" (rejuvenation) and the global seeker of clarity and joy.</p>
             </div>
           </div>
         </section>
@@ -5950,7 +6138,7 @@
             </div>
           </header>
 
-          <div class="container">
+          <div class="container-fluid">
             <div
               class="recommended-reading-grid"
               style="
@@ -6169,7 +6357,7 @@
           class="section-padding bg-light"
           style="padding: 60px 0"
         >
-          <div class="container">
+          <div class="container-fluid">
             <div class="section-header text-center" style="margin-bottom: 30px">
               <h2
                 style="
@@ -6354,7 +6542,7 @@
           class="section-padding bg-light"
           style="padding: 60px 0"
         >
-          <div class="container">
+          <div class="container-fluid">
             <div class="section-header text-center" style="margin-bottom: 30px">
               <h2
                 style="
@@ -6481,7 +6669,7 @@
           class="section-padding"
           style="background-color: #fffef2; padding: 60px 0"
         >
-          <div class="container">
+          <div class="container-fluid">
             <div class="section-header text-center" style="margin-bottom: 30px">
               <span class="eyebrow">THE BOTANICAL ARCHIVE</span>
               <h2
@@ -8356,8 +8544,8 @@
           }
 
           new Swiper(el, {
-            slidesPerView: 3,
-            spaceBetween: 20,
+            slidesPerView: 2,
+            spaceBetween: 15,
             centerInsufficientSlides: true,
             preventClicks: false,
             preventClicksPropagation: false,
@@ -8618,6 +8806,26 @@
             {
               id: "chandra",
               name: "CHANDRA RASA | Sleep Potion",
+              type: "product",
+            },
+            {
+              id: "turmeric",
+              name: "BLACK TURMERIC | Curcuma Caesia",
+              type: "product",
+            },
+            {
+              id: "hibiscus",
+              name: "HIBISCUS | Rosa-Sinensis",
+              type: "product",
+            },
+            {
+              id: "rose",
+              name: "ROSE | Rosa Damascena",
+              type: "product",
+            },
+            {
+              id: "butterflypea",
+              name: "BLUE BUTTERFLY PEA | Clitoria Ternatea",
               type: "product",
             },
           ];

@@ -5923,13 +5923,10 @@
             padding: 0 5%;
           }
           .new-alchemist-media {
-            grid-column: 2;
             position: sticky;
             top: 100px;
           }
           .new-alchemist-content {
-            grid-column: 1;
-            grid-row: 1;
             padding-top: 40px;
           }
 
@@ -5964,11 +5961,10 @@
               gap: 60px;
             }
             .new-alchemist-media {
-              grid-column: 1;
               position: static;
+              order: -1;
             }
             .new-alchemist-content {
-              grid-column: 1;
               padding-top: 0;
             }
           }
@@ -6134,9 +6130,6 @@
         <!-- Origin III: Our Foundations -->
         <section class="new-alchemist-section">
           <div class="new-alchemist-container">
-            <div class="new-alchemist-media">
-              <img src="https://picsum.photos/seed/pillars-foundations/1200/1600" alt="Our Foundations" class="new-pilgrimage-img" referrerpolicy="no-referrer">
-            </div>
             <div class="new-alchemist-content">
               <h2 class="new-pilgrimage-title">Our Foundations</h2>
               <div class="pillar-item-content" style="margin-bottom: 40px;">
@@ -6152,12 +6145,18 @@
                 <p class="new-pilgrimage-text">Every infusion is a ritual, crafted in small batches to preserve the plant’s subtle intelligence.</p>
               </div>
             </div>
+            <div class="new-alchemist-media">
+              <img src="https://picsum.photos/seed/pillars-foundations/1200/1600" alt="Our Foundations" class="new-pilgrimage-img" referrerpolicy="no-referrer">
+            </div>
           </div>
         </section>
 
         <!-- The Slow Botanical Movement -->
         <section class="new-alchemist-section" style="border-bottom: none;">
           <div class="new-alchemist-container">
+            <div class="new-alchemist-media">
+              <img src="https://picsum.photos/seed/slow-botanical/1200/1600" alt="The Slow Botanical Movement" class="new-pilgrimage-img" referrerpolicy="no-referrer">
+            </div>
             <div class="new-alchemist-content">
               <h2 class="new-pilgrimage-title">The Slow Botanical Movement</h2>
               <div class="intention-item-content" style="margin-bottom: 40px;">
@@ -6172,9 +6171,6 @@
                 <h3 style="font-family: var(--font-heading); font-size: 1.5rem; margin-bottom: 10px;">Super Health</h3>
                 <p class="new-pilgrimage-text">Bridging the gap between traditional "Kayakalpa" (rejuvenation) and the global seeker of clarity and joy.</p>
               </div>
-            </div>
-            <div class="new-alchemist-media">
-              <img src="https://picsum.photos/seed/slow-botanical/1200/1600" alt="The Slow Botanical Movement" class="new-pilgrimage-img" referrerpolicy="no-referrer">
             </div>
           </div>
         </section>
@@ -9202,6 +9198,26 @@
           if (typeof updateHeader === "function") updateHeader();
         };
 
+        // --- View Functions ---
+        window.showHouse = function () {
+          document.body.classList.remove("no-hero");
+          document.getElementById("home-view").style.display = "none";
+          document.getElementById("shop-view").style.display = "none";
+          document.getElementById("house-view").style.display = "block";
+          document.getElementById("materia-view").style.display = "none";
+          document.getElementById("provenance-view").style.display = "none";
+          document.getElementById("recommended-reading-view").style.display =
+            "none";
+          document.getElementById("product-view").style.display = "none";
+          document.getElementById("checkout-view").style.display = "none";
+          document.getElementById("article-view").style.display = "none";
+          document.getElementById("contact-view").style.display = "none";
+          document.getElementById("reviews-view").style.display = "none";
+          window.location.hash = "#house";
+          window.scrollTo(0, 0);
+          if (typeof updateHeader === "function") updateHeader();
+        };
+
         // --- Hash Change Handling ---
         window.addEventListener("hashchange", () => {
           const hash = window.location.hash;
@@ -9229,25 +9245,6 @@
 
         // Trigger hashchange on load
         window.dispatchEvent(new Event("hashchange"));
-
-        window.showHouse = function () {
-          document.body.classList.remove("no-hero");
-          document.getElementById("home-view").style.display = "none";
-          document.getElementById("shop-view").style.display = "none";
-          document.getElementById("house-view").style.display = "block";
-          document.getElementById("materia-view").style.display = "none";
-          document.getElementById("provenance-view").style.display = "none";
-          document.getElementById("recommended-reading-view").style.display =
-            "none";
-          document.getElementById("product-view").style.display = "none";
-          document.getElementById("checkout-view").style.display = "none";
-          document.getElementById("article-view").style.display = "none";
-          document.getElementById("contact-view").style.display = "none";
-          document.getElementById("reviews-view").style.display = "none";
-          window.location.hash = "#house";
-          window.scrollTo(0, 0);
-          if (typeof updateHeader === "function") updateHeader();
-        };
 
         window.showMateria = function () {
           document.body.classList.remove("no-hero");

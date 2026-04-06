@@ -2501,8 +2501,7 @@
       .archive-articles-grid {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 40px;
-        justify-items: center;
+        gap: 32px 24px;
       }
       @media (max-width: 900px) {
         .archive-articles-grid {
@@ -2639,8 +2638,8 @@
       .featured-products-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 60px;
-        max-width: 1200px;
+        gap: 20px;
+        max-width: 1050px;
         margin: 60px auto 0;
       }
 
@@ -2709,7 +2708,7 @@
           object-fit: contain !important;
         }
 
-        .product-grid-item h3 {
+        .product-grid-item h3, .product-grid-kit {
           font-size: 0.6rem !important;
         }
 
@@ -2786,8 +2785,8 @@
         object-fit: cover;
       }
 
-      .product-grid-item h3 {
-        font-size: 0.875rem;
+      .product-grid-item h3, .product-grid-kit {
+        font-size: 1rem;
         font-weight: 500;
         margin-top: 10px;
         margin-bottom: 2px;
@@ -2796,6 +2795,12 @@
         text-transform: uppercase;
         letter-spacing: 0.1em;
         line-height: 1.4;
+      }
+      .product-grid-kit {
+        margin-top: 0;
+        text-transform: none;
+        letter-spacing: normal;
+        color: var(--text-color);
       }
 
       .product-grid-subtitle {
@@ -3360,8 +3365,7 @@
       }
 
       #recommended-reading-preview .recommended-reading-card {
-        min-width: 320px;
-        max-width: 320px;
+        width: 100%;
       }
 
       .recommended-reading-card:hover {
@@ -3737,7 +3741,7 @@
           padding: 0px !important;
         }
 
-        .product-grid-item h3 {
+        .product-grid-item h3, .product-grid-kit {
           font-size: 0.55rem !important;
         }
 
@@ -4952,7 +4956,7 @@
       /* Make Shakti Peya and Chandra Rasa images wider */
       .product-grid-item[onclick*="shakti"] .product-grid-image,
       .product-grid-item[onclick*="chandra"] .product-grid-image {
-        aspect-ratio: 1 / 1 !important;
+        aspect-ratio: 1.5 / 1 !important;
       }
     </style>
   </head>
@@ -5194,13 +5198,11 @@
                 style="
                   color: #666;
                   font-size: 1rem;
-                  max-width: 600px;
+                  max-width: 900px;
                   margin: 0 auto 30px;
                 "
               >
-                High-functioning botanical formulations rooted in ancient herbal
-                lineages, designed to restore rhythm and vitality through daily
-                ritual.
+                A collection of precisely composed formulations honoring the body’s essential cycles: activation and restoration.
               </p>
             </div>
 
@@ -5221,12 +5223,12 @@
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <h3 style="font-weight: bold; text-transform: none;">Shakti Peya | Energy Elixir</h3>
+                  <h3 style="font-weight: 400; text-transform: none;">SHAKTI PEYA | Energy Elixir</h3>
                   <p class="product-grid-description">
                     Activation ⋅ Anti-Aging ⋅ Radiance
                   </p>
-                  <p>9 Test Tube Kit</p>
-                  <p class="product-grid-price">$54</p>
+                  <p class="product-grid-kit">9 Test Tube Kit</p>
+                  <p class="product-grid-price">$33</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="SHAKTI PEYA"
@@ -5252,12 +5254,12 @@
                       referrerPolicy="no-referrer"
                     />
                   </div>
-                  <h3 style="font-weight: bold; text-transform: none;">Chandra Rasa | Sleep Potion</h3>
+                  <h3 style="font-weight: 400; text-transform: none;">CHANDRA RASA | Sleep Potion</h3>
                   <p class="product-grid-description">
                     Calm ⋅ Settling ⋅ Restorative
                   </p>
-                  <p>9 Test Tube Kit</p>
-                  <p class="product-grid-price">$54</p>
+                  <p class="product-grid-kit">9 Test Tube Kit</p>
+                  <p class="product-grid-price">$33</p>
                   <button
                     class="btn btn-primary buy-now-btn"
                     data-product="CHANDRA RASA"
@@ -5319,12 +5321,12 @@
         <section id="about" class="about-section">
           <div class="about-split-layout">
             <div class="about-content-side">
-              <div class="about-content-inner" style="text-align: center;">
-                <span class="eyebrow" style="font-family: var(--font-heading);"
+              <div class="about-content-inner" style="text-align: left; align-items: flex-start;">
+                <span class="eyebrow" style="font-family: var(--font-heading); font-size: 1.25rem;"
                   >The Intelligence of Ancient Botanicals</span
                 >
 
-                <p>
+                <p style="text-align: left;">
                   Emerging from India's diverse herbal traditions and regional
                   pharmacopoeias, our formulations draw from centuries of
                   botanical wisdom practiced,and perfected across generations.
@@ -5332,7 +5334,7 @@
                   alchemy, cultivating vitality and balance through ritual and
                   sustained practice.
                 </p>
-                <div style="margin-top: 30px; display: flex; justify-content: center; width: 100%;">
+                <div style="margin-top: 30px; display: flex; justify-content: flex-start; width: 100%;">
                   <a href="#house" onclick="showHouse(); return false;" class="btn btn-view-more">Discover The House</a>
                 </div>
               </div>
@@ -5582,12 +5584,13 @@
             <div class="section-header text-center" style="margin-bottom: 20px">
               <h2
                 style="
-                  font-size: 2.1rem;
                   font-family: 'Cormorant Garamond', serif;
+                  font-size: clamp(2.5rem, 8vw, 4rem);
+                  margin-bottom: 15px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.1em;
                   color: #222;
                   font-weight: 400;
-                  letter-spacing: 0.1em;
-                  text-transform: uppercase;
                   margin-top: 10px;
                 "
               >
@@ -5606,10 +5609,10 @@
         <section
           id="recommended-reading-preview"
           class="section-padding bg-light"
-          style="padding: 20px 0 60px"
+          style="padding: 100px 0 60px"
         >
           <div class="container">
-            <div class="section-header text-center" style="margin-bottom: 30px">
+            <div class="section-header text-center" style="margin-bottom: 60px">
               <h2
                 style="
                   font-size: 2.1rem;
@@ -5625,16 +5628,7 @@
               </h2>
             </div>
 
-            <div
-              class="recommended-reading-grid"
-              style="
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 40px;
-                padding-bottom: 0px;
-              "
-            >
+            <div class="recommended-reading-grid products-grid">
                 <!-- Recommended Reading Post 1 -->
                 <article class="recommended-reading-card">
                   <a
@@ -5723,7 +5717,7 @@
 
             <div class="text-center" style="margin-top: 20px; margin-bottom: 30px;">
               <a
-                class="btn btn-view-more"
+                class="btn btn-primary"
                 href="#recommended-reading"
                 onclick="showRecommendedReading(); return false;"
               >
@@ -6620,10 +6614,8 @@
           />
           <div class="container" style="position: relative; top: auto; transform: none; z-index: 2">
             <h1 class="hero-title" style="color: #333; text-shadow: none;">SIGNATURE RITUALS</h1>
-            <p class="hero-description" style="color: #555; text-shadow: none;">
-              High-functioning botanical formulations rooted in ancient herbal
-              lineages, designed to restore rhythm and vitality through daily
-              ritual.
+            <p class="hero-description" style="color: #555; text-shadow: none; max-width: 900px;">
+              A collection of precisely composed formulations honoring the body’s essential cycles: activation and restoration.
             </p>
             <a href="#shop-products" class="btn btn-primary"
               >Explore the collection</a
@@ -6665,8 +6657,7 @@
                       alt="Shakti Peya - Energy Elixir"
                     />
                   </div>
-                  <h3>SHAKTI PEYA</h3>
-                  <p class="product-grid-subtitle">Energy Elixir</p>
+                  <h3 style="font-weight: 400; text-transform: none;">SHAKTI PEYA | Energy Elixir</h3>
                   <p class="product-grid-description">
                     Activation ⋅ Anti-Aging ⋅ Radiance
                   </p>
@@ -6694,8 +6685,7 @@
                       alt="Chandra Rasa - Sleep Potion"
                     />
                   </div>
-                  <h3>CHANDRA RASA</h3>
-                  <p class="product-grid-subtitle">Sleep Potion</p>
+                  <h3 style="font-weight: 400; text-transform: none;">CHANDRA RASA | Sleep Potion</h3>
                   <p class="product-grid-description">
                     Calm ⋅ Settling ⋅ Restorative
                   </p>
@@ -6735,11 +6725,10 @@
               </h2>
             </div>
 
-            <div class="products-grid swiper">
-              <div class="swiper-wrapper">
+            <div class="products-grid">
                 <!-- Product 1: Hibiscus -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('hibiscus')"
                 >
                   <div class="product-grid-image">
@@ -6767,7 +6756,7 @@
 
                 <!-- Product 2: Rose -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('rose')"
                 >
                   <div class="product-grid-image">
@@ -6795,7 +6784,7 @@
 
                 <!-- Product 3: Blue Butterfly Pea -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('butterflypea')"
                 >
                   <div class="product-grid-image">
@@ -6823,7 +6812,7 @@
 
                 <!-- Product 4: Black Turmeric -->
                 <div
-                  class="product-grid-item swiper-slide"
+                  class="product-grid-item"
                   onclick="showProduct('turmeric')"
                 >
                   <div class="product-grid-image">
@@ -6848,8 +6837,6 @@
                     Add to cart
                   </button>
                 </div>
-              </div>
-              <div class="swiper-pagination"></div>
             </div>
           </div>
         </section>
@@ -6921,8 +6908,7 @@
 
 
                 <div class="pdp-actions">
-                  <button class="pdp-add-to-cart" data-product="SHAKTI PEYA" onclick="event.stopPropagation()" style="background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
-                  <button class="pdp-add-to-cart buy-now-btn" data-product="SHAKTI PEYA" onclick="event.stopPropagation()">Buy Now</button>
+                  <button class="pdp-add-to-cart btn btn-primary" data-product="SHAKTI PEYA" onclick="event.stopPropagation()">Add to Cart</button>
                 </div>
 
               </div>
@@ -6993,6 +6979,7 @@
                       <h4>Chandra Rasa</h4>
                       <p class="pdp-related-subtitle">Sleep Potion</p>
                       <p class="pdp-related-price">$33</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('chandra')">Add to Cart</button>
                     </div>
                     <div class="pdp-related-card" onclick="showProduct('hibiscus')">
                       <div class="pdp-related-img">
@@ -7001,6 +6988,16 @@
                       <h4>Hibiscus Rosa-Sinensis</h4>
                       <p class="pdp-related-subtitle">Antioxidant Infusion</p>
                       <p class="pdp-related-price">$42</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('hibiscus')">Add to Cart</button>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('turmeric')">
+                      <div class="pdp-related-img">
+                        <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png" alt="Curcuma Caesia" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Black Turmeric</h4>
+                      <p class="pdp-related-subtitle">Kaya Kalpa Agent</p>
+                      <p class="pdp-related-price">$42</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('turmeric')">Add to Cart</button>
                     </div>
               </div>
             </div>
@@ -7038,8 +7035,7 @@
                 <p class="pdp-price">$54</p>
 
                 <div class="pdp-actions">
-                  <button class="pdp-add-to-cart" data-product="CHANDRA RASA" onclick="event.stopPropagation()" style="background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
-                  <button class="pdp-add-to-cart buy-now-btn" data-product="CHANDRA RASA" onclick="event.stopPropagation()">Buy Now</button>
+                  <button class="pdp-add-to-cart btn btn-primary" data-product="CHANDRA RASA" onclick="event.stopPropagation()">Add to Cart</button>
                 </div>
 
                 <div class="pdp-key-details">
@@ -7109,6 +7105,7 @@
                       <h4>Shakti Peya</h4>
                       <p class="pdp-related-subtitle">Energy Elixir</p>
                       <p class="pdp-related-price">$33</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('shakti')">Add to Cart</button>
                     </div>
                     <div class="pdp-related-card" onclick="showProduct('hibiscus')">
                       <div class="pdp-related-img">
@@ -7117,6 +7114,16 @@
                       <h4>Hibiscus Rosa-Sinensis</h4>
                       <p class="pdp-related-subtitle">Antioxidant Infusion</p>
                       <p class="pdp-related-price">$42</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('hibiscus')">Add to Cart</button>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('butterflypea')">
+                      <div class="pdp-related-img">
+                        <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Sampriti%20butterfly%20pea.png" alt="Clitoria Ternatea" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Clitoria Ternatea</h4>
+                      <p class="pdp-related-subtitle">Azure Infusion</p>
+                      <p class="pdp-related-price">$38</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('butterflypea')">Add to Cart</button>
                     </div>
               </div>
             </div>
@@ -7154,8 +7161,7 @@
                 <p class="pdp-description">A vibrant infusion of sun-drenched petals, known for its high antioxidant content and ability to support natural collagen production. This botanical essence revitalises the skin's appearance, lending a youthful radiance.</p>
 
                 <div class="pdp-actions">
-                  <button class="pdp-add-to-cart" data-product="HIBISCUS" onclick="event.stopPropagation()" style="background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
-                  <button class="pdp-add-to-cart buy-now-btn" data-product="HIBISCUS" onclick="event.stopPropagation()">Buy Now</button>
+                  <button class="pdp-add-to-cart btn btn-primary" data-product="HIBISCUS" onclick="event.stopPropagation()">Add to Cart</button>
                 </div>
 
                 <div class="pdp-key-details">
@@ -7229,6 +7235,7 @@
                       <h4>Shakti Peya</h4>
                       <p class="pdp-related-subtitle">Energy Elixir</p>
                       <p class="pdp-related-price">$33</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('shakti')">Add to Cart</button>
                     </div>
                     <div class="pdp-related-card" onclick="showProduct('chandra')">
                       <div class="pdp-related-img">
@@ -7237,6 +7244,16 @@
                       <h4>Chandra Rasa</h4>
                       <p class="pdp-related-subtitle">Sleep Potion</p>
                       <p class="pdp-related-price">$33</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('chandra')">Add to Cart</button>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('rose')">
+                      <div class="pdp-related-img">
+                        <img src="https://raw.githubusercontent.com/webbiewooble/test/main/sampriti%20rose.png" alt="Rosa Damascena" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Rosa Damascena</h4>
+                      <p class="pdp-related-subtitle">Hydrating Essence</p>
+                      <p class="pdp-related-price">$56</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('rose')">Add to Cart</button>
                     </div>
               </div>
             </div>
@@ -7272,9 +7289,8 @@
                 <p class="pdp-price">$56</p>
                 <p class="pdp-description">Steam-distilled from hand-picked petals at dawn. A deeply hydrating and soothing essence that balances the skin's pH and calms the senses. This timeless botanical provides comfort and long-lasting moisture.</p>
 
-                <div class="pdp-actions" style="display: flex; gap: 12px;">
-                  <button class="pdp-add-to-cart" data-product="ROSE" onclick="event.stopPropagation()" style="flex: 1; background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
-                  <button class="pdp-add-to-cart buy-now-btn" data-product="ROSE" onclick="event.stopPropagation()" style="flex: 1;">Buy Now</button>
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart btn btn-primary" data-product="ROSE" onclick="event.stopPropagation()">Add to Cart</button>
                 </div>
 
                 <div class="pdp-key-details">
@@ -7348,6 +7364,7 @@
                       <h4>Shakti Peya</h4>
                       <p class="pdp-related-subtitle">Energy Elixir</p>
                       <p class="pdp-related-price">$33</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('shakti')">Add to Cart</button>
                     </div>
                     <div class="pdp-related-card" onclick="showProduct('chandra')">
                       <div class="pdp-related-img">
@@ -7356,6 +7373,16 @@
                       <h4>Chandra Rasa</h4>
                       <p class="pdp-related-subtitle">Sleep Potion</p>
                       <p class="pdp-related-price">$33</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('chandra')">Add to Cart</button>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('turmeric')">
+                      <div class="pdp-related-img">
+                        <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Black%20turmeric%20in%20amber%20jar.png" alt="Curcuma Caesia" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Black Turmeric</h4>
+                      <p class="pdp-related-subtitle">Kaya Kalpa Agent</p>
+                      <p class="pdp-related-price">$42</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('turmeric')">Add to Cart</button>
                     </div>
               </div>
             </div>
@@ -7391,9 +7418,8 @@
                 <p class="pdp-price">$42</p>
                 <p class="pdp-description">A rare kayakalpa herb...</p>
 
-                <div class="pdp-actions" style="display: flex; gap: 12px;">
-                  <button class="pdp-add-to-cart" data-product="Black Turmeric" onclick="event.stopPropagation()" style="flex: 1; background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
-                  <button class="pdp-add-to-cart buy-now-btn" data-product="Black Turmeric" onclick="event.stopPropagation()" style="flex: 1;">Buy Now</button>
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart btn btn-primary" data-product="Black Turmeric" onclick="event.stopPropagation()">Add to Cart</button>
                 </div>
 
                 <div class="pdp-key-details">
@@ -7467,6 +7493,7 @@
                       <h4>Shakti Peya</h4>
                       <p class="pdp-related-subtitle">Energy Elixir</p>
                       <p class="pdp-related-price">$33</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('shakti')">Add to Cart</button>
                     </div>
                     <div class="pdp-related-card" onclick="showProduct('chandra')">
                       <div class="pdp-related-img">
@@ -7475,6 +7502,16 @@
                       <h4>Chandra Rasa</h4>
                       <p class="pdp-related-subtitle">Sleep Potion</p>
                       <p class="pdp-related-price">$33</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('chandra')">Add to Cart</button>
+                    </div>
+                    <div class="pdp-related-card" onclick="showProduct('hibiscus')">
+                      <div class="pdp-related-img">
+                        <img src="https://raw.githubusercontent.com/webbiewooble/test/main/Sampriti%20Hibiscus.png" alt="Hibiscus Rosa-Sinensis" referrerpolicy="no-referrer" />
+                      </div>
+                      <h4>Hibiscus Rosa-Sinensis</h4>
+                      <p class="pdp-related-subtitle">Antioxidant Infusion</p>
+                      <p class="pdp-related-price">$42</p>
+                      <button class="pdp-add-to-cart btn btn-primary" onclick="event.stopPropagation(); addToCart('hibiscus')">Add to Cart</button>
                     </div>
               </div>
             </div>
@@ -7510,9 +7547,8 @@
                 <p class="pdp-price">$38</p>
                 <p class="pdp-description">A brilliant azure infusion rich in anthocyanins. Supports cognitive function and provides a powerful shield against environmental stressors. This antioxidant powerhouse promotes a calm, even tone.</p>
 
-                <div class="pdp-actions" style="display: flex; gap: 12px;">
-                  <button class="pdp-add-to-cart" data-product="BLUE BUTTERFLY PEA" onclick="event.stopPropagation()" style="flex: 1; background: transparent; border: 1.5px solid #333; color: #333;">Add to Cart</button>
-                  <button class="pdp-add-to-cart buy-now-btn" data-product="BLUE BUTTERFLY PEA" onclick="event.stopPropagation()" style="flex: 1;">Buy Now</button>
+                <div class="pdp-actions">
+                  <button class="pdp-add-to-cart btn btn-primary" data-product="BLUE BUTTERFLY PEA" onclick="event.stopPropagation()">Add to Cart</button>
                 </div>
 
                 <div class="pdp-key-details">
@@ -8945,7 +8981,7 @@
         // Removed Google Apps Script URL as requested
 
         // --- Elements ---
-        const buyBtns = document.querySelectorAll(".buy-now-btn");
+        const buyBtns = document.querySelectorAll(".buy-now-btn, .pdp-add-to-cart:not(.direct-buy-btn)");
         const buyForm = document.getElementById("buy-form");
         const hiddenProductName = document.getElementById("product-name");
 
@@ -9219,32 +9255,34 @@
         };
 
         // --- Hash Change Handling ---
-        window.addEventListener("hashchange", () => {
-          const hash = window.location.hash;
-          if (hash === "#recommended-reading") {
-            window.showRecommendedReading();
-          } else if (hash === "#shop") {
-            window.showShop();
-          } else if (hash === "#house") {
-            window.showHouse();
-          } else if (hash === "#materia") {
-            window.showMateria();
-          } else if (hash === "#provenance") {
-            window.showProvenance();
-          } else if (hash === "#contact") {
-            window.showContact();
-          } else if (hash === "#reviews") {
-            window.showReviews();
-          } else if (hash.startsWith("#article-")) {
-            const articleId = hash.replace("#article-", "");
-            window.showArticle(articleId);
-          } else if (hash === "#home" || hash === "") {
-            window.showHome();
-          }
-        });
+        window.addEventListener("DOMContentLoaded", () => {
+          window.addEventListener("hashchange", () => {
+            const hash = window.location.hash;
+            if (hash === "#recommended-reading") {
+              window.showRecommendedReading();
+            } else if (hash === "#shop") {
+              window.showShop();
+            } else if (hash === "#house") {
+              window.showHouse();
+            } else if (hash === "#materia") {
+              window.showMateria();
+            } else if (hash === "#provenance") {
+              window.showProvenance();
+            } else if (hash === "#contact") {
+              window.showContact();
+            } else if (hash === "#reviews") {
+              window.showReviews();
+            } else if (hash.startsWith("#article-")) {
+              const articleId = hash.replace("#article-", "");
+              window.showArticle(articleId);
+            } else if (hash === "#home" || hash === "") {
+              window.showHome();
+            }
+          });
 
-        // Trigger hashchange on load
-        window.dispatchEvent(new Event("hashchange"));
+          // Trigger hashchange on load
+          window.dispatchEvent(new Event("hashchange"));
+        });
 
         window.showMateria = function () {
           document.body.classList.remove("no-hero");
@@ -9628,6 +9666,27 @@
           closeAddedBtn.addEventListener("click", closeAddedModal);
         }
 
+        window.addToCart = function (productKey) {
+          const product = productsData[productKey];
+          if (product) {
+            const existingItem = cart.find(
+              (item) => item.name === product.name,
+            );
+            if (existingItem) {
+              existingItem.quantity += 1;
+            } else {
+              cart.push({ ...product, quantity: 1 });
+            }
+            updateCartUI();
+            showAddedToCartModal(productKey);
+          } else {
+            // Fallback for unknown products
+            cart.push({ name: productKey, price: 0, quantity: 1 });
+            updateCartUI();
+            alert("Added to cart!");
+          }
+        };
+
         window.updateCartItemQuantity = function (index, delta) {
           if (cart[index]) {
             cart[index].quantity += delta;
@@ -9792,7 +9851,8 @@
                         <div style="min-width: 120px; text-align: left; cursor: pointer;" onclick="closeCartModal(); showProduct('${crossProduct.id}')">
                             <img src="${crossProduct.image}" style="width: 100%; height: 120px; object-fit: contain; margin-bottom: 10px; background: #f9f9f9;">
                             <div style="font-size: 0.8rem; font-weight: 500; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; line-clamp: 2; color: #333;">${crossProduct.name}</div>
-                            <div style="font-size: 0.8rem; color: #666;">$${crossProduct.price.toFixed(2)}</div>
+                            <div style="font-size: 0.8rem; color: #666; margin-bottom: 8px;">$${crossProduct.price.toFixed(2)}</div>
+                            <button onclick="event.stopPropagation(); addToCart('${key}')" style="width: 100%; padding: 8px; background: var(--primary-color-1); color: var(--bg-color); border: none; cursor: pointer; font-size: 0.7rem; text-transform: uppercase;">Add to Cart</button>
                         </div>
                     `;
               }
@@ -10164,6 +10224,30 @@
 
       if (heroVideo) videoObserver.observe(heroVideo);
       if (aboutVideo) videoObserver.observe(aboutVideo);
+
+      // Inject product descriptions
+      document.querySelectorAll('.pdp-related-card').forEach(card => {
+        const title = card.querySelector('h4')?.innerText;
+        if (title === 'Shakti Peya') {
+          if (!card.querySelector('.pdp-related-description')) {
+            const desc = document.createElement('p');
+            desc.className = 'pdp-related-description';
+            desc.style.fontSize = '0.8rem';
+            desc.style.color = 'var(--text-muted)';
+            desc.innerText = 'Activation ⋅ Anti-Aging ⋅ Radiance';
+            card.insertBefore(desc, card.querySelector('.pdp-related-price'));
+          }
+        } else if (title === 'Chandra Rasa') {
+          if (!card.querySelector('.pdp-related-description')) {
+            const desc = document.createElement('p');
+            desc.className = 'pdp-related-description';
+            desc.style.fontSize = '0.8rem';
+            desc.style.color = 'var(--text-muted)';
+            desc.innerText = 'Calm ⋅ Settling ⋅ Restorative';
+            card.insertBefore(desc, card.querySelector('.pdp-related-price'));
+          }
+        }
+      });
     </script>
   </body>
 </html>

@@ -1,257 +1,1190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-try{if(window.parent&&window.parent!==window){window.parent.promotekit_referral="1fd2949a-d22c-431b-92bf-02d4ad04ee24";window.parent.document.cookie="promotekit_referral=1fd2949a-d22c-431b-92bf-02d4ad04ee24;path=/;domain=.aura.build;max-age=31536000"}}catch(e){}
-</script>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brunish Richard D Grocery</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<script src="https://code.iconify.design/3/3.1.0/iconify.min.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-:root {
---brand-red: #C8102E;
---brand-black: #101820;
-}
-.font-display { font-family: 'Oswald', sans-serif; }
-.font-body { font-family: 'Open Sans', sans-serif; }
-/* Subtle texture for background elements */
-.bg-pattern {
-background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
-background-size: 20px 20px;
-}
-/* Custom scrollbar hiding for horizontal scroll */
-.no-scrollbar::-webkit-scrollbar {
-display: none;
-}
-.no-scrollbar {
--ms-overflow-style: none;
-scrollbar-width: none;
-}
-</style></head>
-<body class="bg-white text-zinc-900 font-body antialiased min-h-screen flex flex-col">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muskim Bouncer Service | Professional Security</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --accent: #B45309;
+            --accent-hover: #9c4506;
+            --bg-light: #F8FAFC;
+            --bg-white: #ffffff;
+            --text-main: #0F172A;
+            --text-light: #64748B;
+            --card-border: #E2E8F0;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
 
-    <!-- Navigation -->
-    <nav class="sticky top-0 z-50 bg-white border-b border-zinc-200 py-3 px-4 md:px-8">
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-            <div class="flex items-center gap-8">
-                <!-- Logo -->
-                <a href="#" class="font-display text-2xl md:text-3xl font-bold uppercase leading-none tracking-tight text-zinc-900">
-                    Brunish<br><span class="text-[#C8102E]">Grocery</span>
-                </a>
-                
-                <!-- Desktop Links -->
-                <div class="hidden md:flex items-center gap-6 text-sm font-bold uppercase tracking-wider text-zinc-600">
-                    <a href="#" class="hover:text-[#C8102E] transition-colors">Weekly Ad</a>
-                    <a href="#" class="hover:text-[#C8102E] transition-colors">Departments</a>
-                    <a href="#" class="hover:text-[#C8102E] transition-colors">Catering</a>
-                    <a href="#" class="hover:text-[#C8102E] transition-colors">Perks</a>
-                </div>
-            </div>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
 
-            <div class="flex items-center gap-4">
-                <a href="#" class="hidden md:block text-sm font-bold uppercase tracking-wider hover:text-[#C8102E]">Sign In</a>
-                <button class="bg-[#C8102E] hover:bg-red-700 text-white px-5 py-2.5 rounded-full font-bold uppercase tracking-wide text-xs md:text-sm transition-transform hover:-translate-y-0.5 shadow-sm flex items-center gap-2">
-                    <span class="iconify" data-icon="lucide:shopping-basket" data-width="18" style="stroke-width: 2;"></span>
-                    Start Order
-                </button>
-            </div>
-        </div>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .section {
+            padding: 100px 5%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #fff;
+            border: 2px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            padding: 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: var(--primary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .navbar.scrolled .logo,
+        .navbar.scrolled .nav-links a {
+            color: #ffffff;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            color: #fff;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #fff;
+            font-weight: 600;
+            transition: var(--transition);
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            color: #fff;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .navbar.scrolled .menu-btn {
+            color: var(--primary);
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.7)), url('https://images.unsplash.com/photo-1590402485284-4c5a9578053e?auto=format&fit=crop&q=80&w=1000') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 5%;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .hero-title {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            line-height: 1.1;
+            color: #fff;
+        }
+
+        .hero-title span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            margin-bottom: 40px;
+            color: #e2e8f0;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .about {
+            background: var(--bg-white);
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .about-img::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            border-top: 5px solid var(--accent);
+            border-left: 5px solid var(--accent);
+            z-index: -1;
+        }
+
+        .about-content {
+            flex: 1;
+        }
+
+        .about-content .section-title {
+            text-align: left;
+            left: 0;
+            transform: none;
+        }
+
+        .about-content .section-title::after {
+            left: 0;
+            transform: none;
+        }
+
+        .about-text {
+            margin-top: 30px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .feature-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+        }
+
+        .feature-item span {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .services {
+            background: var(--bg-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--bg-white);
+            padding: 20px 30px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-bottom: 4px solid var(--accent);
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            background: #EFF6FF;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--accent);
+            color: #ffffff;
+        }
+
+        .service-card h3 {
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 11px;
+        }
+
+        .why-us {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .why-us .section-title {
+            color: #fff;
+        }
+
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .why-card {
+            padding: 20px;
+            background: var(--bg-white);
+            color: var(--text-main);
+            border-radius: 16px;
+            transition: var(--transition);
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow);
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .why-card i {
+            font-size: 18px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            background: #EFF6FF;
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-card h3 {
+            font-size: 15px;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .why-card p {
+            color: var(--text-light);
+            font-size: 11px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            overflow: hidden;
+            height: 250px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            color: var(--accent);
+            font-size: 2rem;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay i {
+            transform: translateY(0);
+        }
+
+        .testimonials {
+            background: var(--bg-light);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testi-card {
+            background: var(--bg-white);
+            padding: 30px 20px;
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testi-card::before {
+            content: '\f10d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            font-size: 3rem;
+            color: rgba(212, 175, 55, 0.1);
+        }
+
+        .testi-text {
+            color: var(--text-light);
+            font-style: italic;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testi-user {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testi-user img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+        }
+
+        .testi-user h4 {
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .testi-user span {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .contact {
+            background: var(--bg-white);
+        }
+
+        .contact-container {
+            display: flex;
+            gap: 60px;
+            background: var(--bg-white);
+            border-radius: 16px;
+            border: 1px solid var(--card-border);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+        }
+
+        .contact-info {
+            flex: 1;
+            background: var(--primary);
+            color: #fff;
+            padding: 50px;
+        }
+
+        .contact-info h3 {
+            color: #fff;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: #cbd5e1;
+            margin-bottom: 40px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-item i {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+
+        .info-item h4 {
+            color: #fff;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .info-item span {
+            color: #cbd5e1;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #25D366;
+            color: #fff;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            color: #fff;
+        }
+
+        .contact-form {
+            flex: 1.5;
+            padding: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: var(--transition);
+            background: var(--bg-light);
+            outline: none;
+            color: var(--text-main);
+        }
+
+        .form-control:focus {
+            border-color: var(--accent);
+            background: #fff;
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+        }
+
+        .footer {
+            background: #F1F5F9;
+            color: #64748B;
+            border-top: 1px solid var(--card-border);
+            padding: 80px 5% 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-about .logo {
+            margin-bottom: 20px;
+            display: inline-block;
+            color: var(--primary);
+        }
+
+        .footer-about p {
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(30,58,138,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent);
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .footer-links h4 {
+            color: var(--primary);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links ul a {
+            color: #64748B;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links ul a:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-title { font-size: 3.5rem; }
+            .about, .contact-container { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 15px 5%; background: var(--bg-white); }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--bg-white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 50px;
+                transition: var(--transition);
+            }
+            .nav-links.active { left: 0; }
+            .nav-links a { color: var(--primary); font-size: 1.2rem; }
+            .menu-btn { display: block; color: var(--primary); }
+            .logo { color: var(--primary); }
+            .hero-title { font-size: 2.5rem; }
+            .hero { padding-top: 80px; }
+            .section { padding: 70px 5%; }
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+            .contact-form, .contact-info { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">Muskim<span>.</span></a>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About Us</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#testimonials" class="nav-link">Reviews</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="menu-btn" id="menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
 
-    <!-- Hero Section (Split Layout like Potbelly) -->
-    <header class="bg-[#F9F9F9] border-b border-zinc-200">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 min-h-[500px]">
-            <!-- Text Content -->
-            <div class="flex flex-col justify-center p-8 md:p-16 order-2 md:order-1">
-                <span class="text-[#C8102E] font-bold uppercase tracking-widest text-sm mb-4">Fresh Since 1994</span>
-                <h1 class="font-display text-5xl md:text-7xl font-bold uppercase leading-[0.9] text-zinc-900 mb-6">
-                    Quality <br>You Can <br><span class="text-zinc-400">Taste.</span>
-                </h1>
-                <p class="text-zinc-600 text-lg mb-8 max-w-md font-medium">
-                    Local produce, butcher-cut meats, and pantry essentials delivered to your door or ready for pickup.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <button class="bg-zinc-900 text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-zinc-800 transition-all text-sm md:text-base">
-                        Order Pickup
-                    </button>
-                    <button class="bg-white text-zinc-900 border-2 border-zinc-900 px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-zinc-50 transition-all text-sm md:text-base">
-                        Order Delivery
-                    </button>
-                </div>
-            </div>
-            <!-- Hero Image -->
-            <div class="order-1 md:order-2 relative h-64 md:h-auto overflow-hidden">
-                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=2574&auto=format&fit=crop" 
-                     alt="Grocery Store Interior" 
-                     class="absolute inset-0 w-full h-full object-cover">
-                <!-- Overlay Texture -->
-                <div class="absolute inset-0 bg-zinc-900/10 mix-blend-multiply"></div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Ordering Toggle / Quick Access -->
-    <div class="bg-white py-8 border-b border-zinc-200 sticky top-[73px] z-40 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="flex items-center justify-center">
-                <div class="inline-flex bg-zinc-100 p-1 rounded-full border border-zinc-200">
-                    <button class="px-8 py-2 rounded-full bg-white shadow-sm text-zinc-900 font-bold uppercase tracking-wider text-sm border border-zinc-100">
-                        Pickup
-                    </button>
-                    <button class="px-8 py-2 rounded-full text-zinc-500 hover:text-zinc-900 font-bold uppercase tracking-wider text-sm transition-colors">
-                        Delivery
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Departments Grid -->
-    <section class="py-16 bg-pattern">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="flex items-end justify-between mb-10">
-                <h2 class="font-display text-4xl font-bold uppercase text-zinc-900">Shop Departments</h2>
-                <a href="#" class="text-[#C8102E] font-bold uppercase tracking-wide text-sm hover:underline underline-offset-4">View All</a>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <!-- Card 1 -->
-                <a href="#" class="group relative aspect-[4/5] overflow-hidden rounded-xl bg-white shadow-sm border border-zinc-200 hover:shadow-md transition-all hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?q=80&w=2670&auto=format&fit=crop" alt="Produce" class="w-full h-2/3 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 w-full h-1/3 bg-white p-6 flex flex-col justify-center border-t border-zinc-100">
-                        <h3 class="font-display text-2xl font-bold uppercase text-zinc-900">Produce</h3>
-                        <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider mt-1">Fresh Daily</span>
-                    </div>
-                </a>
-
-                <!-- Card 2 -->
-                <a href="#" class="group relative aspect-[4/5] overflow-hidden rounded-xl bg-white shadow-sm border border-zinc-200 hover:shadow-md transition-all hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1603048297172-c92544798d5e?q=80&w=2670&auto=format&fit=crop" alt="Bakery" class="w-full h-2/3 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 w-full h-1/3 bg-white p-6 flex flex-col justify-center border-t border-zinc-100">
-                        <h3 class="font-display text-2xl font-bold uppercase text-zinc-900">Bakery</h3>
-                        <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider mt-1">Baked In-House</span>
-                    </div>
-                </a>
-
-                <!-- Card 3 -->
-                <a href="#" class="group relative aspect-[4/5] overflow-hidden rounded-xl bg-white shadow-sm border border-zinc-200 hover:shadow-md transition-all hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1607623814075-e51df1bdc82f?q=80&w=2670&auto=format&fit=crop" alt="Meat & Deli" class="w-full h-2/3 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 w-full h-1/3 bg-white p-6 flex flex-col justify-center border-t border-zinc-100">
-                        <h3 class="font-display text-2xl font-bold uppercase text-zinc-900">Butcher</h3>
-                        <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider mt-1">Prime Cuts</span>
-                    </div>
-                </a>
-
-                <!-- Card 4 -->
-                <a href="#" class="group relative aspect-[4/5] overflow-hidden rounded-xl bg-white shadow-sm border border-zinc-200 hover:shadow-md transition-all hover:-translate-y-1">
-                    <img src="https://images.unsplash.com/photo-1626139576127-450b92eb527e?q=80&w=2670&auto=format&fit=crop" alt="Dairy" class="w-full h-2/3 object-cover group-hover:scale-105 transition-transform duration-500">
-                    <div class="absolute bottom-0 w-full h-1/3 bg-white p-6 flex flex-col justify-center border-t border-zinc-100">
-                        <h3 class="font-display text-2xl font-bold uppercase text-zinc-900">Dairy</h3>
-                        <span class="text-zinc-500 text-xs font-bold uppercase tracking-wider mt-1">Local Farms</span>
-                    </div>
-                </a>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content reveal active">
+            <h1 class="hero-title">Professional Bouncer & <span>Security Services</span> You Can Trust</h1>
+            <p class="hero-subtitle">Providing highly trained professionals, unmatched reliability, and absolute safety for events, VIPs, and corporate needs across India.</p>
+            <div class="hero-btns">
+                <a href="#contact" class="btn btn-primary">Hire Now</a>
+                <a href="#services" class="btn btn-outline">Explore Services</a>
             </div>
         </div>
     </section>
 
-    <!-- Perks / Rewards Section -->
-    <section class="bg-[#C8102E] py-20 px-4 text-white overflow-hidden relative">
-        <div class="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-        <div class="max-w-4xl mx-auto text-center relative z-10">
-            <h2 class="font-display text-5xl md:text-6xl font-bold uppercase mb-6 tracking-tight">Brunish Perks</h2>
-            <p class="text-xl md:text-2xl font-medium mb-10 text-white/90">Earn points on every grocery run. Free delivery on your first order when you sign up today.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <button class="bg-zinc-900 text-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-zinc-800 transition-all shadow-lg border-2 border-zinc-900">
-                    Join Now
-                </button>
-                <button class="bg-transparent text-white border-2 border-white px-8 py-4 rounded-full font-bold uppercase tracking-wider hover:bg-white hover:text-[#C8102E] transition-all">
-                    Learn More
-                </button>
+    <!-- About Section -->
+    <section class="section about reveal" id="about">
+        <div class="about-img">
+            <img src="https://images.unsplash.com/photo-1541888086053-93d39580a6b7?q=80&w=800" alt="Security Professionals">
+        </div>
+        <div class="about-content">
+            <h2 class="section-title">About Muskim Security</h2>
+            <p class="about-text">At Muskim Bouncer Service, we redefine security with a blend of discipline, advanced training, and unwavering commitment. Our personnel are carefully selected background-checked professionals capable of handling high-pressure situations with calmness and efficiency.</p>
+            <p class="about-text">Whether you need discreet executive protection or robust crowd management for a massive event, we deliver peace of mind so you can focus on what matters most.</p>
+            
+            <div class="about-features">
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Trained Personnel</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>10+ Years Exp.</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Licensed Agency</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>24/7 Protection</span>
+                </div>
+            </div>
+            <br>
+            <a href="#contact" class="btn btn-primary">Get a Quote</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services reveal" id="services">
+        <h2 class="section-title">Our Services</h2>
+        <p class="section-subtitle">Comprehensive security solutions tailored to meet your specific requirements, delivered by industry experts.</p>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-calendar-check"></i></div>
+                <h3>Event Security</h3>
+                <p>Ensuring the safety of your guests and staff at concerts, weddings, corporate events, and private parties with strategic crowd control.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-user-shield"></i></div>
+                <h3>Personal Bodyguards</h3>
+                <p>Discreet and highly trained close-protection officers for VIPs, executives, and individuals requiring personal safety.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-building-shield"></i></div>
+                <h3>Corporate Security</h3>
+                <p>Guarding corporate offices, commercial setups, and retail spaces against unauthorized access and potential threats.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-users-viewfinder"></i></div>
+                <h3>Crowd Management</h3>
+                <p>Expert handling of large gatherings to prevent stampedes, manage queues, and ensure smooth operational flow.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-house-chimney-crack"></i></div>
+                <h3>Residential Protection</h3>
+                <p>Round-the-clock guarding of private estates and gated communities to ensure resident safety and peace of mind.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-car-side"></i></div>
+                <h3>Secure Transportation</h3>
+                <p>Safe transit services for high-value individuals and assets from origin to destination with trained driver-guards.</p>
             </div>
         </div>
     </section>
 
-    <!-- Featured Promo (Two column) -->
-    <section class="max-w-7xl mx-auto py-16 px-4 md:px-8">
-        <div class="bg-zinc-100 rounded-3xl overflow-hidden grid grid-cols-1 md:grid-cols-2">
-            <div class="p-12 md:p-16 flex flex-col justify-center">
-                <div class="flex items-center gap-2 mb-4 text-[#C8102E]">
-                    <span class="iconify" data-icon="lucide:star" data-width="20" class="fill-current"></span>
-                    <span class="font-bold uppercase tracking-widest text-xs">Featured Item</span>
-                </div>
-                <h3 class="font-display text-4xl md:text-5xl font-bold uppercase text-zinc-900 mb-6 leading-[0.9]">
-                    Artisan<br>Sourdough
-                </h3>
-                <p class="text-zinc-600 mb-8 font-medium">Baked fresh every morning using our 30-year-old starter. Perfect for sandwiches or toast.</p>
-                <button class="self-start text-zinc-900 font-bold uppercase tracking-wider border-b-2 border-zinc-900 pb-1 hover:text-[#C8102E] hover:border-[#C8102E] transition-colors">
-                    Add to Cart
-                </button>
+    <!-- Why Choose Us -->
+    <section class="section why-us reveal">
+        <h2 class="section-title">Why Choose Us</h2>
+        <p class="section-subtitle" style="color: #cbd5e1;">The factors that make us the leading choice for security services in the region.</p>
+        
+        <div class="why-us-grid">
+            <div class="why-card">
+                <i class="fas fa-shield-halved"></i>
+                <h3>Trained Professionals</h3>
+                <p>Rigorous physical and tactical training.</p>
             </div>
-            <div class="h-64 md:h-auto relative">
-                <img src="https://images.unsplash.com/photo-1585476263060-b73b43a28691?q=80&w=2670&auto=format&fit=crop" alt="Bread" class="absolute inset-0 w-full h-full object-cover">
+            <div class="why-card">
+                <i class="fas fa-clock"></i>
+                <h3>24/7 Availability</h3>
+                <p>Round-the-clock dispatch & support.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Fast Response</h3>
+                <p>Rapid deployment in emergencies.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-handshake"></i>
+                <h3>Trusted Service</h3>
+                <p>Verified background checks.</p>
+            </div>
+            <div class="why-card">
+                <i class="fas fa-tags"></i>
+                <h3>Affordable Pricing</h3>
+                <p>Premium service within budget.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section gallery reveal" id="gallery">
+        <h2 class="section-title">Our Personnel in Action</h2>
+        <p class="section-subtitle">Glimpses of our team highly alert and managing security gracefully.</p>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1558227031-6b4550a1df24?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Gallery">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1542644265-4dffcbee67f2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Gallery">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Gallery">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1510257321523-2895fcbb4b11?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Gallery">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Gallery">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1614088924036-74fc212df866?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Gallery">
+                <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials reveal" id="testimonials">
+        <h2 class="section-title">Client Testimonials</h2>
+        <p class="section-subtitle">Don't just take our word for it—see what our satisfied clients have to say.</p>
+        
+        <div class="testimonial-grid">
+            <div class="testi-card">
+                <p class="testi-text">"Muskim Bouncers handled our corporate event flawlessly. Their presence was subtle yet commanding, and the entire crowd management process was smooth. Highly recommend their VIP protection."</p>
+                <div class="testi-user">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client">
+                    <div>
+                        <h4>Rajesh Kumar</h4>
+                        <span>Event Organizer</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <p class="testi-text">"We hired them for a private celebrity wedding. The staff was incredibly disciplined, properly dressed, and managed the paparazzi perfectly without causing any scene. Absolute professionals."</p>
+                <div class="testi-user">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client">
+                    <div>
+                        <h4>Sneha Sharma</h4>
+                        <span>Wedding Planner</span>
+                    </div>
+                </div>
+            </div>
+            <div class="testi-card">
+                <p class="testi-text">"Outstanding service! Needed urgent executive protection for our CEO's visit, and Muskim deployed their best guys within 2 hours. Felt completely safe throughout the trip."</p>
+                <div class="testi-user">
+                    <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Client">
+                    <div>
+                        <h4>Anil Deshmukh</h4>
+                        <span>Corporate Director</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact reveal" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <p class="section-subtitle">Get in touch for a quick quote or to discuss your security requirements.</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <p>We are ready to secure your world. Reach out to us anytime, 24/7 for immediate assistance.</p>
+                
+                <div class="info-item">
+                    <i class="fas fa-location-dot"></i>
+                    <div>
+                        <h4>Head Office</h4>
+                        <span>123 Security Square, Connaught Place<br>New Delhi, India 110001</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Phone Number</h4>
+                        <span>+91 98765 43210<br>+91 11 2345 6789</span>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Address</h4>
+                        <span>info@muskimbouncers.in</span>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/919876543210" target="_blank" class="whatsapp-btn">
+                    <i class="fab fa-whatsapp" style="font-size: 1.2rem; margin:0;"></i> Chat on WhatsApp
+                </a>
+            </div>
+            
+            <div class="contact-form">
+                <form onsubmit="event.preventDefault(); alert('Message sent successfully! We will contact you soon.');">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" class="form-control" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" required style="color: var(--text-light);">
+                            <option value="" disabled selected>Select Service Required</option>
+                            <option value="event">Event Security</option>
+                            <option value="vip">VIP Protection</option>
+                            <option value="corporate">Corporate Security</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Enter your message or requirements..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-zinc-900 text-white pt-16 pb-8 border-t-8 border-[#C8102E] mt-auto">
-        <div class="max-w-7xl mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
-                <div class="col-span-1 md:col-span-1">
-                     <a href="#" class="font-display text-3xl font-bold uppercase leading-none tracking-tight text-white mb-6 block">
-                        Brunish<br><span class="text-[#C8102E]">Grocery</span>
-                    </a>
-                    <div class="flex gap-4">
-                        <a href="#" class="bg-zinc-800 p-2 rounded-full hover:bg-[#C8102E] transition-colors"><span class="iconify" data-icon="lucide:facebook" data-width="20"></span></a>
-                        <a href="#" class="bg-zinc-800 p-2 rounded-full hover:bg-[#C8102E] transition-colors"><span class="iconify" data-icon="lucide:instagram" data-width="20"></span></a>
-                        <a href="#" class="bg-zinc-800 p-2 rounded-full hover:bg-[#C8102E] transition-colors"><span class="iconify" data-icon="lucide:twitter" data-width="20"></span></a>
-                    </div>
-                </div>
-                
-                <div>
-                    <h4 class="font-display text-lg font-bold uppercase mb-6 text-zinc-400 tracking-wider">Company</h4>
-                    <ul class="space-y-3 text-sm font-medium text-zinc-300">
-                        <li><a href="#" class="hover:text-white">About Us</a></li>
-                        <li><a href="#" class="hover:text-white">Careers</a></li>
-                        <li><a href="#" class="hover:text-white">Investors</a></li>
-                        <li><a href="#" class="hover:text-white">Locations</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-display text-lg font-bold uppercase mb-6 text-zinc-400 tracking-wider">Support</h4>
-                    <ul class="space-y-3 text-sm font-medium text-zinc-300">
-                        <li><a href="#" class="hover:text-white">Contact Us</a></li>
-                        <li><a href="#" class="hover:text-white">FAQs</a></li>
-                        <li><a href="#" class="hover:text-white">Gift Cards</a></li>
-                        <li><a href="#" class="hover:text-white">Feedback</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-display text-lg font-bold uppercase mb-6 text-zinc-400 tracking-wider">Legal</h4>
-                    <ul class="space-y-3 text-sm font-medium text-zinc-300">
-                        <li><a href="#" class="hover:text-white">Terms of Use</a></li>
-                        <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
-                        <li><a href="#" class="hover:text-white">Accessibility</a></li>
-                    </ul>
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-about">
+                <a href="#" class="logo">Muskim<span>.</span></a>
+                <p>India's premier bouncer and security service provider. Ensuring safety, maintaining order, and delivering peace of mind.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
             
-            <div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-500 uppercase font-bold tracking-widest">
-                <p>&copy; 2024 Brunish Richard D Grocery. All rights reserved.</p>
-                <div class="flex items-center gap-2">
-                    <span class="iconify" data-icon="lucide:map-pin" data-width="14"></span>
-                    <span>Pottstown, PA</span>
-                </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
+            
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">Event Security</a></li>
+                    <li><a href="#services">Bodyguards</a></li>
+                    <li><a href="#services">Corporate Guarding</a></li>
+                    <li><a href="#services">Crowd Control</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Newsletter</h4>
+                <p style="margin-bottom: 20px; font-size: 0.9rem;">Subscribe for security tips and updates.</p>
+                <form onsubmit="event.preventDefault();" style="display: flex;">
+                    <input type="email" placeholder="Email Address" style="padding: 10px; width: 100%; border: none; border-radius: 5px 0 0 5px; outline: none;" required>
+                    <button type="submit" style="padding: 10px 15px; background: var(--accent); color: var(--primary); border: none; border-radius: 0 5px 5px 0; cursor: pointer;"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Muskim Bouncer Service. All Rights Reserved.</p>
         </div>
     </footer>
 
+    <!-- Minimal JS -->
+    <script>
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        const menuBtn = document.getElementById('menu-btn');
+        const navLinks = document.getElementById('nav-links');
+        const navItems = document.querySelectorAll('.nav-link');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.querySelector('i').classList.remove('fa-times');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        const sections = document.querySelectorAll('section');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(li => {
+                li.classList.remove('active');
+                if (li.getAttribute('href') === `#${current}`) {
+                    li.classList.add('active');
+                }
+            });
+        });
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
 </body>
 </html>

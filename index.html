@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Magic Game - Your Ultimate Gaming Destination</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&amp;family=Inter:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-deep": "#0a0a0f",
+                      "secondary": "#93ccff",
+                      "surface-container-low": "#1b1b20",
+                      "inverse-on-surface": "#303036",
+                      "on-tertiary-container": "#a8a9a9",
+                      "surface-variant": "#35343a",
+                      "surface-container-lowest": "#0e0e13",
+                      "surface": "#ffffff",
+                      "outline": "#8e909d",
+                      "primary-fixed-dim": "#b3c5ff",
+                      "tertiary-fixed": "#e2e2e2",
+                      "primary": "#b3c5ff",
+                      "background": "#f4f4f9",
+                      "primary-container": "#003791",
+                      "on-primary-fixed": "#001849",
+                      "tertiary-container": "#3c3e3e",
+                      "on-secondary-container": "#003a5c",
+                      "primary-fixed": "#dae1ff",
+                      "secondary-fixed": "#cce5ff",
+                      "surface-container-high": "#2a292f",
+                      "brand-ps-blue": "#003791",
+                      "on-surface": "#131318",
+                      "surface-elevated": "#ffffff",
+                      "on-surface-variant": "#434652",
+                      "surface-container-highest": "#35343a",
+                      "on-primary-container": "#86a6ff",
+                      "surface-dim": "#f4f4f9",
+                      "tertiary-fixed-dim": "#c6c6c7",
+                      "inverse-primary": "#345ab3",
+                      "inverse-surface": "#131318",
+                      "on-tertiary-fixed-variant": "#454747",
+                      "on-background": "#131318",
+                      "secondary-fixed-dim": "#93ccff",
+                      "secondary-container": "#00a9fd",
+                      "on-primary-fixed-variant": "#14419a",
+                      "surface-tint": "#b3c5ff",
+                      "outline-variant": "#e2e2e2",
+                      "surface-bright": "#ffffff",
+                      "on-secondary-fixed-variant": "#004b73",
+                      "tertiary": "#c6c6c7",
+                      "on-tertiary-fixed": "#1a1c1c",
+                      "on-primary": "#ffffff",
+                      "on-secondary-fixed": "#001d31",
+                      "on-error-container": "#ffdad6",
+                      "neon-glow": "#00aaff",
+                      "on-secondary": "#003351",
+                      "error-container": "#93000a",
+                      "surface-container": "#ffffff",
+                      "error": "#ffb4ab",
+                      "on-error": "#690005",
+                      "on-tertiary": "#2f3131"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "margin-desktop": "64px",
+                      "container-max": "1280px",
+                      "gutter": "24px",
+                      "margin-mobile": "24px",
+                      "unit": "4px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Space Grotesk"
+                      ],
+                      "headline-sm": [
+                              "Space Grotesk"
+                      ],
+                      "headline-md": [
+                              "Space Grotesk"
+                      ],
+                      "display-lg-mobile": [
+                              "Space Grotesk"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "48px",
+                              {
+                                      "lineHeight": "56px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-sm": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-md": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "display-lg-mobile": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #f4f4f9;
+            color: #131318;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Hide scrollbar for horizontal scrolling containers */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-background font-body-md text-on-surface pb-[100px]">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-outline-variant shadow-sm">
+<div class="flex justify-between items-center px-margin-mobile h-16 w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 flex-shrink-0 bg-transparent flex items-center justify-center rounded-full">
+<img alt="Mascot Logo" class="w-full h-full object-contain mix-blend-multiply" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPtXeHDAZ2TCmsijZYNNFBl-7DRA0XUXJ99rb3h1vHo7oHEJ_wKYMXPwUUmi1d9Tc6IM6g0bXaa4nSKJI6QZVuD-Uve9u2OOkq236MaQKCJvjqqbyK6jlJxWKH2w1DomjudpBqWiZaAnUxsHQNcaq60Nc_2RyS85aVp2kx4r_9bz0ooSNwGiw6tLFYijTJKVNIIbexLYkbV19B6dhAslXfyxP-x61NHAMbzaNTq7_ZooK0pMV2NY--L9fFnV0Z4l0d5EY5O6-MObo"/>
+</div>
+<span class="font-headline-sm text-[20px] font-bold text-on-surface tracking-tight">Magic Game</span>
+</div>
+<nav class="hidden md:flex items-center gap-8 font-body-md font-medium text-on-surface">
+<a href="#" class="hover:text-brand-ps-blue transition-colors">Consoles</a>
+<a href="#" class="hover:text-brand-ps-blue transition-colors">Games</a>
+<a href="#" class="hover:text-brand-ps-blue transition-colors">Accessories</a>
+<a href="#" class="hover:text-brand-ps-blue transition-colors">PC Parts</a>
+<a href="#" class="hover:text-brand-ps-blue transition-colors">Offers</a>
+</nav>
+<button class="w-10 h-10 flex items-center justify-center bg-transparent hover:bg-gray-100 text-on-surface transition-colors active:scale-95 duration-200 focus:outline-none rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="w-full max-w-container-max mx-auto pt-16">
+<!-- Hero Section -->
+<section class="relative w-full h-[60vh] min-h-[450px] overflow-hidden bg-surface-deep group" id="hero-slider">
+<!-- Slide 1 -->
+<div class="absolute inset-0 w-full h-full transition-opacity duration-700 opacity-100 slide z-10 pointer-events-auto">
+<img alt="Hero Background" class="w-full h-full object-cover opacity-60" src="https://images.unsplash.com/photo-1606144042875-d14fbdfbeb06?w=1600&amp;q=80&amp;fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-surface-deep/60 to-transparent"></div>
+<div class="absolute inset-0 flex items-end pb-12 px-margin-mobile">
+<div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col gap-6">
+<span class="inline-block px-3 py-1 bg-white text-surface-deep font-label-caps text-[10px] uppercase tracking-widest w-fit">
+                    NEW ARRIVALS
+                </span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white leading-tight font-bold">
+                    Magic Land Games:<br/>
+<span class="text-white/80 font-normal">Your Ultimate Gaming Destination</span>
+</h1>
+<p class="font-body-lg text-body-lg text-white/70 max-w-md">
+                    Power up your play with the latest consoles, immersive gear, and blockbuster titles.
+                </p>
+<div class="flex gap-4 mt-4">
+<button class="bg-brand-ps-blue text-white px-8 py-4 font-label-caps text-label-caps transition-all duration-300 active:scale-95 flex items-center gap-2 rounded-sm hover:bg-brand-ps-blue/90">
+<span>SHOP NOW</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Slide 2 -->
+<div class="absolute inset-0 w-full h-full transition-opacity duration-700 opacity-0 slide z-0 pointer-events-none">
+<img alt="PC Gaming Slider" class="w-full h-full object-cover opacity-60" src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=1600&amp;q=80&amp;fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep via-surface-deep/60 to-transparent"></div>
+<div class="absolute inset-0 flex items-end pb-12 px-margin-mobile">
+<div class="relative z-10 w-full max-w-container-max mx-auto flex flex-col gap-6">
+<span class="inline-block px-3 py-1 bg-white text-surface-deep font-label-caps text-[10px] uppercase tracking-widest w-fit">
+                    PC COMPONENTS
+                </span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile text-white leading-tight font-bold">
+                    Build Your Dream PC<br/>
+<span class="text-white/80 font-normal">High-performance parts</span>
+</h1>
+<p class="font-body-lg text-body-lg text-white/70 max-w-md">
+                    Upgrade your rig with cutting-edge GPUs, processors, and RGB accessories.
+                </p>
+<div class="flex gap-4 mt-4">
+<button class="bg-brand-ps-blue text-white px-8 py-4 font-label-caps text-label-caps transition-all duration-300 active:scale-95 flex items-center gap-2 rounded-sm hover:bg-brand-ps-blue/90">
+<span>EXPLORE HARDWARE</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Slider Controls -->
+<button id="slider-prev" class="absolute z-20 left-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md hover:bg-white/40 transition-colors opacity-0 group-hover:opacity-100 focus:outline-none">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button id="slider-next" class="absolute z-20 right-4 top-1/2 -translate-y-1/2 w-12 h-12 flex items-center justify-center rounded-full bg-white/20 text-white backdrop-blur-md hover:bg-white/40 transition-colors opacity-0 group-hover:opacity-100 focus:outline-none">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<div class="absolute z-20 bottom-6 left-1/2 -translate-x-1/2 flex gap-2" id="slider-dots">
+<button class="w-3 h-3 rounded-full bg-white transition-colors slider-dot focus:outline-none" data-index="0"></button>
+<button class="w-3 h-3 rounded-full bg-white/40 transition-colors slider-dot focus:outline-none" data-index="1"></button>
+</div>
+</section>
+<!-- About Section -->
+<section class="px-margin-mobile py-[80px] bg-white">
+<div class="max-w-2xl mx-auto text-center flex flex-col items-center">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-6">Delhi’s Trusted Game Store</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+                    Located in the heart of Karol Bagh, Magic Land Games is your premier hub for high-performance gaming gear. We bring cinematic, immersive experiences to your living room with a curated selection of next-gen technology.
+                </p>
+</div>
+</section>
+<!-- Categories Bento Grid -->
+<section class="px-margin-mobile py-[80px] bg-background">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-8 border-b border-outline-variant pb-4">
+                Ecosystems
+            </h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- PlayStation Card -->
+<div class="bg-white h-[300px] relative overflow-hidden group cursor-pointer border border-outline-variant transition-all duration-300 hover:shadow-lg">
+<img alt="PlayStation Gear" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="PlayStation 5 console and controller." src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?w=800&amp;q=80&amp;fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep/90 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-6 w-full">
+<h4 class="font-headline-md text-[28px] text-white font-bold">PlayStation Pro Gear</h4>
+<p class="font-label-caps text-label-caps text-white/70 mt-2 tracking-widest">EXPLORE CONSOLES</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-6 h-[300px]">
+<!-- Xbox Card -->
+<div class="bg-white relative overflow-hidden group cursor-pointer border border-outline-variant transition-all duration-300 hover:shadow-lg">
+<img alt="Next-Gen Xbox" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Xbox Series X gaming console." src="https://images.unsplash.com/photo-1621259182978-fbf93132d53d?w=800&amp;q=80&amp;fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep/90 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full flex flex-col">
+<span class="material-symbols-outlined text-white mb-2" style="font-variation-settings: 'FILL' 1;">sports_esports</span>
+<h4 class="font-body-lg text-[18px] text-white font-bold">Next-Gen Xbox</h4>
+</div>
+</div>
+<!-- PC Card -->
+<div class="bg-white relative overflow-hidden group cursor-pointer border border-outline-variant transition-all duration-300 hover:shadow-lg">
+<img alt="High-End PC" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="High-end custom PC gaming setup with RGB lighting." src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=800&amp;q=80&amp;fit=crop"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-deep/90 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-4 w-full flex flex-col">
+<span class="material-symbols-outlined text-white mb-2" style="font-variation-settings: 'FILL' 1;">memory</span>
+<h4 class="font-body-lg text-[18px] text-white font-bold">PC Components</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Products Scroll -->
+<section class="py-[80px] bg-white border-y border-outline-variant">
+<div class="px-margin-mobile mb-8 flex justify-between items-end">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">
+                    Featured Hardware
+                </h3>
+<a class="font-label-caps text-label-caps text-brand-ps-blue hover:text-brand-ps-blue/80 transition-colors" href="#">VIEW ALL</a>
+</div>
+<!-- Horizontal Scroll Container -->
+<div class="flex overflow-x-auto gap-6 px-margin-mobile pb-8 pt-4 no-scrollbar snap-x snap-mandatory">
+<!-- Product 1 -->
+<div class="min-w-[280px] max-w-[280px] bg-white border border-outline-variant flex flex-col snap-start group hover:-translate-y-1 transition-transform duration-300 hover:shadow-xl">
+<div class="h-[240px] w-full bg-gray-100 overflow-hidden relative p-4 flex items-center justify-center">
+<img alt="PS5 Console" class="w-full h-full object-contain mix-blend-multiply" data-alt="PS5 Console standing upright." src="https://images.unsplash.com/photo-1607853202273-797f1c22a38e?w=800&amp;q=80"/>
+<div class="absolute top-4 left-4 px-3 py-1 bg-white border border-outline-variant">
+<span class="font-label-caps text-[10px] font-bold text-on-surface tracking-wider">IN STOCK</span>
+</div>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-body-lg text-[18px] text-on-surface font-bold leading-tight mb-2">PlayStation 5 Console</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4">Ultra-High Speed SSD</p>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant">
+<span class="font-headline-sm text-[20px] text-on-surface font-bold">₹49,990</span>
+<button class="text-brand-ps-blue hover:text-brand-ps-blue/80 transition-colors">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 2 -->
+<div class="min-w-[280px] max-w-[280px] bg-white border border-outline-variant flex flex-col snap-start group hover:-translate-y-1 transition-transform duration-300 hover:shadow-xl">
+<div class="h-[240px] w-full bg-gray-100 overflow-hidden relative p-4 flex items-center justify-center">
+<img alt="DualSense Controller" class="w-full h-full object-contain mix-blend-multiply" data-alt="A close up of the PS5 wireless controller." src="https://images.unsplash.com/photo-1606318801954-d46d46d3360a?w=800&amp;q=80"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-body-lg text-[18px] text-on-surface font-bold leading-tight mb-2">DualSense™ Wireless Controller</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4">Haptic feedback</p>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant">
+<span class="font-headline-sm text-[20px] text-on-surface font-bold">₹5,990</span>
+<button class="text-brand-ps-blue hover:text-brand-ps-blue/80 transition-colors">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product 3 -->
+<div class="min-w-[280px] max-w-[280px] bg-white border border-outline-variant flex flex-col snap-start group hover:-translate-y-1 transition-transform duration-300 hover:shadow-xl">
+<div class="h-[240px] w-full bg-gray-100 overflow-hidden relative p-4 flex items-center justify-center">
+<img alt="EA Sports FC 24" class="w-full h-full object-cover mix-blend-multiply opacity-80" data-alt="Racing video game displayed on a brightly lit screen." src="https://images.unsplash.com/photo-1580234811497-9df7fd2f357e?w=800&amp;q=80"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<h4 class="font-body-lg text-[18px] text-on-surface font-bold leading-tight mb-2">EA Sports FC 24</h4>
+<p class="font-body-md text-[14px] text-on-surface-variant mb-4">PS5 Standard Edition</p>
+</div>
+<div class="flex justify-between items-center mt-auto pt-4 border-t border-outline-variant">
+<span class="font-headline-sm text-[20px] text-on-surface font-bold">₹4,499</span>
+<button class="text-brand-ps-blue hover:text-brand-ps-blue/80 transition-colors">
+<span class="material-symbols-outlined text-[24px]">shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Reviews Section -->
+<section class="px-margin-mobile py-[100px] bg-background">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-10 text-center">Customer Experiences</h3>
+<div class="flex flex-col gap-6 max-w-3xl mx-auto">
+<!-- Review Card 1 -->
+<div class="bg-white p-8 border border-outline-variant shadow-sm">
+<div class="flex items-center gap-1 mb-4 text-brand-ps-blue">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-[18px] text-on-surface mb-6 leading-relaxed">"Best place in Delhi to get authentic gaming gear. The staff really knows their stuff when it comes to high-end PC builds."</p>
+<p class="font-label-caps text-[12px] text-on-surface-variant uppercase tracking-widest">— Rahul S.</p>
+</div>
+<!-- Review Card 2 -->
+<div class="bg-white p-8 border border-outline-variant shadow-sm ml-6">
+<div class="flex items-center gap-1 mb-4 text-brand-ps-blue">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="font-body-lg text-[18px] text-on-surface mb-6 leading-relaxed">"Got my PS5 here on launch day. Incredible service and the atmosphere in the store feels like you're stepping into a spaceship."</p>
+<p class="font-label-caps text-[12px] text-on-surface-variant uppercase tracking-widest">— Aman K.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full bg-white border-t border-outline-variant flex flex-col gap-8 px-margin-mobile py-16 mb-[80px] md:mb-0">
+<div class="max-w-container-max mx-auto w-full">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+<div>
+<div class="font-headline-sm text-[24px] font-bold text-on-surface mb-6">Magic Game</div>
+<p class="font-body-md text-on-surface-variant mb-6 text-sm leading-relaxed">
+Delhi’s premier destination for gaming hardware, next-gen consoles, and accessories.
+</p>
+<div class="flex gap-4 text-on-surface-variant">
+<a href="#" class="hover:text-brand-ps-blue transition-colors" aria-label="Social"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">public</span></a>
+<a href="#" class="hover:text-brand-ps-blue transition-colors" aria-label="Social"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">share</span></a>
+<a href="#" class="hover:text-brand-ps-blue transition-colors" aria-label="Social"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">mail</span></a>
+</div>
+</div>
+<div>
+<h5 class="font-label-caps text-[12px] text-on-surface-variant uppercase tracking-widest mb-4">CATEGORIES</h5>
+<ul class="flex flex-col gap-3">
+<li class="font-body-md text-[14px] text-on-surface hover:text-brand-ps-blue transition-colors cursor-pointer">PlayStation</li>
+<li class="font-body-md text-[14px] text-on-surface hover:text-brand-ps-blue transition-colors cursor-pointer">Xbox</li>
+<li class="font-body-md text-[14px] text-on-surface hover:text-brand-ps-blue transition-colors cursor-pointer">PC Components</li>
+<li class="font-body-md text-[14px] text-on-surface hover:text-brand-ps-blue transition-colors cursor-pointer">Peripherals</li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-[12px] text-on-surface-variant uppercase tracking-widest mb-4">LEGAL</h5>
+<ul class="flex flex-col gap-3">
+<li class="font-body-md text-[14px] text-on-surface hover:text-brand-ps-blue transition-colors cursor-pointer">Privacy Policy</li>
+<li class="font-body-md text-[14px] text-on-surface hover:text-brand-ps-blue transition-colors cursor-pointer">Terms of Service</li>
+<li class="font-body-md text-[14px] text-on-surface hover:text-brand-ps-blue transition-colors cursor-pointer">Return Policy</li>
+</ul>
+</div>
+<div>
+<h5 class="font-label-caps text-[12px] text-on-surface-variant uppercase tracking-widest mb-4">STORE INFO</h5>
+<ul class="flex flex-col gap-3">
+<li class="font-body-md text-[14px] text-on-surface flex items-center gap-2">
+<span class="w-2 h-2 bg-green-500 rounded-full"></span>
+Open Today: 9AM - 11PM
+</li>
+<li class="font-body-md text-[14px] text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+Karol Bagh, New Delhi
+</li>
+<li class="font-body-md text-[14px] text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">call</span>
++91 98765 43210
+</li>
+</ul>
+</div>
+</div>
+<div class="pt-8 mt-12 border-t border-outline-variant flex flex-col md:flex-row justify-between items-center gap-4 font-body-md text-[12px] text-on-surface-variant">
+<span>© 2024 Magic Game Retail. All Rights Reserved.</span>
+</div>
+</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-deep text-white border-t border-surface-deep shadow-[0_-4px_20px_rgba(0,0,0,0.1)] md:hidden">
+<div class="flex justify-around items-center h-20 pb-safe px-4 max-w-container-max mx-auto">
+<!-- Home (Active) -->
+<a class="flex flex-col items-center justify-center text-white cursor-pointer" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-caps text-[10px] tracking-wider">Home</span>
+</a>
+<!-- Store (Inactive) -->
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+<span class="font-label-caps text-[10px] tracking-wider">Store</span>
+</a>
+<!-- Library (Inactive) -->
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">sports_esports</span>
+<span class="font-label-caps text-[10px] tracking-wider">Library</span>
+</a>
+<!-- Account (Inactive) -->
+<a class="flex flex-col items-center justify-center text-white/50 hover:text-white transition-colors cursor-pointer" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-caps text-[10px] tracking-wider">Account</span>
+</a>
+</div>
+</nav>
+<!-- Vanilla JS for micro-interactions -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.slider-dot');
+            if (slides.length === 0) return;
+
+            let currentSlide = 0;
+            let slideInterval;
+
+            function goToSlide(index) {
+                // Hide current
+                slides[currentSlide].classList.remove('opacity-100', 'z-10', 'pointer-events-auto');
+                slides[currentSlide].classList.add('opacity-0', 'z-0', 'pointer-events-none');
+                dots[currentSlide].classList.remove('bg-white');
+                dots[currentSlide].classList.add('bg-white/40');
+                
+                // Set new index
+                currentSlide = (index + slides.length) % slides.length;
+                
+                // Show new
+                slides[currentSlide].classList.remove('opacity-0', 'z-0', 'pointer-events-none');
+                slides[currentSlide].classList.add('opacity-100', 'z-10', 'pointer-events-auto');
+                dots[currentSlide].classList.remove('bg-white/40');
+                dots[currentSlide].classList.add('bg-white');
+            }
+
+            function nextSlide() {
+                goToSlide(currentSlide + 1);
+            }
+
+            function prevSlide() {
+                goToSlide(currentSlide - 1);
+            }
+
+            const nextBtn = document.getElementById('slider-next');
+            const prevBtn = document.getElementById('slider-prev');
+
+            if(nextBtn) nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetInterval();
+            });
+            if(prevBtn) prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetInterval();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    goToSlide(index);
+                    resetInterval();
+                });
+            });
+
+            function startInterval() {
+                slideInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetInterval() {
+                clearInterval(slideInterval);
+                startInterval();
+            }
+
+            startInterval();
+        });
+    </script>
+</body></html>
